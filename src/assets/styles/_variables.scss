@@ -1,0 +1,42 @@
+// Colors
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$text-color: #333;
+$background-color: #fff;
+
+// Fonts
+$font-family-slab: "Montagu Slab" , Roboto, sans-serif;
+$font-family-roboto: Roboto, sans-serif;
+
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+
+// breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Fonts sizes
+$font-sizes-slab: (
+  h1: (sm: 50px, md: 100px, lg: 100px),
+  h2: (sm: 20px, md: 40px, lg: 40px),
+  h3: (sm: 40px, md: 80px, lg: 80px),
+  h4: (sm: 16px, md: 20px, lg: 26px),
+);
+$font-sizes-roboto: (
+  h3: (sm: 16px, md: 24px, lg: 24px),
+  h4: (sm: 16px, md: 20px, lg: 26px),
+  h5: (sm: 18px, md: 24px, lg: 24px),
+  base: (sm: 16px, md: 20px, lg: 20px),
+  'p-small': (sm: 14px, md: 18px, lg: 18px),
+);
+
+// Spacing for different breakpoints
+$spacing-unit: 6px;

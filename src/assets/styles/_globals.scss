@@ -1,0 +1,81 @@
+@import "./variables";
+@import "./mixins";
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-family-roboto;
+  line-height: 1.5;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+}
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Generate margin and padding utilities */
+@include generate-spacing-utilities(m);
+@include generate-spacing-utilities(mt);
+@include generate-spacing-utilities(mr);
+@include generate-spacing-utilities(mb);
+@include generate-spacing-utilities(ml);
+@include generate-spacing-utilities(p);
+@include generate-spacing-utilities(pt);
+@include generate-spacing-utilities(pr);
+@include generate-spacing-utilities(pb);
+@include generate-spacing-utilities(pl);
+
+/* Additional Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-none {
+  display: none;
+}

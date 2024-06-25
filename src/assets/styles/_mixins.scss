@@ -1,0 +1,72 @@
+@import "./variables";
+
+// Text truncation
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// breakpoints min-width
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints map.";
+  }
+}
+
+// Responsive font size mixin
+@mixin responsive-font-size($size-key) {
+  @if map-has-key($font-sizes, $size-key) {
+    $sizes: map-get($font-sizes, $size-key);
+
+    font-size: map-get($sizes, sm);
+
+    @include respond-to("md") {
+      font-size: map-get($sizes, md);
+    }
+
+    @include respond-to("lg") {
+      font-size: map-get($sizes, lg);
+    }
+  } @else {
+    @warn "Font size #{$size-key} not found in $font-sizes map.";
+  }
+}
+
+// Responsive spacing mixin
+@mixin responsive-spacing($size-key) {
+  @if map-has-key($spacing, small) and
+    map-has-key($spacing, medium) and
+    map-has-key($spacing, large)
+  {
+    margin: map-get(map-get($spacing, small), $size-key);
+
+    @include respond-to("medium") {
+      margin: map-get(map-get($spacing, medium), $size-key);
+    }
+
+    @include respond-to("large") {
+      margin: map-get(map-get($spacing, large), $size-key);
+    }
+  } @else {
+    @warn "Spacing #{$size-key} not found in $spacing map.";
+  }
+}
+
+// Dynamic spacing mixin
+@mixin spacing($property, $multiplier) {
+  #{$property}: $base-unit * $multiplier;
+}
+
+// Utility classes for margin and padding
+@mixin generate-spacing-utilities($property) {
+  @for $i from 1 through 20 {
+    .#{$property}-#{$i} {
+      @include spacing($property, $i);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import './variables';
+@import './mixins';
+
+// Base typography styles
+body {
+  font-family: $font-family-roboto;
+  @include responsive-font-roboto(base);
+  line-height: 1.5;
+  color: $text-color;
+}
+
+h1.slab { @include responsive-font-size(h1); font-family: $font-family-slab; }
+h2.slab { @include responsive-font-size(h2); font-family: $font-family-slab; }
+h3.slab { @include responsive-font-size(h3); font-family: $font-family-slab; }
+h4.slab { @include responsive-font-size(h4); font-family: $font-family-slab; }
+
+h3:not(.slab) { @include responsive-font-size(h3); font-family: $font-family-roboto; }
+h4:not(.slab) { @include responsive-font-size(h4); font-family: $font-family-roboto; }
+h5:not(.slab) { @include responsive-font-size(h5); font-family: $font-family-roboto; }
+p:not(.slab) { @include responsive-font-size(base); font-family: $font-family-roboto; }
+p:not(.slab).small { @include responsive-font-size('p-small'); font-family: $font-family-roboto; }
