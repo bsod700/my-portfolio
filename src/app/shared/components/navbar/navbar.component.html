@@ -1,2 +1,17 @@
-<p>navbar works!</p>
-<app-logo [logoConfig]="componentConfig.logo"/>
+
+<nav>
+    <div class="contain">
+        <div class="left">
+            <app-logo [logoConfig]="componentConfig.logo"/>
+            @for (link of componentConfig.links; track link.text) {
+                <div class="link">
+                    <a (click)="scrollTo(link.inLink || '')">{{link.text}}</a>
+                </div>
+            }
+        </div>
+
+        <div class="right">
+            <app-cta [ctaConfig]="componentConfig.cta"/>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,7 @@
+<a 
+    class="cta-wrapper size-{{ctaConfig.size}} color-{{ctaConfig.color}}" 
+    [attr.aria-label]="ctaConfig.ariaLabel" 
+    [routerLink]="ctaConfig.inLink ? ['/' + ctaConfig.inLink] : null">
+
+    <p>{{ctaConfig.text}}</p>
+</a>
