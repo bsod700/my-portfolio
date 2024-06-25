@@ -14,7 +14,7 @@ $font-size-small: 14px;
 $font-size-large: 18px;
 
 // breakpoints
-$grid-breakpoints: (
+$breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
@@ -23,19 +23,20 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
-// Fonts sizes
-$font-sizes-slab: (
-  h1: (sm: 50px, md: 100px, lg: 100px),
-  h2: (sm: 20px, md: 40px, lg: 40px),
-  h3: (sm: 40px, md: 80px, lg: 80px),
-  h4: (sm: 16px, md: 20px, lg: 26px),
-);
-$font-sizes-roboto: (
-  h3: (sm: 16px, md: 24px, lg: 24px),
-  h4: (sm: 16px, md: 20px, lg: 26px),
-  h5: (sm: 18px, md: 24px, lg: 24px),
-  base: (sm: 16px, md: 20px, lg: 20px),
-  'p-small': (sm: 14px, md: 18px, lg: 18px),
+$font-sizes: (
+  'slab': (
+    h1: (small: 50px, medium: 100px, large: 100px),
+    h2: (small: 20px, medium: 40px, large: 40px),
+    h3: (small: 40px, medium: 80px, large: 80px),
+    h4: (small: 16px, medium: 20px, large: 26px)
+  ),
+  'roboto': (
+    h3: (small: 16px, medium: 24px, large: 24px),
+    h4: (small: 16px, medium: 20px, large: 26px),
+    h5: (small: 18px, medium: 24px, large: 24px),
+    base: (small: 16px, medium: 20px, large: 20px),
+    'p-small': (small: 14px, medium: 18px, large: 18px)
+  )
 );
 
 // Spacing for different breakpoints
