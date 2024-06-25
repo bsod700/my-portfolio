@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { DefaultConfigService, Img } from '@core/index';
+import { DefaultConfigService, NavbarRegular } from '@core/index';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +25,10 @@ export class MainConfigService {
 
     getPageConfig(): Main {
       return {
-      logo: this.defaultConfigService.getLogo(),
+        navbar: this.defaultConfigService.getRegularNavbar()
     }
   }
 }
 export interface Main {
-  logo: Img;
+  navbar: NavbarRegular;
 }

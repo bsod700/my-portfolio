@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LogoComponent } from '../logo/logo.component';
+import { NavbarRegular } from '@core/index';
 
 @Component({
   selector: 'app-navbar',
@@ -9,5 +10,5 @@ import { LogoComponent } from '../logo/logo.component';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-
+  @Input() componentConfig!: NavbarRegular;
 }

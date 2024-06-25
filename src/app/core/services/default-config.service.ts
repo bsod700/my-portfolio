@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Img } from '@core/models/img';
+import { NavbarRegular } from '..';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,27 @@ export class DefaultConfigService {
       src: 'assets/imgs/logo-orizon.svg',
       alt: 'Guy Tagger',
     }
+  }
+  getRegularNavbar(): NavbarRegular {
+   return {
+    logo: this.getLogo(),
+    links: [
+      {
+        text: 'Home'
+      },
+      {
+        text: 'About'
+      },
+      {
+        text: 'Projects'
+      }
+    ],
+    cta: {
+      text: 'Contact Me',
+      size: 'big',
+      color: 'white',
+      ariaLabel: 'string'
+    }
+   }
   }
 }
