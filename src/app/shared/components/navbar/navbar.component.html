@@ -3,9 +3,9 @@
     <div class="contain d-flex">
         <div class="left">
             <app-logo [logoConfig]="componentConfig.logo"/>
-            @for (link of componentConfig.links; track link.text) {
+            @for (link of componentConfig.links; track link.label) {
                 <div class="link">
-                    <a (click)="scrollTo(link.inLink || '')">{{link.text}}</a>
+                    <a (click)="scrollTo(link.inLink || '')">{{link.label}}</a>
                 </div>
             }
         </div>

@@ -1,0 +1,53 @@
+@import './mixins';
+
+.cta-wrapper {
+    display: inline-flex;
+    font-family: $font-family-roboto;
+    transition: all ease-in-out .5s;
+    padding: 12.5px 30px;
+    border-radius: $spacing-unit*2;
+    cursor: pointer;
+
+    &.size-big {
+        @include responsive-font-size(roboto, h3);
+    }
+    &.size-default {
+        @include responsive-font-size(roboto, base); 
+    }
+    &.size-small {
+        @include responsive-font-size(roboto, 'p-small'); 
+    }
+    &.color-dark {
+        background-color: $dark;
+        color: $text-color-white;
+        &:hover {
+            background-color: $purple;
+        }
+        &:focus {
+            border: 3px $text-color-gold solid;
+            box-shadow: 0px 4px 12px 2px $dark-gold;
+        }
+    }
+    &.color-white {
+        background-color: $text-color-white;
+        color: $dark;
+        &:hover {
+            background-color: darken($color: $text-color-white, $amount: 50%);
+        }
+        &:focus {
+            border: 3px $dark solid;
+            box-shadow: 0px 0px 0px 4px $text-color-white, 0px 4px 12px 2px $text-color-white;
+        }
+    }
+    &.color-gold {
+        background-color: $text-color-gold;
+        color: $dark;
+        &:hover {
+            background-color: $dark-gold;
+        }
+        &:focus {
+            border: 3px $dark solid;
+            box-shadow: 0px 0px 0px 4px $text-color-gold, 0px 4px 12px 2px $dark-gold;
+        }
+    }
+}

@@ -3,5 +3,18 @@
     [attr.aria-label]="ctaConfig.ariaLabel" 
     [routerLink]="ctaConfig.inLink ? ['/' + ctaConfig.inLink] : null">
 
+    @if (ctaConfig.showIconLeft) {
+        <div class="icon-left">
+            <!-- <app-icon [icon]="iconLeft" /> -->
+        </div>
+    }
+   
+
     <p>{{ctaConfig.text}}</p>
+
+    @if (ctaConfig.showIconRight) {
+        <div class="icon-right">
+            <!-- <app-icon [icon]="iconRight" /> -->
+        </div>
+    }
 </a>

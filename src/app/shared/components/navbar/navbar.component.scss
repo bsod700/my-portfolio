@@ -5,8 +5,17 @@ nav {
     top: 0;
     width: 100vw;
     z-index: 111111;
+    @include spacing('padding-left',8);
+    @include spacing('padding-right',8);
+    @include spacing('padding-top',4);
+    @include spacing('padding-bottom',4);
     .contain {
         align-items: center;
         justify-content: space-between;
+    }
+    .left {
+        display: flex;
+        align-items: center;
+        gap: $spacing-unit*12;
     }
 }

@@ -46,13 +46,19 @@ export class DefaultConfigService {
     logo: this.getLogo(),
     links: [
       {
-        text: 'Home'
+        label: 'Home',
+        showIcon: false,
+        inLink: 'home'
       },
       {
-        text: 'About'
+        label: 'About',
+        showIcon: false,
+        inLink: 'about'
       },
       {
-        text: 'Projects'
+        label: 'Projects',
+        showIcon: false,
+        inLink: 'projects'
       }
     ],
     cta: {

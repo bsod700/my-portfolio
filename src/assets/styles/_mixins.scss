@@ -46,9 +46,37 @@
 
 // Utility classes for margin and padding
 @mixin generate-spacing-utilities($property) {
-  @for $i from 1 through 20 {
+  @for $i from 1 through 10 {
     .#{$property}-#{$i} {
       @include spacing($property, $i);
     }
+  }
+}
+
+@mixin container() {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include respond-to(sm) {
+    max-width: 540px;
+  }
+  
+  @include respond-to(md) {
+    max-width: 720px;
+  }
+
+  @include respond-to(lg) {
+    max-width: 960px;
+  }
+
+  @include respond-to(xl) {
+    max-width: 1140px;
+  }
+
+  @include respond-to(xxl) {
+    max-width: 1320px;
   }
 }
