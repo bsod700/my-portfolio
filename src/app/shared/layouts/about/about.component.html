@@ -1,0 +1,18 @@
+<section class="about-wrapper">
+    <div class="container">
+        <div class="text-wrapper">
+            <div class="title">
+                <h3>{{componentConfig.title}}</h3>
+                <h4>{{componentConfig.subtitle}}</h4>
+            </div>
+            <p>
+                @for (p of componentConfig.paragraphs; track $index) {
+                    <span class="d-block">{{p}}</span>
+                }
+            </p>
+        </div>
+        <div class="img-wrapper">
+            
+        </div>
+    </div>
+</section>

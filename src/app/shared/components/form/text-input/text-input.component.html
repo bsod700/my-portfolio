@@ -1,0 +1,20 @@
+<div class="input-group">
+    <label>{{ config.label }}</label>
+    <div class="input-wrapper">
+        <!-- @if (config.hasIconLeft) {
+            <app-icon />
+        } -->
+      <input
+        type="text"
+        [attr.aria-label]="config.ariaLabel"
+        [attr.aria-describedby]="config.ariaDescribedBy"
+        [attr.aria-labelledby]="config.ariaLabelledBy"
+        [required]="config.required"
+        [value]="value"
+        (input)="onInput($event)"
+      />
+      <!-- @if (config.hasIconRight) {
+        <app-icon />
+    } -->
+    </div>
+  </div>

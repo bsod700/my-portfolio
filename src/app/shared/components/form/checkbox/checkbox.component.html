@@ -1,0 +1,23 @@
+<div class="checkbox-group">
+    <label [for]="config.label">
+        <!-- @if (config.hasIconLeft) {
+            <app-icon />
+        } -->
+        <input
+            type="checkbox"
+            [id]="config.label"
+            [attr.aria-label]="config.ariaLabel"
+            [attr.aria-describedby]="config.ariaDescribedBy"
+            [required]="config.required"
+            [checked]="value"
+            (change)="onInput($event)"
+        />
+        {{ config.label }}
+        <!-- @if (config.hasIconRight) {
+            <app-icon />
+        } -->
+    </label>
+    <!-- <div class="check-icon-wrapper">
+        <app-icon />
+    </div> -->
+  </div>

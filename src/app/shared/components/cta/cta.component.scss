@@ -7,15 +7,23 @@
     padding: 12.5px 30px;
     border-radius: $spacing-unit*2;
     cursor: pointer;
-
+    p {
+        font-weight: 500;
+    }
     &.size-big {
-        @include responsive-font-size(roboto, h3);
+        p {
+            @include responsive-font-size(roboto, h3);
+        }
     }
     &.size-default {
-        @include responsive-font-size(roboto, base); 
+        p {
+            @include responsive-font-size(roboto, base); 
+        }
     }
     &.size-small {
-        @include responsive-font-size(roboto, 'p-small'); 
+        p {
+            @include responsive-font-size(roboto, 'p-small'); 
+        }
     }
     &.color-dark {
         background-color: $dark;

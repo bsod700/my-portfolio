@@ -63,7 +63,7 @@ export class DefaultConfigService {
     ],
     cta: {
       text: 'Contact Me',
-      size: 'big',
+      size: 'regular',
       color: 'white',
       ariaLabel: 'string'
     }

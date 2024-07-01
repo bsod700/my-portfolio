@@ -1,0 +1,51 @@
+<div class="carousel-wrapper" >
+    <div class="container">
+      <h2>{{componentConfig.title}}</h2>
+      <h3>{{componentConfig.subtitle}}</h3>
+  
+      <div class="subjects" role="tablist">
+        @if (componentConfig.subjects && componentConfig.subjects.length > 0) {
+          @for (subject of componentConfig.subjects; track generateId(subject.title)) {
+            <button [class.active]="selectedItem === subject"
+                    (click)="selectSubject(subject.title)"
+                    role="tab"
+                    [attr.aria-selected]="selectedItem === subject"
+                    [attr.aria-controls]="generateId(subject.title)">
+              {{ subject.title }}
+            </button>
+          }
+        }
+      </div>
+      @if (selectedItem !== null) {
+        <div class="carousel-content" role="tabpanel">
+            @if (isProject(selectedItem)) {
+              <div [id]="generateId(selectedItem.title)">
+                <h3>{{ selectedItem.title }}</h3>
+                <p>{{ selectedItem.description }}</p>
+                <div class="responsibilities">
+                  @for (responsibility of selectedItem.responsibilities; track responsibility) {
+                    <div class="responsibility">
+                      <h5>{{ responsibility }}</h5>
+                    </div>
+                  }
+                </div>
+                <app-cta [ctaConfig]="selectedItem.cta"/>
+              </div>
+            }
+            @else {
+              <div [id]="generateId(selectedItem.title)">
+                <div class="contain">
+                  <h3>{{ selectedItem.title }}</h3>
+                  <p>{{ selectedItem.description }}</p>
+                </div>
+                <div class="img-wrapper">
+                  <img [src]="selectedItem.img.src" [alt]="selectedItem.img.alt">
+                </div>
+              </div>
+            }
+          </div>
+      }
+   
+    </div>
+  </div>
+  

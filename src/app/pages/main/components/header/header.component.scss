@@ -1,5 +1,25 @@
 @import './mixins';
 
 .header-wrapper {
-
+    min-height: 900px;
+    .container {
+        @include spacing(padding-top, 25);
+    }
+    span.title {
+        @include responsive-font-size(slab, h2); 
+        font-family: $font-family-slab; 
+        line-height: .7;
+        font-weight: 300;
+    }
+    p { 
+        @include responsive-font-size(roboto, h3);
+        font-family: $font-family-roboto; 
+        font-weight: 400;
+    }
+    .ctas-container {
+        display: flex;
+        align-items: center;
+        @include spacing(gap, 2);
+        flex-wrap: wrap;
+    }
 }

@@ -45,10 +45,10 @@
 }
 
 // Utility classes for margin and padding
-@mixin generate-spacing-utilities($property) {
+@mixin generate-spacing-utilities($property, $css-property) {
   @for $i from 1 through 10 {
     .#{$property}-#{$i} {
-      @include spacing($property, $i);
+      @include spacing($css-property, $i);
     }
   }
 }

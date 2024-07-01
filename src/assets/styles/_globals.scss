@@ -39,16 +39,16 @@ a {
 }
 
 /* Generate margin and padding utilities */
-@include generate-spacing-utilities(m);
-@include generate-spacing-utilities(mt);
-@include generate-spacing-utilities(mr);
-@include generate-spacing-utilities(mb);
-@include generate-spacing-utilities(ml);
-@include generate-spacing-utilities(p);
-@include generate-spacing-utilities(pt);
-@include generate-spacing-utilities(pr);
-@include generate-spacing-utilities(pb);
-@include generate-spacing-utilities(pl);
+@include generate-spacing-utilities('m', 'margin');
+@include generate-spacing-utilities('mt', 'margin-top');
+@include generate-spacing-utilities('mr', 'margin-right');
+@include generate-spacing-utilities('mb', 'margin-bottom');
+@include generate-spacing-utilities('ml', 'margin-left');
+@include generate-spacing-utilities('p', 'padding');
+@include generate-spacing-utilities('pt', 'padding-top');
+@include generate-spacing-utilities('pr', 'padding-right');
+@include generate-spacing-utilities('pb', 'padding-bottom');
+@include generate-spacing-utilities('pl', 'padding-left');
 
 /* Additional Utilities */
 .text-center {

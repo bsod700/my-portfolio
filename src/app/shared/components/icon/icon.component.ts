@@ -12,3 +12,7 @@ export class IconComponent {
   @Input() icon!: string;
 }
 
+export interface Icon {
+  icon: string;
+}
+

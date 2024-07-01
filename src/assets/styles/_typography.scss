@@ -8,8 +8,17 @@ body {
   color: $text-color-white;
 }
 
-h1.slab { @include responsive-font-size(slab, h1); font-family: $font-family-slab; }
-h2.slab { @include responsive-font-size(slab, h2); font-family: $font-family-slab; }
+h1.slab { 
+  font-weight: 400;
+  @include responsive-font-size(slab, h1); 
+  font-family: $font-family-slab; 
+  line-height: .7;
+}
+h2.slab { 
+  @include responsive-font-size(slab, h2);
+  font-family: $font-family-slab;
+  line-height: .7;
+}
 h3.slab { @include responsive-font-size(slab, h3); font-family: $font-family-slab; }
 h4.slab { @include responsive-font-size(slab, h4); font-family: $font-family-slab; }
 

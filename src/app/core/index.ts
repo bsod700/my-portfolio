@@ -11,4 +11,8 @@ export * from './services/scroll.service';
 // Exporting models
 export * from './models/img';
 export * from './models/cta';
-export * from './models/navbar-regular'
+export * from './models/navbar-regular';
+export * from './models/project';
+export * from './models/service';
+export * from './models/tech';
+export * from './models/review';

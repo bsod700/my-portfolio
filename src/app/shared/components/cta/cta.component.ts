@@ -14,6 +14,7 @@ import { IconComponent } from '@shared/index';
 })
 export class CtaComponent {
   @Input() ctaConfig!: Cta;
+  @Input() onClick!: () => void;
 
   get iconLeft(): string {
     return this.ctaConfig.iconLeft || '';

@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    @if (formConfig.checkboxes) {
+        @for (checkbox of formConfig.checkboxes; track $index) {
+            <app-checkbox
+            [formControlName]="checkbox.controlName"
+            [config]="checkbox"
+          />
+        }
+    }
+
+    @if (formConfig.inputTexts) {
+        @for (inputText of formConfig.inputTexts; track $index) {
+            <app-text-input
+                [formControlName]="inputText.controlName"
+                [config]="inputText"
+          />
+        }
+    }
+
+    <app-cta 
+        [ctaConfig]="formConfig.cta"
+        [onClick]="submit"
+     />
+  </form>
+  
