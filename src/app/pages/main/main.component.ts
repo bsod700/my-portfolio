@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Main, MainConfigService } from './main-config.service';
-import { AboutComponent, CarouselComponent, ContactComponent, FooterComponent, NavbarComponent, ProjectsComponent, 
-  ReviewsComponent, ServicesComponent, TechnologiesComponent } from '@shared/index';
+import { AboutComponent, CarouselComponent, ContactComponent, FooterComponent, NavbarComponent, 
+  ReviewsComponent, TechnologiesComponent } from '@shared/index';
 import { HeaderComponent } from './components';
 
 @Component({

@@ -2,10 +2,9 @@
 export * from './components/cta/cta.component';
 export * from './components/logo/logo.component';
 export * from './components/arrow-link/arrow-link.component';
-export * from './components/icon/icon.component';
 export * from './components/carousel/carousel.component';
 export * from './components/modal-button/modal-button.component';
-
+export * from './components/icons-img/icons-img.component';
 
 // directives
 

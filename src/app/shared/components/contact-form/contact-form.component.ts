@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Cta } from '@core/index';
-import { CheckboxComponent, CheckboxConfig, CtaComponent, InputTextConfig, TextInputComponent } from '@shared/index';
+import { CheckboxComponent, CheckboxConfig } from '../form/checkbox/checkbox.component';
+import { InputTextConfig, TextInputComponent } from '../form/text-input/text-input.component';
+import { CtaComponent } from '../cta/cta.component';
 
 @Component({
   selector: 'app-contact-form',

@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IconComponent } from '@shared/index';
 
 @Component({
   selector: 'app-arrow-link',
   standalone: true,
-  imports: [IconComponent],
+  imports: [],
   templateUrl: './arrow-link.component.html',
   styleUrl: './arrow-link.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

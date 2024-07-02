@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { ContactFormComponent, ContactFormConfig } from '@shared/components/contact-form/contact-form.component';
 import { ModalButtonConfig } from '@shared/components/modal-button/modal-button.component';
-import { ContactFormComponent, ContactFormConfig } from '@shared/index';
 
 @Component({
   selector: 'app-contact',

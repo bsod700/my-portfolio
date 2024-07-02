@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { Icon, IconComponent } from '@shared/index';
 
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  imports: [ReactiveFormsModule ,IconComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -59,7 +58,7 @@ export interface CheckboxConfig {
   
   hasIconLeft?: boolean;
   hasIconRight?: boolean;
-  iconLeft?: Icon;
-  iconRight?: Icon;
-  checkIcon?: Icon;
+  iconLeft?: string;
+  iconRight?: string;
+  checkIcon?: string;
 }

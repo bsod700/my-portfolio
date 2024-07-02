@@ -1,9 +1,9 @@
 <div class="input-group">
     <label>{{ config.label }}</label>
     <div class="input-wrapper">
-        <!-- @if (config.hasIconLeft) {
-            <app-icon />
-        } -->
+        @if (config.hasIconLeft) {
+          icon-left
+        }
       <input
         type="text"
         [attr.aria-label]="config.ariaLabel"
@@ -13,8 +13,8 @@
         [value]="value"
         (input)="onInput($event)"
       />
-      <!-- @if (config.hasIconRight) {
-        <app-icon />
-    } -->
+      @if (config.hasIconRight) {
+        icon-right
+      }
     </div>
   </div>

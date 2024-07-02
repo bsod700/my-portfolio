@@ -39,7 +39,8 @@ export class MainConfigService {
             ariaLabel: 'string',
             inLink: 'contact',
             showIconRight: true,
-            iconRight: 'user'
+            iconRight: 'job',
+            showIconLeft: false
           },
           ctaAbout: {
             text: 'About',
@@ -48,7 +49,8 @@ export class MainConfigService {
             ariaLabel: 'string',
             inLink: 'about',
             showIconRight: true,
-            iconRight: 'job'
+            iconRight: 'user',
+            showIconLeft: false
           }
         },
         about: {
@@ -83,7 +85,8 @@ export class MainConfigService {
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'project-tierro',
-                showIconRight: false
+                showIconRight: false,
+                showIconLeft: false
               }
             },
             {
@@ -100,18 +103,19 @@ export class MainConfigService {
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'project-tierro',
-                showIconRight: false
+                showIconRight: false,
+                showIconLeft: false
               }
             }
           ]
         },
         services: {
-          title: 'string',
-          subtitle: 'string',
+          title: 'What I do?',
+          subtitle: 'Services',
           subjects: [
             {
-              title: 'string',
-              description: 'string',
+              title: 'UI/UX Design',
+              description: 'Creating intuitive and engaging user experiences with a focus on aesthetics and functionality. I craft wireframes, mockups, and interactive prototypes to bring ideas to life and ensure a seamless user journey. My designs adhere to WCAG 2.2 guidelines to guarantee accessibility for all users.',
               img: {
                 src: 'string',
                 alt: 'string'
@@ -169,7 +173,7 @@ export class MainConfigService {
                 ariaDescribedBy: 'terms-description-1',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: {icon: ''},
+                iconLeft: '',
                 required: true
               }
             ],
@@ -181,7 +185,7 @@ export class MainConfigService {
                 ariaDescribedBy: 'username-description',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft:  {icon: ''},
+                iconLeft:  '',
                 required: true
               }
             ],
@@ -192,7 +196,8 @@ export class MainConfigService {
               ariaLabel: 'string',
               inLink: 'contact',
               showIconRight: true,
-              iconRight: 'user'
+              iconRight: '',
+              showIconLeft: false
             }
           }
         }

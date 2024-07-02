@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { Icon, IconComponent } from '@shared/index';
 
 @Component({
   selector: 'app-text-input',
   standalone: true,
-  imports: [ReactiveFormsModule ,IconComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './text-input.component.html',
   styleUrl: './text-input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -60,6 +59,6 @@ export interface InputTextConfig {
 
   hasIconLeft?: boolean;
   hasIconRight?: boolean;
-  iconLeft?: Icon;
-  iconRight?: Icon;
+  iconLeft?: string;
+  iconRight?: string;
 }

@@ -65,7 +65,9 @@ export class DefaultConfigService {
       text: 'Contact Me',
       size: 'regular',
       color: 'white',
-      ariaLabel: 'string'
+      ariaLabel: 'string',
+      showIconLeft: false,
+      showIconRight: false
     }
    }
   }
