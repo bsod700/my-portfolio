@@ -1,1 +1,31 @@
-<p>technologies works!</p>
+<div class="technologies-wrapper">
+  <div class="container">
+    <div class="title mb-4 text-center">
+      <h3 class="title-body">{{ componentConfig.title }}</h3>
+      <h4 class="title-body slab">{{ componentConfig.subtitle }}</h4>
+    </div>
+  </div>
+
+  <div class="technologies">
+    <div class="row first-row">
+      @for (tech of firstHalf; track trackByFn($index, tech)) {
+      <div class="tech">
+        <div class="img-wrapper">
+          <img [src]="tech.img.src" [alt]="tech.img.alt" />
+        </div>
+        <h5 class="very-small-title slab">{{ tech.title }}</h5>
+      </div>
+      }
+    </div>
+    <div class="row second-row">
+      @for (tech of secondHalf; track trackByFn($index, tech)) {
+      <div class="tech">
+        <div class="img-wrapper">
+          <img [src]="tech.img.src" [alt]="tech.img.alt" />
+        </div>
+        <h5 class="very-small-title slab">{{ tech.title }}</h5>
+      </div>
+      }
+    </div>
+  </div>
+</div>

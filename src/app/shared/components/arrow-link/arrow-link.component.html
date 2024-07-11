@@ -1,6 +1,21 @@
-<a href="#" class="arrow-link-wrapper" tabindex="0">
-  @if (componentConfig.showIcon) {
-   icon
-  }
-  {{ componentConfig.label }}
-</a>
+
+@if (componentConfig.scrollToLink) {
+  <a class="arrow-link-wrapper" tabindex="0" 
+    (click)="scrollToSection($event)"
+    >
+    @if (componentConfig.showIcon) {
+      <!-- <app-icons-img [icon]="componentConfig.icon" /> -->
+    }
+    {{ componentConfig.label }}
+  </a>
+}
+@else {
+  <a class="arrow-link-wrapper" tabindex="0" 
+    [routerLink]="componentConfig.inLink ? ['/' + componentConfig.inLink] : null"
+  >
+    @if (componentConfig.showIcon) {
+      <!-- <app-icons-img [icon]="componentConfig.icon" /> -->
+    }
+    {{ componentConfig.label }}
+  </a>
+}

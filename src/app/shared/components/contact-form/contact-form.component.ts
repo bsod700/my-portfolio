@@ -1,14 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Cta } from '@core/index';
 import { CheckboxComponent, CheckboxConfig } from '../form/checkbox/checkbox.component';
 import { InputTextConfig, TextInputComponent } from '../form/text-input/text-input.component';
 import { CtaComponent } from '../cta/cta.component';
+import { DynamicImageComponent } from '../dynamic-image/dynamic-image.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CheckboxComponent, TextInputComponent, CtaComponent],
+  imports: [ReactiveFormsModule, CheckboxComponent, TextInputComponent, CtaComponent, DynamicImageComponent, CommonModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,7 +32,11 @@ export class ContactFormComponent implements OnInit {
     });
 
     this.formConfig.inputTexts?.forEach(input => {
-      formControls[input.controlName] = new FormControl('');
+      if(input.controlName === 'email') {
+        formControls[input.controlName] =  new FormControl('', [Validators.required, Validators.email]);
+      } else {
+        formControls[input.controlName] = new FormControl('', [Validators.required]);
+      }
     });
 
     this.form = this.fb.group(formControls);
@@ -42,6 +48,7 @@ export class ContactFormComponent implements OnInit {
 }
 
 export interface ContactFormConfig {
+  checkboxesTitle: string;
   checkboxes?: CheckboxConfig[];
   inputTexts?: InputTextConfig[];
   cta: Cta;

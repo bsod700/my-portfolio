@@ -1,0 +1,64 @@
+@import './mixins';
+
+.reviews-wrapper {
+    background-color: $light-purple;
+    padding-top: $spacing-unit*2;
+    padding-bottom: $spacing-unit*48;
+    background-image: url(assets/images/split3.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 4000px auto;
+    .img-row {
+        margin-bottom: $spacing-unit*32;
+    }
+    .container {
+        gap: $spacing-unit*8;
+        flex-direction: column;
+        @include respond-to(xl) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .left-contain {
+       
+        @include respond-to(xl) {
+            flex: 0 0 500px;
+            max-width: 500px;
+        }
+    }
+    .reviews {
+        flex-direction: column;
+        gap: $spacing-unit*4;
+        .review {
+            display: flex;
+            align-items: flex-start;
+            gap: $spacing-unit*2;
+            border-radius: $spacing-unit*2;
+            max-width: 700px;
+            &:not(.selected) {
+                border-left: $spacing-unit solid rgba($text-color-white, 0.5);
+                background-color: $dark-purple;
+                padding: $spacing-unit*2 $spacing-unit*4 $spacing-unit*2 $spacing-unit*4;
+                h5 {
+                    @include responsive-font-size(slab, h6); font-family: $font-family-slab;
+                }
+                p {
+                    @include responsive-font-size(roboto, "p-small"); font-family: $font-family-roboto;
+                }
+            }
+            &.selected {
+                border-left: $spacing-unit solid $orange;
+                background: $dark;
+                box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.50);
+                padding: $spacing-unit*2 $spacing-unit*2 $spacing-unit*2 $spacing-unit*4;
+                transform: translateX($spacing-unit*2);
+                h5 {
+                    @include responsive-font-size(slab, h5); font-family: $font-family-slab;
+                }
+                p {
+                    @include responsive-font-size(roboto, "p-small"); font-family: $font-family-roboto;
+                }
+            }
+        }
+    }
+}

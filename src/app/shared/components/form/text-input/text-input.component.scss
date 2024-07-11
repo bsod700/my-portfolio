@@ -1,0 +1,46 @@
+@import './mixins';
+
+.input-group-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit*2;
+    label {
+        color: $text-color-white;
+    }
+    app-get-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon {
+        position: absolute;
+        fill: $text-color-white;
+        &.icon-left {
+            left: $spacing-unit*2;
+        }
+        &.icon-right {
+            right: $spacing-unit*2;
+        }
+    }
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        input {
+            padding: $spacing-unit*3 $spacing-unit*4+25;
+            border-radius: $spacing-unit*2; 
+            border: 1px solid $form-border;
+            background: $dark-purple;
+            min-width: 300px;
+            color: $text-color-white;
+            &::placeholder {
+                color: rgba($text-color-white, $alpha: 50%);
+            }
+            &:active, &:focus {
+                border: 2px solid $text-color-gold;
+                box-shadow: 0px 0px 20px 0px $text-color-gold, 0px 0px 5px 0px rgba(0, 0, 0, 0.30);
+                
+            }
+        }
+    }
+}

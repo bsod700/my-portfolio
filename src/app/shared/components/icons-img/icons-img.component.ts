@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-icons-img',
@@ -8,5 +8,4 @@ import { Component, Input } from '@angular/core';
   styleUrl: './icons-img.component.scss'
 })
 export class IconsImgComponent {
-  @Input() icon: string | undefined = '';
 }

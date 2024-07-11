@@ -8,7 +8,7 @@ body {
   color: $text-color-white;
 }
 
-h1.slab { 
+h1.slab{ 
   font-weight: 400;
   @include responsive-font-size(slab, h1); 
   font-family: $font-family-slab; 
@@ -18,6 +18,44 @@ h2.slab {
   @include responsive-font-size(slab, h2);
   font-family: $font-family-slab;
   line-height: .7;
+}
+.title-body.slab {
+  @include responsive-font-size(slab, h3); font-family: $font-family-slab; 
+  color: $text-color-white;
+  line-height: .7;
+  font-weight: 400;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+}
+.small-title {
+  &.slab {
+    @include responsive-font-size(slab, h4); font-family: $font-family-slab;
+    font-weight: 400;
+  }
+  &.roboto {
+   
+  }
+}
+.paragraph {
+  &.roboto {
+    &.small {
+      @include responsive-font-size(roboto, 'p-small'); font-family: $font-family-roboto;
+    }
+    &.base {
+      @include responsive-font-size(roboto, 'base'); font-family: $font-family-roboto;
+    }
+  }
+  
+}
+.very-small-title {
+  &.slab {
+    @include responsive-font-size(slab, h5); font-family: $font-family-slab;
+    font-weight: 400;
+  }
+}
+.title-body:not(.slab) {
+  @include responsive-font-size(roboto, h3); font-family: $font-family-roboto;
+  color: $text-color-gold;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
 }
 h3.slab { @include responsive-font-size(slab, h3); font-family: $font-family-slab; }
 h4.slab { @include responsive-font-size(slab, h4); font-family: $font-family-slab; }

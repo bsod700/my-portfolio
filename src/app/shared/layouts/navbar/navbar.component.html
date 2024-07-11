@@ -1,13 +1,15 @@
 
-<nav>
+<nav [ngClass]="{ 'scrolled-nav': scrolled,  'scrolled-top-nav': notTop}">
     <div class="contain d-flex">
         <div class="left">
             <app-logo [logoConfig]="componentConfig.logo"/>
-            @for (link of componentConfig.links; track link.label) {
-                <div class="link">
-                    <a (click)="scrollTo(link.inLink || '')">{{link.label}}</a>
-                </div>
-            }
+            <div class="links">
+                @for (link of componentConfig.links; track link.label) {
+                    <div class="link">
+                        <app-arrow-link [componentConfig]="link"/>
+                    </div>
+                }
+            </div>
         </div>
 
         <div class="right">

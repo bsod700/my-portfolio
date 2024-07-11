@@ -9,6 +9,18 @@
   padding: 0;
 }
 
+:root {
+  --dark: $dark;
+  --white: $text-color-white;
+  --gold: $text-color-gold;
+  --dark-gold: $dark-gold;
+  --dark-purple: $dark-purple;
+  --light-purple: $light-purple;
+  --purple: $purple;
+  --orange: $orange;
+  --form-border: $form-border;
+}
+
 html {
   font-size: 100%;
 }
@@ -81,4 +93,31 @@ a {
 
 .container {
   @include container;
+}
+img {
+  object-fit: contain;
+}
+
+.arrow-design {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  &:after {
+    content: '';
+    position: relative;
+    display: block;
+    background-image: url(assets/images/title.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 335px;
+    height: 17px;
+    transform: translateY(12px);
+  }
+}
+
+@for $i from 1 through 9 {
+  .fw-#{$i} {
+    font-weight: $i*100;
+  }
 }

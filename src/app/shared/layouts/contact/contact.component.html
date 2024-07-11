@@ -1,9 +1,12 @@
-<section class="contact-wrapper">
+<section class="contact-wrapper" id="contact">
     <div class="container">
-        <h2>{{componentConfig.title}}</h2>
-        <h3>{{componentConfig.subtitle}}</h3>
+        <div class="title text-center">
+            <h3 class="title-body">{{ componentConfig.title }}</h3>
+            <h4 class="title-body slab">{{ componentConfig.subtitle }}</h4>
+          </div>
+       
         <div class="form-wrapper">
-            <h5>{{componentConfig.description}}</h5>
+            <h5 class="paragraph roboto base fw-4 mb-8">{{componentConfig.description}}</h5>
             <app-contact-form [formConfig]="componentConfig.form"/>
         </div>
     </div>

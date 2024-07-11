@@ -7,6 +7,13 @@
     padding: 12.5px 30px;
     border-radius: $spacing-unit*2;
     cursor: pointer;
+    align-items: center;
+    gap: $spacing-unit*2;
+    app-get-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     p {
         font-weight: 500;
     }
@@ -28,6 +35,7 @@
     &.color-dark {
         background-color: $dark;
         color: $text-color-white;
+        fill: $text-color-white;
         &:hover {
             background-color: $purple;
         }
@@ -39,6 +47,7 @@
     &.color-white {
         background-color: $text-color-white;
         color: $dark;
+        fill: $dark;
         &:hover {
             background-color: darken($color: $text-color-white, $amount: 20%);
         }
@@ -50,6 +59,7 @@
     &.color-gold {
         background-color: $text-color-gold;
         color: $dark;
+        fill: $dark;
         &:hover {
             background-color: $dark-gold;
         }
@@ -57,5 +67,11 @@
             border: $border-focus $dark solid;
             box-shadow: $shadow-focus $text-color-gold, $shadow-focus-blur $dark-gold;
         }
+    }
+    &.color-disable-white {
+        background-color: rgba($text-color-white, 50%);
+        color: $dark;
+        fill: $dark;
+        cursor: default;
     }
 }

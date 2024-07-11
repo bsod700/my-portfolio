@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectsComponent } from './projects.component';
+import { DynamicImageComponent } from './dynamic-image.component';
 
-describe('ProjectsComponent', () => {
-  let component: ProjectsComponent;
-  let fixture: ComponentFixture<ProjectsComponent>;
+describe('DynamicImageComponent', () => {
+  let component: DynamicImageComponent;
+  let fixture: ComponentFixture<DynamicImageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProjectsComponent]
+      imports: [DynamicImageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProjectsComponent);
+    fixture = TestBed.createComponent(DynamicImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

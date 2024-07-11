@@ -2,12 +2,15 @@
     class="cta-wrapper size-{{ctaConfig.size}} color-{{ctaConfig.color}}" 
     [attr.aria-label]="ctaConfig.ariaLabel" 
     [routerLink]="ctaConfig.inLink ? ['/' + ctaConfig.inLink] : null"
-    (click)="onClick()"
+    (click)="cta($event)"
+    tabindex="0"
+    (keydown)="handleKeyDown($event)"
+    role="button"
     >
 
     @if (ctaConfig.showIconLeft) {
         <div class="icon-left">
-            <app-icons-img [icon]="ctaConfig.iconLeft" />
+            <app-get-icon [icon]="ctaConfig.iconLeft" [iconColor]="ctaConfig.iconColor" />
         </div>
     }
    
@@ -15,7 +18,7 @@
 
     @if (ctaConfig.showIconRight) {
         <div class="icon-right">
-            <app-icons-img [icon]="ctaConfig.iconRight" />
+            <app-get-icon [icon]="ctaConfig.iconRight" [iconColor]="ctaConfig.iconColor"/>
         </div>
     }
   

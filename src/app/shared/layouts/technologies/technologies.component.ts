@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tech } from '@core/index';
 
 @Component({
@@ -8,8 +8,22 @@ import { Tech } from '@core/index';
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss'
 })
-export class TechnologiesComponent {
+export class TechnologiesComponent implements OnInit {
   @Input() componentConfig!: TechnologiesConfig;
+
+  public firstHalf: Tech[] = [];
+  public secondHalf: Tech[] = [];
+
+  ngOnInit(): void {
+    const technologies = this.componentConfig.technologies;
+    const mid = Math.ceil(technologies.length / 2);
+    this.firstHalf = technologies.slice(0, mid);
+    this.secondHalf = technologies.slice(mid);
+  }
+
+  trackByFn(index: number, item: Tech): string {
+    return `${index}-${item.title.toLocaleLowerCase()}`; 
+  }
 }
 
 export interface TechnologiesConfig {

@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Cta } from '@core/index';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
+import { Cta, ScrollService } from '@core/index';
 import { CtaComponent } from '@shared/index';
 
 @Component({
@@ -12,6 +12,18 @@ import { CtaComponent } from '@shared/index';
 })
 export class HeaderComponent {
   @Input() componentConfig!: headerConfig;
+  scrollService: ScrollService = inject(ScrollService);
+
+  scrollTo(event: Event) {
+    const comp = {name: 'mouse', scrollTo: 'about'}
+    this.scrollService.scrollToSection(event, comp);
+  }
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.scrollTo(event);
+      event.preventDefault(); 
+    }
+  }
 }
 export interface headerConfig {
   h1: string,

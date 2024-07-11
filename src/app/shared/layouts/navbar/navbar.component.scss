@@ -5,18 +5,36 @@ nav {
     top: 0;
     width: 100vw;
     z-index: 111111;
+    background-color: transparent;
     @include spacing('padding-left',8);
     @include spacing('padding-right',8);
     @include spacing('padding-top',4);
     @include spacing('padding-bottom',4);
+    transition: all ease-in-out .2s;
+    .links {
+        display: none;
+        @include respond-to(md) {
+            display: flex;
+            gap: $spacing-unit*6;
+            align-items: center;
+        }
+        @include respond-to(lg) {
+            gap: $spacing-unit*12;
+        }
+    }
+    &.scrolled-top-nav {
+        background-color: $dark;
+    }
     .contain {
         align-items: center;
         justify-content: space-between;
     }
     .left {
-        display: flex;
-        align-items: center;
-        gap: $spacing-unit*12;
+        @include respond-to(md) {
+            display: flex;
+            gap: $spacing-unit*12;
+            align-items: center;
+        }
     }
     .link {
         cursor: pointer;

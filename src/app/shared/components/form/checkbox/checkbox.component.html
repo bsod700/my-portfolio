@@ -1,23 +1,29 @@
-<div class="checkbox-group">
-    <label [for]="config.label">
-        @if (config.hasIconLeft) {
-            <!-- <app-icons-img [icon]="config.iconLeft" /> -->
+<div class="checkbox-group" [class.checked]="value">
+    <label 
+        [for]="config.label"
+        tabindex="0" 
+        role="checkbox"
+        [attr.aria-checked]="value"
+        (keydown)="handleKeyDown($event)"
+    >
+        @if (config.hasIconLeft && config.iconLeft != '') {
+            <app-get-icon [icon]="config.iconLeft" [iconColor]="config.iconColor" />
         }
-        <input
-            type="checkbox"
-            [id]="config.label"
-            [attr.aria-label]="config.ariaLabel"
-            [attr.aria-describedby]="config.ariaDescribedBy"
-            [required]="config.required"
-            [checked]="value"
-            (change)="onInput($event)"
-        />
-        {{ config.label }}
-        @if (config.hasIconRight) {
-            <!-- <app-icons-img [icon]="config.iconRight" /> -->
+        <span class="paragraph roboto small fw-6">{{ config.label }}</span>
+        @if (config.hasIconRight && config.iconRight != '') {
+            <app-get-icon [icon]="config.iconRight" [iconColor]="config.iconColor" />
         }
     </label>
+    <input
+        type="checkbox"
+        [id]="config.label"
+        [attr.aria-label]="config.ariaLabel"
+        [attr.aria-describedby]="config.ariaDescribedBy"
+        [required]="config.required"
+        [checked]="value"
+        (change)="onInput($event)"
+    />
     <div class="check-icon-wrapper">
-        <!-- <app-icons-img [icon]="config.checkIcon" /> -->
+        <app-get-icon [icon]="config.checkIcon" [iconColor]="config.iconColor" />
     </div>
   </div>

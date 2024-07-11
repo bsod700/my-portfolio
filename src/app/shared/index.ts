@@ -14,8 +14,6 @@ export * from './components/icons-img/icons-img.component';
 // layouts
 export * from './layouts/navbar/navbar.component';
 export * from './layouts/about/about.component';
-export * from './layouts/services/services.component';
-export * from './layouts/projects/projects.component';
 export * from './layouts/technologies/technologies.component';
 export * from './layouts/reviews/reviews.component';
 export * from './layouts/contact/contact.component';

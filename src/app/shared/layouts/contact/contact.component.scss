@@ -1,0 +1,15 @@
+@import './mixins';
+
+.contact-wrapper {
+    background-color: $dark;
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*16;
+    .title {
+        margin-bottom: $spacing-unit*16;
+    }
+    .form-wrapper {
+        h5 {
+            max-width: 600px;
+        }
+    }
+}

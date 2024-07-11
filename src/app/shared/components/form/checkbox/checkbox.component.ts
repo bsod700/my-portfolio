@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 
 @Component({
   selector: 'app-checkbox',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, GetIconComponent],
   templateUrl: './checkbox.component.html',
   styleUrl: './checkbox.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,7 +18,24 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@a
   ],
 })
 export class CheckboxComponent implements ControlValueAccessor {
-  @Input() config!: CheckboxConfig;
+
+  private _config: CheckboxConfig = {
+    controlName: '',
+    label: '',
+    ariaLabel: '',
+    ariaDescribedBy: '',
+    required: false,
+    checkIcon: 'check',
+  };
+
+  @Input()
+  set config(value: CheckboxConfig) {
+    this._config = { ...this._config, ...value };
+  }
+
+  get config(): CheckboxConfig {
+    return this._config;
+  }
 
   value: boolean = false;
   onChange = (value: boolean) => {};
@@ -47,6 +65,15 @@ export class CheckboxComponent implements ControlValueAccessor {
       this.onTouched();
     }
   }
+
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault(); // Prevent default behavior like page scrolling
+      this.value = !this.value;
+      this.onChange(this.value);
+      this.onTouched();
+    }
+  }
 }
 
 export interface CheckboxConfig {
@@ -61,4 +88,5 @@ export interface CheckboxConfig {
   iconLeft?: string;
   iconRight?: string;
   checkIcon?: string;
+  iconColor?: string;
 }

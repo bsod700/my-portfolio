@@ -48,17 +48,20 @@ export class DefaultConfigService {
       {
         label: 'Home',
         showIcon: false,
-        inLink: 'home'
+        inLink: 'header',
+        scrollToLink: true
       },
       {
         label: 'About',
         showIcon: false,
-        inLink: 'about'
+        inLink: 'about',
+        scrollToLink: true
       },
       {
         label: 'Projects',
         showIcon: false,
-        inLink: 'projects'
+        inLink: 'projects',
+        scrollToLink: true
       }
     ],
     cta: {
@@ -66,6 +69,7 @@ export class DefaultConfigService {
       size: 'regular',
       color: 'white',
       ariaLabel: 'string',
+      scrollTo: 'contact',
       showIconLeft: false,
       showIconRight: false
     }

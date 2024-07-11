@@ -1,0 +1,15 @@
+@import './mixins';
+
+form {
+    .checkboxes {
+        display: flex;
+        gap: $spacing-unit*2;
+        flex-wrap: wrap;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-unit*8;
+        margin-bottom: $spacing-unit*16;
+    }
+}

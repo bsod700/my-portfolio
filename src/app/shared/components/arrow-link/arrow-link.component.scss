@@ -6,16 +6,16 @@
     text-decoration: none;
     color: $text-color-white;
     background-color: transparent;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     fill: $text-color-white;
     border-radius: $spacing-unit;
     padding: $spacing-unit $spacing-unit*2;
     &:hover {
         background-color: $purple;
-        border: solid 1px $text-color-white;
+        border: inside solid 1px $text-color-white;
     }
     &:focus {
-        border: 1px solid $text-color-gold;
+        border: inside 1px solid $text-color-gold;
         box-shadow: 0px 0px 9.5px 0px $text-color-gold;
     }
 }

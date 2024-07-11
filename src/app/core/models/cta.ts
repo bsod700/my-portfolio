@@ -7,8 +7,10 @@ export interface Cta {
     inLink?: string;
     outLink?: string;
 
+    iconColor?: string;
     showIconLeft: boolean;
     showIconRight: boolean;
     iconLeft?: string;
     iconRight?: string;
+    scrollTo?: string;
 }

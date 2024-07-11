@@ -1,10 +1,13 @@
-<div class="input-group">
-    <label>{{ config.label }}</label>
+<div class="input-group-wrapper">
+    <label class="paragraph roboto base fw-400">{{ config.label }}</label>
     <div class="input-wrapper">
-        @if (config.hasIconLeft) {
-          icon-left
+        @if (config.hasIconLeft && config.iconLeft != '') {
+          <div class="icon icon-left">
+              <app-get-icon [icon]="config.iconLeft" [iconColor]="config.iconColor" />
+          </div>
         }
       <input
+        class="paragraph roboto small fw-4"
         type="text"
         [attr.aria-label]="config.ariaLabel"
         [attr.aria-describedby]="config.ariaDescribedBy"
@@ -13,8 +16,10 @@
         [value]="value"
         (input)="onInput($event)"
       />
-      @if (config.hasIconRight) {
-        icon-right
+      @if (config.hasIconRight && config.iconRight != '') {
+        <div class="icon icon-right">
+          <app-get-icon [icon]="config.iconRight" [iconColor]="config.iconColor" />
+        </div>
       }
     </div>
   </div>

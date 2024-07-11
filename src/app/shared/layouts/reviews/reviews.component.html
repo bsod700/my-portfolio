@@ -1,1 +1,29 @@
-<p>reviews works!</p>
+<div class="reviews-wrapper">
+    <div class="container">
+        <div class="img-row">
+            <img src="assets/images/row.svg" alt>
+        </div>
+    </div>
+    <div class="container d-flex">
+        <div class="left-contain">
+            <div class="title mb-4 text-left">
+                <h3 class="title-body">{{ componentConfig.title }}</h3>
+                <h4 class="title-body slab">{{ componentConfig.subtitle }}</h4>
+            </div>
+            <p>{{componentConfig.paragraph}}</p>
+        </div>
+        <div class="reviews d-flex">
+            @for (review of componentConfig.reviews; track $index) {
+                <div class="review" [class.selected]="selectedIndex() === $index">
+                    <div class="img-wrapper">
+                        <img [src]="review.img.src" [alt]="review.img.alt">
+                    </div>
+                    <div class="text">
+                        <h5 class="very-small-title slab mb-1">{{review.name}}</h5>
+                        <p>{{review.review}}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

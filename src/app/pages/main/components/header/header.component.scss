@@ -1,11 +1,22 @@
 @import './mixins';
 
 .header-wrapper {
+    overflow: hidden;
     min-height: 900px;
     background-repeat: no-repeat;
     background-size: 3840px 1080px;
     background-position: top center;
     background-image: radial-gradient(50% 40% at 50% 50%, #E37042 5%, #A45B69 30%, #744A64 45%, #4F3D5F 60%, #38355D 70%, #30325C 80%);
+    position: relative;
+    .img-wrapper-mouse {
+        cursor: pointer;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        width: 35px;
+        height: 60px;
+        left: calc(50% - 35px/2);
+    }
     .bg {
         position: relative;
         .layer {
@@ -28,6 +39,8 @@
 
     }
     .container {
+        position: relative;
+        z-index: 20;
         @include spacing(padding-top, 25);
     }
     span.title {

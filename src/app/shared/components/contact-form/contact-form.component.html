@@ -1,25 +1,37 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     @if (formConfig.checkboxes) {
-        @for (checkbox of formConfig.checkboxes; track $index) {
-            <app-checkbox
-            [formControlName]="checkbox.controlName"
-            [config]="checkbox"
-          />
-        }
+        <h5 class="paragraph roboto base fw-4 mb-4">{{formConfig.checkboxesTitle}}</h5>
+        <div class="checkboxes mb-8">
+            @for (checkbox of formConfig.checkboxes; track $index) {
+                <app-checkbox
+                [formControlName]="checkbox.controlName"
+                [config]="checkbox"
+              />
+            }
+        </div>
     }
 
+    <div class="img-wrapper mb-8">
+        <img src="assets/images/row.svg" alt>
+    </div>
+    
+
     @if (formConfig.inputTexts) {
-        @for (inputText of formConfig.inputTexts; track $index) {
-            <app-text-input
-                [formControlName]="inputText.controlName"
-                [config]="inputText"
-          />
-        }
+        <div class="inputs">
+            @for (inputText of formConfig.inputTexts; track $index) {
+                <app-text-input
+                    [formControlName]="inputText.controlName"
+                    [config]="inputText"
+              />
+            }
+        </div>
     }
 
     <app-cta 
         [ctaConfig]="formConfig.cta"
         [onClick]="submit"
      />
+     -----------
+     {{form.value | json}}
   </form>
   

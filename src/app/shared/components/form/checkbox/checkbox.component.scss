@@ -1,0 +1,53 @@
+@import './mixins';
+
+.checkbox-group {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $spacing-unit*2;
+    cursor: pointer;
+    position: relative;
+    app-get-icon {
+        display: flex;
+        align-items: center;
+        justify-content:  center;
+    }
+    &:not(.checked) {
+        border: 1px solid $form-border;
+        background-color: $dark-purple;
+        box-shadow: 0px 3px 4px 4px rgba(0, 0, 0, 0.25) inset;
+        .check-icon-wrapper {
+            display: none;
+        }
+        label {
+            color: rgba($text-color-white, 50%);
+            fill: rgba($text-color-white, 50%);
+        }
+    }
+    &.checked {
+        border: 1px solid transparent;
+        background-color: $text-color-gold;
+        box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 0px 20px 0px #BDAA75;
+        label,  .check-icon-wrapper {
+            color: $dark;
+            fill: $dark;
+        }
+    }
+    input {
+        display: none;
+    }
+    label {
+        cursor: pointer;
+        padding: 12.5px $spacing-unit*5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $spacing-unit;
+    }
+    .check-icon-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+    }
+}
