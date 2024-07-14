@@ -8,22 +8,6 @@ import { AboutConfig, CarouselConfig, ContactConfig, ReviewsConfig, Technologies
 })
 export class MainConfigService {
   private defaultConfigService: DefaultConfigService = inject(DefaultConfigService);
-  // getLangs(): Lang[] {
-  //   return [
-  //     {
-  //       img: 'assets/imgs/langs/he.webp',
-  //       name: 'he',
-  //       title: 'עברית',
-  //       selected: false
-  //     },
-  //     {
-  //       img: 'assets/imgs/langs/us.webp',
-  //       name: 'en',
-  //       title: 'English',
-  //       selected: false
-  //     }
-  //   ]
-  // }
 
     getPageConfig(): Main {
       return {
@@ -37,7 +21,7 @@ export class MainConfigService {
             size: 'default',
             color: 'white',
             ariaLabel: 'string',
-            inLink: 'contact',
+            scrollTo: 'contact',
             showIconRight: true,
             iconRight: 'flag',
             showIconLeft: false
@@ -47,7 +31,7 @@ export class MainConfigService {
             size: 'default',
             color: 'dark',
             ariaLabel: 'string',
-            inLink: 'about',
+            scrollTo: 'about',
             showIconRight: true,
             iconRight: 'user',
             showIconLeft: false
@@ -84,7 +68,7 @@ export class MainConfigService {
                 size: 'default',
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
-                inLink: 'project-tierro',
+                inLink: 'projects/tierro',
                 showIconRight: true,
                 iconRight: 'east',
                 showIconLeft: false
@@ -111,7 +95,7 @@ export class MainConfigService {
                 size: 'default',
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
-                inLink: 'project-tierro',
+                inLink: 'projects/brushalong',
                 showIconRight: true,
                 iconRight: 'east',
                 showIconLeft: false
@@ -138,7 +122,7 @@ export class MainConfigService {
                 size: 'default',
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
-                inLink: 'project-tierro',
+                inLink: 'projects/portfolio',
                 showIconRight: true,
                 iconRight: 'east',
                 showIconLeft: false
@@ -165,7 +149,7 @@ export class MainConfigService {
                 size: 'default',
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
-                inLink: 'project-tierro',
+                inLink: 'projects/werlive',
                 showIconRight: true,
                 iconRight: 'east',
                 showIconLeft: false
@@ -192,7 +176,7 @@ export class MainConfigService {
                 size: 'default',
                 color: 'white',
                 ariaLabel: 'Go to Tierro case study',
-                inLink: 'project-tierro',
+                inLink: 'projects/cyberghost',
                 showIconRight: true,
                 iconRight: 'east',
                 showIconLeft: false
@@ -393,20 +377,6 @@ export class MainConfigService {
               }
             },
             {
-              title: 'Next.js',
-              img: {
-                src: 'assets/images/technologies/nextjs-logo-color.svg',
-                alt: 'Next.js icon'
-              }
-            },
-            {
-              title: 'APIs',
-              img: {
-                src: 'assets/images/technologies/api-logo-color.svg',
-                alt: 'RAPIs icon'
-              }
-            },
-            {
               title: 'SMIL',
               img: {
                 src: 'assets/images/technologies/svg-logo-color.svg',
@@ -446,13 +416,6 @@ export class MainConfigService {
               img: {
                 src: 'assets/images/technologies/angular-material-logo-color.svg',
                 alt: 'Angular material icon'
-              }
-            },
-            {
-              title: 'Augury',
-              img: {
-                src: 'assets/images/technologies/angular-augury-logo-color.svg',
-                alt: 'Angular Augury icon'
               }
             },
             {

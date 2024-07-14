@@ -1,0 +1,16 @@
+<section class="problem-solution-wrapper" [ngClass]="componentConfig.projectName">
+    <div class="container">
+        <div class="problem">
+            <h3 class="subtitle">{{componentConfig.problem.title}}</h3>
+            @for (p of componentConfig.problem.paragraph; track $index) {
+                <p class="paragraph">{{p}}</p>
+            }
+        </div>
+        <div class="solution">
+            <h3 class="subtitle">{{componentConfig.solution.title}}</h3>
+            @for (p of componentConfig.solution.paragraph; track $index) {
+                <p class="paragraph">{{p}}</p>
+            }
+        </div>
+    </div>
+</section>

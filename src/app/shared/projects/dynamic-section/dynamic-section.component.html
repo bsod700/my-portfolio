@@ -1,0 +1,39 @@
+<section class="project-dynamic-section-wrapper" [ngClass]="componentConfig.projectName">
+    
+        @for (section of componentConfig.sections; track $index) {
+            <div class="section" [ngClass]="section.dir">
+                <div class="container">
+                    @if (section.img) {
+                        <div class="img-wrapper">
+                            <img [src]="section.img.src" [alt]="section.img.alt">
+                        </div>
+                    }
+                    <div class="text">
+                        @if (section.title) {
+                            <h2 class="title primary-color">{{section.title}}</h2>
+                        }
+                        @if (section.subtitle) {
+                            <h3 class="subtitle white-color">{{section.subtitle}}</h3>
+                        }
+                        @if (section.paragraphs) {
+                            @for (p of section.paragraphs; track $index) {
+                                <p class="paragraph fade-white">{{p}}</p>
+                            }
+                        }
+                        @if (section.bullets) {
+                            <ul>
+                                @for (bullet of section.bullets; track $index) {
+                                    <li class="fade-white">
+                                        <div class="content">
+                                            <span class="title">{{bullet.title}}</span>&nbsp;
+                                            <p>{{bullet.text}}</p>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+</section>

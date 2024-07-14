@@ -7,8 +7,8 @@
       
       <div class="subjects mb-8" role="tablist">
         @if (componentConfig.subjects && componentConfig.subjects.length > 0) {
-          <button (click)="prev()" class="arrow left buttons">&lt;
-            <!-- <app-icons-img icon="arrow-left" /> -->
+          <button (click)="prev()" class="arrow left buttons">
+            <app-get-icon [icon]="'arrow_left'" />
           </button>
           @for (subject of visibleItems; track $index) {
             <button [class.active]="selectedItem === subject"
@@ -22,8 +22,8 @@
                     <p> {{ subject.title }}</p>
             </button>
           }
-          <button (click)="next()" class="arrow right buttons">&gt;
-            <!-- <app-icons-img icon="arrow-right" /> -->
+          <button (click)="next()" class="arrow right buttons">
+            <app-get-icon [icon]="'arrow_right'" />
           </button>
         }
       </div>

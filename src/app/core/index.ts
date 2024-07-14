@@ -2,6 +2,7 @@
 export * from './services/default-config.service';
 export * from './services/scroll.service';
 export * from './services/blob.service';
+export * from './services/responsive.service';
 
 // Exporting guards
 

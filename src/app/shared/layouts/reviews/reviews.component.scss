@@ -10,6 +10,14 @@
     background-size: 4000px auto;
     .img-row {
         margin-bottom: $spacing-unit*32;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 1000px;
+            height: 19px;
+            flex: 0 0 1000px;
+        }
     }
     .container {
         gap: $spacing-unit*8;

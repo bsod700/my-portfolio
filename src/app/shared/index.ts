@@ -24,3 +24,10 @@ export * from './components/form/checkbox/checkbox.component';
 export * from './components/form/text-input/text-input.component';
 
 export * from './components/contact-form/contact-form.component';
+
+// projects
+export * from './projects/header/header.component';
+export * from './projects/dynamic-section/dynamic-section.component';
+export  * from './projects/process/process.component';
+export * from './projects/problem-solution/problem-solution.component';
+export * from './projects/mono-dynamic-section/mono-dynamic-section.component';

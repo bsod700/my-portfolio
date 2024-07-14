@@ -5,32 +5,47 @@
     padding-bottom: $spacing-unit*16;
     .text-wrapper {
         max-width: auto;
+        width: 100%;
         @include respond-to(lg) {
-            max-width: 700px;
+            max-width: 500px;
+        }
+        @include respond-to(xl) {
+            max-width: 600px;
         }
         @include respond-to(xxl) {
             max-width: 800px;
         }
     }
     .container {
-        justify-content: space-between;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: $spacing-unit*16;
         @include respond-to(lg) {
+            align-items: start;
+            justify-content: space-between;
             flex-direction: row;
+            gap: $spacing-unit*4;
         }
     }
     .img-wrapper {
         position: relative;
-        height: 400px;
+        height: 250px;
+        @include respond-to(md) {
+            height: 400px;
+        }
         .rectangle {
             position: absolute;
             border-radius: 6px;
             background-color: $purple;
             z-index: 1;
-            width: 340px;
-            height: 340px;
+            width: 215px;
+            height: 215px;
             bottom: 0;
             box-shadow: 0 0 15px #00000087;
+            @include respond-to(md) {
+                width: 340px;
+                height: 340px;
+            }
         }
         &:after {
             content: '';
@@ -39,16 +54,24 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 300px;
-            width: 300px;
-            border-radius: 391.65px;
+            height: 215px;
+            width: 215px;
+            border-radius: 400px;
             background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%);
+            @include respond-to(md) {
+                height: 300px;
+                width: 300px;
+            }
         }
         img {
             position: relative;
             z-index: 3;
-            width: 341px;
-            height: 400px;
+            width: 215px;
+            height: auto;
+            @include respond-to(md) {
+                width: 341px;
+                height: 400px;
+            }
         }
     }
 }

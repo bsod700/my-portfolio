@@ -13,8 +13,8 @@
             <p>{{componentConfig.paragraph}}</p>
         </div>
         <div class="reviews d-flex">
-            @for (review of componentConfig.reviews; track $index) {
-                <div class="review" [class.selected]="selectedIndex() === $index">
+            @for (review of visibleItems; track $index) {
+                <div class="review" [class.selected]="selectedIndex() === $index" (click)="selectReview($index)">
                     <div class="img-wrapper">
                         <img [src]="review.img.src" [alt]="review.img.alt">
                     </div>

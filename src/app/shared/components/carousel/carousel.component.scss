@@ -10,8 +10,15 @@
         background-repeat: no-repeat;
         background-size: 4000px auto;
         .carousel-content {
-            padding: 0 $spacing-unit*8;
-            justify-content: space-between;
+            padding: 0;
+            flex-direction: column-reverse;
+            @include respond-to(md) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            @include respond-to(lg) {
+                padding: 0 $spacing-unit*8;
+            }
         }
         .subjects {
             button {
@@ -67,7 +74,7 @@
         overflow: hidden;
         white-space: nowrap;
         scroll-behavior: smooth;
-        width: 900px;
+        width: 320px;
         margin-right: auto;
         margin-left: auto;
         position: relative;
@@ -77,20 +84,44 @@
         background-position: top center, bottom center;
         padding-top: 20 + $spacing-unit*4;
         padding-bottom: 20 + $spacing-unit*4;
+        @include respond-to(md) {
+            width: 700px;
+        }
+        @include respond-to(lg) {
+            width: 900px;
+        }
         button {
             background-color: transparent;
             color: $text-color-white;
             padding: 0;
             border: none;
             cursor: pointer;
+            fill: $text-color-white;
+            app-get-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: .5;
+                &:hover {
+                    opacity: 1;
+                }
+            }
             &.subject {
-                width: 170px;
+                width: 100px;
                 opacity: .5;
                 text-align: center;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                flex: 0 0 170px;
+                flex: 0 0 100px;
+                @include respond-to(md) {
+                    width: 105px;
+                    flex: 0 0 105px;
+                }
+                @include respond-to(lg) {
+                    width: 170px;
+                    flex: 0 0 170px;
+                }
                 p {
                     @include responsive-font-size(slab, h4); font-family: $font-family-slab;
                     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
@@ -110,7 +141,10 @@
                 &:nth-of-type(2), &:nth-last-of-type(2) {
                     position: relative;
                     overflow: hidden;
-                    flex: 0 0 90px;
+                    flex: 0 0 45px;
+                    @include respond-to(md) {
+                        flex: 0 0 90px;
+                    }
                     &:after {
                         position: absolute;
                         content: '';
@@ -158,19 +192,35 @@
     gap: $spacing-unit*8 ;
 
     .service-side {
-        justify-content: space-between;
+        
         gap: $spacing-unit*8;
         display: flex;
         background-color: $dark;
-        padding: $spacing-unit*10;
+        padding: $spacing-unit*8;
         border-radius: $spacing-unit*2;
         box-shadow: 0px 0px 42.4px 0px rgba(0, 0, 0, 0.50);
+        flex-direction: column;
+        width: 100%;
+        max-width: 1050px;
+        @include respond-to(lg) {
+            justify-content: space-between;
+            flex-direction: row;
+            padding: $spacing-unit*10;
+        }
         .img-wrapper {
+            width: 180px;
+           flex: 0 0 180px;
+           @include respond-to(lg) {
             width: 300px;
-           flex: 0 0 300px;
+            flex: 0 0 300px;
+           }
             img {
-                width: 300px;
-                height: 300px;
+                width: 180px;
+                height: 180px;
+                @include respond-to(lg) {
+                    width: 300px;
+                    height: 300px;
+                }
             }
         }
         .contain {
@@ -190,13 +240,20 @@
         flex: 1 0 0;
     }
     .img-wrapper {
-        flex: 0 0 400px;
+        flex: 0 0 300px;
+        @include respond-to(lg) {
+            flex: 0 0 400px;
+        }
         @include respond-to(xl) {
             flex: 0 0 450px;
         }
         img {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
+            @include respond-to(lg) {
+                width: 400px;
+                height: 400px;
+            }
             @include respond-to(xl) {
                 width: 450px;
                 height: 450px;

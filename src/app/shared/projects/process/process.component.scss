@@ -1,0 +1,146 @@
+@import "mixins";
+
+.design-process-wrapper {
+    padding-top: $spacing-unit*32;
+    padding-bottom: $spacing-unit*8;
+    overflow: hidden;
+    &.tierro {
+        background-color: $tierroPrimary_100;
+        background-image: url(assets/images/projects/tierro/plug2.svg), url(assets/images/projects/tierro/plug3.svg);
+        background-repeat: no-repeat;
+        background-size: 4076px auto, 768px auto;
+        background-position: left calc(50% + 725px) top -135px, left 1200px;
+        --color-primary: #{$tierroYellow};
+        --color-white: #{$tierroWhite-white};
+        --color-fade-white: #{$tierroLittleWhite};
+        --color-text-primary: #{$tierroPrimary_100};
+        --color-text-sub-primary: #{$tierroSub_Primary_100};
+        .primary-color {
+            color: $tierroYellow;
+        }
+        .white-color {
+            color: $tierroWhite-white;
+        }
+        .fade-white {
+            color: $tierroLittleWhite;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: $spacing-unit*4;
+    }
+    .text {
+        max-width: 600px;
+        h2.title {
+            font-size: 28px;
+            font-weight: 600;  
+            margin-bottom: $spacing-unit; 
+        }
+        h3.subtitle {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: $spacing-unit*4; 
+        }
+        p.paragraph {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: $spacing-unit*8; 
+            &:nth-last-of-type(1) {
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+    .processes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 35px;
+    }
+    .process {
+        max-width: 290px;
+        position: relative;
+        &:nth-child(odd) {
+            grid-column: 2 / 2;
+            .circle {
+                left: -60px;
+            }
+            &::before {
+                left: -40px;
+            }
+        }
+        &:nth-child(even) {
+            grid-column: 3 / 1;
+            .circle {
+                right: -15px;
+            }
+            &::before {
+                right: 6px;
+            }
+        }
+        &.last {
+            max-width: 320px;
+            .content {
+                padding: $spacing-unit*4;
+                border-radius: 37px;
+                border: 1px solid var(--color-text-sub-primary);
+                background: linear-gradient(180deg, var(--color-text-primary) 25%, #161F24 70%);
+                box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.15);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                left: -30px;
+                top: 45px;
+                display: block;
+                width: 0;
+                border-top: 20px solid var(--color-text-sub-primary);
+                transform: rotateZ(90deg);
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+            }
+            .circle {
+                top: 30px;
+            }
+        }
+        h2.number {
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        h3.title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: $spacing-unit;
+        }
+        p.small-paragraph {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+        .circle {
+            border-radius: 50%;
+            border: solid 15px var(--color-text-primary);
+            background-color: var(--color-primary);
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            top: 15px;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-image: linear-gradient(var(--color-white) 33%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 1px 45px;
+            background-repeat: repeat-y;
+            top: 15px;
+        }
+       
+    }
+}

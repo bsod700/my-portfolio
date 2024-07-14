@@ -1,0 +1,24 @@
+<section class="design-process-wrapper" [ngClass]="componentConfig.projectName">
+    <div class="container">
+        <div class="text">
+            <h2 class="title primary-color">{{componentConfig.title}}</h2>
+            <h3 class="subtitle white-color">{{componentConfig.subtitle}}</h3>
+            @for (p of componentConfig.paragraphs; track $index) {
+                <p class="paragraph fade-white">{{p}}</p>
+            }
+        </div>
+        <div class="processes">
+            @for (process of componentConfig.process; track $index) {
+                <div class="process" [ngClass]="{last: $last}">
+                    <div class="circle"></div>
+                    <div class="content" >
+                        <h2 class="number white-color">0{{$index+1}}</h2>
+                        <h3 class="title primary-color">{{process.title}}</h3>
+                        <p class="small-paragraph white-color">{{process.text}}</p>
+                    </div>
+                </div>
+            }
+           
+        </div>
+    </div>
+</section>

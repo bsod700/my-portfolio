@@ -1,0 +1,11 @@
+<section class="dynamic-section-wrapper">
+    <div class="container">
+        <div class="text">
+            <h3 class="subtitle"></h3>
+            @for (p of componentConfig.paragraphs; track $index) {
+                <p class="paragraph">{{p}}</p>
+            }
+            @if (componentConfig.bullets) {}
+        </div>
+    </div>
+</section>

@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit, signal } from '@angular/core';
-import { Project, Service } from '@core/index';
-import { CtaComponent, IconsImgComponent } from '@shared/index';
+import { ChangeDetectionStrategy, Component, Input, OnInit, computed, inject, signal } from '@angular/core';
+import { Project, ResponsiveService, Service } from '@core/index';
+import { CtaComponent } from '@shared/index';
+import { GetIconComponent } from '../get-icon/get-icon.component';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CtaComponent, CommonModule, IconsImgComponent],
+  imports: [CtaComponent, CommonModule, GetIconComponent],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,6 +18,11 @@ export class CarouselComponent implements OnInit {
 
   selected = signal<Project | Service | null>(null);
   currentIndex = signal(0);
+
+  private responsiveService: ResponsiveService = inject(ResponsiveService);
+  
+  isSmallScreen = computed(() => !!this.responsiveService.mdWidth());
+  
 
   ngOnInit(): void {
     if (this.componentConfig?.subjects?.length) {
@@ -54,7 +60,7 @@ export class CarouselComponent implements OnInit {
     const subjects = this.componentConfig.subjects;
     const totalItems = subjects.length;
     const centerIndex = this.currentIndex();
-    const halfVisible = Math.floor(5 / 2);
+    const halfVisible = Math.floor((this.isSmallScreen() ? 5 : 3) / 2);
     
     const visibleItems = [];
     for (let i = -halfVisible; i <= halfVisible; i++) {

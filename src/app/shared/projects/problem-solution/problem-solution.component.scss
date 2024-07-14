@@ -1,0 +1,26 @@
+@import "mixins";
+
+.problem-solution-wrapper {
+    &.tierro {
+        background-color: $tierroPrimary_100;
+        color: $tierroWhite-white;
+        padding-top: $spacing-unit*16; 
+        padding-bottom: $spacing-unit*16; 
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: $spacing-unit*32; 
+        h3.subtitle {
+            font-size: 48px;
+            font-weight: 700;  
+            margin-bottom: $spacing-unit*4; 
+        }
+        p.paragraph {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+    }
+}
