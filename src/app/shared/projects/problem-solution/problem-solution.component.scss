@@ -9,18 +9,32 @@
     }
     .container {
         display: flex;
-        justify-content: space-between;
-        gap: $spacing-unit*32; 
+        flex-direction: column;
+        gap: $spacing-unit*8; 
+        @include respond-to(lg) {
+            flex-direction: row;
+            gap: $spacing-unit*32; 
+            justify-content: space-between;
+        }
         h3.subtitle {
-            font-size: 48px;
+            font-size: 28px;
             font-weight: 700;  
             margin-bottom: $spacing-unit*4; 
+            @include respond-to(md) {
+                font-size: 40px;
+            }
+            @include respond-to(xl) {
+                font-size: 48px;
+            }
         }
         p.paragraph {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 300;
             line-height: 1.5;
             margin-bottom: 0;
+            @include respond-to(md) {
+                font-size: 18px;
+            }
         }
     }
 }

@@ -6,10 +6,12 @@
     overflow: hidden;
     &.tierro {
         background-color: $tierroPrimary_100;
-        background-image: url(assets/images/projects/tierro/plug2.svg), url(assets/images/projects/tierro/plug3.svg);
         background-repeat: no-repeat;
-        background-size: 4076px auto, 768px auto;
-        background-position: left calc(50% + 725px) top -135px, left 1200px;
+        @include respond-to(xxl) {
+            background-image: url(assets/images/projects/tierro/plug3.svg);
+            background-size: 768px auto;
+            background-position:  left 1200px;
+        }
         --color-primary: #{$tierroYellow};
         --color-white: #{$tierroWhite-white};
         --color-fade-white: #{$tierroLittleWhite};
@@ -27,26 +29,41 @@
     }
     .container {
         display: flex;
-        justify-content: space-between;
+       flex-direction: column;
         gap: $spacing-unit*4;
+        @include respond-to(xxl) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
     }
     .text {
-        max-width: 600px;
+        @include respond-to(xxl) {
+            max-width: 600px;
+        }
         h2.title {
             font-size: 28px;
             font-weight: 600;  
             margin-bottom: $spacing-unit; 
         }
         h3.subtitle {
-            font-size: 48px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: $spacing-unit*4; 
+            @include respond-to(md) {
+                font-size: 40px;
+            }
+            @include respond-to(xl) {
+                font-size: 48px;
+            }
         }
         p.paragraph {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 300;
             line-height: 1.5;
             margin-bottom: $spacing-unit*8; 
+            @include respond-to(md) {
+                font-size: 18px;
+            }
             &:nth-last-of-type(1) {
                 margin-bottom: 0;
             }

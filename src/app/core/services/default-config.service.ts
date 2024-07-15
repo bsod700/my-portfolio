@@ -41,6 +41,40 @@ export class DefaultConfigService {
       alt: 'Guy Tagger',
     }
   }
+  // getRegularNavbarNotOnMain(): NavbarRegular {
+  //   return {
+  //     logo: this.getLogo(),
+  //     links: [
+  //       {
+  //         label: 'Home',
+  //         showIcon: false,
+  //         inLink: 'header',
+  //         scrollToLink: true
+  //       },
+  //       {
+  //         label: 'About',
+  //         showIcon: false,
+  //         inLink: 'about',
+  //         scrollToLink: true
+  //       },
+  //       {
+  //         label: 'Projects',
+  //         showIcon: false,
+  //         inLink: 'projects',
+  //         scrollToLink: true
+  //       }
+  //     ],
+  //     cta: {
+  //       text: 'Contact Me',
+  //       size: 'regular',
+  //       color: 'white',
+  //       ariaLabel: 'string',
+  //       scrollTo: 'contact',
+  //       showIconLeft: false,
+  //       showIconRight: false
+  //     }
+  //   }
+  // }
   getRegularNavbar(): NavbarRegular {
    return {
     logo: this.getLogo(),

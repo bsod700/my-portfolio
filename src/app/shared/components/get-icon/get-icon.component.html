@@ -1,3 +1,12 @@
-<svg class="icon-wrapper" [ngStyle]="{'fill': 'var(--' + iconColor + ')'}">
-    <use [attr.href]="'#' + icon" />
-</svg>
+
+@if (iconColor) {
+    <svg class="icon-wrapper" [ngStyle]="{'fill': 'var(--' + iconColor + ')'}">
+        <use [attr.href]="'#' + icon" />
+    </svg>
+}
+
+@else {
+    <svg class="icon-wrapper">
+        <use [attr.href]="'#' + icon" />
+    </svg>
+}

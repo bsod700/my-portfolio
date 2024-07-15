@@ -1,11 +1,13 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
   private viewportScroller: ViewportScroller = inject(ViewportScroller);
+  private router: Router = inject(Router);
 
   scrollToElement(elementId: string, behavior: ScrollBehavior = 'smooth'): void {
     const element = document.getElementById(elementId);
@@ -45,6 +47,12 @@ export class ScrollService {
         // element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+  }
+  
+  navigateToSection(sectionName: string, page: string) {
+    this.router.navigate([`/${page}`], { fragment: sectionName }).then(() => {
+      this.viewportScroller.scrollToAnchor(sectionName);
+    });
   }
   
 }

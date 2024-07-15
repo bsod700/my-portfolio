@@ -1,0 +1,168 @@
+@import "mixins";
+
+.mono-dynamic-section-wrapper {
+    padding-top: $spacing-unit*16; 
+    padding-bottom: $spacing-unit*16; 
+    &.tierro {
+        --color-primary: #{$tierroYellow};
+        --color-white: #{$tierroWhite-white};
+        --color-fade-white: #{$tierroLittleWhite};
+        --color-text-primary: #{$tierroPrimary_100};
+        --color-text-sub-primary: #{$tierroSub_Primary_100};
+        background-color: $tierroBack;
+        .primary-color {
+            color: $tierroYellow;
+        }
+        .white-color {
+            color: $tierroWhite-white;
+        }
+        .fade-white {
+            color: $tierroLittleWhite;
+        }
+    }
+    &.ltr {
+        .container {
+            flex-direction: column-reverse;
+            @include respond-to(lg) {
+                flex-direction: row;
+            }
+            .img-wrapper {
+                img {
+                    @include respond-to(lg) {
+                        margin-left: 40px;
+                    }
+                }
+            }
+        }
+    }
+    &.rtl {
+        .container {
+            flex-direction: column-reverse;
+            @include respond-to(lg) {
+                flex-direction: row-reverse;
+            }
+            .img-wrapper {
+                img {
+                    @include respond-to(lg) {
+                        margin-left: -40px;
+                    }
+                }
+            }
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: start;
+        
+        gap: $spacing-unit*4;
+        
+        @include respond-to(lg) {
+            justify-content: space-between;
+            align-items: center;
+        }
+        .img-wrapper {
+            flex: auto;
+            @include respond-to(lg) {
+                flex:  0 0 500px;
+            }
+            @include respond-to(xl) {
+                flex:  0 0 630px;
+            }
+            img {
+                width: 300px;
+                height: 255px;
+                @include respond-to(md) {
+                    width: 500px;
+                    height: 426px;
+                }
+                @include respond-to(xl) {
+                    width: 630px;
+                    height: 536px;
+                }
+            }
+        }
+        .text {
+            h2.title {
+                font-size: 28px;
+                font-weight: 600;  
+                margin-bottom: $spacing-unit; 
+            }
+            h3.subtitle {
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: $spacing-unit*4; 
+                @include respond-to(md) {
+                    font-size: 40px;
+                }
+                @include respond-to(xl) {
+                    font-size: 48px;
+                }
+            }
+            p.paragraph {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.5;
+                margin-bottom: $spacing-unit*4; 
+                @include respond-to(md) {
+                    font-size: 18px;
+                }
+            }
+            ul {
+                list-style: none;
+                list-style-image: none;
+                li {
+                    display: flex;
+                    gap: $spacing-unit*2; 
+                    margin-bottom: $spacing-unit*4; 
+                }
+                h3.bullet-title {
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    margin-bottom: 0;
+                    @include respond-to(md) {
+                        font-size: 18px;
+                    }
+                }
+                p.bullet-paragraph {
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    margin-bottom: 0;
+                    @include respond-to(md) {
+                        font-size: 18px;
+                    }
+                }
+                .img-bullet-wrapper {
+                    &.with-icon {
+                        background-color: var(--color-primary);
+                        fill: var(--color-text-primary);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        padding: $spacing-unit;
+                        width: 60px;
+                        height: 60px;
+                        flex: 0 0 60px;
+                        app-get-icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 45px;
+                            ::ng-deep {
+                                svg {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                            }
+                        }
+                    }
+                    img {
+
+                    }
+                }
+            }
+        }
+    }
+}

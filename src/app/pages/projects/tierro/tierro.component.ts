@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { TierroProjectConfig, TierroProjectConfigService } from './tierro-config.service';
-import { DynamicSectionComponent, HeaderComponent, MonoDynamicSectionComponent, NavbarComponent, ProblemSolutionComponent, ProcessComponent } from '@shared/index';
+import { DynamicSectionComponent, HeaderComponent, IconsImgComponent, MonoDynamicSectionComponent, NavbarComponent, ProblemSolutionComponent, ProcessComponent, SectionBulletsComponent } from '@shared/index';
 
 @Component({
   selector: 'app-tierro',
   standalone: true,
-  imports: [NavbarComponent, HeaderComponent, DynamicSectionComponent, ProcessComponent, ProblemSolutionComponent, MonoDynamicSectionComponent],
+  imports: [NavbarComponent, HeaderComponent, DynamicSectionComponent, ProcessComponent, ProblemSolutionComponent, MonoDynamicSectionComponent,
+    IconsImgComponent, SectionBulletsComponent
+  ],
   templateUrl: './tierro.component.html',
   styleUrl: './tierro.component.scss'
 })

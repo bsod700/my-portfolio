@@ -31,3 +31,4 @@ export * from './projects/dynamic-section/dynamic-section.component';
 export  * from './projects/process/process.component';
 export * from './projects/problem-solution/problem-solution.component';
 export * from './projects/mono-dynamic-section/mono-dynamic-section.component';
+export * from './projects/section-bullets/section-bullets.component';

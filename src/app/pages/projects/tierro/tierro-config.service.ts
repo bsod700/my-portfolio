@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { DefaultConfigService, NavbarRegular } from '@core/index';
-import { HeaderProjectConfig, ProjectDynamicSectionConfig, ProjectMonoDynamicSectionConfig, ProjectProblemSolutionConfig, ProjectProcessConfig } from '@shared/index';
+import { HeaderProjectConfig, ProjectDynamicSectionConfig, ProjectMonoDynamicSectionConfig, ProjectProblemSolutionConfig, ProjectProcessConfig, ProjectSectionBulletsConfig } from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -153,24 +153,130 @@ export class TierroProjectConfigService {
           }
         },
         clientPage: {
-          subtitle: 'string',
+          projectName: 'tierro',
+          subtitle: 'Producer Client Page',
           paragraphs: [
-            ''
+            'The Producer Client Page is a visually appealing and user-friendly platform designed for clients and fans to explore the music producer\'s work.'
           ],
           bullets: [
             {
-              bulletImage: {
-                src: '',
-                alt: ''
-              },
-              title: 'string',
-              text: 'string'
+              iconName: 'music-note',
+              title: 'Showcase Music',
+              text: 'Features a custom music player to seamlessly showcase the producer\'s tracks.'
+            },
+            {
+              iconName: 'palette',
+              title: 'Engaging Visuals',
+              text: 'Utilizes engaging visuals and a cohesive brand identity to capture the essence of the music producer\'s style.'
+            },
+            {
+              iconName: 'thumb_up',
+              title: 'Client Reviews',
+              text: 'Highlights client reviews to build credibility and connect with the audience.'
             }
           ],
           image: {
-            src: '',
-            alt: ''
-          }
+            src: 'assets/images/projects/tierro/desktop-client2.png',
+            alt: 'Tierro client website page on laptop screen'
+          },
+          dir: 'ltr'
+        },
+        adminPage: {
+          projectName: 'tierro',
+          subtitle: 'Admin Page',
+          paragraphs: [
+            'The Admin Page is a private, user-friendly interface designed for the music producer to manage and update their content easily.'
+          ],
+          bullets: [
+            {
+              iconName: 'music-note',
+              title: 'Content Management',
+              text: 'Allows the producer to update reviews and music tracks effortlessly.'
+            },
+            {
+              iconName: 'palette',
+              title: 'User-Friendly Interface',
+              text: 'Designed for ease of use, ensuring the producer can quickly make changes.'
+            },
+            {
+              iconName: 'thumb_up',
+              title: 'Dynamic Updates',
+              text: 'Ensures the public-facing site remains current and engaging by allowing for real-time content updates.'
+            }
+          ],
+          image: {
+            src: 'assets/images/projects/tierro/desktop-client2.png',
+            alt: 'Tierro client website page on laptop screen'
+          },
+          dir: 'rtl'
+        },
+        theGoal: {
+          projectName: 'tierro',
+          style: '2-columns',
+          title: 'Vision',
+          subtitle: 'The Goal',
+          paragraphs: [
+            'The objective was to establish a professional and engaging online presence for the music producer. This involved designing a visually appealing webpage for clients and fans to explore the producer\'s work and a user-friendly admin page for the producer to manage and update content easily. The project aimed to reflect the producer\'s unique artistic vision and brand identity, showcase their music seamlessly, and provide a dynamic platform that could adapt to their evolving needs.'
+          ],
+          bullets: [
+            {
+              iconName: 'thumb_up',
+              title: 'Professional Presence',
+              text: 'Establish a professional and engaging online presence for the music producer.'
+            },
+            {
+              iconName: 'users',
+              title: 'Client-Facing Webpage',
+              text: 'Design a visually appealing webpage for clients and fans to explore the producer\'s work.'
+            },
+            {
+              iconName: 'settings',
+              title: 'Admin Page',
+              text: 'Create a user-friendly admin page for the producer to manage and update content easily.'
+            },
+            {
+              iconName: 'palette',
+              title: 'Brand Identity',
+              text: 'Reflect the producer\'s unique artistic vision and brand identity.'
+            },
+            {
+              iconName: 'music-note',
+              title: 'Showcase Music',
+              text: 'Seamlessly showcase the producer\'s music with a custom music player.'
+            },
+            {
+              iconName: 'tune',
+              title: 'Dynamic Platform',
+              text: 'Provide a dynamic platform that can adapt to the producer\'s evolving needs.'
+            }
+          ]
+        },
+        targetAudience: {
+          projectName: 'tierro',
+          specialClass: 'paragraph-yellow-title',
+          title: 'Research',
+          subtitle: 'Target Audience',
+          paragraphs: [
+            'Clients and Fans'
+          ],
+          bullets: [
+            {
+              iconName: 'music-note',
+              title: 'Music Enthusiasts',
+              text: 'Individuals who enjoy and appreciate the music produced by the artist.'
+            },
+            {
+              iconName: 'diversity',
+              title: 'Potential Clients',
+              text: 'Artists, bands, and other music industry professionals looking for a music producer to collaborate with.'
+            },
+            {
+              iconName: 'hand-up-person',
+              title: 'General Audience',
+              text: 'Visitors who are curious about the producer\'s work and want to explore their music and reviews.'
+            }
+          ],
+          dir: 'ltr'
         }
       }
   }
@@ -182,4 +288,7 @@ export interface TierroProjectConfig {
   process: ProjectProcessConfig;
   problemSolution: ProjectProblemSolutionConfig;
   clientPage: ProjectMonoDynamicSectionConfig;
+  adminPage: ProjectMonoDynamicSectionConfig;
+  theGoal: ProjectSectionBulletsConfig;
+  targetAudience: ProjectMonoDynamicSectionConfig;
 }
