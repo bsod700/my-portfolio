@@ -1,0 +1,59 @@
+<section class="section-personas-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container">
+        @if (componentConfig.title) {
+            <h2 class="project-title">{{componentConfig.title}}</h2>
+        }
+        @if (componentConfig.subtitle) {
+            <h3 class="project-subtitle">{{componentConfig.subtitle}}</h3>
+        }
+        
+        @for (p of componentConfig.paragraphs; track $index) {
+            <p class="project-paragraph">{{p}}</p>
+        }
+        <div class="personas">
+            @for (persona of componentConfig.personas; track $index) {
+                <div class="persona">
+                    <div class="img-wrapper">
+                        <img [src]="persona.personaImage.src" [alt]="persona.personaImage.alt" loading="lazy">
+                    </div>
+                    <div class="text">
+                        <h4 class="persona-name">{{persona.personaName}}</h4>
+                        @for (personaSection of persona.personaBulletsSections; track $index) {
+                            <div class="persona-section">
+                                @if (personaSection.bulletsTitle) {
+                                    <h5 class="bullets-title">{{personaSection.bulletsTitle}}</h5>
+                                }
+                                <div class="content">
+                                    @for (bullet of personaSection.bullets; track $index) {
+                                        <div class="bullet">
+                                            @if (bullet.bulletIcon) {
+                                                <div class="icon-wrapper">
+                                                    <app-get-icon [icon]="bullet.bulletIcon" />
+                                                </div>
+                                            }
+                                            @if (bullet.bulletImage) {
+                                                <div class="bullet-img-wrapper">
+                                                    <img [src]="bullet.bulletImage.src" [alt]="bullet.bulletImage.alt" loading="lazy">
+                                                </div>
+                                            }
+                                            @if (bullet.bulletTitle) {
+                                                <h5 class="bullet-subtitle">{{bullet.bulletTitle}}</h5>
+                                            }
+                                            @if (bullet.bulletText) {
+                                                <p class="bullet-paragraph">{{bullet.bulletText}}</p>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        <div class="bio">
+                            <h4 class="bullets-title">{{persona.bio.title}}</h4>
+                            <p class="bullet-paragraph">{{persona.bio.bioContent}}</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

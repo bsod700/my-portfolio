@@ -12,20 +12,6 @@
             background-size: 768px auto;
             background-position:  left 1200px;
         }
-        --color-primary: #{$tierroYellow};
-        --color-white: #{$tierroWhite-white};
-        --color-fade-white: #{$tierroLittleWhite};
-        --color-text-primary: #{$tierroPrimary_100};
-        --color-text-sub-primary: #{$tierroSub_Primary_100};
-        .primary-color {
-            color: $tierroYellow;
-        }
-        .white-color {
-            color: $tierroWhite-white;
-        }
-        .fade-white {
-            color: $tierroLittleWhite;
-        }
     }
     .container {
         display: flex;
@@ -40,30 +26,14 @@
         @include respond-to(xxl) {
             max-width: 600px;
         }
-        h2.title {
-            font-size: 28px;
-            font-weight: 600;  
+        h2.project-title {
             margin-bottom: $spacing-unit; 
         }
-        h3.subtitle {
-            font-size: 28px;
-            font-weight: 700;
+        h3.project-subtitle {
             margin-bottom: $spacing-unit*4; 
-            @include respond-to(md) {
-                font-size: 40px;
-            }
-            @include respond-to(xl) {
-                font-size: 48px;
-            }
         }
-        p.paragraph {
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.5;
+        p.project-paragraph {
             margin-bottom: $spacing-unit*8; 
-            @include respond-to(md) {
-                font-size: 18px;
-            }
             &:nth-last-of-type(1) {
                 margin-bottom: 0;
             }

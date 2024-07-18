@@ -3,14 +3,14 @@
         <div class="text">
 
             @if (componentConfig.title) {
-                <h2 class="title">{{componentConfig.title}}</h2>
+                <h2 class="project-title primary-color in-title">{{componentConfig.title}}</h2>
             }
             @if (componentConfig.subtitle) {
-                <h3 class="subtitle">{{componentConfig.subtitle}}</h3>
+                <h3 class="project-subtitle white-color in-title">{{componentConfig.subtitle}}</h3>
             }
             
             @for (p of componentConfig.paragraphs; track $index) {
-                <p class="paragraph">{{p}}</p>
+                <p class="project-paragraph">{{p}}</p>
             }
             @if (componentConfig.bullets) {
                 <ul>
@@ -18,7 +18,7 @@
                         <li>
                             <div class="img-bullet-wrapper" [ngClass]="{'with-icon': bullet.iconName && bullet.iconName.trim().length > 0}">
                                 @if (bullet.bulletImage) {
-                                    <img [src]="bullet.bulletImage.src" [alt]="bullet.bulletImage.alt">
+                                    <img [src]="bullet.bulletImage.src" [alt]="bullet.bulletImage.alt" loading="lazy">
                                 }
                                 @if (bullet.iconName) {
                                     <app-get-icon [icon]="bullet.iconName" />
@@ -35,7 +35,7 @@
         </div>
         @if (componentConfig.image) {
             <div class="img-wrapper">
-                <img [src]="componentConfig.image.src" [alt]="componentConfig.image.alt">
+                <img [src]="componentConfig.image.src" [alt]="componentConfig.image.alt" loading="lazy">
             </div>
         }   
     </div>

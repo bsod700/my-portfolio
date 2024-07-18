@@ -1,0 +1,17 @@
+<section class="section-button-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container">
+        @if (componentConfig.title) {
+            <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+        }
+        @if (componentConfig.subtitle) {
+            <h3 class="project-subtitle">{{componentConfig.subtitle}}</h3>
+        }
+        
+        @for (p of componentConfig.paragraphs; track $index) {
+            <p class="project-paragraph">{{p}}</p>
+        }
+        <div class="cta-wrapper">
+            <app-cta [ctaConfig]="componentConfig.cta"/>
+        </div>
+    </div>
+</section>

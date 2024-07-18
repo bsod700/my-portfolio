@@ -15,15 +15,6 @@
         @include respond-to(xxl) {
             background-position: right calc(50% - 500px) bottom -120px;
         }
-        .primary-color {
-            color: $tierroYellow
-        }
-        .white-color {
-            color: $tierroWhite-white;
-        }
-        .fade-white {
-            color: $tierroLittleWhite;
-        }
         
     }
     .section {
@@ -32,29 +23,11 @@
             margin-bottom: 0;
         }
         .text {
-            h2.title {
-                font-size: 28px;
-                font-weight: 600;  
+            h2.project-title {
                 margin-bottom: $spacing-unit; 
             }
-            h3.subtitle {
-                font-size: 28px;
-                font-weight: 700;
+            h3.project-subtitle {
                 margin-bottom: $spacing-unit*4; 
-                @include respond-to(md) {
-                    font-size: 40px;
-                }
-                @include respond-to(xl) {
-                    font-size: 48px;
-                }
-            }
-            p.paragraph {
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 1.5;
-                @include respond-to(md) {
-                    font-size: 18px;
-                }
             }
             ul {
                 margin-top: $spacing-unit*4; 

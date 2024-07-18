@@ -1,6 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { DefaultConfigService, NavbarRegular } from '@core/index';
-import { HeaderProjectConfig, ProjectDynamicSectionConfig, ProjectMonoDynamicSectionConfig, ProjectProblemSolutionConfig, ProjectProcessConfig, ProjectSectionBulletsConfig } from '@shared/index';
+import { HeaderProjectConfig, ProjectComponentsLibraryShowConfig, ProjectDesignSystemConfig, ProjectDynamicSectionConfig, ProjectFinalSectionConfig, ProjectMonoDynamicSectionConfig, ProjectPersonasConfig, 
+  ProjectProblemSolutionConfig, ProjectProcessConfig, ProjectSectionBulletsConfig, 
+  ProjectSectionButtonConfig,
+  ProjectSectionJumpConfig} from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +37,7 @@ export class TierroProjectConfigService {
             }
           ],
           img: {
-            src: 'assets/images/projects/tierro/header.png',
+            src: 'assets/images/projects/tierro/header.webp',
             alt: 'Tierro project screens on mobile,tablet and desktop'
           }
         },
@@ -49,7 +52,7 @@ export class TierroProjectConfigService {
                 'In the ever-evolving music industry, having a strong online presence is crucial for artists to showcase their work and connect with their audience. As a music producer, my client needed a professional and visually appealing webpage to highlight their musical creativity and talent. Additionally, a unique and memorable logo was essential to establish their brand identity. To enhance the user experience, I also developed a custom music player, tailored specifically for the client, to seamlessly showcase their music. This project aimed to design and develop a captivating webpage, an innovative logo, and a unique music player that reflect the music producer\'s artistic vision and style.'
               ],
               img: {
-                src: 'assets/images/projects/tierro/desktop-client.png',
+                src: 'assets/images/projects/tierro/desktop-client.webp',
                 alt: 'Tierro client website on laptop screen'
               }
             },
@@ -176,7 +179,7 @@ export class TierroProjectConfigService {
             }
           ],
           image: {
-            src: 'assets/images/projects/tierro/desktop-client2.png',
+            src: 'assets/images/projects/tierro/desktop-client2.webp',
             alt: 'Tierro client website page on laptop screen'
           },
           dir: 'ltr'
@@ -205,14 +208,14 @@ export class TierroProjectConfigService {
             }
           ],
           image: {
-            src: 'assets/images/projects/tierro/desktop-client2.png',
+            src: 'assets/images/projects/tierro/desktop-client2.webp',
             alt: 'Tierro client website page on laptop screen'
           },
           dir: 'rtl'
         },
         theGoal: {
           projectName: 'tierro',
-          style: '2-columns',
+          style: 'columns-2-center text-center',
           title: 'Vision',
           subtitle: 'The Goal',
           paragraphs: [
@@ -277,6 +280,542 @@ export class TierroProjectConfigService {
             }
           ],
           dir: 'ltr'
+        },
+        personas: {
+          projectName: 'tierro',
+          subtitle: 'Personas',
+          paragraphs: [
+            'To effectively address the needs of both the music producer and their audience, detailed personas were developed based on research and user insights.'
+          ],
+          personas: [
+            {
+              personaImage: {
+                src: 'assets/images/projects/tierro/persona-sarah.webp',
+                alt: 'Female persona'
+              },
+              personaName: 'Sarah',
+              personaBulletsSections: [
+                  {
+                    bullets: [
+                      {
+                        bulletIcon: 'user',
+                        bulletTitle: 'Age',
+                        bulletText: '28 years'
+                      },
+                      {
+                        bulletIcon: 'location-pin',
+                        bulletTitle: 'Location',
+                        bulletText: 'Los Angeles, CA'
+                      },
+                      {
+                        bulletIcon: 'education',
+                        bulletTitle: 'Education',
+                        bulletText: 'Bachelor\'s Degree in Music'
+                      },
+                      {
+                        bulletIcon: 'family',
+                        bulletTitle: 'Occupation',
+                        bulletText: 'Indie Musician'
+                      }
+                    ]
+                  },
+                  {
+                    bulletsTitle: 'Wants & Needs',
+                    bullets: [
+                      {
+                        bulletText: '😁 Reliable music producer for collaboration'
+                      },
+                      {
+                        bulletText: '😁 Easy access to the producer\'s portfolio'
+                      },
+                      {
+                        bulletText: '😁 Clear communication and feedback channels'
+                      }
+                    ]
+                  },
+                  {
+                    bulletsTitle: 'Frustrations',
+                    bullets: [
+                      {
+                        bulletText: '🥺 Difficulty finding producers with a strong online presence'
+                      },
+                      {
+                        bulletText: '🥺 Limited access to high-quality work samples'
+                      },
+                      {
+                        bulletText: '🥺 Time-consuming search process'
+                      }
+                    ]
+                  }
+              ],
+              bio: {
+                title: 'Bio',
+                bioContent: 'Sarah is a dedicated indie musician based in Los Angeles. She is constantly looking for talented producers to collaborate with on her projects. Sarah values efficiency and clarity in communication and is frustrated by the lack of easily accessible information about potential collaborators.',
+              }
+            },
+            {
+              personaImage: {
+               src: 'assets/images/projects/tierro/persona-alex.webp',
+                alt: 'Male persona'
+              },
+              personaName: 'Alex',
+              personaBulletsSections: [
+                  {
+                    bullets: [
+                      {
+                        bulletIcon: 'user',
+                        bulletTitle: 'Age',
+                        bulletText: '22 years'
+                      },
+                      {
+                        bulletIcon: 'location-pin',
+                        bulletTitle: 'Location',
+                        bulletText: 'Austin, TX'
+                      },
+                      {
+                        bulletIcon: 'education',
+                        bulletTitle: 'Education',
+                        bulletText: 'College Student, studying Communications'
+                      },
+                      {
+                        bulletIcon: 'family',
+                        bulletTitle: 'Occupation',
+                        bulletText: 'College Student'
+                      }
+                    ]
+                  },
+                  {
+                    bulletsTitle: 'Wants & Needs',
+                    bullets: [
+                      {
+                        bulletText: '😁 Discover new and exciting music'
+                      },
+                      {
+                        bulletText: '😁 Learn more about favorite music producers'
+                      },
+                      {
+                        bulletText: '😁 Access to curated music collections'
+                      }
+                    ]
+                  },
+                  {
+                    bulletsTitle: 'Frustrations',
+                    bullets: [
+                      {
+                        bulletText: '🥺 Limited access to high-quality, curated music'
+                      },
+                      {
+                        bulletText: '🥺 Difficulty finding detailed information about producers'
+                      },
+                      {
+                        bulletText: '🥺 Cluttered and confusing websites'
+                      }
+                    ]
+                  }
+              ],
+              bio: {
+                title: 'Bio',
+                bioContent: 'Alex is a college student with a passion for discovering new music. He enjoys learning about the backgrounds of his favorite music producers and sharing new finds with friends. Alex values easy navigation and aesthetically pleasing websites that provide comprehensive information.',
+              }
+            },
+            {
+              personaImage: {
+              src: 'assets/images/projects/tierro/persona-emily.webp',
+                alt: 'Female persona'
+              },
+              personaName: 'Emily',
+              personaBulletsSections: [
+                  {
+                    bullets: [
+                      {
+                        bulletIcon: 'user',
+                        bulletTitle: 'Age',
+                        bulletText: '30 years'
+                      },
+                      {
+                        bulletIcon: 'location-pin',
+                        bulletTitle: 'Location',
+                        bulletText: 'Nashville, TN'
+                      },
+                      {
+                        bulletIcon: 'education',
+                        bulletTitle: 'Education',
+                        bulletText: 'Bachelor\'s Degree in Vocal Performance'
+                      },
+                      {
+                        bulletIcon: 'family',
+                        bulletTitle: 'Occupation',
+                        bulletText: 'Singer and Songwriter'
+                      }
+                    ]
+                  },
+                  {
+                    bulletsTitle: 'Wants & Needs',
+                    bullets: [
+                      {
+                        bulletText: '😁 Singer and Songwriter'
+                      },
+                      {
+                        bulletText: '😁 A portfolio showcasing successful collaborations with other singers'
+                      },
+                      {
+                        bulletText: '😁 Easy access to contact and booking information'
+                      }
+                    ]
+                  },
+                  {
+                    bulletsTitle: 'Frustrations',
+                    bullets: [
+                      {
+                        bulletText: '🥺 Limited information about the producer\'s experience with vocalists'
+                      },
+                      {
+                        bulletText: '🥺 Difficulty finding a producer who aligns with her artistic vision'
+                      },
+                      {
+                        bulletText: '🥺 Difficulty finding a producer who aligns with her artistic vision'
+                      }
+                    ]
+                  }
+              ],
+              bio: {
+                title: 'Bio',
+                bioContent: 'Emily is a professional singer and songwriter based in Nashville. She is looking for a music producer who can help her bring her creative vision to life. Emily values finding a producer who understands her musical style and has a proven track record of successful collaborations with other singers. She is often frustrated by the limited information available about producers experience with vocalists and the time-consuming process of finding the right collaborator.',
+              }
+            }
+          ]
+        },
+        insights: {
+          projectName: 'tierro',
+          style: 'text-center',
+          title: 'Discover',
+          subtitle: 'Insights',
+          paragraphs: [
+            'Through detailed analysis and user research, several key insights were identified to guide the design and development of the project'
+          ],
+          bullets: [
+            {
+              iconName: 'thumb_up',
+              title: 'Engagement',
+              text: 'Engaging visuals and intuitive design elements are crucial for capturing and maintaining user interest.'
+            },
+            {
+              iconName: 'users',
+              title: 'Customization Needs',
+              text: 'Users value the ability to customize and manage content easily, particularly for showcasing music and updates.'
+            },
+            {
+              iconName: 'settings',
+              title: 'Seamless Navigation',
+              text: 'A user-friendly interface with seamless navigation is essential for both clients and producers to interact effectively with the site.'
+            },
+            {
+              iconName: 'palette',
+              title: 'Positive Reinforcement',
+              text: 'Providing clear, positive feedback and updates helps in maintaining user engagement and satisfaction.'
+            },
+            {
+              iconName: 'music-note',
+              title: 'Consistency & Reliability',
+              text: 'Consistent design and reliable functionality are critical to building trust and ensuring a smooth user experience.'
+            }
+          ]
+        },
+        componentsLibraryShow: {
+          projectName: 'tierro',
+          title: 'Producer Page',
+          subtitle: 'Components Library',
+          paragraphs: [
+            'The components library included a set of reusable UI elements such as buttons, icons, forms, and navigation menus. These components were designed to maintain visual consistency and functionality across the webpage. The library ensured that all elements were cohesive, user-friendly, and aligned with the overall design aesthetic of the music producer\'s brand.'
+          ],
+          // ToDo: update the images to be more details and transparent  
+          components: [
+            {
+              classes: 'w-300',
+              desktopImage: {
+                src: 'assets/images/projects/tierro/components/carousel-review-desktop.webp',
+                alt: 'component of a review carousel item'
+              },
+              tabletImage: {
+                src: 'assets/images/projects/tierro/components/carousel-review-desktop.webp',
+                alt: 'component of a review carousel item'
+              },
+              mobileImage: {
+                src: 'assets/images/projects/tierro/components/carousel-review-mobile.webp',
+                alt: 'component of a review carousel item'
+              }
+            },
+            {
+              classes: 'w-300',
+              desktopImage: {
+                src: 'assets/images/projects/tierro/components/side-image-desktop.webp',
+                alt: 'component of a section side image'
+              },
+              tabletImage: {
+                src: 'assets/images/projects/tierro/components/side-image-desktop.webp',
+                 alt: 'component of a section side image'
+              },
+              mobileImage: {
+                src: 'assets/images/projects/tierro/components/side-image-desktop.webp',
+                 alt: 'component of a section side image'
+              }
+            },
+            {
+              classes: 'w-300',
+              desktopImage: {
+                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                alt: 'Button components'
+              },
+              tabletImage: {
+                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                alt: 'Button components'
+              },
+              mobileImage: {
+                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                alt: 'Button components'
+              }
+            },
+            {
+              classes: 'w-1000',
+              desktopImage: {
+                src: 'assets/images/projects/tierro/components/cards-desktop.webp',
+                alt: 'component of a section image on the left or right and text from the side'
+              },
+              tabletImage: {
+                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                alt: 'component of a section image on the left or right and text from the side'
+              },
+              mobileImage: {
+                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                alt: 'component of a section image on the top or bottom and text from the bellow or above'
+              }
+            },
+            {
+              classes: 'w-1000',
+              desktopImage: {
+                src: 'assets/images/projects/tierro/components/music-player-desktop.webp',
+                alt: 'component of a music player'
+              },
+              tabletImage: {
+                src: 'assets/images/projects/tierro/components/music-player-desktop.webp',
+                alt: 'component of a music player'
+              },
+              mobileImage: {
+                src: 'assets/images/projects/tierro/components/music-player-desktop.webp',
+                alt: 'component of a music player'
+              }
+            },
+            {
+              classes: 'w-1000',
+              desktopImage: {
+                src: 'assets/images/projects/tierro/components/contact-desktop.webp',
+                alt: 'component of a contact section'
+              },
+              tabletImage: {
+                src: 'assets/images/projects/tierro/components/contact-desktop.webp',
+                alt: 'component of a contact section'
+              },
+              mobileImage: {
+                src: 'assets/images/projects/tierro/components/contact-desktop.webp',
+                alt: 'component of a contact section'
+              }
+            }
+          ]
+        },
+        finalDesign: {
+          projectName: 'tierro',
+          specialClass: 'text-center',
+          title: 'Final Design',
+          subtitle: 'Producer Page',
+          cta: {
+            text: 'Take Me To The Live Site',
+            size: 'default',
+            color: 'tierro',
+            ariaLabel: 'string',
+            showIconRight: true,
+            iconRight: 'arrow-right',
+            showIconLeft: false
+          }
+        },
+        designSystem: {
+          projectName: 'tierro',
+          specialClass: 'text-center orange-paragraph',
+          title: 'Final Design',
+          subtitle: 'Admin Page',
+          paragraphs: [
+            'Design System'
+          ],
+          cards: [
+            {
+              src: 'assets/images/projects/tierro/components/typography-design-system.webp',
+              alt: 'Typography'
+            },
+            {
+              src: 'assets/images/projects/tierro/components/color-palette-design-system.webp',
+              alt: 'Color palette'
+            },
+            {
+              src: 'assets/images/projects/tierro/components/inputs-design-system.webp',
+              alt: 'Inputs'
+            },
+            {
+              src: 'assets/images/projects/tierro/components/buttons-design-system.webp',
+              alt: 'Buttons'
+            }
+          ]
+        },
+        adminFinalDesign: {
+          projectName: 'tierro',
+          specialClass: 'text-center',
+          title: 'Final Design',
+          subtitle: 'Admin Page',
+          sections: [
+            {
+              classes: '',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/login-page.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Login Screen',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              paragraphs: [
+                'The Login Screen provides a secure entry point for the music producer\'s admin page, featuring fields for email and password. It ensures quick access while maintaining security through standard authentication protocols.'
+              ]
+            },
+            {
+              classes: 'reverse',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/songs-screen.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Songs Screen',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              paragraphs: [
+                'The Songs Screen allows the music producer to manage his song collection efficiently. He can change the order of the songs, edit existing ones, and add new tracks. This screen also provides a comprehensive overview of all the songs in his portfolio.'
+              ]
+            },
+            {
+              classes: '',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/add-song-edit.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Add Song / Edit Song',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              paragraphs: [
+                'The Add Song and Edit Song screens provide intuitive interfaces for the music producer to manage his tracks. On these screens, he can input details such as title, artist, genre, song picture, and Spotify link if available, and select whether the track is a song or a demo. The Edit Song screen allows for easy modifications to existing songs, ensuring all information and files are up-to-date.'
+              ]
+            },
+            {
+              classes: 'reverse',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/reviews-screen.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Reviews Screen',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              paragraphs: [
+                'The Reviews Screen allows the music producer to view all the reviews he has received. He can change the order of the reviews displayed in the carousel on his portfolio, as well as add new reviews and edit existing ones. This ensures his portfolio showcases the most relevant and up-to-date feedback.'
+              ]
+            },
+            {
+              classes: '',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/add-review-edit.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Add Review / Edit Review',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              paragraphs: [
+                'The Add Review and Edit Review screens provide the music producer with the tools to manage his reviews. He can input the review image, review profile details (name and title), the review content, and social links for Spotify and Instagram. These screens enable him to add new reviews or update existing ones, ensuring his portfolio reflects the most accurate and current testimonials.'
+              ]
+            },
+            {
+              classes: 'reverse',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/settings-screen.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Settings Screen',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              paragraphs: [
+                'The Settings Screen allows the music producer to manage his account details comprehensively. He can view and edit his personal profile, user details, and payment methods. This screen ensures he has full control over his personal and financial information, maintaining accuracy and up-to-date records.'
+              ]
+            },
+            {
+              classes: '',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/edit-personal-profile-screen.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Edit Personal Profile',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              paragraphs: [
+                'The Edit Personal Profile screen enables the music producer to update his personal information. The inputs for this screen include profile image, first name, last name, date of birth, and gender. This allows him to keep his profile current and accurate.'
+              ]
+            },
+            {
+              classes: 'reverse',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/edit-user-details-screen.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Edit User Details',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              paragraphs: [
+                'The Edit User Details screen allows the music producer to update his account information. The inputs for this screen include username, password, email, and phone number. This ensures his contact and login details are always accurate and up-to-date.'
+              ]
+            },
+            {
+              classes: '',
+              img: {
+                src: 'assets/images/projects/tierro/admin-screens/edit-payment-screen.webp',
+                alt: 'Laptop with login screen of the admin page for tierro'
+              },
+              title: 'Edit Payment Methods',
+              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              paragraphs: [
+                'The Edit Payment Methods screen allows the music producer to manage his financial details. The inputs for this screen include card type, cardholder name, expiration date, CVV, and card number. This ensures that his payment information is always current and secure.'
+              ]
+            },
+          ]
+        },
+        conclusions: {
+          projectName: 'tierro',
+          specialClass: 'dark-back',
+          title: 'Conclusions',
+          subtitle: 'What did I Learn?',
+          paragraphs: [
+            'Working on this project provided valuable insights into the importance of integrating visual identity with functional design. I learned how to effectively combine artistic elements with practical features to create a cohesive and engaging user experience. The process of designing and developing a custom music player, along with an admin page for content management, highlighted the need for user-friendly interfaces that cater to both creative and administrative needs.',
+            'Additionally, the iterative design process reinforced the value of refining ideas through sketches and prototypes to achieve a polished final product. Overall, this project enhanced my skills in balancing aesthetics with usability and tailoring designs to meet the specific needs of a client.'
+          ],
+          image: {
+            src: 'assets/images/projects/tierro/logo-color.svg',
+            alt: 'Tierro project logo'
+          },
+          dir: 'ltr'
+        },
+        footer: {
+          projectName: 'tierro',
+          subtitle: 'Thanks For Watching!',
+          image: {
+            src: 'assets/images/projects/tierro/box-d.svg',
+            alt: 'thanks'
+          },
+          paragraphsSide: [
+            'Thank you for watching this presentation. I appreciate your time and attention, and I hope you enjoyed learning about this project. If you have any questions or feedback, please feel free to reach out. Thank you!'
+          ],
+          ctaSides: [
+            {
+              text: 'To Development Case study',
+              size: 'default',
+              color: 'tierro',
+              ariaLabel: 'string',
+              showIconRight: true,
+              iconRight: 'dev-tag',
+              showIconLeft: false
+            }
+          ]
         }
       }
   }
@@ -291,4 +830,12 @@ export interface TierroProjectConfig {
   adminPage: ProjectMonoDynamicSectionConfig;
   theGoal: ProjectSectionBulletsConfig;
   targetAudience: ProjectMonoDynamicSectionConfig;
+  personas: ProjectPersonasConfig;
+  insights: ProjectSectionBulletsConfig;
+  componentsLibraryShow: ProjectComponentsLibraryShowConfig;
+  finalDesign: ProjectSectionButtonConfig;
+  designSystem: ProjectDesignSystemConfig;
+  adminFinalDesign: ProjectSectionJumpConfig;
+  conclusions: ProjectMonoDynamicSectionConfig;
+  footer: ProjectFinalSectionConfig;
 }

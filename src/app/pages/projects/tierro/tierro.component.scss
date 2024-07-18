@@ -1,0 +1,9 @@
+@import "mixins";
+
+app-navbar {
+    ::ng-deep {
+        nav.scrolled-top-nav {
+            background-color: $tierroPrimary_100;
+        }
+    }
+}

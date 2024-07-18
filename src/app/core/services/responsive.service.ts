@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ResponsiveService {
-  private readonly breakpoints = {
+  readonly breakpoints = {
     sm: '(min-width: 576px)',
     md: '(min-width: 768px)',
     lg: '(min-width: 992px)',
@@ -28,4 +28,22 @@ export class ResponsiveService {
   lgWidth = computed(() => this.screenWidth()?.breakpoints[this.breakpoints.lg]);
   xlWidth = computed(() => this.screenWidth()?.breakpoints[this.breakpoints.xl]);
   xxlWidth = computed(() => this.screenWidth()?.breakpoints[this.breakpoints.xxl]);
+
+  getCurrentBreakpoints(): Breakpoints {
+    return {
+      sm: this.breakpoints.sm,
+      md: this.breakpoints.md,
+      lg: this.breakpoints.lg,
+      xl: this.breakpoints.xl,
+      xxl: this.breakpoints.xxl,
+    };
+  }
+}
+
+export interface Breakpoints {
+  sm: string;
+  md: string;
+  lg: string;
+  xl: string;
+  xxl: string;
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Img } from '@core/index';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 
@@ -8,7 +8,8 @@ import { GetIconComponent } from '@shared/components/get-icon/get-icon.component
   standalone: true,
   imports: [CommonModule, GetIconComponent],
   templateUrl: './section-bullets.component.html',
-  styleUrl: './section-bullets.component.scss'
+  styleUrl: './section-bullets.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SectionBulletsComponent {
   @Input() componentConfig!: ProjectSectionBulletsConfig;

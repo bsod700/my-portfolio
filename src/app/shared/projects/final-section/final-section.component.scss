@@ -1,0 +1,22 @@
+@import "mixins";
+
+.project-final-section-wrapper {
+    padding-top: $spacing-unit*16; 
+    padding-bottom: $spacing-unit*16; 
+    &.tierro {
+        background-color: #191919;
+        box-shadow: 0px -12px 23.5px 0px rgba(0, 0, 0, 0.25);
+       .container  {
+            display: flex;
+            gap: $spacing-unit*8; 
+       }
+       .project-subtitle {
+        min-width: 345px;
+       }
+       .side {
+        .project-paragraph {
+            margin-bottom: $spacing-unit*4; 
+        }
+       }
+    }
+}

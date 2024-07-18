@@ -5,19 +5,19 @@
                 <div class="container">
                     @if (section.img) {
                         <div class="img-wrapper">
-                            <img [src]="section.img.src" [alt]="section.img.alt">
+                            <img [src]="section.img.src" [alt]="section.img.alt" loading="lazy">
                         </div>
                     }
                     <div class="text">
                         @if (section.title) {
-                            <h2 class="title primary-color">{{section.title}}</h2>
+                            <h2 class="project-title primary-color">{{section.title}}</h2>
                         }
                         @if (section.subtitle) {
-                            <h3 class="subtitle white-color">{{section.subtitle}}</h3>
+                            <h3 class="project-subtitle white-color">{{section.subtitle}}</h3>
                         }
                         @if (section.paragraphs) {
                             @for (p of section.paragraphs; track $index) {
-                                <p class="paragraph fade-white">{{p}}</p>
+                                <p class="project-paragraph fade-white">{{p}}</p>
                             }
                         }
                         @if (section.bullets) {

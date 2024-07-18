@@ -4,20 +4,22 @@
     padding-top: $spacing-unit*16; 
     padding-bottom: $spacing-unit*16; 
     &.tierro {
-        --color-primary: #{$tierroYellow};
-        --color-white: #{$tierroWhite-white};
-        --color-fade-white: #{$tierroLittleWhite};
-        --color-text-primary: #{$tierroPrimary_100};
-        --color-text-sub-primary: #{$tierroSub_Primary_100};
         background-color: $tierroBack;
-        .primary-color {
-            color: $tierroYellow;
+        &.dark-back {
+            background-color: $tierroPrimary_100;
+            background-image: radial-gradient(50% 50% at 50% 50%, rgba($tierroYellow, 0.1) 0%, rgba($tierroPrimary_100, 0) 100%);
+            background-position: top -115px right -115px;
+            background-repeat: no-repeat;
+            background-size: 900px auto;
+            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.25) inset;
         }
-        .white-color {
-            color: $tierroWhite-white;
-        }
-        .fade-white {
-            color: $tierroLittleWhite;
+    }
+    &.paragraph-yellow-title {
+        background-color: $tierroBackBlue;
+        p.project-paragraph {
+            color: var(--color-primary);
+            font-size: 28px;
+            font-weight: 700;
         }
     }
     &.ltr {
@@ -82,30 +84,14 @@
             }
         }
         .text {
-            h2.title {
-                font-size: 28px;
-                font-weight: 600;  
+            h2.project-title {
                 margin-bottom: $spacing-unit; 
             }
-            h3.subtitle {
-                font-size: 28px;
-                font-weight: 700;
+            h3.project-subtitle {
                 margin-bottom: $spacing-unit*4; 
-                @include respond-to(md) {
-                    font-size: 40px;
-                }
-                @include respond-to(xl) {
-                    font-size: 48px;
-                }
             }
-            p.paragraph {
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 1.5;
+            p.project-paragraph {
                 margin-bottom: $spacing-unit*4; 
-                @include respond-to(md) {
-                    font-size: 18px;
-                }
             }
             ul {
                 list-style: none;
@@ -146,9 +132,6 @@
                         height: 60px;
                         flex: 0 0 60px;
                         app-get-icon {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
                             width: 45px;
                             ::ng-deep {
                                 svg {

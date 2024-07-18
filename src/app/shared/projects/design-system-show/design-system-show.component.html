@@ -1,0 +1,28 @@
+<section class="project-design-system-show-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container">
+        @if (componentConfig.title) {
+            <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+        }
+        @if (componentConfig.subtitle) {
+            <h3 class="project-subtitle">{{componentConfig.subtitle}}</h3>
+        }
+        
+        @for (p of componentConfig.paragraphs; track $index) {
+            <p class="project-paragraph">{{p}}</p>
+        }
+
+        <div class="carousel">
+            <button (click)="prev()" class="carousel-button prev-button">
+                <app-get-icon [icon]="'arrow_left'" />
+            </button>
+            <div class="carousel-wrapper">
+              <div class="carousel-item" *ngFor="let item of visibleItems()">
+                <img [src]="item.src" [alt]="item.alt">
+              </div>
+            </div>
+            <button (click)="next()" class="carousel-button next-button">
+                <app-get-icon [icon]="'arrow_right'" />
+            </button>
+        </div>
+    </div>
+</section>

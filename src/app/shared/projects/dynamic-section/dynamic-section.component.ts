@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Img } from '@core/index';
 
 @Component({
@@ -7,7 +7,8 @@ import { Img } from '@core/index';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dynamic-section.component.html',
-  styleUrl: './dynamic-section.component.scss'
+  styleUrl: './dynamic-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DynamicSectionComponent {
   @Input() componentConfig!: ProjectDynamicSectionConfig;

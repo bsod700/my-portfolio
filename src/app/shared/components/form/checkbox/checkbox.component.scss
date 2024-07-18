@@ -7,11 +7,6 @@
     border-radius: $spacing-unit*2;
     cursor: pointer;
     position: relative;
-    app-get-icon {
-        display: flex;
-        align-items: center;
-        justify-content:  center;
-    }
     &:not(.checked) {
         border: 1px solid $form-border;
         background-color: $dark-purple;

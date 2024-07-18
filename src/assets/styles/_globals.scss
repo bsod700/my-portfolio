@@ -51,16 +51,16 @@ a {
 }
 
 /* Generate margin and padding utilities */
-@include generate-spacing-utilities('m', 'margin');
-@include generate-spacing-utilities('mt', 'margin-top');
-@include generate-spacing-utilities('mr', 'margin-right');
-@include generate-spacing-utilities('mb', 'margin-bottom');
-@include generate-spacing-utilities('ml', 'margin-left');
-@include generate-spacing-utilities('p', 'padding');
-@include generate-spacing-utilities('pt', 'padding-top');
-@include generate-spacing-utilities('pr', 'padding-right');
-@include generate-spacing-utilities('pb', 'padding-bottom');
-@include generate-spacing-utilities('pl', 'padding-left');
+@include generate-spacing-utilities("m", "margin");
+@include generate-spacing-utilities("mt", "margin-top");
+@include generate-spacing-utilities("mr", "margin-right");
+@include generate-spacing-utilities("mb", "margin-bottom");
+@include generate-spacing-utilities("ml", "margin-left");
+@include generate-spacing-utilities("p", "padding");
+@include generate-spacing-utilities("pt", "padding-top");
+@include generate-spacing-utilities("pr", "padding-right");
+@include generate-spacing-utilities("pb", "padding-bottom");
+@include generate-spacing-utilities("pl", "padding-left");
 
 /* Additional Utilities */
 .text-center {
@@ -103,7 +103,7 @@ img {
   display: flex;
   gap: 6px;
   &:after {
-    content: '';
+    content: "";
     position: relative;
     display: block;
     background-image: url(assets/images/title.svg);
@@ -118,6 +118,55 @@ img {
 
 @for $i from 1 through 9 {
   .fw-#{$i} {
-    font-weight: $i*100;
+    font-weight: $i * 100;
+  }
+}
+
+app-get-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// --------------------
+// projects:
+// --------------------
+h2.project-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+h3.project-subtitle {
+  font-size: 28px;
+  font-weight: 700;
+  @include respond-to(md) {
+    font-size: 40px;
+  }
+  @include respond-to(xl) {
+    font-size: 48px;
+  }
+}
+p.project-paragraph {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  @include respond-to(md) {
+    font-size: 18px;
+  }
+}
+section {
+  &.tierro {
+    --color-primary: #{$tierroYellow};
+    --color-white: #{$tierroWhite-white};
+    --color-fade-white: #{$tierroLittleWhite};
+    --color-text-primary: #{$tierroPrimary_100};
+    --color-text-sub-primary: #{$tierroSub_Primary_100};
+    .primary-color {
+      color: $tierroYellow;
+    }
+    .white-color {
+      color: $tierroWhite-white;
+    }
+    .fade-white {
+      color: $tierroLittleWhite;
+    }
   }
 }

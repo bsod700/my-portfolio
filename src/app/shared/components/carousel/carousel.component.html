@@ -32,7 +32,7 @@
             @if (isProject(selectedItem)) {
               <div class="left-side" [id]="generateId(selectedItem.title)">
                 <div class="logo-wrapper mb-4">
-                  <img [src]="selectedItem.iconImg.src" [alt]="selectedItem.iconImg.alt">
+                  <img [src]="selectedItem.iconImg.src" [alt]="selectedItem.iconImg.alt" loading="lazy">
                 </div>
                 <div class="responsibilities mb-4">
                   @for (responsibility of selectedItem.responsibilities; track responsibility) {
@@ -45,13 +45,13 @@
                 <app-cta [ctaConfig]="selectedItem.cta"/>
               </div>
               <div class="img-wrapper">
-                <img [src]="selectedItem.previewImg.src" [alt]="selectedItem.previewImg.alt">
+                <img [src]="selectedItem.previewImg.src" [alt]="selectedItem.previewImg.alt" loading="lazy">
               </div>
             }
             @else {
               <div class="service-side" [id]="generateId(selectedItem.title)">
                 <div class="img-wrapper">
-                  <img [src]="selectedItem.previewImg.src" [alt]="selectedItem.previewImg.alt">
+                  <img [src]="selectedItem.previewImg.src" [alt]="selectedItem.previewImg.alt" loading="lazy">
                 </div>
                 <div class="contain">
                   <h3 class="arrow-design small-title slab mb-5">{{ selectedItem.title }}</h3>

@@ -11,7 +11,7 @@
       @for (tech of firstHalf; track trackByFn($index, tech)) {
       <div class="tech">
         <div class="img-wrapper">
-          <img [src]="tech.img.src" [alt]="tech.img.alt" />
+          <img [src]="tech.img.src" [alt]="tech.img.alt" loading="lazy" />
         </div>
         <h5 class="very-small-title slab">{{ tech.title }}</h5>
       </div>
@@ -21,7 +21,7 @@
       @for (tech of secondHalf; track trackByFn($index, tech)) {
       <div class="tech">
         <div class="img-wrapper">
-          <img [src]="tech.img.src" [alt]="tech.img.alt" />
+          <img [src]="tech.img.src" [alt]="tech.img.alt" loading="lazy" />
         </div>
         <h5 class="very-small-title slab">{{ tech.title }}</h5>
       </div>

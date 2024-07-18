@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Img } from '@core/index';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 
@@ -8,7 +8,8 @@ import { GetIconComponent } from '@shared/components/get-icon/get-icon.component
   standalone: true,
   imports: [CommonModule, GetIconComponent],
   templateUrl: './mono-dynamic-section.component.html',
-  styleUrl: './mono-dynamic-section.component.scss'
+  styleUrl: './mono-dynamic-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MonoDynamicSectionComponent {
   @Input() componentConfig!: ProjectMonoDynamicSectionConfig;

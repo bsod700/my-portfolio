@@ -1,10 +1,10 @@
 <section class="design-process-wrapper" [ngClass]="componentConfig.projectName">
     <div class="container">
         <div class="text">
-            <h2 class="title primary-color">{{componentConfig.title}}</h2>
-            <h3 class="subtitle white-color">{{componentConfig.subtitle}}</h3>
+            <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+            <h3 class="project-subtitle white-color">{{componentConfig.subtitle}}</h3>
             @for (p of componentConfig.paragraphs; track $index) {
-                <p class="paragraph fade-white">{{p}}</p>
+                <p class="project-paragraph fade-white">{{p}}</p>
             }
         </div>
         <div class="processes">

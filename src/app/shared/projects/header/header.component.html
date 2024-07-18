@@ -2,7 +2,7 @@
     <div class="container">
         <div class="left">
             <div class="logo-wrapper">
-                <img [src]="componentConfig.logo.src" [alt]="componentConfig.logo.alt">
+                <img [src]="componentConfig.logo.src" [alt]="componentConfig.logo.alt" loading="lazy">
             </div>
             <h2 class="title">{{componentConfig.title}}</h2>
             <p class="suntitle">{{componentConfig.subtitle}}</p>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="right">
-            <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt">
+            <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="lazy">
         </div>
     </div>
 </header>

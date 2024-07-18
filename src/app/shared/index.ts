@@ -5,6 +5,7 @@ export * from './components/arrow-link/arrow-link.component';
 export * from './components/carousel/carousel.component';
 export * from './components/modal-button/modal-button.component';
 export * from './components/icons-img/icons-img.component';
+export * from './components/responsive-image/responsive-image.component';
 
 // directives
 
@@ -28,7 +29,13 @@ export * from './components/contact-form/contact-form.component';
 // projects
 export * from './projects/header/header.component';
 export * from './projects/dynamic-section/dynamic-section.component';
-export  * from './projects/process/process.component';
+export * from './projects/process/process.component';
 export * from './projects/problem-solution/problem-solution.component';
 export * from './projects/mono-dynamic-section/mono-dynamic-section.component';
 export * from './projects/section-bullets/section-bullets.component';
+export * from './projects/personas/personas.component';
+export * from './projects/components-library-show/components-library-show.component';
+export * from './projects/section-button/section-button.component';
+export * from './projects/design-system-show/design-system-show.component';
+export * from './projects/sections-jump/sections-jump.component';
+export * from './projects/final-section/final-section.component';

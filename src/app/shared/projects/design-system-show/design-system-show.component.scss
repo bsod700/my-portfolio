@@ -1,0 +1,64 @@
+@import "mixins";
+
+.project-design-system-show-wrapper {
+  padding-top: $spacing-unit * 16;
+  padding-bottom: $spacing-unit * 16;
+  overflow: hidden;
+  &.tierro {
+    background-color: $tierroPrimary_100;
+    .project-paragraph {
+      margin-bottom: $spacing-unit * 8;
+      color: $tierroYellow;
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+  .project-title {
+    margin-bottom: $spacing-unit;
+  }
+  .project-subtitle {
+    margin-bottom: $spacing-unit * 4;
+  }
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-item {
+        // todo: like the design need to change the image width to be the same to successes
+      flex: 1 0 100%;
+      transition: opacity 0.5s ease;
+      &:nth-child(1),
+      &:nth-child(3) {
+        opacity: 0.5;
+      }
+    }
+    img {
+        height: 700px;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      fill: var(--color-white);
+    }
+
+    .prev-button {
+      left: 0;
+    }
+
+    .next-button {
+      right: 0;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <div class="reviews-wrapper">
     <div class="container">
         <div class="img-row">
-            <img src="assets/images/row.svg" alt>
+            <img src="assets/images/row.svg" alt loading="lazy">
         </div>
     </div>
     <div class="container d-flex">
@@ -16,7 +16,7 @@
             @for (review of visibleItems; track $index) {
                 <div class="review" [class.selected]="selectedIndex() === $index" (click)="selectReview($index)">
                     <div class="img-wrapper">
-                        <img [src]="review.img.src" [alt]="review.img.alt">
+                        <img [src]="review.img.src" [alt]="review.img.alt" loading="lazy">
                     </div>
                     <div class="text">
                         <h5 class="very-small-title slab mb-1">{{review.name}}</h5>

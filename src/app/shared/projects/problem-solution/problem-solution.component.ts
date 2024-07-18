@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-problem-solution',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './problem-solution.component.html',
-  styleUrl: './problem-solution.component.scss'
+  styleUrl: './problem-solution.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProblemSolutionComponent {
   @Input() componentConfig!: ProjectProblemSolutionConfig;

@@ -98,9 +98,6 @@
             cursor: pointer;
             fill: $text-color-white;
             app-get-icon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 opacity: .5;
                 &:hover {
                     opacity: 1;

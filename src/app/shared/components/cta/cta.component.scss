@@ -9,11 +9,7 @@
     cursor: pointer;
     align-items: center;
     gap: $spacing-unit*2;
-    app-get-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
     p {
         font-weight: 500;
     }
@@ -73,5 +69,19 @@
         color: $dark;
         fill: $dark;
         cursor: default;
+    }
+    
+    // projects
+    &.color-tierro {
+        background-color: $tierroYellow;
+        color: $tierroPrimary_100;
+        fill: $tierroPrimary_100;
+        &:hover {
+            background-color: lighten($tierroYellow, $amount: 50%);
+        }
+        &:focus {
+            border: $border-focus $tierroPrimary_100 solid;
+            box-shadow: $shadow-focus $tierroYellow, $shadow-focus-blur $tierroYellow;
+        }
     }
 }

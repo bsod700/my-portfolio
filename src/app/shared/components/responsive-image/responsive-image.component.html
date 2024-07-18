@@ -1,0 +1,5 @@
+<picture loading="lazy" [ngClass]="componentConfig.classes ?? ''">
+    <source [attr.srcset]="componentConfig.desktopImage.src" [attr.media]="breakpoints.lg">
+    <source [attr.srcset]="componentConfig.tabletImage.src" [attr.media]="breakpoints.md">
+    <img [src]="componentConfig.mobileImage.src" [alt]="componentConfig.mobileImage.alt" loading="lazy">
+</picture>

@@ -1,0 +1,22 @@
+@import "mixins";
+
+.components-library-show-wrapper {
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*16;
+    overflow: hidden;
+    &.tierro {
+        background: linear-gradient(180deg, $tierroPrimary_100 0%, $tierroBack 100%);
+        .icon-wrapper {
+            background-color: $tierroYellow;
+        }
+        .project-paragraph {
+            max-width: 600px;
+        }
+    }
+    .components {
+       display: flex;
+       flex-wrap: wrap;
+       gap: $spacing-unit*8;
+       margin-top: $spacing-unit*8;
+    }
+}

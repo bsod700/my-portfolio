@@ -1,0 +1,16 @@
+@import "mixins";
+
+.section-button-wrapper {
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*16;
+    overflow: hidden;
+    &.tierro {
+        background-color: $tierroBack;
+    }
+    .project-title {
+        margin-bottom: $spacing-unit;
+    }
+    .cta-wrapper {
+        margin-top: $spacing-unit*8;
+    }
+}
