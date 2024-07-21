@@ -1,9 +1,13 @@
 @import "mixins";
 
 .header-wrapper {
-    padding-top: $spacing-unit*32;
-    padding-bottom: $spacing-unit*32;
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*16;
     overflow: hidden;
+    @include respond-to(md) {
+        padding-top: $spacing-unit*32;
+        padding-bottom: $spacing-unit*32;
+    }
     &.tierro {
         background-color: $tierroPrimary_100;
         background-image: url(assets/images/projects/tierro/back-header.svg), url(assets/images/projects/tierro/back-rect.svg);
@@ -11,79 +15,123 @@
         background-position: bottom 100px center, left top;
         background-size: 100% auto, 900px auto;
     }
-    .container {
+    .bullets-container {
+        .bullets {
+            display: flex;
+            justify-content: space-between;
+            max-width: 730px;
+            gap: $spacing-unit;
+            h5 {
+                font-size: 12px;
+                font-weight: 600;
+                color: $tierroWhite-white;
+                @include respond-to(md) {
+                    font-size: 18px;
+                }
+                @include respond-to(lg) {
+                    font-size: 20px;
+                }
+            }
+            p {
+                font-size: 16px;
+                font-weight: 700;
+                color: $tierroYellow;
+                white-space: wrap;
+                @include respond-to(md) {
+                    font-size: 20px;
+                }
+                @include respond-to(lg) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .container:not(.bullets-container) {
         display: flex;
         flex-direction: column;
-        @include respond-to(lg) {
+        @include respond-to(md) {
             flex-direction: row;
+            gap: $spacing-unit*4;
         }
         .left {
-            flex: 0 0 550px;
+            @include respond-to(md) {
+                flex: 0 0 400px;
+            }
+            @include respond-to(lg) {
+                flex: 0 0 550px;
+            }
             @include respond-to(xl) {
                 flex: 0 0 700px;
             }
             .logo-wrapper {
                 margin-bottom: $spacing-unit*8;
                 img {
-                    width: 150px;
-                    height: 55px;
+                    width: 100px;
+                    height: 37px;
+                    @include respond-to(md) {
+                        width: 150px;
+                        height: 55px;
+                    }
                 }
             }
             h2.title {
-                font-family: $font-family-roboto;
-                font-size: 50px;
-                margin-bottom: $spacing-unit*8;
+                font-size: 24px;
+                margin-bottom: $spacing-unit*2;
                 font-weight: 600;
                 color: $tierroYellow;
                 max-width: 600px;
                 line-height: 1.2;
+                @include respond-to(md) {
+                    font-size: 36px;
+                    margin-bottom: $spacing-unit*8;
+                }
+                @include respond-to(lg) {
+                    font-size: 50px;
+                }
                 @include respond-to(xl) {
                     font-size: 60px;
                 }
             }
             p.subtitle {
-                font-family: $font-family-roboto;
-                font-size: 28px;
+                font-size: 18px;
                 font-weight: 600;
                 color: $tierroWhite-white;
                 max-width: 600px;
-                
-            }
-            .bullets {
-                margin-top: $spacing-unit*16;
-                display: flex;
-                justify-content: space-between;
-                @include respond-to(xl) {
-                    margin-top: $spacing-unit*32;
+                margin-bottom: $spacing-unit*4;
+                @include respond-to(md) {
+                    font-size: 22px;
+                    margin-bottom: 0;
                 }
-                h5 {
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: $tierroWhite-white;
-                    @include respond-to(md) {
-                        font-size: 20px;
-                    }
-                }
-                p {
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: $tierroYellow;
-                    @include respond-to(md) {
-                        font-size: 24px;
-                    }
+                @include respond-to(lg) {
+                    font-size: 28px;
                 }
             }
+          
 
         }
         .right {
-            flex: 0 0 700px;
+            margin-bottom: $spacing-unit*8;
+            @include respond-to(md) {
+                flex: 0 0 300px;
+                margin-bottom: 0;
+            }
+            @include respond-to(lg) {
+                flex: 0 0 700px;
+            }
             @include respond-to(xl) {
                 flex: 0 0 900px;
             }
             img {
                
-                width: 700px;
+                width: 375px;
                 height: auto;
+                @include respond-to(md) {
+                    width: 500px;
+                }
+                @include respond-to(lg) {
+                    width: 700px;
+                }
                 @include respond-to(xl) {
                     width: 900px;
                     transform: translateX(100px);

@@ -4,6 +4,11 @@
   padding-top: $spacing-unit * 16;
   padding-bottom: $spacing-unit * 16;
   overflow: hidden;
+  @include respond-to(lg) {
+  }
+  .container {
+    overflow: hidden;
+  }
   &.tierro {
     background-color: $tierroPrimary_100;
     .project-paragraph {
@@ -39,7 +44,13 @@
       }
     }
     img {
-        height: 700px;
+        height: 250px;
+        @include respond-to(md) {
+          height: 500px;
+        }
+        @include respond-to(lg) {
+          height: 700px;
+        }
     }
 
     .carousel-button {
@@ -52,9 +63,21 @@
       cursor: pointer;
       fill: var(--color-white);
     }
-
+    .prev-button, .next-button {
+      app-get-icon {
+        ::ng-deep svg {
+          width: 45px;
+          height: 45px;
+          @include respond-to(md) {
+            width: 75px;
+            height: 75px;
+          }
+        }
+      }
+    }
     .prev-button {
       left: 0;
+     
     }
 
     .next-button {

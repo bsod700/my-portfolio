@@ -1,29 +1,70 @@
 @import "mixins";
 
 .design-process-wrapper {
-    padding-top: $spacing-unit*32;
+    padding-top: $spacing-unit*8;
     padding-bottom: $spacing-unit*8;
     overflow: hidden;
+    @include respond-to(md) {
+        padding-top: $spacing-unit*32;
+    }
     &.tierro {
         background-color: $tierroPrimary_100;
         background-repeat: no-repeat;
+        @include respond-to(lg) {
+            background-image:  linear-gradient(-90deg, transparent 70%, $tierroPrimary_100 100%), url(assets/images/projects/tierro/plug5.svg);
+            background-size: cover, 4000px auto;
+            background-position: center, top right calc(50% - 322px);
+        }
+        @include respond-to(xl) {
+            background-image: linear-gradient(-90deg, transparent 40%, $tierroPrimary_100 90%), url(assets/images/projects/tierro/plug3.svg), url(assets/images/projects/tierro/plug5.svg);
+            background-size: cover ,500px auto, 4000px auto;
+            background-position:  center ,left calc(50% - 400px) bottom, top -120px right calc(50% - 700px);
+        }
         @include respond-to(xxl) {
-            background-image: url(assets/images/projects/tierro/plug3.svg);
-            background-size: 768px auto;
-            background-position:  left 1200px;
+            background-image: linear-gradient(-90deg, transparent 40%, $tierroPrimary_100 90%), linear-gradient(-30deg, $tierroPrimary_100 10%, transparent 20%), url(assets/images/projects/tierro/plug3.svg),  url(assets/images/projects/tierro/plug5.svg);
+            background-size: cover, cover, 768px auto, 4000px auto;
+            background-position:  center, center, left calc(50% - 700px) bottom, top -120px right calc(50% - 800px);
         }
     }
     .container {
         display: flex;
-       flex-direction: column;
+       flex-direction: column-reverse;
         gap: $spacing-unit*4;
-        @include respond-to(xxl) {
+        @include respond-to(xl) {
             justify-content: space-between;
             flex-direction: row;
         }
+        &.mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+           
+            @include respond-to(lg) {
+                padding-top: 70px;
+            }
+            @include respond-to(xl) {
+                display: none;
+            }
+            h3.project-subtitle {
+                line-height: .7;
+            }
+        }
+        &:not(.mobile) {
+            h2.project-title, h3.project-subtitle {
+                display: none;
+               
+                @include respond-to(xl) {
+                    display: block;
+                }
+            }
+        }
     }
     .text {
+        @include respond-to(xl) {
+            flex: 0 0 400px;
+        }
         @include respond-to(xxl) {
+            flex: 0 0 600px;
             max-width: 600px;
         }
         h2.project-title {
@@ -40,66 +81,149 @@
         }
         
     }
+    .empty {
+        display: none;
+        @include respond-to(md) {
+            display: block;
+        }
+    }
     .processes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         margin-top: 35px;
+        @include respond-to(md) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
     }
     .process {
         max-width: 290px;
         position: relative;
-        &:nth-child(odd) {
-            grid-column: 2 / 2;
+        display: flex;
+       
+        &:nth-child(even) {
+            justify-self: flex-start;
+            margin-left: $spacing-unit*8;
+            padding-left: $spacing-unit*8;
+            @include respond-to(md) {
+                margin-left: $spacing-unit*2;
+                padding-left: 0;
+            }
             .circle {
-                left: -60px;
+                left: -22px;
+                @include respond-to(md) {
+                    left: -$spacing-unit*10;
+                }
             }
             &::before {
-                left: -40px;
+                left: 0;
+               
+                @include respond-to(md) {
+                    left: -$spacing-unit*6;
+                }
             }
         }
-        &:nth-child(even) {
-            grid-column: 3 / 1;
+        &:nth-child(odd) {
+            justify-self: flex-end;
+            margin-right: unset;
+            padding-right: unset;
+            margin-left: $spacing-unit*8;
+            padding-left: $spacing-unit*8;
+            @include respond-to(md) {
+                margin-right: $spacing-unit*2;
+                padding-right: $spacing-unit*2;
+                margin-left: unset;
+                padding-left: unset;
+            }
+            // grid-column: 3 / 1;
             .circle {
-                right: -15px;
+                left: -20px;
+                @include respond-to(md) {
+                    left: unset;
+                    right: -10px;
+                }
             }
             &::before {
-                right: 6px;
+                left: 0;
+                @include respond-to(md) {
+                    right: $spacing-unit*2;
+                    left: unset;
+                }
+            }
+            .content {
+                padding-right: $spacing-unit*3;
             }
         }
         &.last {
             max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-left: 0;
+            @include respond-to(md) {
+                display: flex;
+                flex-direction: unset;
+                margin-left: $spacing-unit*2;
+            }
+            &:before {
+                display: none;
+            }
             .content {
                 padding: $spacing-unit*4;
                 border-radius: 37px;
                 border: 1px solid var(--color-text-sub-primary);
                 background: linear-gradient(180deg, var(--color-text-primary) 25%, #161F24 70%);
                 box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.15);
+                padding-right: $spacing-unit*2;
             }
             &:after {
                 content: '';
                 position: absolute;
-                left: -30px;
-                top: 45px;
+                left: 26px;
+                top: 5px;
                 display: block;
                 width: 0;
-                border-top: 20px solid var(--color-text-sub-primary);
-                transform: rotateZ(90deg);
-                border-left: 20px solid transparent;
+                border-top:  20px solid transparent;
+                border-left: 20px solid var(--color-text-sub-primary);
                 border-right: 20px solid transparent;
+                border-bottom:  20px solid transparent;
+                transform: rotateZ(-90deg);
+                @include respond-to(md) {
+                    top: 45px;
+                    border-bottom: unset;
+                    border-top: 20px solid var(--color-text-sub-primary);
+                    transform: rotateZ(90deg);
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    left: -30px;
+                }
             }
             .circle {
-                top: 30px;
+                top: -40px;
+                left: 26px;
+                right: unset;
+                position: relative;
+                @include respond-to(md) {
+                    top: 30px;
+                    left: -$spacing-unit*10;
+                    position: absolute;
+                }
             }
         }
         h2.number {
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 500;
             margin-bottom: 0;
+            @include respond-to(lg) {
+                font-size: 48px;
+            }
         }
         h3.title {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 600;
             margin-bottom: $spacing-unit;
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
         }
         p.small-paragraph {
             font-size: 16px;

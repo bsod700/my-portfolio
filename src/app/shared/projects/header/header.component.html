@@ -1,22 +1,24 @@
 <header class="header-wrapper" [ngClass]="componentConfig.projectName">
-    <div class="container">
+    <div class="container in-project">
         <div class="left">
             <div class="logo-wrapper">
                 <img [src]="componentConfig.logo.src" [alt]="componentConfig.logo.alt" loading="lazy">
             </div>
             <h2 class="title">{{componentConfig.title}}</h2>
-            <p class="suntitle">{{componentConfig.subtitle}}</p>
-            <div class="bullets">
-                @for (bullet of componentConfig.bullets; track $index) {
-                    <div class="bullet">
-                        <h5 class="title">{{bullet.title}}</h5>
-                        <p>{{bullet.subtitle}}</p>
-                    </div>
-                }
-            </div>
+            <p class="subtitle">{{componentConfig.subtitle}}</p>
         </div>
         <div class="right">
             <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="lazy">
+        </div>
+    </div>
+    <div class="container in-project bullets-container">
+        <div class="bullets">
+            @for (bullet of componentConfig.bullets; track $index) {
+                <div class="bullet">
+                    <h5 class="title">{{bullet.title}}</h5>
+                    <p>{{bullet.subtitle}}</p>
+                </div>
+            }
         </div>
     </div>
 </header>

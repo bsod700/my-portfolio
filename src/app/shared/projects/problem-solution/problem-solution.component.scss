@@ -4,8 +4,12 @@
     &.tierro {
         background-color: $tierroPrimary_100;
         color: $tierroWhite-white;
-        padding-top: $spacing-unit*16; 
-        padding-bottom: $spacing-unit*16; 
+        padding-top: $spacing-unit*8; 
+        padding-bottom: $spacing-unit*8;
+        @include respond-to(md) {
+            padding-top: $spacing-unit*16; 
+            padding-bottom: $spacing-unit*16;
+        } 
     }
     .container {
         display: flex;
@@ -17,7 +21,10 @@
             justify-content: space-between;
         }
         h3.project-subtitle {
-            margin-bottom: $spacing-unit*4; 
+            margin-bottom: $spacing-unit*2; 
+            @include respond-to(md) {
+                margin-bottom: $spacing-unit*4; 
+            }
         }
         p.project-paragraph {
             margin-bottom: 0;

@@ -1,10 +1,10 @@
 <footer class="project-final-section-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
-    <div class="container">
+    <div class="container in-project">
         @if (componentConfig.title) {
             <h2 class="project-title primary-color in-title">{{componentConfig.title}}</h2>
         }
         @if (componentConfig.subtitle) {
-            <h3 class="project-subtitle white-color in-title">{{componentConfig.subtitle}}</h3>
+            <h3 class="project-subtitle white-color in-title desktop">{{componentConfig.subtitle}}</h3>
         }
 
         @if (componentConfig.paragraphs) {
@@ -12,25 +12,29 @@
                 <p class="project-paragraph">{{p}}</p>
             }
         }
-       
-        @if (componentConfig.image) {
-            <div class="img-wrapper">
-                <img [src]="componentConfig.image.src" [alt]="componentConfig.image.alt">
+       <div class="content">
+            @if (componentConfig.image) {
+                <div class="img-wrapper">
+                    <img [src]="componentConfig.image.src" [alt]="componentConfig.image.alt">
+                </div>
+            }
+            @if (componentConfig.subtitle) {
+                <h3 class="project-subtitle white-color in-title mobile">{{componentConfig.subtitle}}</h3>
+            }
+        
+            <div class="side">
+                @if (componentConfig.paragraphsSide) {
+                    @for (p of componentConfig.paragraphsSide; track $index) {
+                        <p class="project-paragraph">{{p}}</p>
+                    }
+                }
+                
+                @if (componentConfig.ctaSides) {
+                    @for (cta of componentConfig.ctaSides; track $index) {
+                        <app-cta [ctaConfig]="cta"/>
+                    }
+                }
             </div>
-        }
-     
-        <div class="side">
-            @if (componentConfig.paragraphsSide) {
-                @for (p of componentConfig.paragraphsSide; track $index) {
-                    <p class="project-paragraph">{{p}}</p>
-                }
-            }
-            
-            @if (componentConfig.ctaSides) {
-                @for (cta of componentConfig.ctaSides; track $index) {
-                    <app-cta [ctaConfig]="cta"/>
-                }
-            }
-        </div>
+       </div>
     </div>
 </footer>

@@ -3,12 +3,55 @@
 .section-bullets-wrapper {
     padding-top: $spacing-unit*8;
     padding-bottom: $spacing-unit*8;
+    
     &.tierro {
         background-color: $tierroPrimary_100;
+        background-image: url(assets/images/projects/tierro/logo-color-tilt.svg),linear-gradient(180deg, $tierroBack 0%, $tierroPrimary_100 100%);
+        background-size: 2000px auto, cover;
+        background-position:  center, center;
         .img-bullet-wrapper {
             &.with-icon {
                 background-color: $tierroBackBlue;
                 fill: $tierroWhite-white;
+            }
+        }
+    }
+    &.text-center {
+        text-align: start;
+        @include respond-to(md) {
+            text-align: center;
+        }
+    }
+    &.two-rows {
+        &.text-center {
+            text-align: center;
+        }
+        p.project-paragraph {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            gap: $spacing-unit*8;
+            @include respond-to(md) {
+                gap: $spacing-unit*16;
+            }
+            li {
+                text-align: center;
+                flex: 0 0 300px;
+                max-width: 300px;
+                @include respond-to(lg) {
+                    flex: 0 0 350px;
+                    max-width: 350px;
+                }
+                .img-bullet-wrapper {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }
@@ -34,9 +77,16 @@
         }
     }
     h3.bullet-title {
-        font-size: 28px;
+        font-size: 18px;
         font-weight: 700;
-        margin-bottom: $spacing-unit*2; 
+        margin-bottom: $spacing-unit; 
+        @include respond-to(md) {
+            font-size: 22px;
+            margin-bottom: $spacing-unit*2; 
+        }
+        @include respond-to(lg) {
+            font-size: 28px;
+        }
     }
     p.bullet-paragraph {
         font-size: 16px;
@@ -60,7 +110,10 @@
         }
     }
     .img-bullet-wrapper {
-        margin-bottom: $spacing-unit*2; 
+        margin-bottom: $spacing-unit; 
+        @include respond-to(md) {
+            margin-bottom: $spacing-unit*2; 
+        }
         &.with-icon {
             width: 50px;
             height: 50px;

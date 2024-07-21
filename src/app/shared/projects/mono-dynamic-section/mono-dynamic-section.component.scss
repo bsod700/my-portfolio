@@ -1,27 +1,93 @@
 @import "mixins";
 
 .mono-dynamic-section-wrapper {
-    padding-top: $spacing-unit*16; 
-    padding-bottom: $spacing-unit*16; 
+    padding-top: $spacing-unit*8; 
+    padding-bottom: $spacing-unit*8; 
+    @include respond-to(md) {
+        padding-top: $spacing-unit*16; 
+        padding-bottom: $spacing-unit*8; 
+    }
+    @include respond-to(xl) {
+        padding-bottom: $spacing-unit*16; 
+    }
+    overflow: hidden;
     &.tierro {
         background-color: $tierroBack;
+        --circle-icon-bg: #{$tierroYellow};
+        --icon-color: #{$tierroPrimary_100};
         &.dark-back {
             background-color: $tierroPrimary_100;
             background-image: radial-gradient(50% 50% at 50% 50%, rgba($tierroYellow, 0.1) 0%, rgba($tierroPrimary_100, 0) 100%);
-            background-position: top -115px right -115px;
+            background-position: top -115px right calc(50% - 300px), right -115px;
             background-repeat: no-repeat;
             background-size: 900px auto;
             box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.25) inset;
+           
+        }
+        &.conclusions {
+            .container {
+                flex-direction: column;
+                @include respond-to(lg) {
+                    flex-direction: row;
+                }
+                .img-wrapper {
+                    img {
+                        width: 300px;
+                        height: auto;
+                        @include respond-to(md) {
+                            width: 350px;
+                            height: auto;
+                        }
+                        @include respond-to(xl) {
+                            width: 600px;
+                        }
+                    }
+                }
+            }
+        }
+        &.audio-plug {
+            --circle-icon-bg: transparent;
+            --icon-color: #{$tierroWhite};
+            @include respond-to(md) {
+                background-image: url(assets/images/projects/tierro/plug6.svg);
+                background-size: 800px auto;
+                background-position: right calc(50% - 170px) bottom -200px;
+                background-repeat: no-repeat;
+            }
+            .text {
+                
+                @include respond-to(md) {
+                    flex: 0 0 500px;
+                    max-width: 500px;
+                }
+                @include respond-to(lg) {
+                    flex: 0 0 600px;
+                    max-width: 600px;
+                }
+                @include respond-to(xl) {
+                    flex: 0 0 700px;
+                    max-width: 700px;
+                }
+            }
         }
     }
     &.paragraph-yellow-title {
         background-color: $tierroBackBlue;
-        p.project-paragraph {
-            color: var(--color-primary);
-            font-size: 28px;
-            font-weight: 700;
+        .container {
+            .text {
+                p.project-paragraph {
+                    color: var(--color-primary);
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: $spacing-unit;
+                    @include respond-to(md) {
+                        font-size: 28px;
+                    }
+                }
+            }
         }
     }
+ 
     &.ltr {
         .container {
             flex-direction: column-reverse;
@@ -31,7 +97,7 @@
             .img-wrapper {
                 img {
                     @include respond-to(lg) {
-                        margin-left: 40px;
+                        transform: translateX(60px);
                     }
                 }
             }
@@ -46,7 +112,8 @@
             .img-wrapper {
                 img {
                     @include respond-to(lg) {
-                        margin-left: -40px;
+                        
+                        transform: translateX(-60px);
                     }
                 }
             }
@@ -64,8 +131,10 @@
         }
         .img-wrapper {
             flex: auto;
+        
             @include respond-to(lg) {
-                flex:  0 0 500px;
+                flex:  0 0 400px;
+                width: 400px;
             }
             @include respond-to(xl) {
                 flex:  0 0 630px;
@@ -74,8 +143,8 @@
                 width: 300px;
                 height: 255px;
                 @include respond-to(md) {
-                    width: 500px;
-                    height: 426px;
+                    width: 450px;
+                    height: 383px;
                 }
                 @include respond-to(xl) {
                     width: 630px;
@@ -121,22 +190,34 @@
                 }
                 .img-bullet-wrapper {
                     &.with-icon {
-                        background-color: var(--color-primary);
-                        fill: var(--color-text-primary);
+                        background-color: var(--circle-icon-bg);
+                        fill: var(--icon-color);
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         border-radius: 50%;
                         padding: $spacing-unit;
-                        width: 60px;
-                        height: 60px;
-                        flex: 0 0 60px;
+                        width: 35px;
+                        height: 35px;
+                        flex: 0 0 35px;
+                        @include respond-to(lg) {
+                            width: 60px;
+                            height: 60px;
+                            flex: 0 0 60px;
+                        }
                         app-get-icon {
-                            width: 45px;
+                            width: 25px;
+                            @include respond-to(lg) {
+                                width: 45px;
+                            }
                             ::ng-deep {
                                 svg {
-                                    width: 45px;
-                                    height: 45px;
+                                    width: 25px;
+                                    height: 25px;
+                                    @include respond-to(lg) {
+                                        width: 45px;
+                                        height: 45px;
+                                    }
                                 }
                             }
                         }

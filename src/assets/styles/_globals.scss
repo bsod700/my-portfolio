@@ -92,7 +92,33 @@ a {
 }
 
 .container {
-  @include container;
+  
+  &.in-project {
+    width: 100%;
+    padding-right: $spacing-unit*2;
+    padding-left: $spacing-unit*2;
+    margin-right: auto;
+    margin-left: auto;
+  
+  @include respond-to(md) {
+    max-width: 720px;
+  }
+
+  @include respond-to(lg) {
+    max-width: 960px;
+  }
+
+  @include respond-to(xl) {
+    max-width: 1140px;
+  }
+
+  @include respond-to(xxl) {
+    max-width: 1320px;
+  }
+  }
+  &:not(.in-project) {
+    @include container;
+  }
 }
 img {
   object-fit: contain;
@@ -127,20 +153,28 @@ app-get-icon {
   align-items: center;
   justify-content: center;
 }
+
 // --------------------
 // projects:
 // --------------------
+
 h2.project-title {
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 600;
+  @include respond-to(md) {
+    font-size: 22px;
+  }
+  @include respond-to(lg) {
+    font-size: 28px;
+  }
 }
 h3.project-subtitle {
   font-size: 28px;
   font-weight: 700;
   @include respond-to(md) {
-    font-size: 40px;
+    font-size: 36px;
   }
-  @include respond-to(xl) {
+  @include respond-to(lg) {
     font-size: 48px;
   }
 }
@@ -148,7 +182,7 @@ p.project-paragraph {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
-  @include respond-to(md) {
+  @include respond-to(lg) {
     font-size: 18px;
   }
 }

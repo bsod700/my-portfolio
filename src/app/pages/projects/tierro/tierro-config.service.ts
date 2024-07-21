@@ -101,7 +101,7 @@ export class TierroProjectConfigService {
         },
         process: {
           projectName: 'tierro',
-          title: 'The What',
+          title: 'The Process',
           subtitle: 'Design Process',
           paragraphs: [
             'The design process for this project began with comprehensive research to understand the client\'s unique needs and the latest trends in music industry web design. This foundational step ensured that the resulting webpage would be both visually appealing and highly functional. Next, I created detailed wireframes to map out the layout and structure of the webpage, focusing on enhancing usability and aesthetic appeal.',
@@ -223,12 +223,12 @@ export class TierroProjectConfigService {
           ],
           bullets: [
             {
-              iconName: 'thumb_up',
+              iconName: 'thumb_up_circle',
               title: 'Professional Presence',
               text: 'Establish a professional and engaging online presence for the music producer.'
             },
             {
-              iconName: 'users',
+              iconName: 'humans',
               title: 'Client-Facing Webpage',
               text: 'Design a visually appealing webpage for clients and fans to explore the producer\'s work.'
             },
@@ -256,7 +256,7 @@ export class TierroProjectConfigService {
         },
         targetAudience: {
           projectName: 'tierro',
-          specialClass: 'paragraph-yellow-title',
+          specialClass: 'paragraph-yellow-title audio-plug',
           title: 'Research',
           subtitle: 'Target Audience',
           paragraphs: [
@@ -303,17 +303,17 @@ export class TierroProjectConfigService {
                         bulletText: '28 years'
                       },
                       {
-                        bulletIcon: 'location-pin',
+                        bulletIcon: 'location_tag',
                         bulletTitle: 'Location',
                         bulletText: 'Los Angeles, CA'
                       },
                       {
-                        bulletIcon: 'education',
+                        bulletIcon: 'collage_cap',
                         bulletTitle: 'Education',
                         bulletText: 'Bachelor\'s Degree in Music'
                       },
                       {
-                        bulletIcon: 'family',
+                        bulletIcon: 'settings',
                         bulletTitle: 'Occupation',
                         bulletText: 'Indie Musician'
                       }
@@ -368,17 +368,17 @@ export class TierroProjectConfigService {
                         bulletText: '22 years'
                       },
                       {
-                        bulletIcon: 'location-pin',
+                        bulletIcon: 'location_tag',
                         bulletTitle: 'Location',
                         bulletText: 'Austin, TX'
                       },
                       {
-                        bulletIcon: 'education',
+                        bulletIcon: 'collage_cap',
                         bulletTitle: 'Education',
                         bulletText: 'College Student, studying Communications'
                       },
                       {
-                        bulletIcon: 'family',
+                        bulletIcon: 'settings',
                         bulletTitle: 'Occupation',
                         bulletText: 'College Student'
                       }
@@ -433,17 +433,17 @@ export class TierroProjectConfigService {
                         bulletText: '30 years'
                       },
                       {
-                        bulletIcon: 'location-pin',
+                        bulletIcon: 'location_tag',
                         bulletTitle: 'Location',
                         bulletText: 'Nashville, TN'
                       },
                       {
-                        bulletIcon: 'education',
+                        bulletIcon: 'collage_cap',
                         bulletTitle: 'Education',
                         bulletText: 'Bachelor\'s Degree in Vocal Performance'
                       },
                       {
-                        bulletIcon: 'family',
+                        bulletIcon: 'settings',
                         bulletTitle: 'Occupation',
                         bulletText: 'Singer and Songwriter'
                       }
@@ -487,7 +487,7 @@ export class TierroProjectConfigService {
         },
         insights: {
           projectName: 'tierro',
-          style: 'text-center',
+          style: 'text-center two-rows',
           title: 'Discover',
           subtitle: 'Insights',
           paragraphs: [
@@ -500,7 +500,7 @@ export class TierroProjectConfigService {
               text: 'Engaging visuals and intuitive design elements are crucial for capturing and maintaining user interest.'
             },
             {
-              iconName: 'users',
+              iconName: 'puzzle',
               title: 'Customization Needs',
               text: 'Users value the ability to customize and manage content easily, particularly for showcasing music and updates.'
             },
@@ -582,11 +582,11 @@ export class TierroProjectConfigService {
                 alt: 'component of a section image on the left or right and text from the side'
               },
               tabletImage: {
-                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                src: 'assets/images/projects/tierro/components/cards-tablet.webp',
                 alt: 'component of a section image on the left or right and text from the side'
               },
               mobileImage: {
-                src: 'assets/images/projects/tierro/components/buttons-desktop.webp',
+                src: 'assets/images/projects/tierro/components/cards-mobile.webp',
                 alt: 'component of a section image on the top or bottom and text from the bellow or above'
               }
             },
@@ -597,11 +597,11 @@ export class TierroProjectConfigService {
                 alt: 'component of a music player'
               },
               tabletImage: {
-                src: 'assets/images/projects/tierro/components/music-player-desktop.webp',
+                src: 'assets/images/projects/tierro/components/music-player-tablet.webp',
                 alt: 'component of a music player'
               },
               mobileImage: {
-                src: 'assets/images/projects/tierro/components/music-player-desktop.webp',
+                src: 'assets/images/projects/tierro/components/music-player-mobile.webp',
                 alt: 'component of a music player'
               }
             },
@@ -612,11 +612,11 @@ export class TierroProjectConfigService {
                 alt: 'component of a contact section'
               },
               tabletImage: {
-                src: 'assets/images/projects/tierro/components/contact-desktop.webp',
+                src: 'assets/images/projects/tierro/components/contact-tablet.webp',
                 alt: 'component of a contact section'
               },
               mobileImage: {
-                src: 'assets/images/projects/tierro/components/contact-desktop.webp',
+                src: 'assets/images/projects/tierro/components/contact-mobile.webp',
                 alt: 'component of a contact section'
               }
             }
@@ -633,7 +633,7 @@ export class TierroProjectConfigService {
             color: 'tierro',
             ariaLabel: 'string',
             showIconRight: true,
-            iconRight: 'arrow-right',
+            iconRight: 'arrow_right_line',
             showIconLeft: false
           }
         },
@@ -677,7 +677,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Login Screen',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              backgroundItem: 'yellow-circle-right',
               paragraphs: [
                 'The Login Screen provides a secure entry point for the music producer\'s admin page, featuring fields for email and password. It ensures quick access while maintaining security through standard authentication protocols.'
               ]
@@ -689,7 +689,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Songs Screen',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              backgroundItem: 'yellow-circle-left',
               paragraphs: [
                 'The Songs Screen allows the music producer to manage his song collection efficiently. He can change the order of the songs, edit existing ones, and add new tracks. This screen also provides a comprehensive overview of all the songs in his portfolio.'
               ]
@@ -701,7 +701,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Add Song / Edit Song',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              backgroundItem: 'yellow-circle-right',
               paragraphs: [
                 'The Add Song and Edit Song screens provide intuitive interfaces for the music producer to manage his tracks. On these screens, he can input details such as title, artist, genre, song picture, and Spotify link if available, and select whether the track is a song or a demo. The Edit Song screen allows for easy modifications to existing songs, ensuring all information and files are up-to-date.'
               ]
@@ -713,7 +713,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Reviews Screen',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              backgroundItem: 'yellow-circle-left',
               paragraphs: [
                 'The Reviews Screen allows the music producer to view all the reviews he has received. He can change the order of the reviews displayed in the carousel on his portfolio, as well as add new reviews and edit existing ones. This ensures his portfolio showcases the most relevant and up-to-date feedback.'
               ]
@@ -725,7 +725,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Add Review / Edit Review',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              backgroundItem: 'yellow-circle-right',
               paragraphs: [
                 'The Add Review and Edit Review screens provide the music producer with the tools to manage his reviews. He can input the review image, review profile details (name and title), the review content, and social links for Spotify and Instagram. These screens enable him to add new reviews or update existing ones, ensuring his portfolio reflects the most accurate and current testimonials.'
               ]
@@ -737,7 +737,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Settings Screen',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              backgroundItem: 'yellow-circle-left',
               paragraphs: [
                 'The Settings Screen allows the music producer to manage his account details comprehensively. He can view and edit his personal profile, user details, and payment methods. This screen ensures he has full control over his personal and financial information, maintaining accuracy and up-to-date records.'
               ]
@@ -749,7 +749,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Edit Personal Profile',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              backgroundItem: 'yellow-circle-right',
               paragraphs: [
                 'The Edit Personal Profile screen enables the music producer to update his personal information. The inputs for this screen include profile image, first name, last name, date of birth, and gender. This allows him to keep his profile current and accurate.'
               ]
@@ -761,7 +761,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Edit User Details',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-left.svg',
+              backgroundItem: 'yellow-circle-left',
               paragraphs: [
                 'The Edit User Details screen allows the music producer to update his account information. The inputs for this screen include username, password, email, and phone number. This ensures his contact and login details are always accurate and up-to-date.'
               ]
@@ -773,7 +773,7 @@ export class TierroProjectConfigService {
                 alt: 'Laptop with login screen of the admin page for tierro'
               },
               title: 'Edit Payment Methods',
-              backgroundItem: 'assets/images/projects/tierro/yellow-circle-right.svg',
+              backgroundItem: 'yellow-circle-right',
               paragraphs: [
                 'The Edit Payment Methods screen allows the music producer to manage his financial details. The inputs for this screen include card type, cardholder name, expiration date, CVV, and card number. This ensures that his payment information is always current and secure.'
               ]
@@ -782,7 +782,7 @@ export class TierroProjectConfigService {
         },
         conclusions: {
           projectName: 'tierro',
-          specialClass: 'dark-back',
+          specialClass: 'dark-back conclusions',
           title: 'Conclusions',
           subtitle: 'What did I Learn?',
           paragraphs: [

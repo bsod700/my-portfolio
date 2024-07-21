@@ -30,30 +30,110 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         margin-bottom: $spacing-unit*8;
         gap: $spacing-unit*4;
         text-align: start;
+        @include respond-to(md) {
+            background-repeat: no-repeat;
+            background-size: 170px auto;
+            align-items: center;
+        }
+        &.yellow-circle-right {
+            @include respond-to(md) {
+                background-image: url(assets/images/projects/tierro/yellow-circle-right.svg);
+            }
+           
+        }
+        &.yellow-circle-left {
+            @include respond-to(md) {
+                background-image: url(assets/images/projects/tierro/yellow-circle-left.svg);
+            }
+        }
+        &:not(.reverse) {
+            flex-direction: column;
+            @include respond-to(md) {
+                flex-direction: row;
+                background-position: right 10px top -110px;
+            }
+            @include respond-to(lg) {
+                background-position: right 200px top -80px;
+            }
+            @include respond-to(xl) {
+                background-position: right 400px top -50px;
+            }
+            .img-wrapper {
+                img {
+                    transform: translateX(-60px);
+                    @include respond-to(md) {
+                        transform: translateX(-100px);
+                    }
+                }
+            }
+        }
 
         &:nth-last-of-type(1) {
             margin-bottom: 0;
         }
         &.reverse {
-            flex-direction: row-reverse;
+            flex-direction: column;
+            background-position: left top -110px;
+            @include respond-to(md) {
+                flex-direction: row-reverse;
+                background-position: left top -110px;
+            }
+            @include respond-to(lg) {
+                background-position: left 100px top -60px;
+            }
+            @include respond-to(xl) {
+                background-position: left 100px top -25px;
+            }
+            .img-wrapper {
+                img {
+                    @include respond-to(md) {
+                        transform: translateX(100px);
+                    }
+                }
+            }
         }
         .img-wrapper {
-            flex: 0 0 600px;
+            @include respond-to(md) {
+                flex: 0 0 300px;
+                max-width: 300px;
+            }
+            @include respond-to(lg) {
+                flex: 0 0 400px;
+                max-width: 400px;
+            }
+            @include respond-to(xl) {
+                flex: 0 0 600px;
+                max-width: 600px;
+            }
             img {
-                width: 600px;
+                width: 300px;
+                @include respond-to(md) {
+                    width: 400px;
+                }
+                @include respond-to(lg) {
+                    width: 500px;
+                }
+                @include respond-to(xl) {
+                    width: 600px;
+                }
             }
         }
         .text-content {
-            flex: 1 0 0;
             max-width: 550px;
+            @include respond-to(md) {
+                flex: 1 0 0;
+            }
             h4.title {
-                font-size: 28px;
+                font-size: 20px;
                 font-weight: 700;
                 margin-bottom: $spacing-unit*2;
+                @include respond-to(md) {
+                    font-size: 28px;
+                }
             }
             .project-paragraph {
                 margin-bottom: 0;
