@@ -187,7 +187,14 @@
 
    .carousel-content {
     gap: $spacing-unit*8 ;
-
+  
+    .left-side#Portfolio {
+        .logo-wrapper {
+            img {
+                height: 40px;
+            }
+        }
+    }
     .service-side {
         
         gap: $spacing-unit*8;
@@ -228,8 +235,7 @@
 
     .logo-wrapper {
         img {
-            width: 200px;
-            height: auto;
+            height: 75px;
         }
     }
     .left-side {
@@ -263,8 +269,11 @@
         gap: 24px;
         .responsibility {
             h5 {
-                @include responsive-font-size(slab, h5); font-family: $font-family-slab;
-                font-weight: 300;
+                font-size: 14px;
+                font-weight: 400;
+                @include respond-to(lg) {
+                    font-size: 18px;
+                }
             }
         }
     }

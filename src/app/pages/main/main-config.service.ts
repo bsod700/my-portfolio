@@ -87,8 +87,8 @@ export class MainConfigService {
               description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
               responsibilities: [
                 'UX & UI Design',
-                'Logo',
-                'Web Development'
+                'Illustration',
+                'Prototype'
               ],
               cta: {
                 text: 'Take Me To The Project',
@@ -101,11 +101,11 @@ export class MainConfigService {
                 showIconLeft: false
               },
               previewImg: {
-                src: 'assets/images/projects/tierro/preview.png',
+                src: 'assets/images/projects/brush-along/preview.webp',
                 alt: 'Tierro project - preview image'
               },
               iconImg: {
-                src: 'assets/images/projects/tierro/logo-color.svg',
+                src: 'assets/images/projects/brush-along/symbol.webp',
                 alt: 'Tierro project logo'
               }
             },
@@ -114,7 +114,7 @@ export class MainConfigService {
               description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
               responsibilities: [
                 'UX & UI Design',
-                'Logo',
+                'Illustration',
                 'Web Development'
               ],
               cta: {
@@ -128,11 +128,11 @@ export class MainConfigService {
                 showIconLeft: false
               },
               previewImg: {
-                src: 'assets/images/projects/tierro/preview.png',
+                src: 'assets/images/projects/portfolio/preview.webp',
                 alt: 'Tierro project - preview image'
               },
               iconImg: {
-                src: 'assets/images/projects/tierro/logo-color.svg',
+                src: 'assets/images/projects/portfolio/logo.svg',
                 alt: 'Tierro project logo'
               }
             },
