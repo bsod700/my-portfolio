@@ -14,17 +14,80 @@
         background-repeat: no-repeat, no-repeat;
         background-position: bottom 100px center, left top;
         background-size: 100% auto, 900px auto;
+        --font-color-primary: #{$tierroYellow};
+        --font-color-secondary: #{$tierroWhite-white};
+        .logo-wrapper {
+            img {
+                width: 100px;
+                height: 37px;
+                @include respond-to(md) {
+                    width: 150px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+    &.brushalong {
+        background-color: $brushAlongFadeWhite;
+        --font-color-primary: #{$brushalongDarkBlue};
+        --font-color-secondary: #{$brushalongPrimary};
+        padding-bottom: $spacing-unit*8;
+        padding-top: $spacing-unit*16;
+        @include respond-to(md) {
+            background-image: url(assets/images/projects/brush-along/header-image.webp) , radial-gradient(50% 50% at 50% 50%, #4b78d875 0%, rgba(40, 63, 114, 0.00) 100%);
+            background-position: top -20px right calc(50% - 450px), top right calc(50% - 915px);
+            background-repeat: no-repeat;
+            background-size: 900px auto, 2000px auto;
+            padding-bottom: $spacing-unit*16;
+            padding-top: $spacing-unit*20;
+        }
+        
+        .bullets-container {
+            max-width: 500px;
+            @include respond-to(md) {
+                margin-top: $spacing-unit*32;
+            }
+            @include respond-to(lg) {
+                max-width: 730px;
+            }
+           
+        }
+        .container:not(.with-bullets) {
+            .left {
+                .logo-wrapper {
+                    margin-bottom: $spacing-unit*4;
+                    @include respond-to(md) {
+                        margin-bottom: $spacing-unit*8;
+                    }
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+           
+            .right {
+                display: block;
+                margin-bottom: 24px;
+                @include respond-to(md) {
+                    display: none;
+                }
+            }
+        }
+        
     }
     .bullets-container {
+        width: 100%;
         .bullets {
             display: flex;
             justify-content: space-between;
-            max-width: 730px;
+            max-width: 700px;
             gap: $spacing-unit;
+            width: 100%;
             h5 {
                 font-size: 12px;
                 font-weight: 600;
-                color: $tierroWhite-white;
+                color: var(--font-color-secondary);
                 @include respond-to(md) {
                     font-size: 18px;
                 }
@@ -35,7 +98,7 @@
             p {
                 font-size: 16px;
                 font-weight: 700;
-                color: $tierroYellow;
+                color: var(--font-color-primary);
                 white-space: wrap;
                 @include respond-to(md) {
                     font-size: 20px;
@@ -47,7 +110,7 @@
         }
     }
 
-    .container:not(.bullets-container) {
+    .container:not(.with-bullets) {
         display: flex;
         flex-direction: column;
         @include respond-to(md) {
@@ -66,20 +129,13 @@
             }
             .logo-wrapper {
                 margin-bottom: $spacing-unit*8;
-                img {
-                    width: 100px;
-                    height: 37px;
-                    @include respond-to(md) {
-                        width: 150px;
-                        height: 55px;
-                    }
-                }
+              
             }
             h2.title {
                 font-size: 24px;
                 margin-bottom: $spacing-unit*2;
                 font-weight: 600;
-                color: $tierroYellow;
+                color: var(--font-color-primary);
                 max-width: 600px;
                 line-height: 1.2;
                 @include respond-to(md) {
@@ -96,7 +152,7 @@
             p.subtitle {
                 font-size: 18px;
                 font-weight: 600;
-                color: $tierroWhite-white;
+                color: var(--font-color-secondary);
                 max-width: 600px;
                 margin-bottom: $spacing-unit*4;
                 @include respond-to(md) {

@@ -22,11 +22,16 @@ export class CtaComponent {
     this.scrollService.scrollToSection(event, this.ctaConfig);
   }
 
+  scrollToSectionAndPage(event: Event): void {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.scrollService.navigateToSection(event, this.ctaConfig, this.ctaConfig.page)
+  }
+
   cta(event: Event) {
     this.onClick;
     if(this.ctaConfig.scrollTo) {
-      // console.log(this.ctaConfig.scrollTo);
-      this.scrollToSection(event);
+      this.scrollToSectionAndPage(event);
     }
   }
 

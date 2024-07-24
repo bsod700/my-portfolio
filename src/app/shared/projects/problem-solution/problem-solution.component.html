@@ -1,15 +1,15 @@
 <section class="problem-solution-wrapper" [ngClass]="componentConfig.projectName">
     <div class="container in-project">
-        <div class="problem">
-            <h3 class="project-subtitle">{{componentConfig.problem.title}}</h3>
+        <div class="problem scratch">
+            <h3 class="project-subtitle white-color">{{componentConfig.problem.title}}</h3>
             @for (p of componentConfig.problem.paragraph; track $index) {
-                <p class="project-paragraph">{{p}}</p>
+                <p class="project-paragraph white-color">{{p}}</p>
             }
         </div>
-        <div class="solution">
-            <h3 class="project-subtitle">{{componentConfig.solution.title}}</h3>
+        <div class="solution scratch">
+            <h3 class="project-subtitle white-color">{{componentConfig.solution.title}}</h3>
             @for (p of componentConfig.solution.paragraph; track $index) {
-                <p class="project-paragraph">{{p}}</p>
+                <p class="project-paragraph white-color">{{p}}</p>
             }
         </div>
     </div>

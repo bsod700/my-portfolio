@@ -25,6 +25,57 @@
             background-size: cover, cover, 768px auto, 4000px auto;
             background-position:  center, center, left calc(50% - 700px) bottom, top -120px right calc(50% - 800px);
         }
+        .container {
+            &.mobile {
+                @include respond-to(lg) {
+                    padding-top: 70px;
+                }
+            }
+        }
+    }
+    &.brushalong {
+        background-color: $brushAlongWhite;
+        @include respond-to(xl) {
+            background-image: url(assets/images/projects/brush-along/crub.webp);        ;
+            background-repeat: no-repeat;
+            background-size: 400px auto, 300px 300px;
+            background-position: bottom left calc(50% - 400px), top -150px left -150px;
+        }
+        @include respond-to(md) {
+            padding-top: $spacing-unit*16;
+        }
+        .primary-color {
+            color: $brushalongDarkBlue;
+        }
+        .white-color {
+            color: $brushalongPrimary;
+        }
+        .process {
+            &.last {
+                .content {
+                    border: none;
+                    background-image: none;
+                    background-color: $brushalongDarkBlue;
+                    .number, .title, .small-paragraph {
+                        color: $brushAlongWhite;
+                    }
+                }
+                &:after {
+                    border-left: 20px solid $brushalongDarkBlue;
+                    @include respond-to(md) {
+                        border-top: 20px solid $brushalongDarkBlue;
+                        border-left: 20px solid transparent;
+                    }
+                }
+            }
+            .circle {
+                border: solid 15px #D7DBE7;
+                background-color: $brushalongDarkBlue;
+            }
+            &::before {
+                background-image: linear-gradient($brushalongDarkBlue 33%, rgba(255,255,255,0) 0%);
+            }
+        }
     }
     .container {
         display: flex;
@@ -39,9 +90,6 @@
             flex-direction: column;
             gap: 0;
            
-            @include respond-to(lg) {
-                padding-top: 70px;
-            }
             @include respond-to(xl) {
                 display: none;
             }

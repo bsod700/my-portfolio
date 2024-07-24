@@ -16,7 +16,7 @@ export class ArrowLinkComponent {
   scrollService: ScrollService = inject(ScrollService);
 
   scrollToSection(event: Event): void {
-    this.scrollService.scrollToSection(event, this.componentConfig);
+    this.scrollService.navigateToSection(event, this.componentConfig, this.componentConfig.page)
   }
 }
 
@@ -27,4 +27,5 @@ export interface ArrowLink {
   icon?: string;
   inLink?: string;
   outLink?: string;
+  page?: string;
 }

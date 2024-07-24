@@ -16,10 +16,78 @@
             }
         }
     }
+    &.brushalong {
+        &.wooden-sign {
+            background-color: #704720;
+            background-image: url(assets/images/projects/brush-along/wooden-sign.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: $spacing-unit*2;
+            border: $spacing-unit*1 solid $brushalongDarkGreen;
+            @include respond-to(md) {
+                border: $spacing-unit*2 solid $brushalongDarkGreen;
+                border-radius: $spacing-unit*8;
+            }
+        }
+        &.white-bg {
+            background-color: $brushAlongWhite;
+            .project-title {
+                color: $tierroOrange;
+            }
+            .white-color {
+                color: $brushalongPrimary;
+            }
+        }
+        .img-bullet-wrapper {
+            &.with-icon {
+                background-color: $brushalongBlue;
+                app-get-icon {
+                    ::ng-deep svg {
+                        fill: $brushAlongWhite;
+                    }
+                }
+            }
+        }
+        &.two-rows {
+            &.text-center {
+                text-align: start;
+                @include respond-to(md) {
+                    text-align: center;
+                }
+            }
+            ul {
+                text-align: start;
+                text-align: start;
+                justify-content: start;
+                @include respond-to(md) {
+                    text-align: center;
+                    text-align: center;
+                    justify-content: center;
+                }
+                li {
+                    text-align: start;
+                    @include respond-to(md) {
+                        text-align: center;
+                    }
+                    .img-bullet-wrapper {
+                        margin-left: unset;
+                        margin-right: unset;
+                        @include respond-to(md) {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
     &.text-center {
         text-align: start;
         @include respond-to(md) {
             text-align: center;
+            text-align: center;
+            justify-content: center;
         }
     }
     &.two-rows {

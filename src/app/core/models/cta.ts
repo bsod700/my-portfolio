@@ -13,4 +13,5 @@ export interface Cta {
     iconLeft?: string;
     iconRight?: string;
     scrollTo?: string;
+    page?: string;
 }

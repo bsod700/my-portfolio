@@ -39,3 +39,7 @@ export * from './projects/section-button/section-button.component';
 export * from './projects/design-system-show/design-system-show.component';
 export * from './projects/sections-jump/sections-jump.component';
 export * from './projects/final-section/final-section.component';
+export * from './projects/overview/overview.component';
+export * from './projects/wireframes/wireframes.component';
+export * from './projects/style-guide/style-guide.component';
+export * from './projects/prototype/prototype.component';

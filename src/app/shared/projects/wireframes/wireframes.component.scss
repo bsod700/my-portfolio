@@ -1,0 +1,74 @@
+@import "mixins";
+
+.project-wireframes-wrapper {
+    padding-top: $spacing-unit*8;
+    overflow: hidden;
+    &.brushalong {
+        &.green-bg {
+            background-color: $brushalongDarkGreen;
+            background-image: url(assets/images/projects/brush-along/hill.webp);
+            background-repeat: no-repeat;
+            background-size: 300px auto;
+            background-position: top 300px center;
+            @include respond-to(md) {
+                background-size: 800px auto;
+                background-position: top 270px center;
+            }
+            .title {
+                max-width: 900px;
+                margin: 0 auto $spacing-unit*14;
+            }
+            .img-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                
+                img {
+                    width: 900px;
+                    flex: 0 0 900px;
+                    height: auto;
+                    margin-bottom: -100px;
+                    @include respond-to(md) {
+                        width: 1600px;
+                        flex: 0 0 1600px;
+                    }
+                }
+            }
+        }
+        &.white-bg {
+            background-color: $brushAlongWhite;
+            padding-bottom: $spacing-unit*8;
+            .title {
+                max-width: 600px;
+                margin-bottom: $spacing-unit*8;
+                .primary-color {
+                    color: $brushalongBlue;
+                }
+                .white-color {
+                    color: $brushalongPrimary;
+                }
+            }
+            .img-wrapper {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 370px;
+                    flex: 0 0 370px;
+
+                    @include respond-to(md) {
+                        width: 600px;
+                        flex: 0 0 600px;
+                    }
+                    @include respond-to(ld) {
+                        width: 800px;
+                        flex: 0 0 800px;
+                    }
+                    @include respond-to(xl) {
+                        width: 1000px;
+                        flex: 0 0 100px;
+                    }
+                }
+            }
+        }
+    } 
+}

@@ -17,16 +17,9 @@ export class NavbarComponent {
   scrolled = false;
   notTop = false;
 
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.scrolled = window.scrollY > 100;
     this.notTop = window.scrollY > 0;
-  }
-
-  private scrollService = inject(ScrollService);
-
-  scrollTo(elementId: string): void {
-    this.scrollService.scrollToElement(elementId);
   }
 }

@@ -10,6 +10,10 @@ export const routes: Routes = [
         path: 'projects/tierro', 
         loadComponent:() => import('./pages/projects/tierro/tierro.component').then(mod  => mod.TierroComponent),
         data: { name: 'Project Tierro' }
+    },{ 
+        path: 'projects/brushalong', 
+        loadComponent:() => import('./pages/projects/brushalong/brushalong.component').then(mod  => mod.BrushalongComponent),
+        data: { name: 'Project BrushAlong' }
     },
     { path: '**', redirectTo: '' },
 ];

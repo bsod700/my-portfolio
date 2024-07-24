@@ -1,6 +1,7 @@
 import { ViewportScroller } from '@angular/common';
-import { Injectable, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Inject, Injectable, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { filter, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,18 @@ import { Router } from '@angular/router';
 export class ScrollService {
   private viewportScroller: ViewportScroller = inject(ViewportScroller);
   private router: Router = inject(Router);
+
+  // constructor() {
+  //   this.scrollToTop()
+  // }
+
+  scrollToTop(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      window.scrollTo(0, 0); // Scroll to top on navigation end
+    });
+  }
 
   scrollToElement(elementId: string, behavior: ScrollBehavior = 'smooth'): void {
     const element = document.getElementById(elementId);
@@ -49,10 +62,32 @@ export class ScrollService {
     }
   }
   
-  navigateToSection(sectionName: string, page: string) {
-    this.router.navigate([`/${page}`], { fragment: sectionName }).then(() => {
-      this.viewportScroller.scrollToAnchor(sectionName);
-    });
+  navigateToSection(event: Event, comp: any, page?: string ) {
+    const scrollTo = comp.inLink ?? comp.scrollTo;
+    const currentRoute = this.getCurrentRoute();
+    console.log('currentRoute : '+ currentRoute);
+    console.log('page : '+ page);
+    
+    
+      if (currentRoute === page) {
+        console.log('in page');
+        
+        this.scrollToSection(event, comp);
+      } else {
+        console.log('new page');
+        
+        this.scrollToTop()
+        this.router.navigate([`/${page}`], { fragment: scrollTo }).then(() => {
+       
+          this.scrollToSection(event, comp);
+        });
+      }
   }
   
+  getCurrentRoute(): string {
+    const currentUrl = this.router.url;
+    const urlSegments = currentUrl.split('/');
+    
+    return urlSegments.length > 1 ? urlSegments[1] : '';
+  }
 }

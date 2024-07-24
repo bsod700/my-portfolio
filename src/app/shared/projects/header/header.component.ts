@@ -23,5 +23,5 @@ export interface HeaderProjectConfig {
     title: string;
     subtitle: string;
   }[],
-  img: Img;
+  img?: Img;
 }

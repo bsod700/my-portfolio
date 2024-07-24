@@ -84,4 +84,16 @@
             box-shadow: $shadow-focus $tierroYellow, $shadow-focus-blur $tierroYellow;
         }
     }
+    &.color-brushalong-blue {
+        background-color: $brushalongBlue;
+        color: $brushAlongWhite;
+        fill: $brushAlongWhite;
+        &:hover {
+            background-color: darken($brushalongBlue, $amount: 20%);
+        }
+        &:focus {
+            border: $border-focus $brushAlongWhite solid;
+            box-shadow: $shadow-focus $brushalongBlue, $shadow-focus-blur $brushalongBlue;
+        }
+    }
 }

@@ -1,0 +1,72 @@
+<section class="components-library-show-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container in-project">
+        <div class="title">
+            @if (componentConfig.title) {
+                <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+            }
+            @if (componentConfig.subtitle) {
+                <h3 class="project-subtitle white-color">{{componentConfig.subtitle}}</h3>
+            }
+            
+            @for (p of componentConfig.paragraphs; track $index) {
+                <p class="project-paragraph white-color">{{p}}</p>
+            }
+        </div>
+
+        <div class="content">
+           @for (item of componentConfig.items; track $index) {
+            @if (item.text) {
+                <div class="text">
+                    @if (item.text.title) {
+                        <h2 class="project-title primary-color">{{item.text.title}}</h2>
+                    }
+                    @if (item.text.subtitle) {
+                        <h3 class="project-subtitle white-color">{{item.text.subtitle}}</h3>
+                    }
+                    
+                    @for (p of item.text.paragraphs; track $index) {
+                        <p class="project-paragraph white-color">{{p}}</p>
+                    }
+                </div>  
+            }
+            @else if (item.font) {
+                <div class="font">
+                    <div class="left">
+                        <h5 class="font-tile">{{item.font.title}}</h5>
+                        <img [src]="item.font.img.src" [alt]="item.font.img.alt">
+                    </div>
+                    <div class="right">
+                        @for (style of item.font.styles; track $index) {
+                            <div class="row">
+                                <p class="style-name">{{style}}</p>
+                                <p class="abc">{{componentConfig.abc}}</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            @else if (item.components) {
+                <div class="components">
+                    @for (component of item.components; track $index) {
+                        <div class="components-image-wrapper">
+                            <img [src]="component.src" [alt]="component.alt">
+                        </div>
+                    }
+                </div>
+            }
+            @else if (item.colors) {
+                <div class="colors">
+                    @for (color of item.colors; track $index) {
+                        <div class="color" [ngClass]="[color.classes ?? '']" [ngStyle]="{'background-color': color.hex}">
+                            @if (color.title) {
+                                <h5 class="title">{{color.title}}</h5>
+                            }
+                            <p class="color-hex">{{color.hex}}</p>
+                        </div>
+                    }
+                </div>
+            }
+           }
+        </div>
+    </div>
+</section>

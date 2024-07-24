@@ -10,7 +10,7 @@
             }
             
             @for (p of componentConfig.paragraphs; track $index) {
-                <p class="project-paragraph">{{p}}</p>
+                <p class="project-paragraph white-color">{{p}}</p>
             }
             @if (componentConfig.bullets) {
                 <ul>
@@ -25,8 +25,8 @@
                                 }
                             </div>
                             <div class="text-bullet-wrapper">
-                                <h3 class="bullet-title">{{bullet.title}}</h3>
-                                <p class="bullet-paragraph">{{bullet.text}}</p>
+                                <h3 class="bullet-title white-color">{{bullet.title}}</h3>
+                                <p class="bullet-paragraph white-color">{{bullet.text}}</p>
                             </div>
                         </li>
                     }

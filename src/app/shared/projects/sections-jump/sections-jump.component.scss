@@ -10,6 +10,132 @@
         .icon-wrapper {
             background-color: $tierroYellow;
         }
+        .sections-wrapper {
+            &.yellow-circle-right {
+                @include respond-to(md) {
+                    background-image: url(assets/images/projects/tierro/yellow-circle-right.svg);
+                }
+               
+            }
+            &.yellow-circle-left {
+                @include respond-to(md) {
+                    background-image: url(assets/images/projects/tierro/yellow-circle-left.svg);
+                }
+            }
+        }
+        &:not(.reverse) {
+            .img-wrapper {
+                img {
+                    transform: translateX(-60px);
+                    @include respond-to(md) {
+                        transform: translateX(-100px);
+                    }
+                }
+            }
+        }
+        &.reverse {
+            .img-wrapper {
+                img {
+                    @include respond-to(md) {
+                        transform: translateX(100px);
+                    }
+                }
+            }
+        }
+    }
+    &.brushalong {
+        padding-top: $spacing-unit*8;
+        padding-bottom: $spacing-unit*8;
+        @include respond-to(lg) {
+            padding-top: $spacing-unit*16;
+            padding-bottom: $spacing-unit*16;
+        }
+        &.green-bg {
+            background-color: $brushalongDarkGreen;
+        }
+        .sections-wrapper {
+            position: relative;
+            .img-wrapper, .text-content {
+                z-index: 2;
+                position: relative;
+            }
+            .text-content {
+                &::before {
+                    @include respond-to(md) {
+                        position: relative;
+                        width: 150px;
+                        display: inline-block;
+                        content: '';
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 150px;
+                        margin-bottom: -100px;
+                        top: -100px;
+                    }
+                }
+            }
+            &:after {
+                @include respond-to(md) {
+                    content: '';
+                    background-image: radial-gradient(50% 50% at 50% 50%, $brushalongGreen 0%, rgba(176, 238, 24, 0.00) 100%);
+                    position: absolute;
+                    width: 500px;
+                    height: 500px;
+                    background-size: 500px 500px;
+                    background-repeat: no-repeat;
+                    z-index: 1;
+                }
+            }
+            &.green-circle-right {
+                .text-content {
+                    &::before {
+                        @include respond-to(md) {
+                            background-image: url(assets/images/projects/brush-along/green-circle-right.svg);
+                        }
+                    }
+                }
+               
+            }
+            &.green-circle-left {
+                .text-content {
+                    &::before {
+                        @include respond-to(md) {
+                            background-image: url(assets/images/projects/brush-along/green-circle-left.svg);
+                        }
+                    }
+                }
+            }
+            &:not(.reverse) {
+                .img-wrapper {
+                    img {
+                        @include respond-to(md) {
+                            transform: translateX(-100px);
+                        }
+                    }
+                }
+                &:after {
+                    @include respond-to(md) {
+                        top: -120px;
+                        left: -200px;
+                    }
+                }
+            }
+            &.reverse {
+                .img-wrapper {
+                    img {
+                        @include respond-to(md) {
+                            transform: translateX(100px);
+                        }
+                    }
+                }
+                &:after {
+                    @include respond-to(md) {
+                        top: -120px;
+                        right: -200px;
+                    }
+                }
+            }
+        }
     }
     .project-title {
         &.in-title {
@@ -39,17 +165,7 @@
             background-size: 170px auto;
             align-items: center;
         }
-        &.yellow-circle-right {
-            @include respond-to(md) {
-                background-image: url(assets/images/projects/tierro/yellow-circle-right.svg);
-            }
-           
-        }
-        &.yellow-circle-left {
-            @include respond-to(md) {
-                background-image: url(assets/images/projects/tierro/yellow-circle-left.svg);
-            }
-        }
+       
         &:not(.reverse) {
             flex-direction: column;
             @include respond-to(md) {
@@ -62,14 +178,7 @@
             @include respond-to(xl) {
                 background-position: right 400px top -50px;
             }
-            .img-wrapper {
-                img {
-                    transform: translateX(-60px);
-                    @include respond-to(md) {
-                        transform: translateX(-100px);
-                    }
-                }
-            }
+           
         }
 
         &:nth-last-of-type(1) {
@@ -88,13 +197,7 @@
             @include respond-to(xl) {
                 background-position: left 100px top -25px;
             }
-            .img-wrapper {
-                img {
-                    @include respond-to(md) {
-                        transform: translateX(100px);
-                    }
-                }
-            }
+            
         }
         .img-wrapper {
             @include respond-to(md) {

@@ -49,19 +49,22 @@ export class DefaultConfigService {
   //         label: 'Home',
   //         showIcon: false,
   //         inLink: 'header',
-  //         scrollToLink: true
+  //         scrollToLink: true,
+  //         page: 'home'
   //       },
   //       {
   //         label: 'About',
   //         showIcon: false,
   //         inLink: 'about',
-  //         scrollToLink: true
+  //         scrollToLink: true,
+  //         page: 'home'
   //       },
   //       {
   //         label: 'Projects',
   //         showIcon: false,
   //         inLink: 'projects',
-  //         scrollToLink: true
+  //         scrollToLink: true,
+  //         page: 'home'
   //       }
   //     ],
   //     cta: {
@@ -71,7 +74,8 @@ export class DefaultConfigService {
   //       ariaLabel: 'string',
   //       scrollTo: 'contact',
   //       showIconLeft: false,
-  //       showIconRight: false
+  //       showIconRight: false,
+  //       page: 'home'
   //     }
   //   }
   // }
@@ -83,19 +87,22 @@ export class DefaultConfigService {
         label: 'Home',
         showIcon: false,
         inLink: 'header',
-        scrollToLink: true
+        scrollToLink: true,
+        page: 'home'
       },
       {
         label: 'About',
         showIcon: false,
         inLink: 'about',
-        scrollToLink: true
+        scrollToLink: true,
+        page: 'home'
       },
       {
         label: 'Projects',
         showIcon: false,
         inLink: 'projects',
-        scrollToLink: true
+        scrollToLink: true,
+        page: 'home'
       }
     ],
     cta: {

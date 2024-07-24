@@ -1,24 +1,41 @@
 @import "mixins";
 
 .problem-solution-wrapper {
+    padding-top: $spacing-unit*8; 
+    padding-bottom: $spacing-unit*8;
+    @include respond-to(md) {
+        padding-top: $spacing-unit*16; 
+        padding-bottom: $spacing-unit*16;
+    } 
     &.tierro {
         background-color: $tierroPrimary_100;
         color: $tierroWhite-white;
-        padding-top: $spacing-unit*8; 
-        padding-bottom: $spacing-unit*8;
-        @include respond-to(md) {
-            padding-top: $spacing-unit*16; 
-            padding-bottom: $spacing-unit*16;
-        } 
+        .container {
+            gap: $spacing-unit*8; 
+        }
+    }
+    &.brushalong {
+        background-color: $brushAlongWhite;
+        .primary-color {
+            color: $brushalongDarkBlue;
+        }
+        .white-color {
+            color: $brushalongPrimary;
+        }
+        .container {
+            gap: $spacing-unit*8; 
+        }
     }
     .container {
         display: flex;
         flex-direction: column;
-        gap: $spacing-unit*8; 
         @include respond-to(lg) {
             flex-direction: row;
             gap: $spacing-unit*32; 
             justify-content: space-between;
+        }
+        .scratch {
+            flex: 1 0 0;
         }
         h3.project-subtitle {
             margin-bottom: $spacing-unit*2; 

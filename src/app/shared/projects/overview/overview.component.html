@@ -1,0 +1,36 @@
+<section class="overview-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container in-project">
+        @if (componentConfig.img) {
+            <div class="img-wrapper">
+                <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="lazy">
+            </div>
+        }
+        <div class="content">
+            <div class="title">
+                @if (componentConfig.title) {
+                    <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+                }
+                @if (componentConfig.subtitle) {
+                    <h3 class="project-subtitle white-color">{{componentConfig.subtitle}}</h3>
+                }
+                @if (componentConfig.paragraphs) {
+                    @for (p of componentConfig.paragraphs; track $index) {
+                        <p class="project-paragraph white-color">{{p}}</p>
+                    }
+                }
+            </div>
+                @for (item of componentConfig.text; track $index) {
+                    <div class="text">
+                        @if (item.subtitle) {
+                            <h3 class="project-subtitle white-color">{{item.subtitle}}</h3>
+                        }
+                        @if (item.paragraphs) {
+                            @for (p of item.paragraphs; track $index) {
+                                <p class="project-paragraph white-color">{{p}}</p>
+                            }
+                        }
+                    </div>
+                }
+        </div>
+    </div>
+</section>

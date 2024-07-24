@@ -71,6 +71,56 @@
             }
         }
     }
+    &.brushalong {
+        background-color: $brushAlongWhite;
+        --circle-icon-bg: #{$brushalongBlue};
+        --icon-color: #{$brushAlongWhite}; 
+        .primary-color {
+            color: $brushalongDarkBlue;
+        }
+        .white-color {
+            color: $brushalongPrimary;
+        }
+        &.conclusions {
+            .container {
+                flex-direction: column;
+                @include respond-to(lg) {
+                    flex-direction: row;
+                }
+                .img-wrapper {
+                   
+                    @include respond-to(lg) {
+                        flex: 0 0 450px;
+                    }
+                    img {
+                        width: 300px;
+                        height: auto;
+                        @include respond-to(md) {
+                            width: 350px;
+                            height: auto;
+                        }
+                        @include respond-to(xl) {
+                            width: 450px;
+                        }
+                    }
+                }
+            }
+        }
+        &.clouds {
+            background-image: url(assets/images/projects/brush-along/clouds.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top 20px center;
+            padding-top: $spacing-unit*16; 
+            padding-bottom: $spacing-unit*8; 
+            @include respond-to(md) {
+                padding-top: $spacing-unit*32; 
+            }
+            @include respond-to(xl) {  
+                padding-bottom: $spacing-unit*16; 
+            }
+        }
+    }
     &.paragraph-yellow-title {
         background-color: $tierroBackBlue;
         .container {

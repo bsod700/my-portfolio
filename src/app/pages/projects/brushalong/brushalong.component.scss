@@ -1,0 +1,30 @@
+@import "mixins";
+
+app-navbar {
+    ::ng-deep {
+        app-arrow-link {
+            ::ng-deep {
+                .arrow-link-wrapper {
+                    color: $brushalongPrimary;
+                }
+            }
+        }
+        app-logo  {
+            ::ng-deep {
+                .logo-wrapper svg {
+                    fill:  $brushalongPrimary !important;
+                }
+            }
+        }
+        nav.scrolled-top-nav {
+            background-color: $brushAlongFadeWhite;
+           
+        }
+    }
+}
+
+::ng-deep {
+    body {
+        background-color: $brushAlongWhite;
+    }
+}

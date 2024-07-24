@@ -203,4 +203,23 @@ section {
       color: $tierroLittleWhite;
     }
   }
+
+  &.brushalong {
+    --color-blue: #{$brushalongBlue};
+    --color-dark-blue: #{$brushalongDarkBlue};
+    --color-green: #{$brushalongGreen};
+    --color-dark-green: #{$brushalongDarkGreen};
+    --color-gray: #{$brushalongPrimary};
+    --color-fade-white: #{$brushAlongFadeWhite};
+    --color-white: #{$brushAlongWhite};
+    .primary-color {
+      color: $brushalongGreen;
+    }
+    .white-color {
+      color: $brushAlongWhite;
+    }
+    .fade-white {
+      color: $brushAlongFadeWhite;
+    }
+  }
 }

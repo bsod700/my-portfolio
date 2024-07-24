@@ -7,18 +7,24 @@
             <h2 class="title">{{componentConfig.title}}</h2>
             <p class="subtitle">{{componentConfig.subtitle}}</p>
         </div>
-        <div class="right">
-            <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="lazy">
+
+        @if (componentConfig.img) {
+            <div class="right">
+                <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="lazy">
+            </div>
+        }
+    </div>
+    <div class="container in-project with-bulltes">
+        <div class="bullets-container">
+            <div class="bullets">
+                @for (bullet of componentConfig.bullets; track $index) {
+                    <div class="bullet">
+                        <h5 class="title">{{bullet.title}}</h5>
+                        <p>{{bullet.subtitle}}</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-    <div class="container in-project bullets-container">
-        <div class="bullets">
-            @for (bullet of componentConfig.bullets; track $index) {
-                <div class="bullet">
-                    <h5 class="title">{{bullet.title}}</h5>
-                    <p>{{bullet.subtitle}}</p>
-                </div>
-            }
-        </div>
-    </div>
+   
 </header>

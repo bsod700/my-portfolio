@@ -1,0 +1,171 @@
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+
+.components-library-show-wrapper {
+    padding-top: $spacing-unit*8;
+    padding-bottom: $spacing-unit*8;
+    overflow: hidden;
+    @include respond-to(lg) {
+        padding-top: $spacing-unit*16;
+        padding-bottom: $spacing-unit*16;
+    }
+    &.brushalong {
+        &.white-bg {
+            background-color: $brushAlongWhite;
+            background-image: url(assets/images/projects/brush-along/crub.webp);
+            background-repeat: no-repeat;
+            background-size: 200px auto;
+            background-position: right bottom;
+            @include respond-to(md) {
+                background-image: url(assets/images/projects/brush-along/crub.webp), url(assets/images/projects/brush-along/blue-line2.svg);
+                background-repeat: no-repeat;
+                background-size: 250px auto, 2000px auto;
+                background-position: top 2050px left calc(50% - 260px), top 1500px center;
+            }
+            .primary-color {
+                color: $brushalongDarkBlue;
+            }
+            .white-color, .font-tile, .style-name, .abc {
+                color: $brushalongPrimary;
+            }
+        }
+    }
+    &.text-center {
+        text-align: start;
+        @include respond-to(md) {
+            text-align: center;
+        }
+        .content {
+            text-align: start;
+        }
+    }
+    .title {
+        margin-bottom: $spacing-unit*8;
+        @include respond-to(md) {
+            max-width: 600px;
+            margin: 0 auto $spacing-unit*8;
+        }
+    }
+    .content {
+        .text {
+            max-width: 600px;
+            margin-bottom: $spacing-unit*8;
+        }
+        .project-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            @include respond-to(md) {
+                font-size: 22px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        .colors {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            height: 400px;
+            margin-bottom: $spacing-unit*8;
+            @include respond-to(md) {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+            .color {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+                color: $brushAlongWhite;
+                font-weight: bold;
+                text-align: center;
+                padding: 20px;
+                &.big {
+                    grid-row: span 2; 
+                    grid-column: span 2;
+                }
+            }
+        }
+        .font {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $spacing-unit*4;
+            max-width: 900px;
+            margin: 0 auto $spacing-unit*8;
+            flex-direction: column;
+            @include respond-to(md) {
+                flex-direction: row;
+                gap: $spacing-unit*8;
+            }
+            .left {
+                @include respond-to(md) {
+                    flex: 0 0 270px;
+                }
+                .font-tile {
+                    margin-bottom: $spacing-unit*4;
+                    font-size: 18px;
+                    @include respond-to(md) {
+                        margin-bottom: $spacing-unit*8;
+                        font-size: 22px;
+                    }
+                    @include respond-to(lg) {
+                        font-size: 28px;
+                    }
+                }
+                img {
+                    width: 150px;
+                    @include respond-to(md) {
+                        width: 270px;
+                    }
+                }
+            }
+            .right {
+                .row {
+                    display: flex;
+                    gap: $spacing-unit*4;
+                    align-items: center;
+                    .abc {
+                        font-family: "Lilita One";
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .components {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $spacing-unit*2;
+            @include respond-to(md) {
+                gap: $spacing-unit*8;
+            }
+            .components-image-wrapper {
+                &:nth-of-type(1), &:nth-of-type(2) {
+                    img {
+                        width: 200px;
+                        @include respond-to(md) {
+                            width: 400px;
+                        }
+                    }
+                }
+                &:nth-of-type(3) {
+                    img {
+                        width: 300px;
+                        @include respond-to(md) {
+                            width: 500px;
+                        }
+                    }
+                }
+                &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6) {
+                    img {
+                        width: 100px;
+                        @include respond-to(md) {
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

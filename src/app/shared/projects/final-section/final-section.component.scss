@@ -1,65 +1,111 @@
 @import "mixins";
 
 .project-final-section-wrapper {
-    padding-top: $spacing-unit*16; 
-    padding-bottom: $spacing-unit*16; 
-    &.tierro {
-        background-color: #191919;
-        box-shadow: 0px -12px 23.5px 0px rgba(0, 0, 0, 0.25);
-        .content {
-            display: flex;
-            gap: $spacing-unit*8; 
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            @include respond-to(md) {
-                flex-direction: row;
-                align-items: start;
-                text-align: start;
-            }
-        }
-       .container  {
-            display: flex;
-            gap: $spacing-unit*8; 
-            flex-wrap: wrap;
-            @include respond-to(xl) {
-                flex-wrap: nowrap;
-            }
-       }
-       .project-subtitle {
+  padding-top: $spacing-unit * 16;
+  padding-bottom: $spacing-unit * 16;
+  &.tierro {
+    background-color: #191919;
+    box-shadow: 0px -12px 23.5px 0px rgba(0, 0, 0, 0.25);
+    .content {
+      display: flex;
+      gap: $spacing-unit * 8;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      @include respond-to(md) {
+        flex-direction: row;
+        align-items: start;
+        text-align: start;
+      }
+    }
+    .container {
+        gap: $spacing-unit * 8;
+      }
+    .project-subtitle {
         min-width: 345px;
         text-align: center;
         &.mobile {
-            display: block;
-            @include respond-to(md) {
-                display: none;
-            }
+          display: block;
+          @include respond-to(md) {
+            display: none;
+          }
         }
         &.desktop {
-            display: none;
-            @include respond-to(md) {
-                display: block;
-                flex: 0 0 100%;
-            }
-            @include respond-to(xl) {
-                flex: auto;
-            }
+          display: none;
+          @include respond-to(md) {
+            display: block;
+            flex: 0 0 100%;
+          }
+          @include respond-to(xl) {
+            flex: auto;
+          }
         }
         @include respond-to(md) {
-            text-align: start;
+          text-align: start;
         }
         @include respond-to(lg) {
-            flex: auto;
+          flex: auto;
         }
-       }
-       .side {
-       
+      }
+    .side {
         @include respond-to(lg) {
-            flex: auto;
+          flex: auto;
         }
         .project-paragraph {
-            margin-bottom: $spacing-unit*4; 
+          margin-bottom: $spacing-unit * 4;
         }
-       }
     }
+  }
+  &.brushalong {
+    box-shadow: 0px -12px 23.5px 0px rgba(0, 0, 0, 0.25);
+    background-color: $brushalongDarkBlue;
+    padding-top: $spacing-unit * 8;
+    padding-bottom: $spacing-unit * 8;
+    @include respond-to(md) {
+        padding-top: $spacing-unit * 16;
+        padding-bottom: $spacing-unit * 16;
+    }
+    .container {
+        gap: $spacing-unit * 4;
+        @include respond-to(md) {
+            gap: $spacing-unit * 8;
+        }
+    }
+    .project-subtitle {
+        min-width: 325px;
+    }
+    .mobile {
+        display: none;
+    }
+    .content {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: $spacing-unit * 2;
+      @include respond-to(lg) {
+        flex-direction: row;
+        align-items: center;
+      }
+      .img-wrapper {
+       
+        @include respond-to(lg) {
+            flex: 0 0 300px;
+        }
+        img {
+          width: 100px;
+          @include respond-to(lg) {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    @include respond-to(xl) {
+      flex-wrap: nowrap;
+    }
+  }
+ 
+  
 }
