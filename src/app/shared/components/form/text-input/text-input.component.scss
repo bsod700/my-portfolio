@@ -32,9 +32,13 @@
                 color: rgba($text-color-white, $alpha: 50%);
             }
             &:active, &:focus {
-                border: 2px solid $text-color-gold;
-                box-shadow: 0px 0px 20px 0px $text-color-gold, 0px 0px 5px 0px rgba(0, 0, 0, 0.30);
+                border: 2px solid $focusBlue;
+                box-shadow: 0px 0px 20px 0px $focusBlue, 0px 0px 5px 0px rgba(0, 0, 0, 0.30);
                 
+            }
+            &.invalid {
+                border: 2px solid $errorRed;
+                box-shadow: 0px 0px 20px 0px $errorRed, 0px 0px 5px 0px rgba(0, 0, 0, 0.30);
             }
         }
     }

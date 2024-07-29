@@ -14,12 +14,17 @@
         [attr.aria-labelledby]="config.ariaLabelledBy"
         [required]="config.required"
         [value]="value"
-        (input)="onInput($event)"
+        (blur)="onBlur()"
+        (input)="onInputChange($event)"
       />
       @if (config.hasIconRight && config.iconRight != '') {
         <div class="icon icon-right">
           <app-get-icon [icon]="config.iconRight" [iconColor]="config.iconColor" />
         </div>
       }
+      
     </div>
+    @if (!isValid && formControlName.touched) {
+      <span>{{ error }}</span>
+    }
   </div>

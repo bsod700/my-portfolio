@@ -8,6 +8,8 @@
         margin-bottom: $spacing-unit*16;
     }
     .form-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
         h5 {
             max-width: 600px;
         }

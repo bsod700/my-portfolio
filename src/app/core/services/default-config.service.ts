@@ -108,7 +108,7 @@ export class DefaultConfigService {
     cta: {
       text: 'Contact Me',
       size: 'regular',
-      color: 'white',
+      color: 'yellow',
       ariaLabel: 'string',
       scrollTo: 'contact',
       showIconLeft: false,

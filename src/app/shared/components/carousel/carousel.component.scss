@@ -3,16 +3,30 @@
 .carousel-wrapper {
     &#projects {
         background-color: $dark;
-        padding-top: $spacing-unit*48;
-        padding-bottom: $spacing-unit*32;
-        background-image: url(assets/images/split1.png);
+        padding-top: $spacing-unit*12;
+        padding-bottom: $spacing-unit*24;
+        background-image: url(assets/images/split1.webp);
         background-position: center bottom;
         background-repeat: no-repeat;
-        background-size: 4000px auto;
+        background-size: 991px auto;
+        @include respond-to(md) {
+            padding-top: $spacing-unit*24;
+            background-size: 2000px auto;
+            padding-bottom: $spacing-unit*24;
+        }
+        @include respond-to(xxl) {
+            padding-top: $spacing-unit*48;
+            background-size: 4000px auto;
+            padding-bottom: $spacing-unit*32;
+        }
         .carousel-content {
             padding: 0;
             flex-direction: column-reverse;
+            max-width: 400px;
+            margin: 0 auto;
             @include respond-to(md) {
+                max-width: unset;
+                margin:unset;
                 flex-direction: row;
                 justify-content: space-between;
             }
@@ -38,12 +52,24 @@
     }
     &#services {
         background-color: $dark-purple;
-        padding-top: $spacing-unit*32;
-        padding-bottom: $spacing-unit*80;
-        background-image: url(assets/images/split2.png);
+        padding-top: $spacing-unit*12;
+        padding-bottom: $spacing-unit*30;
+        background-image: url(assets/images/split2.webp);
         background-position: center bottom;
         background-repeat: no-repeat;
-        background-size: 4000px auto;
+        background-size: 991px auto, 600px auto;
+        @include respond-to(md) {
+            background-image: url(assets/images/split2.webp), url(assets/images/birds.svg);
+            padding-top: $spacing-unit*16;
+            background-position: center bottom, top right calc(50% - 500px);
+            background-size: 2000px auto , 400px auto;
+            padding-bottom: $spacing-unit*48;
+        }
+        @include respond-to(xxl) {
+            padding-top: $spacing-unit*24;
+            background-size: 4000px auto , 500px auto;
+            padding-bottom: $spacing-unit*80;
+        }
         .carousel-content { 
             justify-content: center;
         }
@@ -205,32 +231,37 @@
         box-shadow: 0px 0px 42.4px 0px rgba(0, 0, 0, 0.50);
         flex-direction: column;
         width: 100%;
-        max-width: 1050px;
+        // max-width: 1050px;
+        max-width: 900px;
+        height: unset;
+        @include respond-to(md) {
+            height: 300px;
+        }
         @include respond-to(lg) {
             justify-content: space-between;
             flex-direction: row;
             padding: $spacing-unit*10;
         }
-        .img-wrapper {
-            width: 180px;
-           flex: 0 0 180px;
-           @include respond-to(lg) {
-            width: 300px;
-            flex: 0 0 300px;
-           }
-            img {
-                width: 180px;
-                height: 180px;
-                @include respond-to(lg) {
-                    width: 300px;
-                    height: 300px;
-                }
-            }
-        }
-        .contain {
-            flex: 1 0 0;
-            max-width: 600px;
-        }
+        // .img-wrapper {
+        //     width: 180px;
+        //    flex: 0 0 180px;
+        //    @include respond-to(lg) {
+        //     width: 300px;
+        //     flex: 0 0 300px;
+        //    }
+        //     img {
+        //         width: 180px;
+        //         height: 180px;
+        //         @include respond-to(lg) {
+        //             width: 300px;
+        //             height: 300px;
+        //         }
+        //     }
+        // }
+        // .contain {
+        //     flex: 1 0 0;
+        //     max-width: 600px;
+        // }
     }
 
     .logo-wrapper {

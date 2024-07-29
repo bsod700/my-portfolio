@@ -54,7 +54,7 @@ h2.slab {
 }
 .title-body:not(.slab) {
   @include responsive-font-size(roboto, h3); font-family: $font-family-roboto;
-  color: $text-color-gold;
+  color: $tierroYellow;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
 }
 h3.slab { @include responsive-font-size(slab, h3); font-family: $font-family-slab; }

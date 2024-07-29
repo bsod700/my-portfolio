@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 
@@ -12,7 +12,7 @@ import { GetIconComponent } from '@shared/components/get-icon/get-icon.component
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: CheckboxComponent,
+      useExisting: forwardRef(() => CheckboxComponent),
       multi: true,
     },
   ],
@@ -21,17 +21,22 @@ export class CheckboxComponent implements ControlValueAccessor {
 
   private _config: CheckboxConfig = {
     controlName: '',
+    id: '',
     label: '',
     ariaLabel: '',
     ariaDescribedBy: '',
     required: false,
     checkIcon: 'check',
+    value: false
   };
 
   @Input()
   set config(value: CheckboxConfig) {
     this._config = { ...this._config, ...value };
   }
+  
+  // @Output() labelChange = new EventEmitter<{label: string, checked: boolean}>();
+
 
   get config(): CheckboxConfig {
     return this._config;
@@ -42,7 +47,7 @@ export class CheckboxComponent implements ControlValueAccessor {
   onTouched = () => {};
 
   writeValue(value: boolean): void {
-    this.value = value;
+    this.value = value ?? false;  // Safeguard to ensure value is always boolean
   }
 
   registerOnChange(fn: (value: boolean) => void): void {
@@ -63,6 +68,11 @@ export class CheckboxComponent implements ControlValueAccessor {
       this.value = target.checked;
       this.onChange(this.value);
       this.onTouched();
+      if (this.value) {
+        console.table({label: this.config.label, checked: this.value});
+        
+        // this.labelChange.emit({label: this.config.label, checked: this.value});
+      }
     }
   }
 
@@ -72,16 +82,21 @@ export class CheckboxComponent implements ControlValueAccessor {
       this.value = !this.value;
       this.onChange(this.value);
       this.onTouched();
+      // if (this.value) {
+      //   this.labelChange.emit({label: this.config.label, checked: this.value});
+      // }
     }
   }
 }
 
 export interface CheckboxConfig {
   controlName: string;
+  id: string;
   label: string;
   ariaLabel: string;
   ariaDescribedBy: string;
   required: boolean;
+  value: boolean;
   
   hasIconLeft?: boolean;
   hasIconRight?: boolean;

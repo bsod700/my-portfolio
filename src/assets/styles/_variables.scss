@@ -9,6 +9,9 @@ $purple: #402B48;
 $orange: #CC6850;
 $form-border: #D9DADB;
 
+$focusBlue: #4851FE;
+$errorRed: #CB5F5F;
+
 // Fonts
 $font-family-slab: "Montagu Slab" , Roboto, sans-serif;
 $font-family-roboto: Roboto, sans-serif;
@@ -32,7 +35,7 @@ $font-sizes: (
     h1: (sm: 50px, md: 80px, lg: 100px),
     h2: (sm: 20px, md: 40px, lg: 40px),
     h3: (sm: 40px, md: 80px, lg: 80px),
-    h4: (sm: 16px, md: 20px, lg: 26px),
+    h4: (sm: 16px, md: 18px, lg: 26px),
     h5: (sm: 16px, md: 18px, lg: 20px),
     h6: (sm: 14px, md: 18px, lg: 18px)
   ),

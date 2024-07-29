@@ -93,10 +93,9 @@ a {
 
 .container {
   
-  &.in-project {
     width: 100%;
-    padding-right: $spacing-unit*2;
-    padding-left: $spacing-unit*2;
+    padding-right: $spacing-unit*4;
+    padding-left: $spacing-unit*4;
     margin-right: auto;
     margin-left: auto;
   
@@ -115,10 +114,7 @@ a {
   @include respond-to(xxl) {
     max-width: 1320px;
   }
-  }
-  &:not(.in-project) {
-    @include container;
-  }
+
 }
 img {
   object-fit: contain;

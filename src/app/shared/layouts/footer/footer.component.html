@@ -1,1 +1,27 @@
-<p>footer works!</p>
+<footer class="footer-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="logo">
+                <app-logo [logoConfig]="componentConfig.logo"/>
+            </div>
+            <div class="menu">
+                @for (link of componentConfig.links; track $index) {
+                    <div class="link">
+                        <app-arrow-link [componentConfig]="link"/>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="email"></div>
+        <div class="socials">
+            @for (social of componentConfig.socials; track $index) {
+                <a class="social">
+                    <img [src]="social.src" [alt]="social.alt">
+                </a>
+            }
+        </div>
+        <div class="copyright">
+            <p id="copyright-p"></p>
+        </div>
+    </div>
+</footer>

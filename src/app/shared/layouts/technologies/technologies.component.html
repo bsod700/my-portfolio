@@ -7,25 +7,41 @@
   </div>
 
   <div class="technologies">
-    <div class="row first-row">
+    <div class="row first-row" #scrollRow>
       @for (tech of firstHalf; track trackByFn($index, tech)) {
       <div class="tech">
         <div class="img-wrapper">
           <img [src]="tech.img.src" [alt]="tech.img.alt" loading="lazy" />
         </div>
-        <h5 class="very-small-title slab">{{ tech.title }}</h5>
+        <h5 class="very-small-title">{{ tech.title }}</h5>
       </div>
       }
+      @for (tech of firstHalf; track trackByFn($index, tech)) {
+        <div class="tech">
+          <div class="img-wrapper">
+            <img [src]="tech.img.src" [alt]="tech.img.alt" loading="lazy" />
+          </div>
+          <h5 class="very-small-title">{{ tech.title }}</h5>
+        </div>
+        }
     </div>
-    <div class="row second-row">
+    <div class="row second-row" #scrollRow2>
       @for (tech of secondHalf; track trackByFn($index, tech)) {
       <div class="tech">
         <div class="img-wrapper">
           <img [src]="tech.img.src" [alt]="tech.img.alt" loading="lazy" />
         </div>
-        <h5 class="very-small-title slab">{{ tech.title }}</h5>
+        <h5 class="very-small-title">{{ tech.title }}</h5>
       </div>
       }
+      @for (tech of secondHalf; track trackByFn($index, tech)) {
+        <div class="tech">
+          <div class="img-wrapper">
+            <img [src]="tech.img.src" [alt]="tech.img.alt" loading="lazy" />
+          </div>
+          <h5 class="very-small-title">{{ tech.title }}</h5>
+        </div>
+        }
     </div>
   </div>
 </div>

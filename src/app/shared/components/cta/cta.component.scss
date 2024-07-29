@@ -36,8 +36,8 @@
             background-color: $purple;
         }
         &:focus {
-            border: $border-focus $text-color-gold solid;
-            box-shadow: $shadow-focus $dark, $shadow-focus-blur $dark-gold;
+            border: $border-focus $tierroYellow solid;
+            box-shadow: $shadow-focus $dark, $shadow-focus-blur $tierroYellow;
         }
     }
     &.color-white {
@@ -62,6 +62,21 @@
         &:focus {
             border: $border-focus $dark solid;
             box-shadow: $shadow-focus $text-color-gold, $shadow-focus-blur $dark-gold;
+        }
+    }
+    &.color-yellow {
+        background-color: $tierroYellow;
+        color: $tierroPrimary_100;
+        fill: $tierroPrimary_100;
+        &:hover {
+            background-color: darken($tierroYellow, $amount: 20%);
+        }
+        &:focus {
+            &, &:hover {
+                border: $border-focus $tierroPrimary_100 solid;
+                box-shadow: $shadow-focus $tierroYellow, $shadow-focus-blur $tierroYellow;
+                background-color: $tierroYellow;
+            }
         }
     }
     &.color-disable-white {

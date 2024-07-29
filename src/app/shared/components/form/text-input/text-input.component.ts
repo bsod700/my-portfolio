@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 
 @Component({
@@ -19,10 +19,12 @@ import { GetIconComponent } from '@shared/components/get-icon/get-icon.component
 })
 export class TextInputComponent implements ControlValueAccessor {
   @Input() config!: InputTextConfig;
+  @Input() formControlName!: AbstractControl;
 
-  value: string = '';
-  onChange = (value: string) => {};
-  onTouched = () => {};
+  value: any = '';
+  onChange: (value: any) => void = () => {};
+  onTouched: () => void = () => {};
+  disabled: boolean = false;
 
   writeValue(value: string): void {
     this.value = value;
@@ -37,10 +39,10 @@ export class TextInputComponent implements ControlValueAccessor {
   }
 
   setDisabledState?(isDisabled: boolean): void {
-    // Handle the disabled state if necessary
+    this.disabled = isDisabled;
   }
 
-  onInput(event: Event) {
+  onInputChange(event: any) {
     const target = event.target as HTMLInputElement | null;
     if (target) {
       this.value = target.value;
@@ -48,10 +50,32 @@ export class TextInputComponent implements ControlValueAccessor {
       this.onTouched();
     }
   }
+
+  validate(c: AbstractControl): {[key: string]: any} | null {
+    return c.valid ? null : { invalid: true }; 
+  }
+
+  onBlur() {
+    this.onTouched();
+  }
+
+  get isValid() {
+    return this.formControlName?.valid;
+  }
+
+  get error() {
+    if (this.formControlName?.hasError('required')) {
+      return 'This field is required';
+    }
+    // Add more error handling logic as needed
+    return '';
+  }
+
 }
 
 export interface InputTextConfig {
   controlName: string;
+  type: string;
   label: string;
   ariaLabel: string;
   ariaDescribedBy: string;

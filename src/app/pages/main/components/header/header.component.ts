@@ -30,5 +30,4 @@ export interface headerConfig {
   h2: string;
   h3: string;
   ctaJob: Cta;
-  ctaAbout: Cta;
 }

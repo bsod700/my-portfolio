@@ -2,12 +2,19 @@
 
 .header-wrapper {
     overflow: hidden;
-    min-height: 900px;
+    min-height: 600px;
     background-repeat: no-repeat;
     background-size: 3840px 1080px;
     background-position: top center;
     background-image: radial-gradient(50% 40% at 50% 50%, #E37042 5%, #A45B69 30%, #744A64 45%, #4F3D5F 60%, #38355D 70%, #30325C 80%);
     position: relative;
+
+    @include respond-to(md) {
+        min-height: 800px;
+    }
+    @include respond-to(xxl) {
+        min-height: 900px;
+    }
     .img-wrapper-mouse {
         cursor: pointer;
         z-index: 10;
@@ -22,11 +29,19 @@
         .layer {
             position: absolute;
             width: 100%;
-            height: 900px;
+            height: 600px;
             max-height: 1080px;
             background-position: bottom center;
             background-repeat: no-repeat;
-            background-size: 3840px 1080px;
+            background-size: 1800px auto;
+            @include respond-to(md) {
+                background-size: 2600px auto;
+                height: 800px;
+            }
+            @include respond-to(xxl) {
+                background-size: 3840px auto;
+                height: 900px;
+            }
         }
         .layer1 {
             z-index: 10;

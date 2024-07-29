@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { DefaultConfigService, NavbarRegular } from '@core/index';
 import { headerConfig } from './components';
-import { AboutConfig, CarouselConfig, ContactConfig, ReviewsConfig, TechnologiesConfig } from '@shared/index';
+import { AboutConfig, CarouselConfig, ContactConfig, FooterConfig, ReviewsConfig, TechnologiesConfig } from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +13,17 @@ export class MainConfigService {
       return {
         navbar: this.defaultConfigService.getRegularNavbar(),
         header: {
-          h1: 'HI IM',
+          h1: 'Hello I\'m',
           h2: 'GUY TAGGER',
           h3: 'A FRONTEND DEVELOPER & UI/UX DESIGNER & ILLUSTRATOR',
           ctaJob: {
-            text: 'Let’s Create Something Great!',
+            text: 'Let\'s Create Something Great!',
             size: 'default',
-            color: 'white',
+            color: 'yellow',
             ariaLabel: 'string',
             scrollTo: 'contact',
             showIconRight: true,
             iconRight: 'flag',
-            showIconLeft: false
-          },
-          ctaAbout: {
-            text: 'About',
-            size: 'default',
-            color: 'dark',
-            ariaLabel: 'string',
-            scrollTo: 'about',
-            showIconRight: true,
-            iconRight: 'user',
             showIconLeft: false
           }
         },
@@ -66,7 +56,7 @@ export class MainConfigService {
               cta: {
                 text: 'Take Me To The Project',
                 size: 'default',
-                color: 'white',
+                color: 'yellow',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'projects/tierro',
                 showIconRight: true,
@@ -93,7 +83,7 @@ export class MainConfigService {
               cta: {
                 text: 'Take Me To The Project',
                 size: 'default',
-                color: 'white',
+                color: 'yellow',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'projects/brushalong',
                 showIconRight: true,
@@ -120,7 +110,7 @@ export class MainConfigService {
               cta: {
                 text: 'Take Me To The Project',
                 size: 'default',
-                color: 'white',
+                color: 'yellow',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'projects/portfolio',
                 showIconRight: true,
@@ -147,7 +137,7 @@ export class MainConfigService {
               cta: {
                 text: 'Take Me To The Project',
                 size: 'default',
-                color: 'white',
+                color: 'yellow',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'projects/werlive',
                 showIconRight: true,
@@ -174,7 +164,7 @@ export class MainConfigService {
               cta: {
                 text: 'Take Me To The Project',
                 size: 'default',
-                color: 'white',
+                color: 'yellow',
                 ariaLabel: 'Go to Tierro case study',
                 inLink: 'projects/cyberghost',
                 showIconRight: true,
@@ -295,170 +285,136 @@ export class MainConfigService {
             {
               title: 'Bootstrap',
               img: {
-                src: 'assets/images/technologies/bootstrap-logo-color.svg',
+                src: 'assets/images/technologies/bootstrap-logo-white.svg',
                 alt: 'Bootstrap icon'
               }
             },
             {
               title: 'SCSS',
               img: {
-                src: 'assets/images/technologies/scss-logo-color.svg',
+                src: 'assets/images/technologies/scss-logo-white.svg',
                 alt: 'SCSS icon'
               }
             },
             {
               title: 'CSS3',
               img: {
-                src: 'assets/images/technologies/css3-logo-color.svg',
+                src: 'assets/images/technologies/css3-logo-white.svg',
                 alt: 'CSS3 icon'
               }
             },
             {
               title: 'HTML5',
               img: {
-                src: 'assets/images/technologies/html5-logo-color.svg',
+                src: 'assets/images/technologies/html5-logo-white.svg',
                 alt: 'HTML5 icon'
               }
             },
             {
               title: 'Figma',
               img: {
-                src: 'assets/images/technologies/figma-logo-color.svg',
+                src: 'assets/images/technologies/figma-logo-white.svg',
+                alt: 'Figma icon'
+              }
+            },
+            {
+              title: 'Canva',
+              img: {
+                src: 'assets/images/technologies/canva-logo-white.svg',
                 alt: 'Figma icon'
               }
             },
             {
               title: 'Illustrator',
               img: {
-                src: 'assets/images/technologies/illustrator-logo-color.svg',
+                src: 'assets/images/technologies/illustrator-logo-white.svg',
                 alt: 'Adobe Illustrator icon'
               }
             },
             {
               title: 'Photoshop',
               img: {
-                src: 'assets/images/technologies/photoshop-logo-color.svg',
+                src: 'assets/images/technologies/photoshop-logo-white.svg',
                 alt: 'Adobe Photoshop icon'
               }
             },
             {
               title: 'Lighthouse',
               img: {
-                src: 'assets/images/technologies/lighthouse-logo-color.svg',
+                src: 'assets/images/technologies/lighthouse-logo-white.svg',
                 alt: 'Google Lighthouse icon'
               }
             },
             {
               title: 'Node.js',
               img: {
-                src: 'assets/images/technologies/nodejs-logo-color.svg',
+                src: 'assets/images/technologies/nodejs-logo-white.svg',
                 alt: 'Node.js icon'
               }
             },
             {
               title: 'Firebase',
               img: {
-                src: 'assets/images/technologies/firebase-logo-color.svg',
+                src: 'assets/images/technologies/firebase-logo-white.svg',
                 alt: 'Firebase icon'
               }
             },
             {
               title: 'AMP',
               img: {
-                src: 'assets/images/technologies/amp-logo-color.svg',
+                src: 'assets/images/technologies/amp-logo-white.svg',
                 alt: 'Google AMP icon'
               }
             },
             {
               title: 'Github',
               img: {
-                src: 'assets/images/technologies/github-logo-color.svg',
+                src: 'assets/images/technologies/github-logo-white.svg',
                 alt: 'Github icon'
-              }
-            },
-            {
-              title: 'SMIL',
-              img: {
-                src: 'assets/images/technologies/svg-logo-color.svg',
-                alt: 'SVG icon'
               }
             },
             {
               title: 'SVG',
               img: {
-                src: 'assets/images/technologies/svg-logo-color.svg',
+                src: 'assets/images/technologies/svg-logo-white.svg',
                 alt: 'SVG icon'
               }
             },
             {
               title: 'AWS',
               img: {
-                src: 'assets/images/technologies/aws-logo-color.svg',
+                src: 'assets/images/technologies/aws-logo-white.svg',
                 alt: 'AWS icon'
               }
             },
             {
               title: 'Webpack',
               img: {
-                src: 'assets/images/technologies/webpack-logo-color.svg',
+                src: 'assets/images/technologies/webpack-logo-white.svg',
                 alt: 'Webpack icon'
               }
             },
             {
               title: 'Angular',
               img: {
-                src: 'assets/images/technologies/angular-logo-color.svg',
+                src: 'assets/images/technologies/angular-logo-white.svg',
                 alt: 'Angular icon'
               }
             },
             {
               title: 'Material',
               img: {
-                src: 'assets/images/technologies/angular-material-logo-color.svg',
+                src: 'assets/images/technologies/angular-material-logo-white.svg',
                 alt: 'Angular material icon'
               }
             },
             {
               title: 'TypeScript',
               img: {
-                src: 'assets/images/technologies/typeScript-logo-color.svg',
+                src: 'assets/images/technologies/typescript-logo-white.svg',
                 alt: 'TypeScript icon'
               }
             },
-          ]
-        },
-        reviews: {
-          title: 'What My Clients Say',
-          subtitle: 'Reviews',
-          paragraph: 'Check out what my clients have to say about our time working together.',
-          reviews: [
-            {
-              img: {
-                src: 'assets/images/reviews/tierro.png',
-                alt: 'Tierro photo'
-              },
-              name: 'Dor Tierro',
-              review: 'Welcome to my Front-End Development and UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer ',
-              active: true
-            },
-            {
-              img: {
-                src: 'assets/images/reviews/tierro.png',
-                alt: 'Tierro photo'
-              },
-              name: 'Dor Tierro',
-              review: 'Welcome to my Front-End Development and UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer ',
-              active: false
-            },
-            {
-              img: {
-                src: 'assets/images/reviews/tierro.png',
-                alt: 'Tierro photo'
-              },
-              name: 'Dor Tierro',
-              review: 'Welcome to my Front-End Development and UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer ',
-              active: false
-            }
           ]
         },
         contact: {
@@ -475,112 +431,133 @@ export class MainConfigService {
           },
           form: {
             checkboxesTitle: 'What are you looking for?',
+            checkboxesControlName: 'looking',
             checkboxes: [
               {
                 controlName: 'looking',
+                id: 'website',
                 label: 'Website',
                 ariaLabel: 'I am looking for a website',
                 ariaDescribedBy: 'Website',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: 'info',
+                iconLeft: 'web',
                 required: true,
-                
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'landing-page',
                 label: 'Landing Page',
                 ariaLabel: 'I am looking for a Landing Page',
                 ariaDescribedBy: 'Landing Page',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'landing',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'web-app',
                 label: 'Web-App',
                 ariaLabel: 'I am looking for a Web-App',
                 ariaDescribedBy: 'Web-App',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'touch_app',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'mobile-app',
                 label: 'Mobile App',
                 ariaLabel: 'I am looking for a Mobile App',
                 ariaDescribedBy: 'Mobile App',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'phone_android',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'ui-design',
                 label: 'UI Design',
                 ariaLabel: 'I am looking for an UI Design',
                 ariaDescribedBy: 'UI Design',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'ui',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'ux-research',
                 label: 'UX Research',
                 ariaLabel: 'I am looking for an UX Research',
                 ariaDescribedBy: 'UX Research',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'psychology',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'development',
                 label: 'Development',
                 ariaLabel: 'I am looking for a Development',
                 ariaDescribedBy: 'Development',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'code',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'game',
                 label: 'Game',
                 ariaLabel: 'I am looking for a Game',
                 ariaDescribedBy: 'Game',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'puzzle',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'logo',
                 label: 'Logo',
                 ariaLabel: 'I am looking for a Logo',
                 ariaDescribedBy: 'Logo',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'diamond',
+                required: true,
+                value: false
               },
               {
                 controlName: 'looking',
+                id: 'other',
                 label: 'Other',
                 ariaLabel: 'I am looking for other thing',
                 ariaDescribedBy: 'Other',
                 hasIconLeft: true,
                 hasIconRight: false,
-                iconLeft: '',
-                required: true
+                iconLeft: 'lightbulb',
+                required: true,
+                value: false
               },
             ],
             inputTexts: [
               {
                 controlName: 'name',
+                type: 'text',
                 label: 'Name',
                 ariaLabel: 'Enter your name',
                 ariaDescribedBy: 'Enter your name',
@@ -592,6 +569,7 @@ export class MainConfigService {
               },
               {
                 controlName: 'email',
+                type: 'email',
                 label: 'Email',
                 ariaLabel: 'Enter your email',
                 ariaDescribedBy: 'Enter your email',
@@ -605,16 +583,38 @@ export class MainConfigService {
             cta: {
               text: 'Let’s Talk',
               size: 'default',
-              color: 'gold',
+              color: 'yellow',
               ariaLabel: 'string',
               inLink: '',
               showIconRight: true,
-              iconRight: 'user',
+              iconRight: 'question_answer',
               showIconLeft: false
             }
           }
+        },
+        footer: {
+          logo: this.defaultConfigService.getLogo(),
+          links: this.defaultConfigService.getRegularNavbar().links,
+          socials: [
+            {
+              src: '',
+              alt: 'linkdin'
+            },
+            {
+              src: '',
+              alt: 'github'
+            },
+            {
+              src: '',
+              alt: 'facebook'
+            },
+            {
+              src: '',
+              alt: 'instagram'
+            }
+          ],
+          copyright: '<b>Copyright</b> ©2024 Guy Tagger. All rights reserved. The content on this portfolio website, including text, images, videos, and design, is protected by copyright and may not be used without the express permission of Guy Tagger. '
         }
-
     }
   }
 }
@@ -625,6 +625,6 @@ export interface Main {
   projects: CarouselConfig;
   services: CarouselConfig;
   technologies: TechnologiesConfig;
-  reviews: ReviewsConfig;
   contact: ContactConfig;
+  footer: FooterConfig;
 }
