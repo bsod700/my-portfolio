@@ -2,7 +2,7 @@
 
 .header-wrapper {
     overflow: hidden;
-    min-height: 600px;
+    height: 700px;
     background-repeat: no-repeat;
     background-size: 3840px 1080px;
     background-position: top center;
@@ -10,10 +10,10 @@
     position: relative;
 
     @include respond-to(md) {
-        min-height: 800px;
+        height: 900px;
     }
     @include respond-to(xxl) {
-        min-height: 900px;
+        height: 1200px;
     }
     .img-wrapper-mouse {
         cursor: pointer;
@@ -29,29 +29,63 @@
         .layer {
             position: absolute;
             width: 100%;
-            height: 600px;
-            max-height: 1080px;
+            height: 700px;
             background-position: bottom center;
             background-repeat: no-repeat;
             background-size: 1800px auto;
             @include respond-to(md) {
                 background-size: 2600px auto;
-                height: 800px;
+                height: 900px;
             }
             @include respond-to(xxl) {
                 background-size: 3840px auto;
-                height: 900px;
+                height: 1200px;
             }
         }
         .layer1 {
             z-index: 10;
-            background-image: url(assets/images/hero/layer1.png); 
+            background-image: url(assets/images/hero/layer1.webp); 
         }
         .layer2 {
             z-index: 9;
             background-image: url(assets/images/hero/layer2.svg); 
         }
-
+        .layer3 {
+            z-index: 8;
+            background-image: url(assets/images/hero/layer3.svg); 
+        }
+        .layer4 {
+            z-index: 7;
+            background-image: url(assets/images/hero/layer4.webp); 
+        }
+        .layer5 {
+            z-index: 6;
+            background-image: url(assets/images/hero/layer5.webp); 
+        }
+        .layer6 {
+            z-index: 5;
+            background-image: url(assets/images/hero/layer6.webp); 
+        }
+        .layer7 {
+            z-index: 4;
+            background-image: url(assets/images/hero/layer7.svg); 
+        }
+        .sun {
+            z-index: 3;
+            background-image: url(assets/images/hero/sun.svg); 
+        }
+        .birds {
+            z-index: 2;
+            background-image: url(assets/images/hero/birds.svg); 
+        }
+        .water {
+            z-index: 1;
+            background-image: url(assets/images/hero/water.svg); 
+        }
+        .sky {
+            z-index: 0;
+            background-image: url(assets/images/hero/sky.svg); 
+        }
     }
     .container {
         position: relative;
