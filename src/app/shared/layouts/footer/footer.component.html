@@ -12,11 +12,13 @@
                 }
             </div>
         </div>
-        <div class="email"></div>
+        <div class="email-container">
+            <a class="email" [href]="'mailto:' + componentConfig.email.link">{{componentConfig.email.text}}</a>
+        </div>
         <div class="socials">
             @for (social of componentConfig.socials; track $index) {
                 <a class="social">
-                    <img [src]="social.src" [alt]="social.alt">
+                    <app-get-icon [icon]="social"/>
                 </a>
             }
         </div>

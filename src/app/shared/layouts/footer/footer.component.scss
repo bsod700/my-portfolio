@@ -1,0 +1,70 @@
+@import "mixins";
+
+.footer-wrapper {
+    margin-top: $spacing-unit*4;
+    padding-bottom: $spacing-unit*4;
+    @include respond-to(md) {
+        margin-top: $spacing-unit*16;
+        padding-bottom: $spacing-unit*8;
+    }
+    .container {
+        background-image: url(assets/images/bottom-carousel.svg); 
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-top:  $spacing-unit*8;
+        @include respond-to(md) {
+            padding-top:  $spacing-unit*16;
+        }
+    }
+    .row {
+        display: flex;
+        margin-bottom: $spacing-unit*4;
+        flex-direction: column;
+        gap: $spacing-unit*4;
+        @include respond-to(md) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: $spacing-unit*2;
+    }
+    .email-container, .socials {
+        display: flex;
+        align-items: center;
+        margin-bottom: $spacing-unit*4;
+        @include respond-to(md) {
+            justify-content: end;
+        }
+    }
+    .socials {
+        gap: $spacing-unit*4;
+        fill: $text-color-white;
+    }
+    .email {
+        color: $text-color-white;
+        @include respond-to(md) {
+            text-align: end;
+        }
+    }
+    .copyright {
+        margin-top: $spacing-unit*4;
+        @include respond-to(md) {
+            margin-top: $spacing-unit*32;
+        }
+        p {
+            color: $text-color-white;
+            font-weight: 100;
+            font-size: 14px;
+            ::ng-deep {
+                b {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

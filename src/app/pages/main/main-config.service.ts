@@ -596,23 +596,15 @@ export class MainConfigService {
           logo: this.defaultConfigService.getLogo(),
           links: this.defaultConfigService.getRegularNavbar().links,
           socials: [
-            {
-              src: '',
-              alt: 'linkdin'
-            },
-            {
-              src: '',
-              alt: 'github'
-            },
-            {
-              src: '',
-              alt: 'facebook'
-            },
-            {
-              src: '',
-              alt: 'instagram'
-            }
+            'linkedin',
+            'github',
+            'facebook',
+            'instagram'
           ],
+          email: {
+            text: 'Email: Guytagger@gmail.com',
+            link: 'Guytagger@gmail.com'
+          },
           copyright: '<b>Copyright</b> ©2024 Guy Tagger. All rights reserved. The content on this portfolio website, including text, images, videos, and design, is protected by copyright and may not be used without the express permission of Guy Tagger. '
         }
     }

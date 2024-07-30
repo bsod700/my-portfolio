@@ -4,14 +4,42 @@
     background-color: $dark;
     padding-top: $spacing-unit*16;
     padding-bottom: $spacing-unit*16;
+    
     .title {
         margin-bottom: $spacing-unit*16;
     }
     .form-wrapper {
         max-width: 1000px;
         margin: 0 auto;
+        position: relative;
         h5 {
             max-width: 600px;
         }
+        .row {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: $spacing-unit;
+        }
+    }
+    button.help {
+        background-color: transparent;
+        fill: $text-color-white;
+        border: none;
+        top: 0;
+        right: 0;
+        width: 40px;
+        flex: 0 0 40px;
+
+        display: none;
+        &:focus {
+            border: $border-focus $tierroYellow solid;
+        }
+        app-get-icon {
+            ::ng-deep svg {
+              width: 40px;
+              height: 40px;
+            }
+          }
     }
 }

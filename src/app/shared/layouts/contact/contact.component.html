@@ -6,8 +6,15 @@
           </div>
        
         <div class="form-wrapper">
-            <h5 class="paragraph roboto base fw-4 mb-8">{{componentConfig.description}}</h5>
+            <div class="row">
+                <h5 class="paragraph roboto base fw-4 mb-8">{{componentConfig.description}}</h5>
+                <button class="help" role="button" tabindex="0" >
+                    <app-get-icon [icon]="'info'"/>
+                </button>
+            </div>
+            
             <app-contact-form [formConfig]="componentConfig.form"/>
+            
         </div>
     </div>
 </section>

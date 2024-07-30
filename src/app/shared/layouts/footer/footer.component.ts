@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { DocumentService, Img } from '@core/index';
+import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 import { ArrowLink, ArrowLinkComponent, LogoComponent } from '@shared/index';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [LogoComponent, ArrowLinkComponent, CommonModule],
+  imports: [LogoComponent, ArrowLinkComponent, CommonModule, GetIconComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -26,6 +27,10 @@ export class FooterComponent {
 export interface FooterConfig {
   logo: Img;
   links: ArrowLink[];
-  socials: Img[];
+  socials: string[];
+  email: {
+    link: string;
+    text: string;
+  };
   copyright: string;
 }

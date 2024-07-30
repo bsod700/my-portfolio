@@ -12,7 +12,7 @@ h1.slab{
   font-weight: 400;
   @include responsive-font-size(slab, h1); 
   font-family: $font-family-slab; 
-  line-height: .7;
+  line-height: 1;
 }
 h2.slab { 
   @include responsive-font-size(slab, h2);
