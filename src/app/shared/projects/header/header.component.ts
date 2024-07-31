@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Img } from '@core/index';
+import { Cta, Img } from '@core/index';
+import { CtaComponent } from '@shared/index';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CtaComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -24,4 +25,5 @@ export interface HeaderProjectConfig {
     subtitle: string;
   }[],
   img?: Img;
+  cta?: Cta;
 }

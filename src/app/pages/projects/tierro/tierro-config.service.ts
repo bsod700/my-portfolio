@@ -39,6 +39,16 @@ export class TierroProjectConfigService {
           img: {
             src: 'assets/images/projects/tierro/header.webp',
             alt: 'Tierro project screens on mobile,tablet and desktop'
+          },
+          cta: {
+            text: 'Take Me To The Live Site',
+            size: 'default',
+            color: 'tierro',
+            ariaLabel: 'Go to TierroMusic website',
+            showIconRight: true,
+            iconRight: 'arrow_right_line',
+            showIconLeft: false,
+            outLink: 'https://www.tierromusic.com/'
           }
         },
         overview: {
@@ -631,10 +641,11 @@ export class TierroProjectConfigService {
             text: 'Take Me To The Live Site',
             size: 'default',
             color: 'tierro',
-            ariaLabel: 'string',
+            ariaLabel: 'Go to TierroMusic website',
             showIconRight: true,
             iconRight: 'arrow_right_line',
-            showIconLeft: false
+            showIconLeft: false,
+            outLink: 'https://www.tierromusic.com/'
           }
         },
         designSystem: {
@@ -807,12 +818,13 @@ export class TierroProjectConfigService {
           ],
           ctaSides: [
             {
-              text: 'To Development Case study',
+              text: 'Development Case study Coming Soon',
               size: 'default',
-              color: 'tierro',
-              ariaLabel: 'string',
+              color: 'disable-white',
+              ariaLabel: 'Coming soon',
               showIconRight: true,
-              iconRight: 'dev-tag',
+              // iconRight: 'dev-tag',
+              iconRight: 'pending',
               showIconLeft: false
             }
           ]

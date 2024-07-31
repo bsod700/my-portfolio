@@ -13,6 +13,11 @@
     p {
         font-weight: 500;
     }
+    .icon-right, .icon-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     &.size-big {
         p {
             @include responsive-font-size(roboto, h3);

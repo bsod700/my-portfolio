@@ -1,4 +1,5 @@
-<a 
+@if (ctaConfig.inLink) {
+    <a 
     class="cta-wrapper size-{{ctaConfig.size}} color-{{ctaConfig.color}}" 
     [attr.aria-label]="ctaConfig.ariaLabel" 
     [routerLink]="ctaConfig.inLink ? ['/' + ctaConfig.inLink] : null"
@@ -7,7 +8,6 @@
     (keydown)="handleKeyDown($event)"
     role="button"
     >
-
     @if (ctaConfig.showIconLeft) {
         <div class="icon-left">
             <app-get-icon [icon]="ctaConfig.iconLeft" [iconColor]="ctaConfig.iconColor" />
@@ -23,3 +23,32 @@
     }
   
 </a>
+} @else {
+    <a 
+    class="cta-wrapper size-{{ctaConfig.size}} color-{{ctaConfig.color}}" 
+    [attr.aria-label]="ctaConfig.ariaLabel" 
+    (click)="cta($event)"
+    tabindex="0"
+    (keydown)="handleKeyDown($event)"
+    role="button"
+    [attr.href]="ctaConfig.outLink ? ctaConfig.outLink : null"
+    >
+    @if (ctaConfig.showIconLeft) {
+        <div class="icon-left">
+            <app-get-icon [icon]="ctaConfig.iconLeft" [iconColor]="ctaConfig.iconColor" />
+        </div>
+    }
+   
+    <p>{{ctaConfig.text}}</p>
+
+    @if (ctaConfig.showIconRight) {
+        <div class="icon-right">
+            <app-get-icon [icon]="ctaConfig.iconRight" [iconColor]="ctaConfig.iconColor"/>
+        </div>
+    }
+  
+</a>
+}
+
+
+   

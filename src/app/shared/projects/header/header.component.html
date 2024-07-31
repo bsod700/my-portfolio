@@ -6,6 +6,11 @@
             </div>
             <h2 class="title">{{componentConfig.title}}</h2>
             <p class="subtitle">{{componentConfig.subtitle}}</p>
+            @if (componentConfig.cta) {
+                <div class="cta-wrapper">
+                    <app-cta [ctaConfig]="componentConfig.cta"/>
+                </div>
+            }
         </div>
 
         @if (componentConfig.img) {

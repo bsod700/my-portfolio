@@ -68,13 +68,16 @@
            
             .right {
                 display: block;
-                margin-bottom: 24px;
+                margin-bottom: $spacing-unit*4;
                 @include respond-to(md) {
                     display: none;
                 }
             }
         }
         
+    }
+    .cta-wrapper {
+        margin-top: $spacing-unit*8;
     }
     .bullets-container {
         width: 100%;

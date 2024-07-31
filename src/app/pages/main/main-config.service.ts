@@ -36,7 +36,7 @@ export class MainConfigService {
             'When it comes to design, I use Figma, Adobe XD, Illustrator, and Photoshop to create wireframes, mockups, interactive prototypes, animations, logos, slides, and other branding materials, ensuring top-notch user experiences. I stay up-to-date with the latest design trends to deliver modern and innovative solutions.'
           ],
           img: {
-            src: 'assets/images/about.png',
+            src: 'assets/images/about.webp',
             alt: 'Guy Tagger profile photo'
           }
 
@@ -64,7 +64,7 @@ export class MainConfigService {
                 showIconLeft: false
               },
               previewImg: {
-                src: 'assets/images/projects/tierro/preview.png',
+                src: 'assets/images/projects/tierro/preview.webp',
                 alt: 'Tierro project - preview image'
               },
               iconImg: {
@@ -145,7 +145,7 @@ export class MainConfigService {
             //     showIconLeft: false
             //   },
             //   previewImg: {
-            //     src: 'assets/images/projects/tierro/preview.png',
+            //     src: 'assets/images/projects/tierro/preview.webp',
             //     alt: 'Tierro project - preview image'
             //   },
             //   iconImg: {
@@ -172,7 +172,7 @@ export class MainConfigService {
             //     showIconLeft: false
             //   },
             //   previewImg: {
-            //     src: 'assets/images/projects/tierro/preview.png',
+            //     src: 'assets/images/projects/tierro/preview.webp',
             //     alt: 'Tierro project - preview image'
             //   },
             //   iconImg: {
@@ -199,7 +199,7 @@ export class MainConfigService {
                 showIconLeft: false
               },
               previewImg: {
-                src: 'assets/images/projects/tierro/preview.png',
+                src: 'assets/images/projects/tierro/preview.webp',
                 alt: 'Tierro project - preview image'
               },
               iconImg: {
@@ -218,7 +218,7 @@ export class MainConfigService {
               title: 'UI/UX',
               description: 'Creating intuitive and engaging user experiences with a focus on aesthetics and functionality. I craft wireframes, mockups, and interactive prototypes to bring ideas to life and ensure a seamless user journey. My designs adhere to WCAG 2.2 guidelines to guarantee accessibility for all users.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             },
@@ -227,7 +227,7 @@ export class MainConfigService {
               title: 'Graphics',
               description: 'Designing visually stunning logos, slides, and branding materials. Using tools like Illustrator and Photoshop, I create cohesive and impactful visual identities for brands.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             },
@@ -236,7 +236,7 @@ export class MainConfigService {
               title: 'Illustrations',
               description: ' If you need custom artwork, icons, or infographics, I’ve got you covered. I create unique illustrations that add personality and visual appeal to your brand, making your content more engaging and memorable.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             },
@@ -245,7 +245,7 @@ export class MainConfigService {
               title: 'Interactive',
               description: 'Want to make your website or app fun and engaging? I’m here to help. I create dynamic designs with animations and interactive elements that will captivate your users and provide a memorable experience.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             },
@@ -254,7 +254,7 @@ export class MainConfigService {
               title: 'Consulting',
               description: 'Offering expert advice on design strategy, usability, and aesthetics. I help businesses and individuals refine their digital products to meet user needs and achieve their goals.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             },
@@ -263,7 +263,7 @@ export class MainConfigService {
               title: 'Front-End',
               description: 'Building responsive, mobile-friendly websites using Angular, HTML, SCSS, JavaScript, and TypeScript. I follow best practices to deliver clean, efficient, and maintainable code for high-performance web applications.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             },
@@ -272,7 +272,7 @@ export class MainConfigService {
               title: 'Back-End',
               description: 'Developing robust and scalable server-side applications using Node.js. I ensure seamless integration with front-end systems, utilizing APIs for efficient data exchange, and maintain best practices in security and performance.',
               previewImg: {
-                src: 'assets/images/services/uiux.png',
+                src: 'assets/images/services/uiux.webp',
                 alt: 'a hand holding a smartphone with uiux design'
               }
             }
