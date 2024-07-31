@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, inject } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { Cta } from '@core/index';
+import { Cta, Img } from '@core/index';
 import { CheckboxConfig } from '../form/checkbox/checkbox.component';
 import { InputTextConfig } from '../form/text-input/text-input.component';
 import { CommonModule } from '@angular/common';
 import { GetIconComponent } from '../get-icon/get-icon.component';
+import { EmailService } from '@core/services/email.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -16,25 +17,43 @@ import { GetIconComponent } from '../get-icon/get-icon.component';
 })
 export class ContactFormComponent {
   private fb: FormBuilder = inject(FormBuilder);
+  private cdr: ChangeDetectorRef = inject(ChangeDetectorRef)
+  emailService: EmailService = inject(EmailService);
   @Input() formConfig!: ContactFormConfig;
   form!: FormGroup;
 
-  checkboxes: CheckboxConfig[] = [];
-  selectedCheckboxes: string[] = [];
+  contactSuccess: boolean = false;
+  contactError: boolean = false;
+  isLoading: boolean = false;
 
   submitted = false;
-
 
   submit() {
     this.submitted = true;
     this.form.markAllAsTouched();
-    if (this.form.invalid) {
-      // Force validation messages to show
+
+    if (this.form.valid) {
+      this.isLoading = true;
+      this.emailService.sendEmail(this.form.value).subscribe({
+        next: (response) => {
+          console.log('Email sent successfully', response);
+          this.contactSuccess = true;
+          this.form.reset();
+          this.isLoading = false;
+          this.cdr.markForCheck();
+        },
+        error: (error) => {
+          this.contactError = true;
+          this.isLoading = false;
+          this.cdr.markForCheck();
+          console.error('Error sending email', error);
+        }
+      });
+    } else {
       this.form.markAllAsTouched();
       this.submitted = false;
-    } else {
-      // Process your form data here
-      console.log(this.form.value);
+      console.log('Form is not valid');
+      alert('Please fill all required fields correctly.');
     }
   }
   constructor() {
@@ -113,5 +132,20 @@ export interface ContactFormConfig {
   checkboxes?: CheckboxConfig[];
   inputTexts?: InputTextConfig[];
   cta: Cta;
+  success: {
+    img: Img;
+    title: string;
+    subtitle: string;
+  },
+  error: {
+    exitIcon: string;
+    title: string;
+    paragraph: string;
+    cta: {
+      href: string;
+      text: string;
+      iconRight: string;
+    }
+  }
 }
 

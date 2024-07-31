@@ -1,113 +1,160 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-    @if (formConfig.checkboxes) {
-        <h5 class="paragraph roboto base fw-4 mb-4">{{formConfig.checkboxesTitle}}</h5>
-        <div class="checkboxes mb-8">
-            @for (checkbox of formConfig.checkboxes; track $index) {
-                <label 
-                    [attr.aria-checked]="checkbox.value"
-                    tabindex="0"
-                    role="checkbox"
-                    [attr.aria-label]="checkbox.ariaLabel"
-                    [attr.aria-describedby]="checkbox.ariaDescribedBy"
-                >
 
-                    @if (checkbox.hasIconLeft && checkbox.iconLeft != '') {
-                        <app-get-icon [icon]="checkbox.iconLeft" [iconColor]="checkbox.iconColor" />
-                    }
-
-                    <input 
-                        type="checkbox" 
-                        [value]="checkbox.label"
-                        [id]="checkbox.id" 
-                        [checked]="checkbox.value"
-                        [required]="checkbox.required"
-                        (change)="onCheckboxChange($event)">
-                    <span class="paragraph roboto small fw-6">{{ checkbox.label }}</span>
-
-                    @if (checkbox.hasIconRight && checkbox.iconRight != '') {
-                        <app-get-icon [icon]="checkbox.iconRight" [iconColor]="checkbox.iconColor" />
-                    }
-
-                    <div class="check-icon-wrapper">
-                        <app-get-icon [icon]="'check'" />
-                    </div>
-                </label>
-               
-            }
-            @if (looking?.errors?.['required'] && looking?.touched) {
-                <div class="error">
-                    <app-get-icon [icon]="'alert'" />
-                    <span> Please select at least one option from the checkboxes above.</span>
-                </div>
-            }
-        </div>
-    }
-
-    <div class="img-row mb-8">
-        <img src="assets/images/row.svg" alt loading="lazy">
-    </div>
+@if (!contactSuccess) {
+    contactSuccess{{contactSuccess}}
+    contactError{{contactError}}
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        @if (formConfig.checkboxes) {
+            <h5 class="paragraph roboto base fw-4 mb-4">{{formConfig.checkboxesTitle}}</h5>
+            <div class="checkboxes mb-8">
+                @for (checkbox of formConfig.checkboxes; track $index) {
+                    <label 
+                        [attr.aria-checked]="checkbox.value"
+                        tabindex="0"
+                        role="checkbox"
+                        [attr.aria-label]="checkbox.ariaLabel"
+                        [attr.aria-describedby]="checkbox.ariaDescribedBy"
+                    >
     
-
-    @if (formConfig.inputTexts) {
-        <div class="inputs">
-            @for (inputText of formConfig.inputTexts; track $index) {
-                <div class="input-group-wrapper">
-                    <label class="paragraph roboto base fw-400">{{ inputText.label }}</label>
-                    <div class="input-wrapper">
-                        @if (inputText.hasIconLeft && inputText.iconLeft != '') {
-                          <div class="icon icon-left">
-                              <app-get-icon [icon]="inputText.iconLeft" [iconColor]="inputText.iconColor" />
-                          </div>
+                        @if (checkbox.hasIconLeft && checkbox.iconLeft != '') {
+                            <app-get-icon [icon]="checkbox.iconLeft" [iconColor]="checkbox.iconColor" />
                         }
-                      <input
-                        [formControlName]="inputText.controlName"
-                        class="paragraph roboto small fw-4"
-                        [type]="inputText.type"
-                        [attr.aria-label]="inputText.ariaLabel"
-                        [attr.aria-describedby]="inputText.ariaDescribedBy"
-                        [attr.aria-labelledby]="inputText.ariaLabelledBy"
-                        [required]="inputText.required"
-                        [class.shake]="shouldShake(inputText.controlName)"
-                      />
-                      @if (inputText.hasIconRight && inputText.iconRight != '') {
-                        <div class="icon icon-right">
-                          <app-get-icon [icon]="inputText.iconRight" [iconColor]="inputText.iconColor" />
+    
+                        <input 
+                            type="checkbox" 
+                            [value]="checkbox.label"
+                            [id]="checkbox.id" 
+                            [checked]="checkbox.value"
+                            [required]="checkbox.required"
+                            (change)="onCheckboxChange($event)">
+                        <span class="paragraph roboto small fw-6">{{ checkbox.label }}</span>
+    
+                        @if (checkbox.hasIconRight && checkbox.iconRight != '') {
+                            <app-get-icon [icon]="checkbox.iconRight" [iconColor]="checkbox.iconColor" />
+                        }
+    
+                        <div class="check-icon-wrapper">
+                            <app-get-icon [icon]="'check'" />
                         </div>
-                      }
-                      
+                    </label>
+                   
+                }
+                @if (looking?.errors?.['required'] && looking?.touched) {
+                    <div class="error">
+                        <app-get-icon [icon]="'alert'" />
+                        <span> Please select at least one option from the checkboxes above.</span>
                     </div>
-
-                    @for (error of getErrorMessage(inputText.controlName); track $index) {
-                        <div class="error">
-                            <app-get-icon [icon]="'alert'" />
-                            <span>{{ error }}</span>
+                }
+            </div>
+        }
+    
+        <div class="img-row mb-8">
+            <img src="assets/images/row.svg" alt loading="lazy">
+        </div>
+        
+    
+        @if (formConfig.inputTexts) {
+            <div class="inputs">
+                @for (inputText of formConfig.inputTexts; track $index) {
+                    <div class="input-group-wrapper">
+                        <label class="paragraph roboto base fw-400">{{ inputText.label }}</label>
+                        <div class="input-wrapper">
+                            @if (inputText.hasIconLeft && inputText.iconLeft != '') {
+                              <div class="icon icon-left">
+                                  <app-get-icon [icon]="inputText.iconLeft" [iconColor]="inputText.iconColor" />
+                              </div>
+                            }
+                          <input
+                            [formControlName]="inputText.controlName"
+                            [name]="inputText.controlName"
+                            class="paragraph roboto small fw-4"
+                            [type]="inputText.type"
+                            [attr.aria-label]="inputText.ariaLabel"
+                            [attr.aria-describedby]="inputText.ariaDescribedBy"
+                            [attr.aria-labelledby]="inputText.ariaLabelledBy"
+                            [required]="inputText.required"
+                            [class.shake]="shouldShake(inputText.controlName)"
+                            [placeholder]="inputText.placeholder"
+                          />
+                          @if (inputText.hasIconRight && inputText.iconRight != '') {
+                            <div class="icon icon-right">
+                              <app-get-icon [icon]="inputText.iconRight" [iconColor]="inputText.iconColor" />
+                            </div>
+                          }
+                          
                         </div>
-                    }
-                </div>
+    
+                        @for (error of getErrorMessage(inputText.controlName); track $index) {
+                            <div class="error">
+                                <app-get-icon [icon]="'alert'" />
+                                <span>{{ error }}</span>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+        <button 
+            class="cta-wrapper"
+            type="submit"
+            [attr.aria-label]="formConfig.cta.ariaLabel" 
+            tabindex="0"
+            role="button"
+        >
+            @if (!isLoading) {
+                @if (formConfig.cta.showIconLeft) {
+                    <div class="icon-left">
+                        <app-get-icon [icon]="formConfig.cta.iconLeft" />
+                    </div>
+                }
             }
+            
+            <p class="fw-5">
+                @if (!isLoading) {
+                    {{formConfig.cta.text}}
+                }
+                @else {
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Sending...
+                }
+              
+            </p>
+            @if (!isLoading) {
+                @if (formConfig.cta.showIconRight) {
+                    <div class="icon-right">
+                        <app-get-icon [icon]="formConfig.cta.iconRight" />
+                    </div>
+                }
+            }
+        </button>
+         <!-- {{form.value | json}} -->
+      </form>
+}
+
+@else {
+    @if (contactSuccess) {
+        <div class="success">
+            <img [src]="formConfig.success.img.src" [alt]="formConfig.success.img.alt">
+            <div class="text">
+                <h2>{{formConfig.success.title}}</h2>
+                <p>{{formConfig.success.subtitle}}</p>
+            </div>
         </div>
     }
-    <button 
-        class="cta-wrapper"
-        type="submit"
-        [attr.aria-label]="formConfig.cta.ariaLabel" 
-        tabindex="0"
-        role="button"
-    >
-        @if (formConfig.cta.showIconLeft) {
-            <div class="icon-left">
-                <app-get-icon [icon]="formConfig.cta.iconLeft" />
+    @else if (contactError) {
+        <div class="error">
+            <div class="exit">
+                <app-get-icon [icon]="formConfig.error.exitIcon" />
             </div>
-        }
+            <h2>{{formConfig.error.title}}</h2>
+            <p>{{formConfig.error.paragraph}}</p>
+            <a role="button" [href]="formConfig.error.cta.href">
+                <span>{{formConfig.error.cta.text}}</span>
+                <div class="icon-right">
+                    <app-get-icon [icon]="formConfig.error.cta.iconRight" />
+                </div>
+            </a>
+        </div>
+    }
+}
 
-        <p class="fw-5">{{formConfig.cta.text}}</p>
-
-        @if (formConfig.cta.showIconRight) {
-            <div class="icon-right">
-                <app-get-icon [icon]="formConfig.cta.iconRight" />
-            </div>
-        }
-    </button>
-     <!-- {{form.value | json}} -->
-  </form>
   

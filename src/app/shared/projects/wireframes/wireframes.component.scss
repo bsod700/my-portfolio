@@ -59,7 +59,7 @@
                         width: 600px;
                         flex: 0 0 600px;
                     }
-                    @include respond-to(ld) {
+                    @include respond-to(lg) {
                         width: 800px;
                         flex: 0 0 800px;
                     }

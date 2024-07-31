@@ -17,7 +17,7 @@
             </button>
             <div class="carousel-wrapper">
               <div class="carousel-item" *ngFor="let item of visibleItems()">
-                <img [src]="item.src" [alt]="item.alt">
+                <img [src]="item.src" [alt]="item.alt" loading="lazy">
               </div>
             </div>
             <button (click)="next()" class="carousel-button next-button">

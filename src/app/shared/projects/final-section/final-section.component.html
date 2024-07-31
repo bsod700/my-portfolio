@@ -15,7 +15,7 @@
        <div class="content">
             @if (componentConfig.image) {
                 <div class="img-wrapper">
-                    <img [src]="componentConfig.image.src" [alt]="componentConfig.image.alt">
+                    <img [src]="componentConfig.image.src" [alt]="componentConfig.image.alt" loading="lazy">
                 </div>
             }
             @if (componentConfig.subtitle) {

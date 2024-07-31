@@ -20,6 +20,11 @@
             max-width: 800px;
         }
     }
+    .title {
+        @include respond-to(md) {
+            margin-bottom: $spacing-unit*4;
+        }
+    }
     .container {
         align-items: center;
         flex-direction: column-reverse;

@@ -8,12 +8,15 @@
     background-position: top center;
     background-image: radial-gradient(50% 40% at 50% 50%, #E37042 5%, #A45B69 30%, #744A64 45%, #4F3D5F 60%, #38355D 70%, #30325C 80%);
     position: relative;
+    z-index: 2;
 
     @include respond-to(md) {
         height: 900px;
     }
     @include respond-to(xxl) {
         height: 1200px;
+        height: 100vh;
+        max-height: 1200px;
     }
     .img-wrapper-mouse {
         cursor: pointer;
@@ -23,16 +26,21 @@
         width: 35px;
         height: 60px;
         left: calc(50% - 35px/2);
+        img {
+            width: 35px;
+            height: 60px;
+        }
     }
     .bg {
         position: relative;
-        .layer {
+        .layer,  .dark-layer {
             position: absolute;
             width: 100%;
             height: 700px;
             background-position: bottom center;
             background-repeat: no-repeat;
             background-size: 1800px auto;
+            pointer-events: none;
             @include respond-to(md) {
                 background-size: 2600px auto;
                 height: 900px;
@@ -40,11 +48,13 @@
             @include respond-to(xxl) {
                 background-size: 3840px auto;
                 height: 1200px;
+                height: 100vh;
+                max-height: 1200px;
             }
         }
         .layer1 {
             z-index: 10;
-            background-image: url(assets/images/hero/layer1.webp); 
+            background-image: url(assets/images/hero/layer1.webp);
         }
         .layer2 {
             z-index: 9;
@@ -85,6 +95,42 @@
         .sky {
             z-index: 0;
             background-image: url(assets/images/hero/sky.svg); 
+        }
+        .dark-layer {
+            z-index: 10;
+            background-color: $dark;
+            transform: translateY(-900px);
+            height: 900px;
+            pointer-events: none;
+        }
+        .sunlights {
+            position: absolute;
+            z-index: 12;
+            top: 0;
+            left: calc(50% - 1800px/2);
+            pointer-events: none;
+            @include respond-to(md) {
+                left: calc(50% - 2600px/2);
+            }
+            @include respond-to(xxl) {
+                left: calc(50% - 3840px/2);
+            }
+            svg {
+                height: 700px;
+                width: 1800px;
+                @include respond-to(md) {
+                    height: 900px;
+                    width: 2600px;
+                }
+                @include respond-to(xxl) {
+                    height: 100vh;
+                    width: 3840px;
+                }
+                g {
+                    transform: rotateZ(10deg);
+                    transform-origin: 50% 50%;
+                }
+            }
         }
     }
     .container {

@@ -33,7 +33,7 @@
                 <div class="font">
                     <div class="left">
                         <h5 class="font-tile">{{item.font.title}}</h5>
-                        <img [src]="item.font.img.src" [alt]="item.font.img.alt">
+                        <img [src]="item.font.img.src" [alt]="item.font.img.alt" loading="lazy">
                     </div>
                     <div class="right">
                         @for (style of item.font.styles; track $index) {
@@ -49,7 +49,7 @@
                 <div class="components">
                     @for (component of item.components; track $index) {
                         <div class="components-image-wrapper">
-                            <img [src]="component.src" [alt]="component.alt">
+                            <img [src]="component.src" [alt]="component.alt" loading="lazy">
                         </div>
                     }
                 </div>

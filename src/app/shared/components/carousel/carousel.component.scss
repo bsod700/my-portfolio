@@ -214,13 +214,24 @@
    .carousel-content {
     gap: $spacing-unit*8 ;
   
-    .left-side#Portfolio {
-        .logo-wrapper {
-            img {
-                height: 40px;
+    .left-side {
+        &#Portfolio {
+            .logo-wrapper {
+                img {
+                    height: 40px;
+                }
+            }
+        }
+        &#tierro {
+            .logo-wrapper {
+                img {
+                    height: 75px;
+                    width: 200px;
+                }
             }
         }
     }
+    
     .service-side {
         
         gap: $spacing-unit*8;

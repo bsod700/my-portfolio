@@ -126,60 +126,60 @@ export class MainConfigService {
                 alt: 'Tierro project logo'
               }
             },
-            {
-              title: 'WeRLive',
-              description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
-              responsibilities: [
-                'UX & UI Design',
-                'Logo',
-                'Web Development'
-              ],
-              cta: {
-                text: 'Take Me To The Project',
-                size: 'default',
-                color: 'yellow',
-                ariaLabel: 'Go to Tierro case study',
-                inLink: 'projects/werlive',
-                showIconRight: true,
-                iconRight: 'east',
-                showIconLeft: false
-              },
-              previewImg: {
-                src: 'assets/images/projects/tierro/preview.png',
-                alt: 'Tierro project - preview image'
-              },
-              iconImg: {
-                src: 'assets/images/projects/tierro/logo-color.svg',
-                alt: 'Tierro project logo'
-              }
-            },
-            {
-              title: 'CyberGhost',
-              description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
-              responsibilities: [
-                'UX & UI Design',
-                'Logo',
-                'Web Development'
-              ],
-              cta: {
-                text: 'Take Me To The Project',
-                size: 'default',
-                color: 'yellow',
-                ariaLabel: 'Go to Tierro case study',
-                inLink: 'projects/cyberghost',
-                showIconRight: true,
-                iconRight: 'east',
-                showIconLeft: false
-              },
-              previewImg: {
-                src: 'assets/images/projects/tierro/preview.png',
-                alt: 'Tierro project - preview image'
-              },
-              iconImg: {
-                src: 'assets/images/projects/tierro/logo-color.svg',
-                alt: 'Tierro project logo'
-              }
-            },
+            // {
+            //   title: 'WeRLive',
+            //   description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+            //   responsibilities: [
+            //     'UX & UI Design',
+            //     'Logo',
+            //     'Web Development'
+            //   ],
+            //   cta: {
+            //     text: 'Take Me To The Project',
+            //     size: 'default',
+            //     color: 'yellow',
+            //     ariaLabel: 'Go to Tierro case study',
+            //     inLink: 'projects/werlive',
+            //     showIconRight: true,
+            //     iconRight: 'east',
+            //     showIconLeft: false
+            //   },
+            //   previewImg: {
+            //     src: 'assets/images/projects/tierro/preview.png',
+            //     alt: 'Tierro project - preview image'
+            //   },
+            //   iconImg: {
+            //     src: 'assets/images/projects/tierro/logo-color.svg',
+            //     alt: 'Tierro project logo'
+            //   }
+            // },
+            // {
+            //   title: 'CyberGhost',
+            //   description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+            //   responsibilities: [
+            //     'UX & UI Design',
+            //     'Logo',
+            //     'Web Development'
+            //   ],
+            //   cta: {
+            //     text: 'Take Me To The Project',
+            //     size: 'default',
+            //     color: 'yellow',
+            //     ariaLabel: 'Go to Tierro case study',
+            //     inLink: 'projects/cyberghost',
+            //     showIconRight: true,
+            //     iconRight: 'east',
+            //     showIconLeft: false
+            //   },
+            //   previewImg: {
+            //     src: 'assets/images/projects/tierro/preview.png',
+            //     alt: 'Tierro project - preview image'
+            //   },
+            //   iconImg: {
+            //     src: 'assets/images/projects/tierro/logo-color.svg',
+            //     alt: 'Tierro project logo'
+            //   }
+            // },
             {
               title: 'TCAbility',
               description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
@@ -589,6 +589,24 @@ export class MainConfigService {
               showIconRight: true,
               iconRight: 'question_answer',
               showIconLeft: false
+            },
+            error: {
+              exitIcon: '',
+              title: 'string',
+              paragraph: 'string',
+              cta: {
+                href: 'string',
+                text: 'string',
+                iconRight: 'string'
+              }
+            },
+            success: {
+              img: {
+                src: '',
+                alt: ''
+              },
+              title: 'string',
+              subtitle: 'string'
             }
           }
         },

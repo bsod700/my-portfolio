@@ -11,10 +11,10 @@ form {
         flex-direction: column;
         gap: $spacing-unit*4;
         margin-bottom: $spacing-unit*8;
-        @include respond-to(md) {
-            gap: $spacing-unit*8;
-            margin-bottom: $spacing-unit*16;
-        }
+        // @include respond-to(md) {
+        //     gap: $spacing-unit*8;
+        //     margin-bottom: $spacing-unit*16;
+        // }
     }
     .img-row {
         overflow: hidden;
@@ -122,6 +122,9 @@ form {
         .icon {
             position: absolute;
             fill: $text-color-white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &.icon-left {
                 left: $spacing-unit*2;
             }
@@ -150,23 +153,42 @@ form {
                 &.ng-invalid.ng-touched:not(:focus) {
                     border: 2px solid $errorRed;
                 }
+                &.ng-touched:-internal-autofill-selected {
+                    background-image: none !important;
+                    background-color: $dark-purple !important;
+                    color: $text-color-white !important;
+                }
             }
         }
     }
-
-    .shake {
-        animation: shake-animation 1s ease-in-out;
-      }
+    .spinner-border {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: text-bottom;
+        border: 0.25em solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: spinner-border .75s linear infinite;
+        margin-right: $spacing-unit;
+    }
+    
+    @keyframes spinner-border {
+        to { transform: rotate(360deg); }
+    }
+    // .shake {
+    //     animation: shake-animation 1s ease-in-out;
+    //   }
       
-      @keyframes shake-animation {
-        0%, 100% {
-          transform: translateX(0);
-        }
-        10%, 30%, 50%, 70%, 90% {
-          transform: translateX(-10px);
-        }
-        20%, 40%, 60%, 80% {
-          transform: translateX(10px);
-        }
-      }
+    //   @keyframes shake-animation {
+    //     0%, 100% {
+    //       transform: translateX(0);
+    //     }
+    //     10%, 30%, 50%, 70%, 90% {
+    //       transform: translateX(-10px);
+    //     }
+    //     20%, 40%, 60%, 80% {
+    //       transform: translateX(10px);
+    //     }
+    //   }
 }
