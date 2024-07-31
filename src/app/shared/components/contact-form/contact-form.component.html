@@ -1,7 +1,5 @@
 
 @if (!contactSuccess) {
-    contactSuccess{{contactSuccess}}
-    contactError{{contactError}}
     <form [formGroup]="form" (ngSubmit)="submit()">
         @if (formConfig.checkboxes) {
             <h5 class="paragraph roboto base fw-4 mb-4">{{formConfig.checkboxesTitle}}</h5>
@@ -130,31 +128,33 @@
       </form>
 }
 
-@else {
-    @if (contactSuccess) {
-        <div class="success">
-            <img [src]="formConfig.success.img.src" [alt]="formConfig.success.img.alt">
-            <div class="text">
-                <h2>{{formConfig.success.title}}</h2>
-                <p>{{formConfig.success.subtitle}}</p>
-            </div>
-        </div>
-    }
-    @else if (contactError) {
-        <div class="error">
-            <div class="exit">
+@if (contactError) {
+    <div class="error-wrapper" (click)="closeErrorWrapper($event)">
+        <div class="content">
+            <button class="exit" (click)="closeErrorWrapper($event, true)" aria-label="Close">
                 <app-get-icon [icon]="formConfig.error.exitIcon" />
-            </div>
-            <h2>{{formConfig.error.title}}</h2>
-            <p>{{formConfig.error.paragraph}}</p>
-            <a role="button" [href]="formConfig.error.cta.href">
-                <span>{{formConfig.error.cta.text}}</span>
+            </button>
+            <h2 class="roboto">{{formConfig.error.title}}</h2>
+            <p class="paragraph roboto base">{{formConfig.error.paragraph}}</p>
+            <a role="button" [href]="formConfig.error.cta.href" class="button">
+                <span class="paragraph roboto base">{{formConfig.error.cta.text}}</span>
                 <div class="icon-right">
                     <app-get-icon [icon]="formConfig.error.cta.iconRight" />
                 </div>
             </a>
         </div>
-    }
+    </div>
 }
+@else if (contactSuccess) {
+        <div class="success-wrapper">
+            <div class="img-wrapper">
+                <img [src]="formConfig.success.img.src" [alt]="formConfig.success.img.alt">
+            </div>
+            <div class="text">
+                <h2 class="roboto">{{formConfig.success.title}}</h2>
+                <p class="paragraph roboto base">{{formConfig.success.subtitle}}</p>
+            </div>
+        </div>
+    }
 
   

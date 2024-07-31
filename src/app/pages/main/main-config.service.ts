@@ -591,22 +591,22 @@ export class MainConfigService {
               showIconLeft: false
             },
             error: {
-              exitIcon: '',
-              title: 'string',
-              paragraph: 'string',
+              exitIcon: 'exit-circle',
+              title: 'Oops! Something Went Wrong',
+              paragraph: 'Unfortunately, your message couldn\'t be sent. Please retry or contact me directly.',
               cta: {
-                href: 'string',
-                text: 'string',
-                iconRight: 'string'
+                href: 'mailto: gt@guytagger.com',
+                text: 'Contact me',
+                iconRight: 'mail'
               }
             },
             success: {
               img: {
-                src: '',
-                alt: ''
+                src: 'assets/images/projects/portfolio/deer.svg',
+                alt: 'deer'
               },
-              title: 'string',
-              subtitle: 'string'
+              title: 'Weֿֿ\'ll Be in Touch Soon!',
+              subtitle: 'I appreciate your interest and will get back to you shortly.'
             }
           }
         },

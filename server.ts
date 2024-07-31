@@ -6,6 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 import nodemailer from 'nodemailer';
 import { readFileSync } from 'fs';
+import { formValueConfig } from '@shared/index';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,7 +17,7 @@ if (process.env['NODE_ENV'] !== 'production') {
 
 // Read HTML template
 const templatePath = join(__dirname, '../browser/assets/email-templates/emailTemplate.html');
-const toMeTemplatePath = join(__dirname, '../browser/assets/email-templates/toMeTemplate.html');
+const toMeTemplatePath = join(__dirname, '../browser/assets/email-templates/adminEmailTemplate.html');
 
 let emailTemplate = readFileSync(templatePath, 'utf8');
 let toMeEmailTemplate = readFileSync(toMeTemplatePath, 'utf8');
@@ -95,10 +96,10 @@ export function app(): express.Express {
   });
 
   server.post('/send-email', (req, res) => {
-    console.log(req.body);
+    console.log(req.body as formValueConfig);
 
     const subject = `Thanks ${req.body.name}`;
-    const message = `Hi ${req.body.name} `;
+    const message = `Hi ${req.body.name}, thank you for reaching out.`;
 
     // Replace placeholders in the email template
     const replacements = {

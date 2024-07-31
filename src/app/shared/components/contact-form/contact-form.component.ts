@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, inject, output } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { Cta, Img } from '@core/index';
 import { CheckboxConfig } from '../form/checkbox/checkbox.component';
@@ -20,6 +20,7 @@ export class ContactFormComponent {
   private cdr: ChangeDetectorRef = inject(ChangeDetectorRef)
   emailService: EmailService = inject(EmailService);
   @Input() formConfig!: ContactFormConfig;
+  @Output() formSubmitted: EventEmitter<boolean> = new EventEmitter<boolean>(false);
   form!: FormGroup;
 
   contactSuccess: boolean = false;
@@ -28,13 +29,29 @@ export class ContactFormComponent {
 
   submitted = false;
 
+  closeErrorWrapper(event: MouseEvent, isExitButton: boolean = false) {
+    if (isExitButton || !this.isClickInsideContent(event)) {
+      const errorWrapper = document.querySelector('.error-wrapper') as HTMLElement;
+      if (errorWrapper) {
+        errorWrapper.style.display = 'none';
+      }
+    }
+  }
+
+  private isClickInsideContent(event: MouseEvent): boolean {
+    const target = event.target as HTMLElement;
+    const content = document.querySelector('.content') as HTMLElement;
+    return content.contains(target);
+  }
+
   submit() {
     this.submitted = true;
+    this.formSubmitted.emit(true);
     this.form.markAllAsTouched();
 
     if (this.form.valid) {
       this.isLoading = true;
-      this.emailService.sendEmail(this.form.value).subscribe({
+      this.emailService.sendEmail(this.form.value as formValueConfig).subscribe({
         next: (response) => {
           console.log('Email sent successfully', response);
           this.contactSuccess = true;
@@ -125,7 +142,11 @@ export class ContactFormComponent {
     return control?.invalid && control.touched && this.submitted;
   }
 }
-
+export interface formValueConfig {
+  looking: string[];
+  email: string;
+  name: string;
+}
 export interface ContactFormConfig {
   checkboxesTitle: string;
   checkboxesControlName: string;
