@@ -27,6 +27,26 @@
                     @for (p of item.text.paragraphs; track $index) {
                         <p class="project-paragraph white-color">{{p}}</p>
                     }
+                    @if (item.text.bullets) {
+                        <ul>
+                            @for (bullet of item.text.bullets; track $index) {
+                                <li>
+                                    <div class="img-bullet-wrapper" [ngClass]="{'with-icon': bullet.iconName && bullet.iconName.trim().length > 0}">
+                                        @if (bullet.bulletImage) {
+                                            <img [src]="bullet.bulletImage.src" [alt]="bullet.bulletImage.alt" loading="lazy">
+                                        }
+                                        @if (bullet.iconName) {
+                                            <app-get-icon [icon]="bullet.iconName" />
+                                        }
+                                    </div>
+                                    <div class="text-bullet-wrapper">
+                                        <h3 class="bullet-title white-color">{{bullet.title}}</h3>
+                                        <p class="bullet-paragraph white-color">{{bullet.text}}</p>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    }
                 </div>  
             }
             @else if (item.font) {

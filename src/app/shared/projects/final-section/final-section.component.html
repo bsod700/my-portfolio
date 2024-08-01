@@ -31,7 +31,9 @@
                 
                 @if (componentConfig.ctaSides) {
                     @for (cta of componentConfig.ctaSides; track $index) {
-                        <app-cta [ctaConfig]="cta"/>
+                        <div class="cta-wrapper">
+                            <app-cta [ctaConfig]="cta"/>
+                        </div>
                     }
                 }
             </div>

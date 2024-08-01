@@ -18,6 +18,10 @@
       font-weight: 600;
     }
   }
+  &.portfolio {
+    background-color: $light-purple;
+    padding-top: $spacing-unit * 0;
+  }
   .project-title {
     margin-bottom: $spacing-unit;
   }

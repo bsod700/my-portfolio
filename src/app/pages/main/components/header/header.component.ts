@@ -1,30 +1,48 @@
-import { ChangeDetectionStrategy, Component, HostListener, Input, Renderer2, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Input, OnInit, Renderer2, inject } from '@angular/core';
 import { Cta, ResponsiveService, ScrollService } from '@core/index';
 import { CtaComponent } from '@shared/index';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CtaComponent],
+  imports: [CtaComponent, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() componentConfig!: headerConfig;
   scrollService: ScrollService = inject(ScrollService);
   responsiveService: ResponsiveService = inject(ResponsiveService);
-  renderer: Renderer2 = inject(Renderer2)
+  renderer: Renderer2 = inject(Renderer2);
+  private cdr: ChangeDetectorRef = inject(ChangeDetectorRef)
 
+  mobile: boolean = false;
   scrollTo(event: Event) {
     const comp = {name: 'mouse', scrollTo: 'about'}
     this.scrollService.scrollToSection(event, comp);
   }
+
   handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'Enter' || event.key === ' ') {
       this.scrollTo(event);
       event.preventDefault(); 
     }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize(): void {
+    if (this.responsiveService.lgWidth()) {
+      this.mobile = false;
+    } else {
+      this.mobile = true;
+    }
+    this.cdr.markForCheck();
   }
 
   moveTransform(element: HTMLElement | null, _gap?: number | undefined, _delay?: number): void {
@@ -58,14 +76,9 @@ export class HeaderComponent {
   onWindowScroll() {
     if (this.responsiveService.lgWidth()) {
       const layers = document.querySelectorAll('.layer');
-      const dark = document.querySelector('.dark-layer') as HTMLElement | null
-      const mouse = document.querySelector('.img-wrapper-mouse') as HTMLElement | null
       const lights = document.querySelector('.sunlights') as HTMLElement | null
       const scrollTop = window.pageYOffset;
-      let headerHeight = 900
 
-      this.moveTransform(dark, headerHeight, 0.4);
-      this.moveTransform(mouse, 0, 0.4);
       this.moveTransform(lights, 0, 0.4);
 
       this.moveLight()
@@ -77,6 +90,10 @@ export class HeaderComponent {
         this.renderer.setStyle(layer, 'background-position', `bottom ${-movement}px center`);
       });
     }
+  }
+
+  ngOnInit(): void {
+    this.checkScreenSize();
   }
 }
 export interface headerConfig {

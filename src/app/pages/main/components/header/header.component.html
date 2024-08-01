@@ -1,32 +1,34 @@
-<header class="header-wrapper" id="header">
-    <div class="bg">
-        <div class="sky layer" data-speed="-0.6"></div>
-        <div class="water layer" data-speed="-1"></div>
-        <div class="layer1 layer" data-speed="0.3"></div>
-        <div class="layer2 layer" data-speed="-0.5"></div>
-        <div class="layer3 layer" data-speed="-.6"></div>
-        <div class="layer4 layer" data-speed="-.7"></div>
-        <div class="layer5 layer" data-speed="-.8"></div>
-        <div class="layer6 layer" data-speed="-1"></div>
-        <div class="layer7 layer" data-speed="-1.2"></div>
-        <div class="birds layer" data-speed="-1.5"></div>
-        <div class="sun layer" data-speed="-0.6"></div>
-        <div class="dark-layer" data-speed="1"></div>
-        <div class="sunlights" data-speed="-3">
-            <svg width="3840" height="1080" viewBox="0 0 3840 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#FF7836" data-speed=".3">
-                    <path opacity="0.05" d="M2359.1 382.101H2334.3L2321.9 403.501L2334.3 424.901H2359.1L2371.5 403.501L2359.1 382.101Z"/>
-                    <path opacity="0.05" d="M2570.2 294.5H2545.5L2533.1 315.9L2545.5 337.3H2570.2L2582.6 315.9L2570.2 294.5Z"/>
-                    <path opacity="0.05" d="M2492.6 294.5H2418.8L2382 358.2L2418.8 421.9H2492.6L2529.5 358.2L2492.6 294.5Z"/>
-                    <path opacity="0.05" d="M2806.8 96.2002H2651.3L2573.6 230.5L2651.3 364.8H2806.8L2884.5 230.5L2806.8 96.2002Z"/>
-                    <path opacity="0.05" d="M1458.9 774.9H1434.1L1421.7 796.3L1434.1 817.7H1458.9L1471.3 796.3L1458.9 774.9Z"/>
-                    <path opacity="0.05" d="M1906.5 588H1881.7L1869.3 609.5L1881.7 630.9H1906.5L1918.9 609.5L1906.5 588Z"/>
-                    <path opacity="0.05" d="M1147.1 914.101H1122.3L1109.9 935.601L1122.3 957.001H1147.1L1159.5 935.601L1147.1 914.101Z"/>
-                    <path opacity="0.05" d="M1728.7 629.9H1654.9L1618.1 693.6L1654.9 757.3H1728.7L1765.6 693.6L1728.7 629.9Z"/>
-                </g>
-            </svg>
+<header class="header-wrapper" id="header" [ngClass]="{ 'mobile': mobile }">
+    @if (!mobile) {
+        <div class="bg">
+            <div class="sky layer" data-speed="-0.6"></div>
+            <div class="water layer" data-speed="-1"></div>
+            <div class="layer1" data-speed="0.3"></div>
+            <div class="layer2 layer" data-speed="-0.5"></div>
+            <div class="layer3 layer" data-speed="-.6"></div>
+            <div class="layer4 layer" data-speed="-.7"></div>
+            <div class="layer5 layer" data-speed="-.8"></div>
+            <div class="layer6 layer" data-speed="-1"></div>
+            <div class="layer7 layer" data-speed="-1.2"></div>
+            <div class="birds layer" data-speed="-1.5"></div>
+            <div class="sun layer" data-speed="-0.6"></div>
+            <div class="sunlights" data-speed="-3">
+                <svg width="3840" height="1080" viewBox="0 0 3840 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#FF7836" data-speed=".3">
+                        <path opacity="0.05" d="M2359.1 382.101H2334.3L2321.9 403.501L2334.3 424.901H2359.1L2371.5 403.501L2359.1 382.101Z"/>
+                        <path opacity="0.05" d="M2570.2 294.5H2545.5L2533.1 315.9L2545.5 337.3H2570.2L2582.6 315.9L2570.2 294.5Z"/>
+                        <path opacity="0.05" d="M2492.6 294.5H2418.8L2382 358.2L2418.8 421.9H2492.6L2529.5 358.2L2492.6 294.5Z"/>
+                        <path opacity="0.05" d="M2806.8 96.2002H2651.3L2573.6 230.5L2651.3 364.8H2806.8L2884.5 230.5L2806.8 96.2002Z"/>
+                        <path opacity="0.05" d="M1458.9 774.9H1434.1L1421.7 796.3L1434.1 817.7H1458.9L1471.3 796.3L1458.9 774.9Z"/>
+                        <path opacity="0.05" d="M1906.5 588H1881.7L1869.3 609.5L1881.7 630.9H1906.5L1918.9 609.5L1906.5 588Z"/>
+                        <path opacity="0.05" d="M1147.1 914.101H1122.3L1109.9 935.601L1122.3 957.001H1147.1L1159.5 935.601L1147.1 914.101Z"/>
+                        <path opacity="0.05" d="M1728.7 629.9H1654.9L1618.1 693.6L1654.9 757.3H1728.7L1765.6 693.6L1728.7 629.9Z"/>
+                    </g>
+                </svg>
+            </div>
         </div>
-    </div>
+    } 
+  
     <div class="container">
         <span class="title mb-3 d-inline-block">{{componentConfig.h1}}</span>
         <h1 class="slab mb-4">{{componentConfig.h2}}</h1>
@@ -35,7 +37,7 @@
             <app-cta [ctaConfig]="componentConfig.ctaJob"/>
         </div>
     </div>
-    <div class="img-wrapper-mouse" (click)="scrollTo($event)" (keydown)="handleKeyDown($event)" role="button" tabindex="0" data-speed="1">
+    <div class="img-wrapper-mouse" (click)="scrollTo($event)" (keydown)="handleKeyDown($event)" role="button" tabindex="0">
         <img src="assets/images/mouse.svg" alt loading="lazy">
     </div>
 </header>

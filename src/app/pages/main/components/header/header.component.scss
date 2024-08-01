@@ -17,12 +17,17 @@
         height: 1200px;
         height: 100vh;
         max-height: 1200px;
+        min-height: 1200px;
+    }
+    &.mobile {
+        background-image: url(assets/images/hero/full-bg.webp);
+        background-size: cover;
     }
     .img-wrapper-mouse {
         cursor: pointer;
         z-index: 10;
         position: absolute;
-        bottom: 0;
+        @include spacing(bottom, 2);
         width: 35px;
         height: 60px;
         left: calc(50% - 35px/2);
@@ -33,7 +38,7 @@
     }
     .bg {
         position: relative;
-        .layer,  .dark-layer {
+        .layer, .layer1  {
             position: absolute;
             width: 100%;
             height: 700px;
@@ -50,11 +55,19 @@
                 height: 1200px;
                 height: 100vh;
                 max-height: 1200px;
+                min-height: 1200px;
             }
         }
         .layer1 {
             z-index: 10;
             background-image: url(assets/images/hero/layer1.webp);
+            background-position: bottom -350px center;
+            @include respond-to(md) {
+                background-position: bottom -450px center;
+            }
+            @include respond-to(xxl) {
+                background-position: bottom -650px center;
+            }
         }
         .layer2 {
             z-index: 9;
@@ -96,13 +109,6 @@
             z-index: 0;
             background-image: url(assets/images/hero/sky.svg); 
         }
-        .dark-layer {
-            z-index: 10;
-            background-color: $dark;
-            transform: translateY(-900px);
-            height: 900px;
-            pointer-events: none;
-        }
         .sunlights {
             position: absolute;
             z-index: 12;
@@ -125,6 +131,7 @@
                 @include respond-to(xxl) {
                     height: 100vh;
                     width: 3840px;
+                    min-height: 1200px;
                 }
                 g {
                     transform: rotateZ(10deg);

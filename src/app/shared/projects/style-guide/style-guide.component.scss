@@ -11,6 +11,8 @@
         padding-bottom: $spacing-unit*16;
     }
     &.brushalong {
+        --selected-font: "Lilita One";
+        --font-weight: 600;
         &.white-bg {
             background-color: $brushAlongWhite;
             background-image: url(assets/images/projects/brush-along/crub.webp);
@@ -28,6 +30,28 @@
             }
             .white-color, .font-tile, .style-name, .abc {
                 color: $brushalongPrimary;
+            }
+        }
+    }
+    &.portfolio {
+      background-color: $light-purple;
+      --circle-icon-bg: #{$tierroYellow};
+      --icon-color: #{$dark};
+      --selected-font: "Montagu Slab";
+      --font-weight: 600;
+      .content {
+        .colors {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+                @include respond-to(md) {
+                    grid-template-columns: repeat(5, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                }
+            }
+            [style="background-color: #F5F5F5;"], .big {
+                p {
+                    color: $dark;
+                }
             }
         }
     }
@@ -60,6 +84,72 @@
             }
             @include respond-to(lg) {
                 font-size: 28px;
+            }
+        }
+        ul {
+            list-style: none;
+            list-style-image: none;
+            margin-top: $spacing-unit*4;
+            li {
+                display: flex;
+                gap: $spacing-unit*2; 
+                margin-bottom: $spacing-unit*4; 
+            }
+            h3.bullet-title {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1.5;
+                margin-bottom: 0;
+                @include respond-to(md) {
+                    font-size: 18px;
+                }
+            }
+            p.bullet-paragraph {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.5;
+                margin-bottom: 0;
+                @include respond-to(md) {
+                    font-size: 18px;
+                }
+            }
+            .img-bullet-wrapper {
+                &.with-icon {
+                    background-color: var(--circle-icon-bg);
+                    fill: var(--icon-color);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    padding: $spacing-unit;
+                    width: 35px;
+                    height: 35px;
+                    flex: 0 0 35px;
+                    @include respond-to(lg) {
+                        width: 60px;
+                        height: 60px;
+                        flex: 0 0 60px;
+                    }
+                    app-get-icon {
+                        width: 25px;
+                        @include respond-to(lg) {
+                            width: 45px;
+                        }
+                        ::ng-deep {
+                            svg {
+                                width: 25px;
+                                height: 25px;
+                                @include respond-to(lg) {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+                img {
+
+                }
             }
         }
         .colors {
@@ -127,8 +217,8 @@
                     gap: $spacing-unit*4;
                     align-items: center;
                     .abc {
-                        font-family: "Lilita One";
-                        font-weight: 600;
+                        font-family: var(--selected-font);
+                        font-weight: var(--font-weight);
                     }
                 }
             }

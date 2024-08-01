@@ -14,6 +14,10 @@ export const routes: Routes = [
         path: 'projects/brushalong', 
         loadComponent:() => import('./pages/projects/brushalong/brushalong.component').then(mod  => mod.BrushalongComponent),
         data: { name: 'Project BrushAlong' }
+    },{ 
+        path: 'projects/portfolio', 
+        loadComponent:() => import('./pages/projects/portfolio/portfolio.component').then(mod  => mod.PortfolioComponent),
+        data: { name: 'Project Portfolio' }
     },
     { path: '**', redirectTo: '' },
 ];

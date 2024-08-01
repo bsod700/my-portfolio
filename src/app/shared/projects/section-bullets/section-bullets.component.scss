@@ -16,6 +16,33 @@
             }
         }
     }
+    &.portfolio {
+        background-color: $dark;
+        background-image: url(assets/images/projects/portfolio/project-mobile-split1.webp);
+        background-repeat: no-repeat;
+        background-size: 991px auto;
+        background-position: center bottom -25px;
+        padding-bottom: $spacing-unit*24;
+        @include respond-to(lg) {
+            background-image: url(assets/images/projects/portfolio/project-split1.webp);
+            background-size: 1200px auto;
+        }
+        @include respond-to(xl) {
+            background-position: center bottom -30px;
+            background-size:  1400px auto;
+        }
+        @include respond-to(xxl) {
+            background-position: center bottom -100px;
+            background-size: 3840px auto;
+            padding-bottom: $spacing-unit*40;
+        }
+        .img-bullet-wrapper {
+            &.with-icon {
+                background-color: $purple;
+                fill: $text-color-white;
+            }
+        }
+    }
     &.brushalong {
         &.wooden-sign {
             background-color: #704720;

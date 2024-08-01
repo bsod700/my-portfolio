@@ -200,6 +200,23 @@ section {
     }
   }
 
+  &.portfolio {
+    --color-primary: #{$tierroYellow};
+    --color-white: #{$text-color-white};
+    --color-fade-white: #{$tierroLittleWhite};
+    --color-text-primary: #{$dark};
+    --color-text-sub-primary: #{$dark-purple};
+    .primary-color {
+      color: $tierroYellow;
+    }
+    .white-color {
+      color: $text-color-white;
+    }
+    .fade-white {
+      color: $tierroLittleWhite;
+    }
+  }
+
   &.brushalong {
     --color-blue: #{$brushalongBlue};
     --color-dark-blue: #{$brushalongDarkBlue};

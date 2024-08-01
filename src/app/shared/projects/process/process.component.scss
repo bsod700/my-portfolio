@@ -33,6 +33,81 @@
             }
         }
     }
+    &.portfolio {
+        background-color: $dark;
+        background-image: url(assets/images/projects/portfolio/project-mobile-split1.webp);
+        background-repeat: no-repeat;
+        background-size: 991px auto;
+        background-position: center bottom -25px;
+        padding-bottom: $spacing-unit*24;
+        @include respond-to(lg) {
+            background-image: url(assets/images/projects/portfolio/project-split1.webp);
+            background-size: 1200px auto;
+        }
+        @include respond-to(xl) {
+            background-repeat: no-repeat;
+            background-image: url(assets/images/projects/portfolio/sun2.svg), url(assets/images/projects/portfolio/project-split1.webp);
+            background-position: top left calc(50% - 200px), center bottom -30px;
+            background-size: 311px 311px, 1400px auto;
+        }
+        @include respond-to(xxl) {
+            background-repeat: no-repeat;
+            background-image: url(assets/images/projects/portfolio/sun2.svg), url(assets/images/projects/portfolio/project-split1.webp);
+            background-position: top left calc(50% - 200px), center bottom -100px;
+            background-size: 311px 311px, 3840px auto;
+            padding-bottom: $spacing-unit*32;
+        }
+        .process {
+            &.last {
+               
+                margin-left: unset;
+                padding-left: unset;
+                margin-top: 48px;
+                margin-right: 0;
+                padding-right: 0;
+                @include respond-to(md) {
+                    margin-top: 0;
+                    margin-right: 40px;
+                    padding-right: 12px;
+                }
+                .content {
+                    background: linear-gradient(180deg, #34233B 25.52%, #190417 70.83%);
+                    @include respond-to(md) {
+                        padding-right: 18px;
+                    }
+                }
+                .circle {
+                    position: absolute;
+                    top: -64px;
+                    @include respond-to(md) {
+                        left: unset;
+                        right: -40px;
+                        top: 0;
+                    }
+                }
+                &:after {
+                   
+                    left: 26px;
+                    top: -40px;
+                    border-top:  20px solid transparent;
+                    border-left: 20px solid var(--color-text-sub-primary);
+                    border-right: 20px solid transparent;
+                    border-bottom:  20px solid transparent;
+                    transform: rotateZ(-90deg);
+                    @include respond-to(md) {
+                        left: unset;
+                        border-top: 20px solid var(--color-text-sub-primary);
+                        transform: rotateZ(-90deg);
+                        border-left: 20px solid transparent;
+                        border-right: 20px solid transparent;
+                        top: 30px;
+                        right: -27px;
+                        
+                    }
+                }
+            }
+        }
+    }
     &.brushalong {
         background-color: $brushAlongWhite;
         @include respond-to(xl) {

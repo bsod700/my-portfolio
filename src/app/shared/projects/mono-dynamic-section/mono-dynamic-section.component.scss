@@ -71,6 +71,26 @@
             }
         }
     }
+    &.portfolio {
+        background-image: url(assets/images/projects/portfolio/project-mobile-split2.webp), linear-gradient(180deg, #5B2E49 0%, #402B48 103.72%);
+        background-repeat: no-repeat;
+        background-size: 991px auto, cover;
+        background-position: bottom center;
+        --circle-icon-bg: #{$text-color-white};
+        --icon-color: #{$dark};
+        padding-bottom: $spacing-unit*16; 
+        @include respond-to(lg) {
+            background-image: url(assets/images/projects/portfolio/project-split2.webp), linear-gradient(180deg, #5B2E49 0%, #402B48 103.72%);
+            background-size: 1200px auto, cover;
+        }
+        @include respond-to(xl) {
+            background-size: 1400px auto, cover;
+        }
+        @include respond-to(xxl) {
+            background-size: 3840px auto, cover;
+            padding-bottom: $spacing-unit*32; 
+        }
+    }
     &.brushalong {
         background-color: $brushAlongWhite;
         --circle-icon-bg: #{$brushalongBlue};
