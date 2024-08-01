@@ -304,19 +304,19 @@ export class PortfolioConfigService {
         subtitle: 'Design System',
         cards: [
           {
-            src: 'assets/images/projects/tierro/components/typography-design-system.webp',
+            src: 'assets/images/projects/portfolio/components/typography-design-system.webp',
             alt: 'Typography'
           },
           {
-            src: 'assets/images/projects/tierro/components/color-palette-design-system.webp',
+            src: 'assets/images/projects/portfolio/components/color-palette-design-system.webp',
             alt: 'Color palette'
           },
           {
-            src: 'assets/images/projects/tierro/components/inputs-design-system.webp',
+            src: 'assets/images/projects/portfolio/components/inputs-design-system.webp',
             alt: 'Inputs'
           },
           {
-            src: 'assets/images/projects/tierro/components/buttons-design-system.webp',
+            src: 'assets/images/projects/portfolio/components/buttons-design-system.webp',
             alt: 'Buttons'
           }
         ]
