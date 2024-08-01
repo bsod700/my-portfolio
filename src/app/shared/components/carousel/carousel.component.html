@@ -5,30 +5,30 @@
         <h4 class="title-body slab">{{componentConfig.subtitle}}</h4>
       </div>
       
-      <div class="subjects mb-6" role="tablist">
+      <div class="subjects mb-6">
         @if (componentConfig.subjects && componentConfig.subjects.length > 0) {
-          <button (click)="prev()" class="arrow left buttons">
+          <button (click)="prev()" class="arrow left buttons" role="button" aria-label="Go to previous">
             <app-get-icon [icon]="'arrow_left'" />
           </button>
           @for (subject of visibleItems; track $index) {
             <button [class.active]="selectedItem === subject"
                     (click)="selectSubject(subject.title, $event)"
-                    role="tab"
+                    role="button"
                     class="subject buttons"
-                    [attr.aria-selected]="selectedItem === subject"
+                    [attr.aria-expanded]="selectedItem === subject"
                     [attr.aria-controls]="generateId(subject.title)"
                     [attr.aria-label]="getAriaLabel(subject)"
                     >
                     <p> {{ subject.title }}</p>
             </button>
           }
-          <button (click)="next()" class="arrow right buttons">
+          <button (click)="next()" class="arrow right buttons" role="button" aria-label="Go to next">
             <app-get-icon [icon]="'arrow_right'" />
           </button>
         }
       </div>
       @if (selectedItem !== null) {
-        <div class="carousel-content d-flex" role="tabpanel">
+        <div class="carousel-content d-flex">
             @if (isProject(selectedItem)) {
               <div class="left-side" [id]="generateId(selectedItem.title)">
                 <div class="logo-wrapper mb-4">

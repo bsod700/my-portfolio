@@ -10,7 +10,7 @@
             <div class="layer5 layer" data-speed="-.8"></div>
             <div class="layer6 layer" data-speed="-1"></div>
             <div class="layer7 layer" data-speed="-1.2"></div>
-            <div class="birds layer" data-speed="-1.5"></div>
+            <div class="birds layer" data-speed="-1.1"></div>
             <div class="sun layer" data-speed="-0.6"></div>
             <div class="sunlights" data-speed="-3">
                 <svg width="3840" height="1080" viewBox="0 0 3840 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@
             <app-cta [ctaConfig]="componentConfig.ctaJob"/>
         </div>
     </div>
-    <div class="img-wrapper-mouse" (click)="scrollTo($event)" (keydown)="handleKeyDown($event)" role="button" tabindex="0">
+    <div class="img-wrapper-mouse" (click)="scrollTo($event)" (keydown)="handleKeyDown($event)" role="button" tabindex="0" aria-label="Click to scroll to next section">
         <img src="assets/images/mouse.svg" alt loading="lazy">
     </div>
 </header>

@@ -27,7 +27,10 @@ export class FooterComponent {
 export interface FooterConfig {
   logo: Img;
   links: ArrowLink[];
-  socials: string[];
+  socials: {
+    url: string;
+    iconName: string;
+  }[];
   email: {
     link: string;
     text: string;

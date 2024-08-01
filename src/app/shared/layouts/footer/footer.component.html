@@ -17,8 +17,8 @@
         </div>
         <div class="socials">
             @for (social of componentConfig.socials; track $index) {
-                <a class="social">
-                    <app-get-icon [icon]="social"/>
+                <a class="social" [href]="social.url" target="_blank" [attr.aria-label]="'Go to ' + social.iconName + ' page'">
+                    <app-get-icon [icon]="social.iconName"/>
                 </a>
             }
         </div>

@@ -74,7 +74,7 @@ export class MainConfigService {
             },
             {
               title: 'BrushAlong',
-              description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+              description: 'A fun brushing tracker game app designed for children, making dental hygiene engaging and enjoyable. This project also includes an intuitive tracking system for parents to easily monitor and manage their children\'s brushing habits.',
               responsibilities: [
                 'UX & UI Design',
                 'Illustration',
@@ -101,7 +101,7 @@ export class MainConfigService {
             },
             {
               title: 'Portfolio',
-              description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+              description: 'An engaging and interactive personal portfolio, showcasing a range of design and development skills. This project highlights my various projects, services offered, and provides an insight into my background and expertise.',
               responsibilities: [
                 'UX & UI Design',
                 'Illustration',
@@ -182,10 +182,12 @@ export class MainConfigService {
             // },
             {
               title: 'TCAbility',
-              description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+              description: 'A comprehensive project for TCAbility, featuring a brand website that adheres to the latest WCAG 2.2 standards. This project includes designing and developing the site, creating the logo, and embedding accessibility features, showcasing TCAbility’s expertise in accessible digital design.',
               responsibilities: [
                 'UX & UI Design',
                 'Logo',
+                'Illustration',
+                'Accessibility',
                 'Web Development'
               ],
               cta: {
@@ -199,11 +201,11 @@ export class MainConfigService {
                 showIconLeft: false
               },
               previewImg: {
-                src: 'assets/images/projects/tierro/preview.webp',
+                src: 'assets/images/projects/tcability/preview.webp',
                 alt: 'Tierro project - preview image'
               },
               iconImg: {
-                src: 'assets/images/projects/tierro/logo-color.svg',
+                src: 'assets/images/projects/tcability/logo-white.svg',
                 alt: 'Tierro project logo'
               }
             }
@@ -614,10 +616,22 @@ export class MainConfigService {
           logo: this.defaultConfigService.getLogo(),
           links: this.defaultConfigService.getRegularNavbar().links,
           socials: [
-            'linkedin',
-            'github',
-            'facebook',
-            'instagram'
+            {
+              url: 'https://www.linkedin.com/in/guytagger/',
+              iconName: 'linkedin'
+            },
+            {
+              url: 'https://github.com/bsod700',
+              iconName: 'github'
+            },
+            {
+              url: 'https://www.facebook.com/gtkiller',
+              iconName: 'facebook'
+            },
+            {
+              url: '/',
+              iconName: 'instagram'
+            }
           ],
           email: {
             text: 'Email: Guytagger@gmail.com',

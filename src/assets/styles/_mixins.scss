@@ -80,3 +80,29 @@
     max-width: 1320px;
   }
 }
+/* Mixin for custom scrollbar styles */
+@mixin custom-scrollbar {
+  /* WebKit Browsers */
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-track-color;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb-color;
+    border-radius: 10px;
+    border: 3px solid $scrollbar-track-color;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $scrollbar-thumb-hover-color;
+  }
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+}

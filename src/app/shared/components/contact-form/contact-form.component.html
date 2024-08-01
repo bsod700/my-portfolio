@@ -6,11 +6,9 @@
             <div class="checkboxes mb-8">
                 @for (checkbox of formConfig.checkboxes; track $index) {
                     <label 
-                        [attr.aria-checked]="checkbox.value"
                         tabindex="0"
-                        role="checkbox"
                         [attr.aria-label]="checkbox.ariaLabel"
-                        [attr.aria-describedby]="checkbox.ariaDescribedBy"
+                        class="checkbox"
                     >
     
                         @if (checkbox.hasIconLeft && checkbox.iconLeft != '') {
@@ -22,7 +20,10 @@
                             [value]="checkbox.label"
                             [id]="checkbox.id" 
                             [checked]="checkbox.value"
+                            [attr.aria-describedby]="checkbox.ariaDescribedBy"
                             [required]="checkbox.required"
+                            [attr.aria-checked]="checkbox.value"
+                            role="checkbox"
                             (change)="onCheckboxChange($event)">
                         <span class="paragraph roboto small fw-6">{{ checkbox.label }}</span>
     

@@ -4,3 +4,36 @@
 @import "./globals";
 
 @import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Variables for customization */
+$scrollbar-width: $spacing-unit*2;
+$scrollbar-track-color: $dark;
+$scrollbar-thumb-color: $tierroYellow;
+$scrollbar-thumb-hover-color: darken($tierroYellow, 20%);
+
+/* Global styles for WebKit browsers */
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-thumb-color;
+  border-radius: 10px;
+  border: 3px solid $scrollbar-track-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $scrollbar-thumb-hover-color;
+}
+
+/* Global styles for Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+}
+
