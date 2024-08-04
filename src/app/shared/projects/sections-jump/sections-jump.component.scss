@@ -231,11 +231,11 @@
                 flex: 1 0 0;
             }
             h4.title {
-                font-size: 20px;
+                font-size: 1.25rem;
                 font-weight: 700;
                 margin-bottom: $spacing-unit*2;
                 @include respond-to(md) {
-                    font-size: 28px;
+                    font-size: 1.75rem;
                 }
             }
             .project-paragraph {

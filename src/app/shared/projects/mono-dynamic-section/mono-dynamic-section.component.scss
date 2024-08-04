@@ -147,11 +147,11 @@
             .text {
                 p.project-paragraph {
                     color: var(--color-primary);
-                    font-size: 20px;
+                    font-size: 1.25rem;
                     font-weight: 700;
                     margin-bottom: $spacing-unit;
                     @include respond-to(md) {
-                        font-size: 28px;
+                        font-size: 1.75rem;
                     }
                 }
             }
@@ -241,21 +241,21 @@
                     margin-bottom: $spacing-unit*4; 
                 }
                 h3.bullet-title {
-                    font-size: 16px;
+                    font-size: 1rem;
                     font-weight: 700;
                     line-height: 1.5;
                     margin-bottom: 0;
                     @include respond-to(md) {
-                        font-size: 18px;
+                        font-size: 1.125rem;
                     }
                 }
                 p.bullet-paragraph {
-                    font-size: 16px;
+                    font-size: 1rem;
                     font-weight: 300;
                     line-height: 1.5;
                     margin-bottom: 0;
                     @include respond-to(md) {
-                        font-size: 18px;
+                        font-size: 1.125;
                     }
                 }
                 .img-bullet-wrapper {

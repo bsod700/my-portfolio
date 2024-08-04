@@ -15,7 +15,7 @@ export class MainConfigService {
         header: {
           h1: 'Hello I\'m',
           h2: 'GUY TAGGER',
-          h3: 'A FRONTEND DEVELOPER & UI/UX DESIGNER & ILLUSTRATOR',
+          h3: 'A FRONTEND DEVELOPER <span>|</span> UI/UX DESIGNER <span>|</span> ILLUSTRATOR',
           ctaJob: {
             text: 'Let\'s Create Something Great!',
             size: 'default',

@@ -159,6 +159,9 @@
         @include responsive-font-size(roboto, h3);
         font-family: $font-family-roboto; 
         font-weight: 400;
+        ::ng-deep span {
+            color: $tierroYellow;
+        }
     }
     .ctas-container {
         display: flex;

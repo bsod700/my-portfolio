@@ -77,13 +77,13 @@
             margin-bottom: $spacing-unit*8;
         }
         .project-subtitle {
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 500;
             @include respond-to(md) {
-                font-size: 22px;
+                font-size: 1.375rem;
             }
             @include respond-to(lg) {
-                font-size: 28px;
+                font-size: 1.75rem;
             }
         }
         ul {
@@ -96,21 +96,21 @@
                 margin-bottom: $spacing-unit*4; 
             }
             h3.bullet-title {
-                font-size: 16px;
+                font-size: 1rem;
                 font-weight: 700;
                 line-height: 1.5;
                 margin-bottom: 0;
                 @include respond-to(md) {
-                    font-size: 18px;
+                    font-size: 1.125rem;
                 }
             }
             p.bullet-paragraph {
-                font-size: 16px;
+                font-size: 1rem;
                 font-weight: 300;
                 line-height: 1.5;
                 margin-bottom: 0;
                 @include respond-to(md) {
-                    font-size: 18px;
+                    font-size: 1.125;
                 }
             }
             .img-bullet-wrapper {
@@ -195,13 +195,13 @@
                 }
                 .font-tile {
                     margin-bottom: $spacing-unit*4;
-                    font-size: 18px;
+                    font-size: 1.125rem;
                     @include respond-to(md) {
                         margin-bottom: $spacing-unit*8;
-                        font-size: 22px;
+                        font-size: 1.375rem;
                     }
                     @include respond-to(lg) {
-                        font-size: 28px;
+                        font-size: 1.75rem;
                     }
                 }
                 img {

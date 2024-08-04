@@ -311,10 +311,10 @@
         gap: 24px;
         .responsibility {
             h5 {
-                font-size: 14px;
+                font-size: 0.875rem; // 14px
                 font-weight: 400;
                 @include respond-to(lg) {
-                    font-size: 18px;
+                    font-size: 1.125rem; // 18px
                 }
             }
         }

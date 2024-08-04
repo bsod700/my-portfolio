@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Input, OnInit, Renderer2, inject } from '@angular/core';
-import { Cta, ResponsiveService, ScrollService } from '@core/index';
+import { Cta, DocumentService, ResponsiveService, ScrollService } from '@core/index';
 import { CtaComponent } from '@shared/index';
 
 @Component({
@@ -16,7 +16,10 @@ export class HeaderComponent implements OnInit {
   scrollService: ScrollService = inject(ScrollService);
   responsiveService: ResponsiveService = inject(ResponsiveService);
   renderer: Renderer2 = inject(Renderer2);
-  private cdr: ChangeDetectorRef = inject(ChangeDetectorRef)
+  private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
+  documentService: DocumentService= inject(DocumentService);
+
+  
 
   mobile: boolean = false;
   scrollTo(event: Event) {
@@ -94,6 +97,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkScreenSize();
+
+    this.documentService.setInnerHtml({
+      'header-paragraph': this.componentConfig.h3
+    });
   }
 }
 export interface headerConfig {

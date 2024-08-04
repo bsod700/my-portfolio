@@ -126,11 +126,11 @@
                     padding: $spacing-unit*4 $spacing-unit*2 $spacing-unit*4 0px ;
                 }
                 .persona-name {
-                    font-size: 20px;
+                    font-size: 1.25rem;
                     font-weight: 600;
                     margin-bottom: $spacing-unit*2;
                     @include respond-to(md) {
-                        font-size: 28px;
+                        font-size: 1.75rem;
                         margin-bottom: $spacing-unit*4;
                     }
                 }
@@ -160,24 +160,24 @@
                     }
                     .bullet-subtitle {
                         flex: 0 0 80px;
-                        font-size: 14px;
+                        font-size: 0.875rem;
                         font-weight: 400;
                         margin-bottom: 0;
                         @include respond-to(md) {
-                            font-size: 16px;
+                            font-size: 1rem;
                             flex: 0 0 100px;
                         }
                     }
                     
                 }
                 .bullet-paragraph {
-                    font-size: 14px;
+                    font-size: 0.875;
                     margin-bottom: 0;
                     font-weight: 300;
                     flex-shrink: 0;
                 }
                 .bullets-title {
-                    font-size: 20px;
+                    font-size: 1.25rem;
                     font-weight: 600;
                     margin-bottom: $spacing-unit*2;
                 }

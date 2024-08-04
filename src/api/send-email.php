@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $adminTemplate = str_replace('{{looking}}', $looking, $adminTemplate);
 
         // Prepare the email headers
-        $subject = 'New Inquiry';
+        $subject = 'Thank You for Your Request - Guy Tagger\'s Services';
         $headers = 'From: gt@guytagger.com' . "\r\n" .
                    'Reply-To: gt@guytagger.com' . "\r\n" .
                    'X-Mailer: PHP/' . phpversion() . "\r\n" .
