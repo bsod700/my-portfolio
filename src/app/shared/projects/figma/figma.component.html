@@ -1,0 +1,25 @@
+<section class="figma-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container in-project">
+        <div class="title">
+            @if (componentConfig.title) {
+                <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+            }
+            @if (componentConfig.subtitle) {
+                <h3 class="project-subtitle white-color">{{componentConfig.subtitle}}</h3>
+            }
+            @if (componentConfig.paragraphs) {
+                @for (p of componentConfig.paragraphs; track $index) {
+                    <p class="project-paragraph white-color">{{p}}</p>
+                }
+            }
+        </div>
+        @if (componentConfig.figma.link) {
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+                [width]="componentConfig.figma.width" 
+                [height]="componentConfig.figma.height" 
+                [src]="safeSrc" 
+                allowfullscreen>
+            </iframe>
+        }
+    </div>
+</section>

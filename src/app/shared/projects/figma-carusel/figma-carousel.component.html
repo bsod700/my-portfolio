@@ -1,0 +1,42 @@
+<section class="figma-wrapper" [ngClass]="[componentConfig.projectName, componentConfig.specialClass ?? '']">
+    <div class="container in-project">
+        <div class="title">
+            @if (componentConfig.title) {
+                <h2 class="project-title primary-color">{{componentConfig.title}}</h2>
+            }
+            @if (componentConfig.subtitle) {
+                <h3 class="project-subtitle white-color">{{componentConfig.subtitle}}</h3>
+            }
+            @if (componentConfig.paragraphs) {
+                @for (p of componentConfig.paragraphs; track $index) {
+                    <p class="project-paragraph white-color">{{p}}</p>
+                }
+            }
+        </div>
+        <div class="carusel">
+            <div class="titles">
+                @for (figma of componentConfig.figmas; track $index) {
+                    <button 
+                            (click)="selectFigma(figma.title, $event)"
+                            role="button"
+                            class="title-buttons"
+                            [attr.aria-controls]="generateId(figma.title)"
+                            [attr.aria-label]="getAriaLabel(figma)"
+                            >
+                            <p> {{ figma.title }}</p>
+                    </button>
+                  }
+            </div>
+            @for (figma of visibleItems(); track $index) {
+                <div class="carousel-item">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+                        [width]="figma.width" 
+                        [height]="figma.height" 
+                        [src]="getSafeSrc(figma.link)" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            }
+        </div>
+    </div>
+</section>

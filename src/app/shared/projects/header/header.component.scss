@@ -94,6 +94,12 @@
     }
     .cta-wrapper {
         margin-top: $spacing-unit*8;
+        display: flex;
+        gap: $spacing-unit*4;
+        flex-direction: column;
+        @include respond-to(xl) {
+            flex-direction: row;
+        }
     }
     .bullets-container {
         width: 100%;

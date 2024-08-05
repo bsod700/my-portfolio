@@ -6,6 +6,7 @@ export interface Project {
     description: string;
     responsibilities: string[];
     cta: Cta;
+    devCta?: Cta;
     previewImg: Img;
     iconImg: Img;
 }

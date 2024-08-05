@@ -1,0 +1,20 @@
+@import './mixins';
+
+.figma-wrapper {
+    text-align: center;
+    padding-top: $spacing-unit*10;
+    padding-bottom: $spacing-unit*10;
+
+    &.brushalong {
+    }
+    &.portfolio {
+        background-color: $light-purple;
+    }
+    .title {
+        margin-bottom: $spacing-unit*4;
+    }
+    iframe {
+        width: 100%;
+        max-width: 800px;
+    }
+}

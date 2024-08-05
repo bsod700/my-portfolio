@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { DesignSystemShowComponent, DynamicSectionComponent, FinalSectionComponent, HeaderComponent, IconsImgComponent, MonoDynamicSectionComponent, NavbarComponent, ProblemSolutionComponent, ProcessComponent, SectionBulletsComponent, StyleGuideComponent } from '@shared/index';
+import { DesignSystemShowComponent, DynamicSectionComponent, FigmaComponent, FinalSectionComponent, HeaderComponent, IconsImgComponent, MonoDynamicSectionComponent, NavbarComponent, ProblemSolutionComponent, ProcessComponent, SectionBulletsComponent, StyleGuideComponent } from '@shared/index';
 import { PortfolioConfigService, PortfolioProjectConfig } from './portfolio-config.service';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [NavbarComponent, HeaderComponent, DynamicSectionComponent, ProcessComponent, ProblemSolutionComponent, MonoDynamicSectionComponent,
-    IconsImgComponent, SectionBulletsComponent, FinalSectionComponent, StyleGuideComponent, DesignSystemShowComponent
+    IconsImgComponent, SectionBulletsComponent, FinalSectionComponent, StyleGuideComponent, DesignSystemShowComponent, FigmaComponent
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'

@@ -9,13 +9,16 @@
             @if (componentConfig.cta) {
                 <div class="cta-wrapper">
                     <app-cta [ctaConfig]="componentConfig.cta"/>
+                    @if (componentConfig.devCta) {
+                        <app-cta [ctaConfig]="componentConfig.devCta"/>
+                      }
                 </div>
             }
         </div>
 
         @if (componentConfig.img) {
             <div class="right">
-                <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="lazy">
+                <img [src]="componentConfig.img.src" [alt]="componentConfig.img.alt" loading="eager">
             </div>
         }
     </div>

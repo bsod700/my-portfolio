@@ -26,4 +26,5 @@ export interface HeaderProjectConfig {
   }[],
   img?: Img;
   cta?: Cta;
+  devCta?: Cta;
 }

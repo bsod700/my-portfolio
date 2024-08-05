@@ -43,3 +43,4 @@ export * from './projects/overview/overview.component';
 export * from './projects/wireframes/wireframes.component';
 export * from './projects/style-guide/style-guide.component';
 export * from './projects/prototype/prototype.component';
+export * from './projects/figma/figma.component';

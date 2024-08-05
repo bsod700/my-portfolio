@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $looking = implode(", ", $emailData['looking']);
 
         // Construct the path to the HTML email templates
-        $userTemplatePath = __DIR__ . '/../assets/email-templates/emailTemplate.html';
+        $userTemplatePath = __DIR__ . '/../assets/email-templates/emailTemplateInline.html';
         $adminTemplatePath = __DIR__ . '/../assets/email-templates/adminEmailTemplate.html';
 
         // Load the HTML email template for the user

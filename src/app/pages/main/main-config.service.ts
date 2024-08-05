@@ -111,7 +111,7 @@ export class MainConfigService {
                 text: 'Take Me To The Project',
                 size: 'default',
                 color: 'yellow',
-                ariaLabel: 'Go to Tierro case study',
+                ariaLabel: 'Go to portfolio case study',
                 inLink: 'projects/portfolio',
                 showIconRight: true,
                 iconRight: 'east',

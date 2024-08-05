@@ -230,6 +230,11 @@
                 }
             }
         }
+        .cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-unit*4;
+        }
     }
     
     .service-side {

@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { DefaultConfigService, NavbarRegular } from '@core/index';
-import { HeaderProjectConfig, ProjectDesignSystemConfig, ProjectDynamicSectionConfig, ProjectFinalSectionConfig, ProjectMonoDynamicSectionConfig, ProjectProblemSolutionConfig, ProjectProcessConfig, ProjectSectionBulletsConfig, ProjectStyleGuideConfig } from '@shared/index';
+import { FigmaProjectConfig, HeaderProjectConfig, ProjectDesignSystemConfig, ProjectDynamicSectionConfig, ProjectFinalSectionConfig, ProjectMonoDynamicSectionConfig, ProjectProblemSolutionConfig, ProjectProcessConfig, ProjectSectionBulletsConfig, ProjectStyleGuideConfig } from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +46,17 @@ export class PortfolioConfigService {
           iconRight: 'arrow_right_line',
           showIconLeft: false,
           outLink: 'https://www.tierromusic.com/'
-        }
+        },
+        devCta: {
+          text: 'Go To The Repository',
+          size: 'default',
+          color: 'yellow',
+          ariaLabel: 'Go to portfolio github repository',
+          outLink: 'https://github.com/bsod700/my-portfolio',
+          showIconRight: true,
+          iconRight: 'github',
+          showIconLeft: false
+        },
       },
       overview: {
         projectName: 'portfolio',
@@ -222,6 +232,33 @@ export class PortfolioConfigService {
           }
         ]
       },
+      figmaConfig: {
+        projectName: 'portfolio',
+        subtitle: 'Project Figma link',
+        figma: {
+          width: '100%',
+          height: '450',
+          link: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIjRCEvp9uA6nEIIInIb7hN%2FPortfolio-Project%3Fnode-id%3D0-1%26t%3DL3CrXtF96uH8NLoS-1&show-layers=1'
+        }
+      },
+      figmaCompsConfig: {
+        projectName: 'portfolio',
+        subtitle: 'Project\'s Components',
+        figma: {
+          width: '100%',
+          height: '450',
+          link: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIjRCEvp9uA6nEIIInIb7hN%2FPortfolio-Project%3Fnode-id%3D1-5692%26t%3DL3CrXtF96uH8NLoS-1'
+        }
+      },
+      figmaProjectsConfig: {
+        projectName: 'portfolio',
+        subtitle: 'Project\'s Case Studies',
+        figma: {
+          width: '100%',
+          height: '450',
+          link: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIjRCEvp9uA6nEIIInIb7hN%2FPortfolio-Project%3Fnode-id%3D1-10932%26t%3DL3CrXtF96uH8NLoS-1'
+        }
+      },
       styleGuide: {
         projectName: 'portfolio',
         specialClass: 'white-bg text-center',
@@ -356,6 +393,9 @@ export interface PortfolioProjectConfig {
   problemSolution: ProjectProblemSolutionConfig;
   clientPage: ProjectMonoDynamicSectionConfig;
   theGoal: ProjectSectionBulletsConfig;
+  figmaConfig: FigmaProjectConfig;
+  figmaCompsConfig: FigmaProjectConfig;
+  figmaProjectsConfig: FigmaProjectConfig;
   styleGuide: ProjectStyleGuideConfig;
   designSystem: ProjectDesignSystemConfig;
   footer: ProjectFinalSectionConfig;

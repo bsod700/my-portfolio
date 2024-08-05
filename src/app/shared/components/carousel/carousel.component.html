@@ -42,7 +42,9 @@
                   }
                 </div>
                 <p class="mb-6">{{ selectedItem.description }}</p>
-                <app-cta [ctaConfig]="selectedItem.cta"/>
+                <div class="cta-wrapper">
+                  <app-cta [ctaConfig]="selectedItem.cta"/>
+                </div>
               </div>
               <div class="img-wrapper">
                 <img [src]="selectedItem.previewImg.src" [alt]="selectedItem.previewImg.alt" loading="lazy">
