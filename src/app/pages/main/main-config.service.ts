@@ -61,7 +61,8 @@ export class MainConfigService {
                 inLink: 'projects/tierro',
                 showIconRight: true,
                 iconRight: 'east',
-                showIconLeft: false
+                showIconLeft: false,
+                targetStyle: '_blank'
               },
               previewImg: {
                 src: 'assets/images/projects/tierro/preview.webp',
@@ -88,7 +89,8 @@ export class MainConfigService {
                 inLink: 'projects/brushalong',
                 showIconRight: true,
                 iconRight: 'east',
-                showIconLeft: false
+                showIconLeft: false,
+                targetStyle: '_blank'
               },
               previewImg: {
                 src: 'assets/images/projects/brush-along/preview.webp',
@@ -115,7 +117,8 @@ export class MainConfigService {
                 inLink: 'projects/portfolio',
                 showIconRight: true,
                 iconRight: 'east',
-                showIconLeft: false
+                showIconLeft: false,
+                targetStyle: '_blank'
               },
               previewImg: {
                 src: 'assets/images/projects/portfolio/preview.webp',
@@ -607,7 +610,7 @@ export class MainConfigService {
                 src: 'assets/images/projects/portfolio/deer.svg',
                 alt: 'deer'
               },
-              title: 'Weֿֿ\'ll Be in Touch Soon!',
+              title: 'We\'ll Be in Touch Soon!',
               subtitle: 'I appreciate your interest and will get back to you shortly.'
             }
           }

@@ -44,4 +44,17 @@
         }
     </div>
   </div>
+  <button 
+    class="toggle-play-button-wrapper" 
+    (click)="toggleScrollAnimation()" 
+    [attr.aria-pressed]="isScrolling" 
+    [attr.aria-label]="isScrolling ? 'Pause scrolling animation' : 'Play scrolling animation'"
+  >
+    @if (isScrolling) {
+      <app-get-icon [icon]="'pause'" />
+    }
+    @else {
+      <app-get-icon [icon]="'play_arrow'" />
+    }
+  </button>
 </div>

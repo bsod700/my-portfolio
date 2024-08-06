@@ -30,12 +30,26 @@ export class CarouselComponent implements OnInit {
     }
   }
 
+  private addAnimationClass(className: string) {
+    const contentElement = document.querySelector(`#${this.componentConfig.subtitle.toLocaleLowerCase()} .carousel-content`);
+    if (contentElement) {
+      contentElement.classList.add(className);
+      setTimeout(() => {
+        contentElement.classList.remove(className);
+      }, 500);
+    }
+  }
+
   selectSubject(title: string, event: MouseEvent) {
     const subject = this.componentConfig.subjects.find(subj => subj.title === title) || null;
-    this.selected.set(subject);
-    if (subject) {
-      this.currentIndex.set(this.componentConfig.subjects.findIndex(subj => subj.title === subject.title));
-    }
+    this.addAnimationClass('slide-out');
+    setTimeout(() => {
+      this.selected.set(subject);
+      if (subject) {
+        this.currentIndex.set(this.componentConfig.subjects.findIndex(subj => subj.title === subject.title));
+      }
+      this.addAnimationClass('slide-in');
+    }, 500);
     this.removeFocusToButtons();
   }
 
@@ -72,16 +86,24 @@ export class CarouselComponent implements OnInit {
   }
 
   next() {
-    const nextIndex = (this.currentIndex() + 1) % this.componentConfig.subjects.length;
-    this.currentIndex.set(nextIndex);
-    this.selected.set(this.componentConfig.subjects[nextIndex]);
+    this.addAnimationClass('slide-out');
+    setTimeout(() => {
+      const nextIndex = (this.currentIndex() + 1) % this.componentConfig.subjects.length;
+      this.currentIndex.set(nextIndex);
+      this.selected.set(this.componentConfig.subjects[nextIndex]);
+      this.addAnimationClass('slide-in');
+    }, 500);
     this.removeFocusToButtons();
   }
 
   prev() {
-    const prevIndex = (this.currentIndex() - 1 + this.componentConfig.subjects.length) % this.componentConfig.subjects.length;
-    this.currentIndex.set(prevIndex);
-    this.selected.set(this.componentConfig.subjects[prevIndex]);
+    this.addAnimationClass('slide-out');
+    setTimeout(() => {
+      const prevIndex = (this.currentIndex() - 1 + this.componentConfig.subjects.length) % this.componentConfig.subjects.length;
+      this.currentIndex.set(prevIndex);
+      this.selected.set(this.componentConfig.subjects[prevIndex]);
+      this.addAnimationClass('slide-in');
+    }, 500);
     this.removeFocusToButtons();
   }
 

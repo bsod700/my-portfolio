@@ -63,7 +63,6 @@ export class HeaderComponent implements OnInit {
 
   moveLight(): void {
     const svgGroup = document.querySelector('.sunlights svg g') as SVGGElement | null;
-    // console.log(svgGroup);
     
     const scrollTop = window.pageYOffset;
 
@@ -72,6 +71,18 @@ export class HeaderComponent implements OnInit {
       const movement = -(scrollTop * speed);
 
       this.renderer.setStyle(svgGroup, 'transform', `rotateZ(${movement}deg) scale(${movement/40*-1 + 1})`);
+
+       // Calculate opacity
+      const opacity = Math.max(0, 1 - Math.abs(movement/2) / 100);
+      this.renderer.setStyle(svgGroup, 'opacity', opacity.toString());
+
+      // remove the element from the DOM after it becomes invisible
+      if (opacity === 0) {
+        this.renderer.setStyle(svgGroup, 'display', 'none');
+      }
+      else {
+        this.renderer.setStyle(svgGroup, 'display', 'block');
+      }
     }
   }
 

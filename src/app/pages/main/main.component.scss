@@ -1,0 +1,36 @@
+@import './mixins';
+
+main {
+    position: relative;
+    overflow: hidden;
+    .sunlights {
+        position: absolute;
+        z-index: 12;
+        top: 0;
+        left: calc(50% - 1800px/2);
+        pointer-events: none;
+        @include respond-to(md) {
+            left: calc(50% - 2600px/2);
+        }
+        @include respond-to(xxl) {
+            left: calc(50% - 3840px/2);
+        }
+        svg {
+            height: 700px;
+            width: 1800px;
+            @include respond-to(md) {
+                height: 900px;
+                width: 2600px;
+            }
+            @include respond-to(xxl) {
+                height: 100vh;
+                width: 3840px;
+                min-height: 1200px;
+            }
+            g {
+                transform: rotateZ(10deg);
+                transform-origin: 50% 50%;
+            }
+        }
+    }
+}

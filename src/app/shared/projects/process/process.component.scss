@@ -12,17 +12,17 @@
         background-repeat: no-repeat;
         @include respond-to(lg) {
             background-image:  linear-gradient(-90deg, transparent 70%, $tierroPrimary_100 100%), url(assets/images/projects/tierro/plug5.svg);
-            background-size: cover, 4000px auto;
+            background-size: cover, 3940px auto;
             background-position: center, top right calc(50% - 322px);
         }
         @include respond-to(xl) {
             background-image: linear-gradient(-90deg, transparent 40%, $tierroPrimary_100 90%), url(assets/images/projects/tierro/plug3.svg), url(assets/images/projects/tierro/plug5.svg);
-            background-size: cover ,500px auto, 4000px auto;
+            background-size: cover ,500px auto, 3940px auto;
             background-position:  center ,left calc(50% - 400px) bottom, top -120px right calc(50% - 700px);
         }
         @include respond-to(xxl) {
             background-image: linear-gradient(-90deg, transparent 40%, $tierroPrimary_100 90%), linear-gradient(-30deg, $tierroPrimary_100 10%, transparent 20%), url(assets/images/projects/tierro/plug3.svg),  url(assets/images/projects/tierro/plug5.svg);
-            background-size: cover, cover, 768px auto, 4000px auto;
+            background-size: cover, cover, 768px auto, 3940px auto;
             background-position:  center, center, left calc(50% - 700px) bottom, top -120px right calc(50% - 800px);
         }
         .container {

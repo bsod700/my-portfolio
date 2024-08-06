@@ -6,6 +6,7 @@ export interface Cta {
     ariaLabel: string;
     inLink?: string;
     outLink?: string;
+    targetStyle?: string;
 
     iconColor?: string;
     showIconLeft: boolean;

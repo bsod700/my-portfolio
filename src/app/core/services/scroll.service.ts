@@ -65,9 +65,6 @@ export class ScrollService {
   navigateToSection(event: Event, comp: any, page?: string ) {
     const scrollTo = comp.inLink ?? comp.scrollTo;
     const currentRoute = this.getCurrentRoute();
-    console.log('currentRoute : '+ currentRoute);
-    console.log('page : '+ page);
-    
     
       if (currentRoute === page) {
         console.log('in page');

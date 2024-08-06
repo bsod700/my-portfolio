@@ -1,13 +1,15 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, signal, ViewChild } from '@angular/core';
 import { Tech } from '@core/index';
+import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 
 @Component({
   selector: 'app-technologies',
   standalone: true,
-  imports: [],
+  imports: [GetIconComponent],
   templateUrl: './technologies.component.html',
-  styleUrl: './technologies.component.scss'
+  styleUrl: './technologies.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TechnologiesComponent implements OnInit, AfterViewInit {
   @Input() componentConfig!: TechnologiesConfig;
@@ -19,6 +21,7 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
   @ViewChild('scrollRow2', { static: false }) scrollRow2!: ElementRef<HTMLDivElement>;
   
   private scrollAmount = signal(0);
+  isScrolling = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -41,6 +44,14 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
     }
   }
 
+  toggleScrollAnimation(): void {
+    this.isScrolling = !this.isScrolling;
+    const rows = [this.scrollRow.nativeElement, this.scrollRow2.nativeElement];
+    rows.forEach(row => {
+      row.classList.toggle('paused', !this.isScrolling);
+    });
+  }
+
   private setupInfiniteScroll(container: HTMLDivElement, reverse: boolean): void {
     // Initialize signals for each row
     const scrollSignal = signal(0);
@@ -52,17 +63,18 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
     const totalWidth = container.scrollWidth / 2;
 
     const scroll = () => {
-      scrollSignal.update((current) => {
-        let updatedScroll = current + step;
-        if (!reverse && updatedScroll >= totalWidth) {
-          updatedScroll = 0; // Reset scroll position for forward direction
-        } else if (reverse && updatedScroll <= -totalWidth) {
-          updatedScroll = 0; // Reset for reverse direction
-        }
-        container.style.transform = `translateX(${updatedScroll}px)`;
-        return updatedScroll;
-      });
-
+      if (this.isScrolling) {
+        scrollSignal.update((current) => {
+          let updatedScroll = current + step;
+          if (!reverse && updatedScroll >= totalWidth) {
+            updatedScroll = 0; // Reset scroll position for forward direction
+          } else if (reverse && updatedScroll <= -totalWidth) {
+            updatedScroll = 0; // Reset for reverse direction
+          }
+          container.style.transform = `translateX(${updatedScroll}px)`;
+          return updatedScroll;
+        });
+      }
       requestAnimationFrame(scroll);
     };
 

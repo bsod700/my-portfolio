@@ -7,6 +7,7 @@
     tabindex="0"
     (keydown)="handleKeyDown($event)"
     role="button"
+    [target]="ctaConfig.targetStyle ?? '_self'"
     >
     @if (ctaConfig.showIconLeft) {
         <div class="icon-left">
