@@ -1,0 +1,58 @@
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 year"
+  ExpiresByType text/x-javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/x-shockwave-flash "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType audio/mpeg "access plus 1 year"
+  ExpiresDefault "access plus 1 year"
+</IfModule>
+## EXPIRES CACHING ##
+
+## CACHE CONTROL ##
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|webp|svg|gif|png|css|pdf|js|swf|ico|mp3)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>
+## CACHE CONTROL ##
+
+<Files .env>
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+RewriteEngine On
+
+# Block direct access to the /api directory
+RewriteCond %{REQUEST_URI} ^/api/ [NC]
+RewriteCond %{REQUEST_METHOD} GET
+RewriteRule ^ - [F]
+
+# Allow access to all files in the api directory for non-GET requests
+RewriteCond %{REQUEST_URI} ^/api/ [NC]
+RewriteCond %{REQUEST_METHOD} !GET
+RewriteRule ^ - [L]
+
+# If an existing asset or directory is requested go to it as it is
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# If the requested pattern is file and file doesn't exist, send 404
+RewriteCond %{REQUEST_URI} ^(\/[a-z_\-\s0-9\.]+)+\.[a-zA-Z]{2,4}$
+RewriteRule ^ - [L,R=404]
+
+# Otherwise use history router
+RewriteRule ^ /index.html [L,QSA]

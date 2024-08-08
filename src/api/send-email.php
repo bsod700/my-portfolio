@@ -23,6 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userTemplatePath = __DIR__ . '/../assets/email-templates/emailTemplateInline.html';
         $adminTemplatePath = __DIR__ . '/../assets/email-templates/adminEmailTemplate.html';
 
+        // Check if the email template files exist
+        if (!file_exists($userTemplatePath)) {
+            echo json_encode(['status' => 'error', 'message' => 'User email template not found.']);
+            error_log("User email template not found at path: " . $userTemplatePath);
+            exit;
+        }
+        if (!file_exists($adminTemplatePath)) {
+            echo json_encode(['status' => 'error', 'message' => 'Admin email template not found.']);
+            error_log("Admin email template not found at path: " . $adminTemplatePath);
+            exit;
+        }
+
         // Load the HTML email template for the user
         $userTemplate = file_get_contents($userTemplatePath);
 
