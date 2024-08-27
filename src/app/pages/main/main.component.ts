@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Main, MainConfigService } from './main-config.service';
-import { AboutComponent, ContactComponent, ExploreWorkComponent, FooterComponent, IconsImgComponent, NavbarComponent, TechnologiesComponent } from '@shared/index';
+import { AboutComponent, ContactComponent, ExploreWorkComponent, FooterComponent, IconsImgComponent, NavbarComponent, ReviewsCarouselComponent, TechnologiesComponent } from '@shared/index';
 import { HeaderComponent } from './components';
 
 @Component({
@@ -8,7 +8,7 @@ import { HeaderComponent } from './components';
   standalone: true,
   imports: [NavbarComponent, HeaderComponent, AboutComponent,
     TechnologiesComponent, ContactComponent, FooterComponent, 
-    IconsImgComponent, ExploreWorkComponent
+    IconsImgComponent, ExploreWorkComponent, ReviewsCarouselComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',

@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { DefaultConfigService, NavbarRegular } from '@core/index';
 import { headerConfig } from './components';
-import { AboutConfig, CarouselConfig, ContactConfig, ExploreWorkConfig, FooterConfig, ReviewsConfig, TechnologiesConfig } from '@shared/index';
+import { AboutConfig, CarouselConfig, ContactConfig, ExploreWorkConfig, FooterConfig, ReviewsCarouselConfig, ReviewsConfig, TechnologiesConfig } from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -568,6 +568,75 @@ export class MainConfigService {
             }
           ]
         },
+        reviewsCarousel: {
+          title: 'What My Clients Say',
+          subtitle: 'Reviews',
+          paragraphs: [
+            'Check out what my clients have to say about our time working together.'
+          ],
+          cards: [
+            {
+              img: {
+                src: 'assets/images/projects/tierro/tierro.webp',
+                alt: 'tierro profile'
+              },
+              title: 'Tierro',
+              logo: {
+                src: 'assets/images/projects/tierro/logo-color.svg',
+                alt: 'tierro logo'
+              },
+              review: 'sadasdd to my Front-End Development and UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer '
+            },
+            {
+              img: {
+                src: 'assets/images/projects/tierro/tierro.webp',
+                alt: 'tierro profile'
+              },
+              title: 'Tierro',
+              logo: {
+                src: 'assets/images/projects/tierro/logo-color.svg',
+                alt: 'tierro logo'
+              },
+              review: 'Welcome to my Front-End Development and UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer '
+            },
+            {
+              img: {
+                src: 'assets/images/projects/tierro/tierro.webp',
+                alt: 'tierro profile'
+              },
+              title: 'Tierro',
+              logo: {
+                src: 'assets/images/projects/tierro/logo-color.svg',
+                alt: 'tierro logo'
+              },
+              review: 'W UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer '
+            },
+            {
+              img: {
+                src: 'assets/images/projects/tierro/tierro.webp',
+                alt: 'tierro profile'
+              },
+              title: 'Tierro',
+              logo: {
+                src: 'assets/images/projects/tierro/logo-color.svg',
+                alt: 'tierro logo'
+              },
+              review: 'Welcome to my dasdsadFront-End Developmenolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer '
+            },
+            {
+              img: {
+                src: 'assets/images/projects/tierro/tierro.webp',
+                alt: 'tierro profile'
+              },
+              title: 'Tierro',
+              logo: {
+                src: 'assets/images/projects/tierro/logo-color.svg',
+                alt: 'tierro logo'
+              },
+              review: 'Welcome to my Front-vfvfvfv Development and UI/UX Design portfolio! My name is Guy Tagger and I am a highly skilled and experienced Front-End Developer with a specialization in Angular and UI/UX Designer '
+            }
+          ]
+        },
         technologies: {
           title: 'My Tech Toolbox',
           subtitle: 'Technologies',
@@ -941,6 +1010,7 @@ export interface Main {
   header: headerConfig;
   about: AboutConfig;
   exploreWork: ExploreWorkConfig;
+  reviewsCarousel: ReviewsCarouselConfig;
   technologies: TechnologiesConfig;
   contact: ContactConfig;
   footer: FooterConfig;

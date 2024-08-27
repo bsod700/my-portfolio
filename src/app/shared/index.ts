@@ -23,6 +23,7 @@ export * from './layouts/reviews/reviews.component';
 export * from './layouts/contact/contact.component';
 export * from './layouts/footer/footer.component';
 export * from './layouts/explore-work/explore-work.component';
+export * from './layouts/reviews-carousel/reviews-carousel.component';
 
 // form
 export * from './components/form/checkbox/checkbox.component';

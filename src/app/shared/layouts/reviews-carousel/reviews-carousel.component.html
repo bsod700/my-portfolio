@@ -1,0 +1,42 @@
+<section class="reviews-carousel-wrapper">
+    <div class="container text-center">
+        <div class="title mb-3">
+            <h2 class="title-body">{{componentConfig.title}}</h2>
+            <h3 class="title-body slab">{{componentConfig.subtitle}}</h3>
+        </div>
+        <p>
+            @for (p of componentConfig.paragraphs; track $index) {
+                <span class="d-block mb-2">{{p}}</span>
+            }
+        </p>
+
+        <div class="carousel-container">
+            <button (click)="prev()" class="carousel-control left">
+                <app-get-icon [icon]="'arrow_left_line2'"/>
+            </button>
+          
+            <div class="carousel">
+                @for (card of visibleCards; track $index) {
+                    <div
+                        class="carousel-card"
+                        [class.active]="isActive($index)"
+                    >
+                    <div class="image-container">
+                        <img [src]="card.img.src" [alt]="card.img.alt" />
+                    </div>
+                    <div class="top">
+                        <h3 class="card-title slab">{{ card.title }}</h3>
+                        <img [src]="card.logo.src" [alt]="card.logo.alt" />
+                    </div>
+                    <p class="card-content">{{ card.review }}</p>
+                  </div>
+                }
+             
+            </div>
+          
+            <button (click)="next()" class="carousel-control right">
+                <app-get-icon [icon]="'arrow_right_line2'"/>
+            </button>
+        </div>
+    </div>
+</section>
