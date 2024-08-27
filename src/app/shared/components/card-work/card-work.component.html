@@ -1,0 +1,54 @@
+<div class="card" [ngClass]="[componentConfig.projectName, componentConfig.type, componentConfig.specialClass ?? '']">
+    <div class="header">
+        <div class="type">
+            <div class="icon-wrapper">
+                <app-get-icon [icon]="componentConfig.typeIcon" />
+            </div>
+            <span>{{componentConfig.type}}</span>
+        </div>
+        <div class="logo-wrapper">
+            <img [src]="componentConfig.logo.src" [alt]="componentConfig.logo.alt">
+        </div>
+    </div>
+    <div class="body">
+        <div class="top">
+            <h5 class="slab project-title">{{componentConfig.projectName}}</h5>
+            <ul class="types">
+                @for (bullet of componentConfig.bullets; track $index) {
+                    <li>{{bullet}}</li>
+                }
+            </ul>
+        </div>
+      
+        @if (componentConfig.projectImage) {
+            <div class="project-image-wrapper">
+                <img [src]="componentConfig.projectImage.src" [alt]="componentConfig.projectImage.alt">
+            </div>
+        }
+        <div class="cta-wrapper-mobile">
+            <app-cta [ctaConfig]="componentConfig.cta"/>
+        </div>
+    </div>
+
+    @if (componentConfig.comingSoon) {
+        <div class="coming-soon">
+            <span>Coming Soon</span>
+        </div>
+    }
+  
+    <div class="description-wrapper">
+        <div>
+            <h5 class="project-title">{{componentConfig.projectName}}</h5>
+            <ul class="types">
+                @for (bullet of componentConfig.bullets; track $index) {
+                    <li>{{bullet}}</li>
+                }
+            </ul>
+            <p class="description">{{componentConfig.projectDescription}}</p>
+        </div>
+       
+        <div class="cta-wrapper">
+            <app-cta [ctaConfig]="componentConfig.cta"/>
+        </div>
+    </div>
+</div>

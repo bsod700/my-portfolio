@@ -1,9 +1,8 @@
-import { ArrowLink } from "@shared/index";
+import { ArrowLink, logoConfig } from "@shared/index";
 import { Cta } from "./cta";
-import { Img } from "./img";
 
 export interface NavbarRegular {
-    logo: Img,
+    logo: logoConfig,
     links: ArrowLink[],
     cta: Cta
 }

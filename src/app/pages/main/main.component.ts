@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Main, MainConfigService } from './main-config.service';
-import { AboutComponent, CarouselComponent, ContactComponent, FooterComponent, IconsImgComponent, NavbarComponent, TechnologiesComponent } from '@shared/index';
+import { AboutComponent, ContactComponent, ExploreWorkComponent, FooterComponent, IconsImgComponent, NavbarComponent, TechnologiesComponent } from '@shared/index';
 import { HeaderComponent } from './components';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [NavbarComponent, HeaderComponent, AboutComponent, CarouselComponent,
+  imports: [NavbarComponent, HeaderComponent, AboutComponent,
     TechnologiesComponent, ContactComponent, FooterComponent, 
-    IconsImgComponent
+    IconsImgComponent, ExploreWorkComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',

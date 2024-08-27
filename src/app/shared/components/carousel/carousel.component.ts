@@ -112,6 +112,10 @@ export class CarouselComponent implements OnInit {
     const status = this.selectedItem === subject ? `${subject.title} ${type} - currently selected` : `Go to ${subject.title} ${type}`;
     return `${status}`;
   }
+
+  convertToSlug(title: string): string {
+    return title.toLowerCase().replace(/\s+/g, '-');
+  }
 }
 
 export interface CarouselConfig {

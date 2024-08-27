@@ -32,6 +32,7 @@
         display: flex;
         align-items: center;
         gap: $spacing-unit*2;
+        margin-bottom: $spacing-unit*2;
     }
     .email-container, .socials {
         display: flex;
@@ -44,11 +45,21 @@
     .socials {
         gap: $spacing-unit*4;
         fill: $text-color-white;
+        .social {
+            &:hover {
+                fill: $tierroYellow;
+            }
+        }
+       
     }
     .email {
         color: $text-color-white;
+        transition: all ease-in-out .3s;
         @include respond-to(md) {
             text-align: end;
+        }
+        &:hover {
+            color: $tierroYellow;
         }
     }
     .copyright {
@@ -59,7 +70,10 @@
         p {
             color: $text-color-white;
             font-weight: 100;
-            font-size: 14px;
+            font-size: 12px;
+            @include respond-to(md) {
+                font-size: 14px;
+            }
             ::ng-deep {
                 b {
                     font-weight: 400;

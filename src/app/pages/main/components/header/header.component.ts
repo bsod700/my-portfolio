@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Input, OnInit, Renderer2, inject } from '@angular/core';
-import { Cta, DocumentService, ResponsiveService, ScrollService } from '@core/index';
+import { Cta, ResponsiveService, ScrollService } from '@core/index';
 import { CtaComponent } from '@shared/index';
 
 @Component({
@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   responsiveService: ResponsiveService = inject(ResponsiveService);
   renderer: Renderer2 = inject(Renderer2);
   private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
-  documentService: DocumentService= inject(DocumentService);
 
   
 
@@ -108,15 +107,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkScreenSize();
-
-    this.documentService.setInnerHtml({
-      'header-paragraph': this.componentConfig.h3
-    });
   }
 }
 export interface headerConfig {
   h1: string,
-  h2: string;
-  h3: string;
+  paragraph: string;
   ctaJob: Cta;
 }

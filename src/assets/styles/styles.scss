@@ -37,3 +37,20 @@ html {
   scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
 }
 
+section {
+  &:focus > div{
+    animation: focus-section 1s ease-out;
+  }
+}
+
+@keyframes focus-section {
+  0% {
+    outline: 2px solid transparent; /* Initial outline color */
+  }
+  50% {
+    outline: 2px solid $tierroYellow; /* Make outline invisible */
+  }
+  100% {
+    outline: 2px solid transparent; /* Ensure it stays invisible after the animation */
+  }
+}

@@ -1,0 +1,70 @@
+@import './mixins';
+
+ul {
+    list-style: none;
+    list-style-image: none;
+    &.white {
+        --circle-icon-bg: #{$text-color-white};
+    }
+    li {
+        display: flex;
+        gap: $spacing-unit*2; 
+        margin-bottom: $spacing-unit*4; 
+    }
+    h3.bullet-title {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 0;
+        @include respond-to(md) {
+            font-size: 1.125rem;
+        }
+    }
+    p.bullet-paragraph {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 0;
+        @include respond-to(md) {
+            font-size: 1.125;
+        }
+    }
+    .img-bullet-wrapper {
+        &.with-icon {
+            background-color: var(--circle-icon-bg);
+            fill: var(--icon-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: $spacing-unit;
+            width: 35px;
+            height: 35px;
+            flex: 0 0 35px;
+            @include respond-to(lg) {
+                width: 60px;
+                height: 60px;
+                flex: 0 0 60px;
+            }
+            app-get-icon {
+                width: 25px;
+                @include respond-to(lg) {
+                    width: 45px;
+                }
+                ::ng-deep {
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                        @include respond-to(lg) {
+                            width: 45px;
+                            height: 45px;
+                        }
+                    }
+                }
+            }
+        }
+        img {
+
+        }
+    }
+}

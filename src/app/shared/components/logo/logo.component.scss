@@ -1,8 +1,16 @@
+@import "mixins";
+
 .logo-wrapper {
-    width: 54px;
-    height: 33px;
     svg {
-        fill: #F5F5F5;
+        fill: $tierroYellow;
         width: 100%;
+    }
+    &.symbol {
+        width: 55px;
+        height: 55px;
+    }
+    &.vertical {
+        width: 200px;
+        height: 181px;
     }
 }

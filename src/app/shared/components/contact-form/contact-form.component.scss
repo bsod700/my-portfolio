@@ -2,19 +2,19 @@
 
 form {
     .checkboxes {
-        display: flex;
-        gap: $spacing-unit*2;
-        flex-wrap: wrap;
+        outline: none;
+        border: none;
+        &>div {
+            display: flex;
+            gap: $spacing-unit*2;
+            flex-wrap: wrap;
+        }
     }
     .inputs {
         display: flex;
         flex-direction: column;
         gap: $spacing-unit*4;
         margin-bottom: $spacing-unit*8;
-        // @include respond-to(md) {
-        //     gap: $spacing-unit*8;
-        //     margin-bottom: $spacing-unit*16;
-        // }
     }
     .img-row {
         overflow: hidden;
@@ -26,11 +26,7 @@ form {
             flex: 0 0 1000px;
         }
     }
-    .error {
-        display: flex;
-        align-items: center;
-        gap: $spacing-unit*2;
-    }
+
     label.checkbox {
         display: inline-flex;
         justify-content: center;
@@ -64,7 +60,7 @@ form {
             color: $dark;
             fill: $dark;
             &:focus {
-                border: 2px $tierroPrimary_100 solid;
+                border: 1px $tierroPrimary_100 solid;
                 box-shadow: 0px 0px 0px 2px $tierroYellow;
                 background-color: $tierroYellow;
             }
@@ -76,7 +72,7 @@ form {
             color: rgba($text-color-white, 80%);
             fill: rgba($text-color-white, 80%);
             &:focus {
-                border: 2px solid $tierroYellow;
+                border: 1px solid $tierroYellow;
             }
             .check-icon-wrapper {
                 display: none;
@@ -148,10 +144,10 @@ form {
                     color: rgba($text-color-white, $alpha: 50%);
                 }
                 &:active, &:focus {
-                    border: 2px solid $focusBlue;
+                    border: 1px solid $tierroYellow;
                 }
                 &.ng-invalid.ng-touched:not(:focus) {
-                    border: 2px solid $errorRed;
+                    border: 1px solid $errorRed;
                 }
                 &.ng-touched:-internal-autofill-selected {
                     background-image: none !important;
@@ -176,22 +172,29 @@ form {
     @keyframes spinner-border {
         to { transform: rotate(360deg); }
     }
-    // .shake {
-    //     animation: shake-animation 1s ease-in-out;
-    //   }
+    .shake {
+        animation: shake-animation 1s ease-in-out;
+      }
       
-    //   @keyframes shake-animation {
-    //     0%, 100% {
-    //       transform: translateX(0);
-    //     }
-    //     10%, 30%, 50%, 70%, 90% {
-    //       transform: translateX(-10px);
-    //     }
-    //     20%, 40%, 60%, 80% {
-    //       transform: translateX(10px);
-    //     }
-    //   }
+      @keyframes shake-animation {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        10%, 30%, 50%, 70%, 90% {
+          transform: translateX(-10px);
+        }
+        20%, 40%, 60%, 80% {
+          transform: translateX(10px);
+        }
+      }
 }
+
+.error {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit*2;
+}
+
 .success-wrapper {
     text-align: center;
     display: flex;
@@ -297,3 +300,15 @@ form {
         }
     }
 }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    background-color: transparent;
+  }

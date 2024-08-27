@@ -3,47 +3,59 @@
     <form [formGroup]="form" (ngSubmit)="submit()">
         @if (formConfig.checkboxes) {
             <h5 class="paragraph roboto base fw-4 mb-4">{{formConfig.checkboxesTitle}}</h5>
-            <div class="checkboxes mb-8">
-                @for (checkbox of formConfig.checkboxes; track $index) {
-                    <label 
-                        tabindex="0"
-                        [attr.aria-label]="checkbox.ariaLabel"
-                        class="checkbox"
-                    >
-    
-                        @if (checkbox.hasIconLeft && checkbox.iconLeft != '') {
-                            <app-get-icon [icon]="checkbox.iconLeft" [iconColor]="checkbox.iconColor" />
-                        }
-    
-                        <input 
-                            type="checkbox" 
-                            [value]="checkbox.label"
-                            [id]="checkbox.id" 
-                            [checked]="checkbox.value"
-                            [attr.aria-describedby]="checkbox.ariaDescribedBy"
-                            [required]="checkbox.required"
-                            [attr.aria-checked]="checkbox.value"
-                            role="checkbox"
-                            (change)="onCheckboxChange($event)">
-                        <span class="paragraph roboto small fw-6">{{ checkbox.label }}</span>
-    
-                        @if (checkbox.hasIconRight && checkbox.iconRight != '') {
-                            <app-get-icon [icon]="checkbox.iconRight" [iconColor]="checkbox.iconColor" />
-                        }
-    
-                        <div class="check-icon-wrapper">
-                            <app-get-icon [icon]="'check'" />
+            <fieldset class="checkboxes mb-8" id="checkbox-group" tabindex="0">
+                <legend class="visually-hidden" id="checkbox-group-label">
+                    {{ looking?.errors?.['required'] && looking?.touched 
+                    ? 'Please select at least one option from the checkboxes above.' 
+                    : 'Select options that you are looking for' }}
+                </legend>
+                <div role="group" 
+                    aria-labelledby="checkbox-group-label" 
+                    [attr.aria-invalid]="looking?.errors?.['required'] && looking?.touched ? 'true' : 'false'"
+                    [attr.aria-describedby]="looking?.errors?.['required'] && looking?.touched ? 'checkbox-error' : null"
+                >
+                    @for (checkbox of formConfig.checkboxes; track $index) {
+                        <label 
+                            tabindex="0"
+                            [attr.aria-label]="checkbox.ariaLabel"
+                            class="checkbox"
+                            (keydown.enter)="toggleCheckbox($event, checkbox)"
+                        >
+        
+                            @if (checkbox.hasIconLeft && checkbox.iconLeft != '') {
+                                <app-get-icon [icon]="checkbox.iconLeft" [iconColor]="checkbox.iconColor" />
+                            }
+        
+                            <input 
+                                type="checkbox" 
+                                [value]="checkbox.label"
+                                [id]="checkbox.id" 
+                                [checked]="checkbox.value"
+                                [attr.aria-describedby]="checkbox.ariaDescribedBy"
+                                [required]="checkbox.required"
+                                [attr.aria-checked]="checkbox.value"
+                                role="checkbox"
+                                (change)="onCheckboxChange($event)">
+                            <span class="paragraph roboto small fw-6">{{ checkbox.label }}</span>
+        
+                            @if (checkbox.hasIconRight && checkbox.iconRight != '') {
+                                <app-get-icon [icon]="checkbox.iconRight" [iconColor]="checkbox.iconColor" />
+                            }
+        
+                            <div class="check-icon-wrapper">
+                                <app-get-icon [icon]="'check'" />
+                            </div>
+                        </label>
+                    
+                    }
+                    @if (looking?.errors?.['required'] && looking?.touched) {
+                        <div class="error" aria-live="assertive" tabindex="-1" id="checkbox-error">
+                            <app-get-icon [icon]="'alert'" />
+                            <span> Please select at least one option from the checkboxes above.</span>
                         </div>
-                    </label>
-                   
-                }
-                @if (looking?.errors?.['required'] && looking?.touched) {
-                    <div class="error">
-                        <app-get-icon [icon]="'alert'" />
-                        <span> Please select at least one option from the checkboxes above.</span>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
+            </fieldset>
         }
     
         <div class="img-row mb-8">
@@ -68,7 +80,7 @@
                             class="paragraph roboto small fw-4"
                             [type]="inputText.type"
                             [attr.aria-label]="inputText.ariaLabel"
-                            [attr.aria-describedby]="inputText.ariaDescribedBy"
+                            [attr.aria-describedby]="form.get(inputText.controlName)?.invalid && form.get(inputText.controlName)?.touched ? inputText.controlName + '-error' : inputText.ariaDescribedBy"
                             [attr.aria-labelledby]="inputText.ariaLabelledBy"
                             [required]="inputText.required"
                             [class.shake]="shouldShake(inputText.controlName)"
@@ -83,7 +95,7 @@
                         </div>
     
                         @for (error of getErrorMessage(inputText.controlName); track $index) {
-                            <div class="error">
+                            <div class="error" aria-live="assertive" [id]="inputText.controlName + '-error'">
                                 <app-get-icon [icon]="'alert'" />
                                 <span>{{ error }}</span>
                             </div>

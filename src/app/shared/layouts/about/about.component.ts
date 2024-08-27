@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Img } from '@core/index';
+import { DynamicBulletsComponent, DynamicBulletsConfig } from '@shared/index';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [DynamicBulletsComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
@@ -16,5 +17,6 @@ export interface AboutConfig {
   title: string;
   subtitle: string;
   paragraphs: string[],
+  bullets: DynamicBulletsConfig;
   img: Img;
 }

@@ -44,6 +44,51 @@ export class ContactFormComponent {
     return content.contains(target);
   }
 
+  toggleCheckbox(event: Event, checkbox: any) {
+    event.preventDefault();
+    const checkboxElement = document.getElementById(checkbox.id) as HTMLInputElement;
+    if (checkboxElement) {
+      checkboxElement.checked = !checkboxElement.checked;
+      // Trigger change event
+      checkboxElement.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
+
+  onCheckboxGroupFocusOut(): void {
+    if (!this.form.get('looking')?.invalid) {
+      // If the checkbox group is invalid, ensure the error message is shown
+      this.focusFirstInvalidControl();
+    }
+  }
+
+  focusFirstInvalidControl() {
+    // check what invalid in form
+    const invalidControls = Object.keys(this.form.controls).filter(key => this.form.controls[key].invalid);
+    
+    if (invalidControls.length > 0) {
+      const firstInvalidControl = invalidControls[0];
+      // Find the input element for the first invalid control
+      
+      const controlElement = document.querySelector(`[name="${firstInvalidControl}"]`) as HTMLElement;
+      if (controlElement) {
+        controlElement.focus();
+      }
+
+      // Special handling for the checkbox group
+      const checkboxGroupControl = this.form.get('looking') as FormArray;
+     
+      
+      if (checkboxGroupControl.invalid) {
+        // Focus the fieldset if the checkbox group is invalid
+        const groupElement = document.getElementById('checkbox-group') as HTMLElement;
+        if (groupElement) {
+          groupElement.focus();
+          
+        }
+      }
+    }
+  }
+
   submit() {
     this.submitted = true;
     this.formSubmitted.emit(true);
@@ -51,33 +96,35 @@ export class ContactFormComponent {
 
     if (this.form.valid) {
       this.isLoading = true;
-      this.emailService.sendEmail(this.form.value as formValueConfig).subscribe({
-        next: (response) => {
-          console.log('Email sent successfully', response);
-          this.contactSuccess = true;
-          this.form.reset();
-          this.isLoading = false;
-          this.cdr.markForCheck();
-        },
-        error: (error) => {
-          this.contactError = true;
-          this.isLoading = false;
-          this.cdr.markForCheck();
-          console.error('Error sending email', error);
-        }
-      });
+      console.log(this.form.value);
+      
+      // this.emailService.sendEmail(this.form.value as formValueConfig).subscribe({
+      //   next: (response) => {
+      //     console.log('Email sent successfully', response);
+      //     this.contactSuccess = true;
+      //     this.form.reset();
+      //     this.isLoading = false;
+      //     this.cdr.markForCheck();
+      //   },
+      //   error: (error) => {
+      //     this.contactError = true;
+      //     this.isLoading = false;
+      //     this.cdr.markForCheck();
+      //     console.error('Error sending email', error);
+      //   }
+      // });
     } else {
       this.form.markAllAsTouched();
       this.submitted = false;
       console.log('Form is not valid');
-      alert('Please fill all required fields correctly.');
+      this.focusFirstInvalidControl();
     }
   }
   constructor() {
     this.form = this.fb.group({
       looking: this.fb.array([], this.minSelectedCheckboxes(1)),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      name:  new FormControl('', [Validators.required])
+      name:  new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email])
     })
   }
 

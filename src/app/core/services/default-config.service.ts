@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Img } from '@core/models/img';
 import { NavbarRegular } from '..';
+import { logoConfig } from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -35,10 +36,13 @@ export class DefaultConfigService {
   //     langs: this.getLangs()
   //   }
   // }
-  getLogo(): Img {
+  getLogo(): logoConfig {
     return {
-      src: 'assets/imgs/logo-orizon.svg',
-      alt: 'Guy Tagger',
+      type: 'symbol',
+      img: {
+        src: 'assets/imgs/logo-symbol.svg',
+        alt: 'Guy Tagger',
+      }
     }
   }
   // getRegularNavbarNotOnMain(): NavbarRegular {
@@ -85,6 +89,7 @@ export class DefaultConfigService {
     links: [
       {
         label: 'Home',
+        ariaLabel: 'Go to Home',
         showIcon: false,
         inLink: 'header',
         scrollToLink: true,
@@ -92,6 +97,7 @@ export class DefaultConfigService {
       },
       {
         label: 'About',
+        ariaLabel: 'Go to about section',
         showIcon: false,
         inLink: 'about',
         scrollToLink: true,
@@ -99,6 +105,7 @@ export class DefaultConfigService {
       },
       {
         label: 'Projects',
+        ariaLabel: 'Go to projects section',
         showIcon: false,
         inLink: 'projects',
         scrollToLink: true,
@@ -109,7 +116,7 @@ export class DefaultConfigService {
       text: 'Contact Me',
       size: 'regular',
       color: 'yellow',
-      ariaLabel: 'string',
+      ariaLabel: 'Go to contact form section',
       scrollTo: 'contact',
       showIconLeft: false,
       showIconRight: false

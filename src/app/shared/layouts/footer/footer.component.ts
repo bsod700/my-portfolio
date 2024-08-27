@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
-import { DocumentService, Img } from '@core/index';
+import { DocumentService } from '@core/index';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
-import { ArrowLink, ArrowLinkComponent, LogoComponent } from '@shared/index';
+import { ArrowLink, ArrowLinkComponent, LogoComponent, logoConfig } from '@shared/index';
 
 @Component({
   selector: 'app-footer',
@@ -25,7 +25,7 @@ export class FooterComponent {
 }
 
 export interface FooterConfig {
-  logo: Img;
+  logo: logoConfig;
   links: ArrowLink[];
   socials: {
     url: string;

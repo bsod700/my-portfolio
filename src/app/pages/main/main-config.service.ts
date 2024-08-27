@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { DefaultConfigService, NavbarRegular } from '@core/index';
 import { headerConfig } from './components';
-import { AboutConfig, CarouselConfig, ContactConfig, FooterConfig, ReviewsConfig, TechnologiesConfig } from '@shared/index';
+import { AboutConfig, CarouselConfig, ContactConfig, ExploreWorkConfig, FooterConfig, ReviewsConfig, TechnologiesConfig } from '@shared/index';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +13,13 @@ export class MainConfigService {
       return {
         navbar: this.defaultConfigService.getRegularNavbar(),
         header: {
-          h1: 'Hello I\'m',
-          h2: 'GUY TAGGER',
-          h3: 'A FRONTEND DEVELOPER <span>|</span> UI/UX DESIGNER <span>|</span> ILLUSTRATOR',
+          h1: 'Guy Tagger Design & Code Wizard',
+          paragraph: 'Dive into a portfolio where creativity meets technology.',
           ctaJob: {
-            text: 'Let\'s Create Something Great!',
+            text: 'Tell me about your project',
             size: 'default',
             color: 'yellow',
-            ariaLabel: 'string',
+            ariaLabel: 'Go to projects section',
             scrollTo: 'contact',
             showIconRight: true,
             iconRight: 'flag',
@@ -29,257 +28,543 @@ export class MainConfigService {
         },
         about: {
           title: 'Who am i?',
-          subtitle: 'About',
+          subtitle: 'Intro',
           paragraphs: [
-            'Welcome to my portfolio! I\'m Guy Tagger, a Front-End Developer and UI/UX Designer with a knack for crafting beautiful and functional websites and apps.',
-            'I build responsive, mobile-friendly sites using Angular, HTML, SCSS, JavaScript, and TypeScript, always following best practices for clean and efficient code.',
-            'When it comes to design, I use Figma, Adobe XD, Illustrator, and Photoshop to create wireframes, mockups, interactive prototypes, animations, logos, slides, and other branding materials, ensuring top-notch user experiences. I stay up-to-date with the latest design trends to deliver modern and innovative solutions.'
+            'Ahoy! My name is Guy, a professional designer and developer. I create engaging digital experiences with clean, rapid code for every industry.',
+            'My technical toolkit includes:'
           ],
+          bullets: {
+            iconColorBG: 'white',
+            bullets: [
+              {
+                iconName: 'palette',
+                title: 'Design',
+                text: 'My expertise in Figma, Adobe XD, Illustrator, and Photoshop equips me with the ability to craft detailed wireframes, user-friendly interfaces, and compelling visual content. My designs not only look great but are also responsive and accessible across every device size, ensuring seamless user interaction.'
+              },
+              {
+                iconName: 'code',
+                title: 'Development',
+                text: 'Proficient in HTML, SCSS, JavaScript, and TypeScript, I develop responsive and efficient websites and applications using Angular. My focus on clean code ensures optimal performance and accessibility across all platforms.'
+              },
+              {
+                iconName: 'integration',
+                title: 'Integration',
+                text: ' Ensuring cohesive digital experiences that are SEO-optimized and high-performing. This integrated approach efficiently transforms creative concepts into functional realities.'
+              }
+            ]
+          },
           img: {
             src: 'assets/images/about.webp',
             alt: 'Guy Tagger profile photo'
           }
 
         },
-        projects: {
-          title: 'what I\'ve created',
-          subtitle: 'Projects',
-          subjects: [
+        exploreWork: {
+          title: 'Let\'s turn your ideas into reality.',
+          subtitle: 'Explore my work',
+          types: [
             {
-              title: 'Tierro',
-              description: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
-              responsibilities: [
-                'UX & UI Design',
-                'Logo',
-                'Web Development'
-              ],
-              cta: {
-                text: 'Take Me To The Project',
-                size: 'default',
-                color: 'yellow',
-                ariaLabel: 'Go to Tierro case study',
-                inLink: 'projects/tierro',
-                showIconRight: true,
-                iconRight: 'east',
-                showIconLeft: false,
-                targetStyle: '_blank'
-              },
-              previewImg: {
-                src: 'assets/images/projects/tierro/preview.webp',
-                alt: 'Tierro project - preview image'
-              },
-              iconImg: {
-                src: 'assets/images/projects/tierro/logo-color.svg',
-                alt: 'Tierro project logo'
-              }
+              title: 'Designs',
+              subtitle: 'As a versatile designer, I create engaging websites, dynamic graphics, animations, apps, and games tailored to various industries. Explore my designs in different fields.',
+              cardRows: [
+                {
+                  title: 'Websites / Landing Page',
+                  moreLink: 'projects/design/websites-lps',
+                  cards: [
+                    {
+                      type: 'Website',
+                      typeIcon: 'ui',
+                      logo: {
+                        src: 'assets/images/projects/tierro/logo-color.svg',
+                        alt: 'Tierro project logo'
+                      },
+                      projectName: 'Tierro',
+                      bullets: [
+                        'UX & UI Design',
+                        'Responsive',
+                        'Web Development'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/tierro/desktop-client.webp',
+                        alt: 'Tierro client website on laptop screen'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to Tierro website design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Website',
+                      typeIcon: 'ui',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Portfolio project logo'
+                      },
+                      projectName: 'Portfolio',
+                      bullets: [
+                        'UX & UI Design',
+                        'Illustration',
+                        'Web Development'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/portfolio/hero.webp',
+                        alt: 'portfolio project screens on mobile,tablet and desktop'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to Portfolio website design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Website',
+                      typeIcon: 'ui',
+                      logo: {
+                        src: 'assets/images/projects/tcability/logo-symbol-color.svg',
+                        alt: 'TCAbility project logo'
+                      },
+                      projectName: 'TCAbility',
+                      bullets: [
+                        'UX & UI Design',
+                        'Illustration',
+                        'Web Development'
+                      ],
+                      comingSoon: true,
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                        text: 'Coming Soon',
+                        size: 'default',
+                        color: 'disable-white',
+                        ariaLabel: 'TCAbility web design is Coming soon',
+                        showIconRight: true,
+                        iconRight: 'pending',
+                        showIconLeft: false
+                      }
+                    }
+                  ]
+                },
+                {
+                  title: 'Web-App / Saas / CRM',
+                  moreLink: 'projects/design/saas',
+                  cards: [
+                    {
+                      type: 'Management',
+                      typeIcon: 'management',
+                      logo: {
+                         src: 'assets/images/projects/tierro/logo-color.svg',
+                        alt: 'Tierro project logo'
+                      },
+                      projectName: 'Tierro',
+                      bullets: [
+                        'CRM',
+                        'Admin',
+                        'Design System'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/tierro/crm-preview.webp',
+                        alt: 'CRM Admin'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'string',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Management',
+                      typeIcon: 'management',
+                      logo: {
+                        src: 'assets/images/projects/tcability/logo-symbol-color.svg',
+                        alt: 'TCAbility project logo'
+                      },
+                      projectName: 'TCAbility',
+                      bullets: [
+                        'Saas',
+                        'Accessibility',
+                        'Design System'
+                      ],
+                      comingSoon: true,
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                        text: 'Coming Soon',
+                        size: 'default',
+                        color: 'disable-white',
+                        ariaLabel: 'Coming soon',
+                        showIconRight: true,
+                        iconRight: 'pending',
+                        showIconLeft: false
+                      }
+                    }
+                  ]
+                },
+                {
+                  title: 'Logo / Branding',
+                  moreLink: 'projects/design/logo & branding',
+                  cards: [
+                    {
+                      type: 'Logo',
+                      typeIcon: 'diamond',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectName: 'Portfolio',
+                      bullets: [
+                        'Portfolio',
+                        'Creation',
+                        'Journey'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/logo-vertical.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to portfolio logo design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Logo',
+                      typeIcon: 'diamond',
+                      logo: {
+                        src: 'assets/images/projects/tierro/logo-color.svg',
+                        alt: 'Tierro project logo'
+                      },
+                      projectName: 'Tierro',
+                      bullets: [
+                        'Music',
+                        'Producer',
+                        'Portfolio'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/tierro/logo-color.svg',
+                        alt: 'Tierro project logo'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to Tierro logo design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    }, 
+                    {
+                      type: 'Logo',
+                      typeIcon: 'diamond',
+                      logo: {
+                        src: 'assets/images/projects/werlive/logo-symbol-color.svg',
+                        alt: 'WeRlive logo'
+                      },
+                      projectName: 'WeRlive',
+                      bullets: [
+                        'Streaming',
+                        'Corporation',
+                        'Consulting'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/werlive/logo-color.svg',
+                        alt: 'WeRlive logo'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to werlive logo design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                  ]
+                },
+                {
+                  title: 'Emails / Newsletter / banners',
+                  moreLink: 'projects/design/emails & banners',
+                  cards: [
+                    {
+                      type: 'Email',
+                      typeIcon: 'mail',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectName: 'Portfolio',
+                      bullets: [
+                        'Portfolio',
+                        'Creation',
+                        'Journey'
+                      ],
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to portfolio logo design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Email',
+                      typeIcon: 'mail',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectName: 'Portfolio',
+                      bullets: [
+                        'Portfolio',
+                        'Creation',
+                        'Journey'
+                      ],
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to portfolio logo design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Email',
+                      typeIcon: 'mail',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectName: 'Portfolio',
+                      bullets: [
+                        'Portfolio',
+                        'Creation',
+                        'Journey'
+                      ],
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to portfolio logo design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                  ]
+                },
+                {
+                  title: 'Illustrations Animations / Game',
+                  moreLink: 'projects/design/illustrations & game-design',
+                  cards: [
+                    {
+                      type: 'Game',
+                      typeIcon: 'phone_android',
+                      logo: {
+                        src: 'assets/images/projects/brush-along/symbol.webp',
+                        alt: 'Brush Along project game design'
+                      },
+                      projectName: 'BrushAlong',
+                      bullets: [
+                        'UX & UI Design',
+                        'Illustration',
+                        'Prototype'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/brush-along/preview-devices.webp',
+                        alt: 'brush along preview game design'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to BrushAlong game design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Illustrations',
+                      typeIcon: 'brush',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectName: 'Mr. Avocado',
+                      bullets: [
+                        'Cute',
+                        'Green',
+                        'Happy'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/illustrations/export-minify.svg',
+                        alt: 'mr. avocado illustration animation preview'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to mr. Avocado illustrate design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Illustrations',
+                      typeIcon: 'brush',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Guy Tagger project logo'
+                      },
+                      projectName: 'Murskweesh',
+                      bullets: [
+                        'Cute',
+                        'Green',
+                        'Happy'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/illustrations/murdskweesh.webp',
+                        alt: 'murdskweesh illustration animation preview'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to murdskweesh illustrate design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                  ]
+                },
+              ]
             },
             {
-              title: 'BrushAlong',
-              description: 'A fun brushing tracker game app designed for children, making dental hygiene engaging and enjoyable. This project also includes an intuitive tracking system for parents to easily monitor and manage their children\'s brushing habits.',
-              responsibilities: [
-                'UX & UI Design',
-                'Illustration',
-                'Prototype'
-              ],
-              cta: {
-                text: 'Take Me To The Project',
-                size: 'default',
-                color: 'yellow',
-                ariaLabel: 'Go to Tierro case study',
-                inLink: 'projects/brushalong',
-                showIconRight: true,
-                iconRight: 'east',
-                showIconLeft: false,
-                targetStyle: '_blank'
-              },
-              previewImg: {
-                src: 'assets/images/projects/brush-along/preview.webp',
-                alt: 'Tierro project - preview image'
-              },
-              iconImg: {
-                src: 'assets/images/projects/brush-along/symbol.webp',
-                alt: 'Tierro project logo'
-              }
-            },
-            {
-              title: 'Portfolio',
-              description: 'An engaging and interactive personal portfolio, showcasing a range of design and development skills. This project highlights my various projects, services offered, and provides an insight into my background and expertise.',
-              responsibilities: [
-                'UX & UI Design',
-                'Illustration',
-                'Web Development'
-              ],
-              cta: {
-                text: 'Take Me To The Project',
-                size: 'default',
-                color: 'yellow',
-                ariaLabel: 'Go to portfolio case study',
-                inLink: 'projects/portfolio',
-                showIconRight: true,
-                iconRight: 'east',
-                showIconLeft: false,
-                targetStyle: '_blank'
-              },
-              previewImg: {
-                src: 'assets/images/projects/portfolio/preview.webp',
-                alt: 'Tierro project - preview image'
-              },
-              iconImg: {
-                src: 'assets/images/projects/portfolio/logo.svg',
-                alt: 'Tierro project logo'
-              }
-            },
-            // {
-            //   title: 'WeRLive',
-            //   description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
-            //   responsibilities: [
-            //     'UX & UI Design',
-            //     'Logo',
-            //     'Web Development'
-            //   ],
-            //   cta: {
-            //     text: 'Take Me To The Project',
-            //     size: 'default',
-            //     color: 'yellow',
-            //     ariaLabel: 'Go to Tierro case study',
-            //     inLink: 'projects/werlive',
-            //     showIconRight: true,
-            //     iconRight: 'east',
-            //     showIconLeft: false
-            //   },
-            //   previewImg: {
-            //     src: 'assets/images/projects/tierro/preview.webp',
-            //     alt: 'Tierro project - preview image'
-            //   },
-            //   iconImg: {
-            //     src: 'assets/images/projects/tierro/logo-color.svg',
-            //     alt: 'Tierro project logo'
-            //   }
-            // },
-            // {
-            //   title: 'CyberGhost',
-            //   description: 'An asdasdasdr a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
-            //   responsibilities: [
-            //     'UX & UI Design',
-            //     'Logo',
-            //     'Web Development'
-            //   ],
-            //   cta: {
-            //     text: 'Take Me To The Project',
-            //     size: 'default',
-            //     color: 'yellow',
-            //     ariaLabel: 'Go to Tierro case study',
-            //     inLink: 'projects/cyberghost',
-            //     showIconRight: true,
-            //     iconRight: 'east',
-            //     showIconLeft: false
-            //   },
-            //   previewImg: {
-            //     src: 'assets/images/projects/tierro/preview.webp',
-            //     alt: 'Tierro project - preview image'
-            //   },
-            //   iconImg: {
-            //     src: 'assets/images/projects/tierro/logo-color.svg',
-            //     alt: 'Tierro project logo'
-            //   }
-            // },
-            {
-              title: 'TCAbility',
-              description: 'A comprehensive project for TCAbility, featuring a brand website that adheres to the latest WCAG 2.2 standards. This project includes designing and developing the site, creating the logo, and embedding accessibility features, showcasing TCAbility’s expertise in accessible digital design.',
-              responsibilities: [
-                'UX & UI Design',
-                'Logo',
-                'Illustration',
-                'Accessibility',
-                'Web Development'
-              ],
-              cta: {
-                text: 'Coming Soon',
-                size: 'default',
-                color: 'disable-white',
-                ariaLabel: 'Coming soon',
-                inLink: '',
-                showIconRight: true,
-                iconRight: 'pending',
-                showIconLeft: false
-              },
-              previewImg: {
-                src: 'assets/images/projects/tcability/preview.webp',
-                alt: 'Tierro project - preview image'
-              },
-              iconImg: {
-                src: 'assets/images/projects/tcability/logo-white.svg',
-                alt: 'Tierro project logo'
-              }
-            }
-          ]
-        },
-        services: {
-          title: 'What I do?',
-          subtitle: 'Services',
-          subjects: [
-            {
-              longTitle: 'UI/UX Design',
-              title: 'UI/UX',
-              description: 'Creating intuitive and engaging user experiences with a focus on aesthetics and functionality. I craft wireframes, mockups, and interactive prototypes to bring ideas to life and ensure a seamless user journey. My designs adhere to WCAG 2.2 guidelines to guarantee accessibility for all users.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
-            },
-            {
-              longTitle: 'Graphic Design',
-              title: 'Graphics',
-              description: 'Designing visually stunning logos, slides, and branding materials. Using tools like Illustrator and Photoshop, I create cohesive and impactful visual identities for brands.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
-            },
-            {
-              longTitle: 'Illustrations',
-              title: 'Illustrations',
-              description: ' If you need custom artwork, icons, or infographics, I’ve got you covered. I create unique illustrations that add personality and visual appeal to your brand, making your content more engaging and memorable.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
-            },
-            {
-              longTitle: 'Interactive Design & Development',
-              title: 'Interactive',
-              description: 'Want to make your website or app fun and engaging? I’m here to help. I create dynamic designs with animations and interactive elements that will captivate your users and provide a memorable experience.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
-            },
-            {
-              longTitle: 'Design Consulting',
-              title: 'Consulting',
-              description: 'Offering expert advice on design strategy, usability, and aesthetics. I help businesses and individuals refine their digital products to meet user needs and achieve their goals.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
-            },
-            {
-              longTitle: 'Front-End Development',
-              title: 'Front-End',
-              description: 'Building responsive, mobile-friendly websites using Angular, HTML, SCSS, JavaScript, and TypeScript. I follow best practices to deliver clean, efficient, and maintainable code for high-performance web applications.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
-            },
-            {
-              longTitle: 'Back-End Development',
-              title: 'Back-End',
-              description: 'Developing robust and scalable server-side applications using Node.js. I ensure seamless integration with front-end systems, utilizing APIs for efficient data exchange, and maintain best practices in security and performance.',
-              previewImg: {
-                src: 'assets/images/services/uiux.webp',
-                alt: 'a hand holding a smartphone with uiux design'
-              }
+              title: 'Development',
+              subtitle: 'As a versatile developer, I create fast-loading, clean, and organized code for websites, animations, and email systems, all designed with accessibility in mind. Explore my work in different fields.',
+              cardRows: [
+                {
+                  title: 'Websites / Landing Page',
+                  moreLink: 'projects/development/websites-lps',
+                  cards: [
+                    {
+                      type: 'Website',
+                      typeIcon: 'ui',
+                      logo: {
+                        src: 'assets/images/projects/tierro/logo-color.svg',
+                        alt: 'Tierro project logo'
+                      },
+                      projectName: 'Tierro',
+                      bullets: [
+                        'UX & UI Design',
+                        'Responsive',
+                        'Web Development'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/tierro/desktop-client.webp',
+                        alt: 'Tierro client website on laptop screen'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to Tierro website design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Website',
+                      typeIcon: 'ui',
+                      logo: {
+                        src: 'assets/images/logo-symbol.svg',
+                        alt: 'Portfolio project logo'
+                      },
+                      projectName: 'Portfolio',
+                      bullets: [
+                        'UX & UI Design',
+                        'Illustration',
+                        'Web Development'
+                      ],
+                      projectImage: {
+                        src: 'assets/images/projects/portfolio/hero.webp',
+                        alt: 'portfolio project screens on mobile,tablet and desktop'
+                      },
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                          text: 'Take Me To The Project',
+                          size: 'default',
+                          color: 'yellow',
+                          ariaLabel: 'Redirect to Portfolio website design',
+                          showIconRight: true,
+                          iconRight: 'arrow_right',
+                          showIconLeft: false
+                      }
+                    },
+                    {
+                      type: 'Website',
+                      typeIcon: 'ui',
+                      logo: {
+                        src: 'assets/images/projects/tcability/logo-symbol-color.svg',
+                        alt: 'TCAbility project logo'
+                      },
+                      projectName: 'TCAbility',
+                      bullets: [
+                        'UX & UI Design',
+                        'Illustration',
+                        'Web Development'
+                      ],
+                      comingSoon: true,
+                      projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
+                      cta: {
+                        text: 'Coming Soon',
+                        size: 'default',
+                        color: 'disable-white',
+                        ariaLabel: 'TCAbility web design is Coming soon',
+                        showIconRight: true,
+                        iconRight: 'pending',
+                        showIconLeft: false
+                      }
+                    }
+                  ]
+                },
+              ]
             }
           ]
         },
@@ -616,7 +901,13 @@ export class MainConfigService {
           }
         },
         footer: {
-          logo: this.defaultConfigService.getLogo(),
+          logo: {
+            type: 'vertical',
+            img: {
+              src: 'assets/imgs/logo-vertical.svg',
+              alt: 'Guy Tagger',
+            }
+          },
           links: this.defaultConfigService.getRegularNavbar().links,
           socials: [
             {
@@ -649,8 +940,7 @@ export interface Main {
   navbar: NavbarRegular;
   header: headerConfig;
   about: AboutConfig;
-  projects: CarouselConfig;
-  services: CarouselConfig;
+  exploreWork: ExploreWorkConfig;
   technologies: TechnologiesConfig;
   contact: ContactConfig;
   footer: FooterConfig;

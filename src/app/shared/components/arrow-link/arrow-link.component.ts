@@ -22,6 +22,7 @@ export class ArrowLinkComponent {
 
 export interface ArrowLink {
   label: string;
+  ariaLabel: string;
   showIcon: boolean;
   scrollToLink?: boolean;
   icon?: string;

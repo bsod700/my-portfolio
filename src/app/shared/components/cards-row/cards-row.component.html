@@ -1,0 +1,11 @@
+<div class="cards-row-wrapper">
+    <div class="row">
+         <h5>{{componentConfig.title}}</h5>
+         <a [routerLink]="componentConfig.moreLink" [attr.aria-label]="'View More of ' + componentConfig.title + ' ' + type">View More</a>
+    </div>
+    <div class="cards">
+         @for (card of componentConfig.cards; track $index) {
+            <app-card-work [componentConfig]="card"/>
+         }
+    </div>
+ </div>

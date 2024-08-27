@@ -1,0 +1,45 @@
+@import './mixins';
+
+.explore-work-section-wrapper {
+    padding: $spacing-unit*8 0 $spacing-unit*16;
+    background-image: url(assets/images/split5.webp);
+    background-position: center bottom -2px;
+    background-repeat: no-repeat;
+    background-size: 991px auto;
+    position: relative;
+    @include respond-to(md) {
+        padding: $spacing-unit*16 0;
+        background-size: 2000px auto;
+        padding-bottom: $spacing-unit * 24;
+    }
+    @include respond-to(xxl) {
+      background-size: 3840px auto;
+      padding-bottom: $spacing-unit * 48;
+    }
+    .title {
+        .arrow-design:after{
+            display: none;
+            @include respond-to(md) {
+                display: block;
+            }
+        }
+    }
+    .types {
+       .type{
+            &:not(:nth-last-of-type(1)) {
+                margin-bottom: $spacing-unit*4;
+            }
+       }
+        .title {
+            max-width: 800px;
+            h4 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 0;
+                @include respond-to(md) {
+                    font-size: 48px;
+                }
+            }
+        }
+    }
+}

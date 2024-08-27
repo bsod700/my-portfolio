@@ -2,6 +2,7 @@
 @if (componentConfig.scrollToLink) {
   <a class="arrow-link-wrapper" tabindex="0" 
     (click)="scrollToSection($event)"
+    [attr.aria-label]="componentConfig.ariaLabel"
     href="/"
     >
     @if (componentConfig.showIcon) {
@@ -13,6 +14,7 @@
 @else {
   <a class="arrow-link-wrapper" tabindex="0" 
     [routerLink]="componentConfig.inLink ? ['/' + componentConfig.inLink] : null"
+    [attr.aria-label]="componentConfig.ariaLabel"
   >
     @if (componentConfig.showIcon) {
       <!-- <app-icons-img [icon]="componentConfig.icon" /> -->

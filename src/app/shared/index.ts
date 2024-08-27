@@ -6,6 +6,9 @@ export * from './components/carousel/carousel.component';
 export * from './components/modal-button/modal-button.component';
 export * from './components/icons-img/icons-img.component';
 export * from './components/responsive-image/responsive-image.component';
+export * from './components/card-work/card-work.component';
+export * from './components/cards-row/cards-row.component';
+export * from './components/dynamic-bullets/dynamic-bullets.component';
 
 // directives
 
@@ -19,6 +22,7 @@ export * from './layouts/technologies/technologies.component';
 export * from './layouts/reviews/reviews.component';
 export * from './layouts/contact/contact.component';
 export * from './layouts/footer/footer.component';
+export * from './layouts/explore-work/explore-work.component';
 
 // form
 export * from './components/form/checkbox/checkbox.component';

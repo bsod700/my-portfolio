@@ -30,7 +30,7 @@
               "src/assets/images",
               "src/assets/email-templates",
               "src/api",
-              "src/.htaccess.json",
+              "src/.htaccess",
               "src/robots.txt",
               "src/sitemap.xml",
               {

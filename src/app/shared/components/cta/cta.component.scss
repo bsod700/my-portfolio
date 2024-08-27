@@ -18,6 +18,9 @@
         align-items: center;
         justify-content: center;
     }
+    &.icon-right {
+        padding: 12.5px 15px 12.5px 30px;
+    }
     &.size-big {
         p {
             @include responsive-font-size(roboto, h3);

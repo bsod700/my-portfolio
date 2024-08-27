@@ -1,0 +1,349 @@
+@import './mixins';
+
+.card {
+    overflow: hidden;
+    background-color: $tierroPrimary_100;
+    padding: $spacing-unit*2;
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    --text-color: #{$text-color-white};
+    --coming-soon-color-bg: #0E1032;
+    --coming-soon-color: #{$text-color-white};
+    width: 300px;
+    flex: 0 0 300px;
+    height: 300px;
+    @include respond-to(md) {
+        width: 400px;
+        flex: 0 0 400px;
+        height: 415px;
+        adding: $spacing-unit*4;
+    }
+    @include respond-to(md) {
+        &:hover {
+            .description-wrapper {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+        }
+    }
+    @include respond-to(md) {
+        &:has(app-cta ::ng-deep a:focus) {
+            .description-wrapper {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+        }
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $spacing-unit*2;
+        position: relative;
+        z-index: 1;
+        @include respond-to(md) {
+            margin-bottom: $spacing-unit*4;
+        }
+        .type {
+            display: flex;
+            align-items: center;
+            gap: $spacing-unit;
+            @include respond-to(md) {
+                gap: $spacing-unit*2;
+            }
+            .icon-wrapper {
+                background-color: $tierroYellow;
+                border-radius: 3px;
+                padding: 4px;
+                width: 25px;
+                height: 25px;
+                @include respond-to(md) {
+                    padding: 8px;
+                    width: 40px;
+                    height: 40px;
+                }
+                app-get-icon {
+                    ::ng-deep {
+                        svg {
+                            fill: $dark;
+                            width: 17px;
+                            height: 17px;
+                            @include respond-to(md) {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            span {
+                font-size: 14px;
+                color: var(--text-color);
+                @include respond-to(md) {
+                    font-size: 20px;
+                }
+            }
+        }
+        .logo-wrapper {
+            img {
+                height: 30px;
+                @include respond-to(md) {
+                    height: 40px;
+                }
+            }
+        }
+    }
+    &.Website, &.Management, &.Game {
+        .body {
+            .project-image-wrapper {
+                margin-top: $spacing-unit;
+                img {
+                    height: 100px;
+                    transform: translateX(-20px);
+                    @include respond-to(md) {
+                        height: 225px;
+                        transform: translateX(-50px);
+                    }
+                }
+              }
+        }
+    }
+    &.Illustrations {
+        .body {
+            .project-image-wrapper {
+                margin-top: $spacing-unit;
+                img {
+                    height: 100px;
+                    @include respond-to(md) {
+                        height: 205px;
+                    }
+                }
+            }
+        }
+    }
+    &.Logo, &.Illustrations {
+        .body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .project-image-wrapper {
+                text-align: center;
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    .body {
+        position: relative;
+        z-index: 1;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    h5.project-title {
+        font-size: 22px;
+        margin-bottom: $spacing-unit;
+        line-height: 1.1;
+        color: var(--text-color);
+        @include respond-to(md) {
+            font-size: 26px;
+        }
+    }
+    ul.types {
+        display: flex;
+        align-items: center;
+        gap: $spacing-unit;
+        padding: 0;
+        list-style: none;
+        color: var(--text-color);
+        li {
+            font-size: 12px;
+            &:not(:nth-last-of-type(1)) {
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 5px; 
+                    height: 5px;
+                    background-color: var(--text-color);
+                    border-radius: 50%;
+                    margin-left: $spacing-unit;
+                    vertical-align: middle;
+                }
+            }
+           
+        }
+    }
+    .coming-soon {
+        position: absolute;
+        right: -55px;
+        bottom: 40px;
+        background-color: var(--coming-soon-color-bg);
+        color: var(--coming-soon-color);
+        text-align: center;
+        padding: 12px 6px;
+        transform: rotate(-45deg);
+        width: 245px;
+    }
+    .description-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        padding: $spacing-unit*4;
+        background-color: $tierroPrimary_100;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all ease-in-out .6s;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25);
+        transform: translateY(100%);
+        .description {
+            font-size: 14px;
+            list-style: 1.2;
+            color: $text-color-white;
+        }
+        h5.project-title, ul.types li {
+            color: $text-color-white;
+        }
+        ul.types {
+            margin-bottom: $spacing-unit*2;
+        }
+    }
+    .cta-wrapper-mobile {
+        display: flex;
+        flex-grow: 1;
+        align-items: flex-end;
+        @include respond-to(md) {
+            display: none;
+        }
+    }
+    &.Tierro {
+        &:not(.Logo) {
+            background-image: url(assets/images/projects/tierro/plug1.svg);
+            background-repeat: no-repeat;
+            background-size: 275px auto;
+            background-position: right -100px top 115px;
+            @include respond-to(md) {
+                background-size: 375px auto;
+                background-position: right -145px top 20px;
+            }
+        }
+        &.Logo {
+            background-image: radial-gradient(50% 50% at 50% 50%, #fdc55d20 0%, rgba(253, 196, 93, 0.00) 100%);
+            background-position: center bottom -100px;
+            background-repeat: no-repeat;
+            background-size: 360px auto;
+            .body {
+                .project-image-wrapper {
+                    img {
+                        width: 200px;
+                        height: 75px;
+                        @include respond-to(md) {
+                            width: 322px;
+                            height: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.BrushAlong {
+        background-color: #37579C;
+        &.Game {
+            background-image: url(assets/images/projects/brush-along/dog-preview.webp);
+            background-repeat: no-repeat;
+            background-size: 100px auto;
+            background-position: right bottom 75px;
+            @include respond-to(md) {
+                background-size: 175px auto;
+                background-position: right -15px bottom 20px;
+            }
+        }
+    }
+
+    &.Portfolio {
+        background-color: $purple;
+        &:not(.Logo) {
+            background-image: url(assets/images/projects/portfolio/birds-dark.svg);
+            background-repeat: no-repeat;
+            background-size: 235px auto;
+            background-position: right top 80px;
+        }
+        &.Logo {
+            background-image: radial-gradient(50% 50% at 50% 50%, #fdc55d20 0%, rgba(253, 196, 93, 0.00) 100%);
+            background-position: center bottom -100px;
+            background-repeat: no-repeat;
+            background-size: 360px auto;
+            .body {
+                .project-image-wrapper {
+                    img {
+                        width: 91px;
+                        height: 100px;
+                        @include respond-to(md) {
+                            width: 164px;
+                            height: 180px;
+                        }
+                    }
+                }
+            }
+        }
+        &.Email {
+            background-color: $dark;
+            border: solid 1px rgba($color: $tierroYellow, $alpha: .2);
+            background-image: url(assets/images/projects/portfolio/email-preview.webp);
+            background-repeat: no-repeat;
+            background-size: calc(100% - $spacing-unit*4) auto;
+            background-position: center bottom;
+            @include respond-to(md) {
+                background-size: calc(100% - $spacing-unit*8) auto;
+            }
+        }
+    }
+    &.TCAbility {
+        background-color: #FBFCFE;
+        --text-color: #{$dark};
+        --coming-soon-color-bg: #0E1032;
+        --coming-soon-color: #{$text-color-white};
+        background-image: url(assets/images/projects/tcability/bg-symbol.svg);
+        background-repeat: no-repeat;
+        background-size: 315px auto;
+        background-position: left -45px bottom -45px;
+        app-cta ::ng-deep {
+            a.color-disable-white {
+                border: solid 1px $dark;
+            }
+        }
+    }
+    &.WeRlive {
+        background-color: #FBFCFE;
+        --text-color: #{$dark};
+        &.Logo {
+            .body {
+                .project-image-wrapper {
+                    img {
+                        width: 205px;
+                        height: 75px;
+                        @include respond-to(md) {
+                            width: 267px;
+                            height: 97px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.Avocado {
+        background-color: #315c3f;
+    }
+}

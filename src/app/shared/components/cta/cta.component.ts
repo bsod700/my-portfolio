@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core
 import { Router, RouterModule } from '@angular/router';
 import { Cta, ScrollService } from '@core/index';
 import { GetIconComponent } from '../get-icon/get-icon.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cta',
   standalone: true,
-  imports: [RouterModule, GetIconComponent],
+  imports: [RouterModule, GetIconComponent, CommonModule],
   templateUrl: './cta.component.html',
   styleUrl: './cta.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

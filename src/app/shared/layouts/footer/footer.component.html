@@ -4,24 +4,27 @@
             <div class="logo">
                 <app-logo [logoConfig]="componentConfig.logo"/>
             </div>
-            <div class="menu">
-                @for (link of componentConfig.links; track $index) {
-                    <div class="link">
-                        <app-arrow-link [componentConfig]="link"/>
-                    </div>
-                }
+            <div class="side">
+                <div class="menu">
+                    @for (link of componentConfig.links; track $index) {
+                        <div class="link">
+                            <app-arrow-link [componentConfig]="link"/>
+                        </div>
+                    }
+                </div>
+                <div class="email-container">
+                    <a class="email" [href]="'mailto:' + componentConfig.email.link">{{componentConfig.email.text}}</a>
+                </div>
+                <div class="socials">
+                    @for (social of componentConfig.socials; track $index) {
+                        <a class="social" [href]="social.url" target="_blank" [attr.aria-label]="'Go to ' + social.iconName + ' page'">
+                            <app-get-icon [icon]="social.iconName"/>
+                        </a>
+                    }
+                </div>
             </div>
         </div>
-        <div class="email-container">
-            <a class="email" [href]="'mailto:' + componentConfig.email.link">{{componentConfig.email.text}}</a>
-        </div>
-        <div class="socials">
-            @for (social of componentConfig.socials; track $index) {
-                <a class="social" [href]="social.url" target="_blank" [attr.aria-label]="'Go to ' + social.iconName + ' page'">
-                    <app-get-icon [icon]="social.iconName"/>
-                </a>
-            }
-        </div>
+       
         <div class="copyright">
             <p id="copyright-p"></p>
         </div>

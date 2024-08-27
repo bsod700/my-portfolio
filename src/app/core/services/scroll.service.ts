@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Inject, Injectable, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
-import { filter, map, Observable } from 'rxjs';
+import { filter, map, Observable, timeout } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,6 @@ import { filter, map, Observable } from 'rxjs';
 export class ScrollService {
   private viewportScroller: ViewportScroller = inject(ViewportScroller);
   private router: Router = inject(Router);
-
-  // constructor() {
-  //   this.scrollToTop()
-  // }
 
   scrollToTop(): void {
     this.router.events.pipe(
@@ -26,9 +22,6 @@ export class ScrollService {
     const element = document.getElementById(elementId);
     if (element) {
       let offset = 0;
-      if (elementId === 'projects') {
-        offset = 1000;
-      }
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
 
@@ -48,16 +41,17 @@ export class ScrollService {
       const element = document.getElementById(scrollTo);
       if (element) {
         let offset = -100;
-        if (scrollTo === 'projects') {
-          offset = 150;
-        }
+  
         const elementPosition = element.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition + offset;
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
-        // element.scrollIntoView({ behavior: 'smooth' });
+
+        setTimeout(() => {
+          element.focus({ preventScroll: true })
+        },1000)
       }
     }
   }
