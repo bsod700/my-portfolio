@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, signal } from '@angular/core';
 import { Review } from '@core/index';
 
 @Component({
@@ -7,7 +7,8 @@ import { Review } from '@core/index';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './reviews.component.html',
-  styleUrl: './reviews.component.scss'
+  styleUrl: './reviews.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReviewsComponent {
   @Input() componentConfig!: ReviewsConfig;

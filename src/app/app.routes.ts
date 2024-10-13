@@ -21,5 +21,10 @@ export const routes: Routes = [
         loadComponent:() => import('./pages/projects/portfolio/portfolio.component').then(mod  => mod.PortfolioComponent),
         data: { name: 'Project Portfolio' }
     },
+    { 
+        path: 'projects/:category/:subcategory', 
+        loadComponent:() => import('./pages/projects/more-projects/more-projects.component').then(mod  => mod.MoreProjectsComponent),
+        data: { name: 'More Projects' }
+    },
     { path: '**', redirectTo: '' },
 ];

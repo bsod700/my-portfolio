@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { DocumentService } from '@core/index';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 import { ArrowLink, ArrowLinkComponent, LogoComponent, logoConfig } from '@shared/index';
@@ -9,7 +9,8 @@ import { ArrowLink, ArrowLinkComponent, LogoComponent, logoConfig } from '@share
   standalone: true,
   imports: [LogoComponent, ArrowLinkComponent, CommonModule, GetIconComponent],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
 

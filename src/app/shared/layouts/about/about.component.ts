@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Img } from '@core/index';
 import { DynamicBulletsComponent, DynamicBulletsConfig } from '@shared/index';
 
@@ -7,7 +7,8 @@ import { DynamicBulletsComponent, DynamicBulletsConfig } from '@shared/index';
   standalone: true,
   imports: [DynamicBulletsComponent],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
   @Input() componentConfig!: AboutConfig;

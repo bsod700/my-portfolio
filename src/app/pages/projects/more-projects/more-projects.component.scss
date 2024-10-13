@@ -1,0 +1,116 @@
+@import "mixins";
+
+.more-projects-wrapper {
+    padding-top: 192px;
+    .title {
+        margin-bottom: 48px;
+    }
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 48px;
+        h4 {
+            font-size: 48px;
+        }
+    }
+    .content {
+        padding-top: 48px;
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 400px);
+            justify-items: stretch;
+            gap: 24px;
+        }
+    }
+
+    .select-container {
+        position: relative;
+        display: inline-flex;
+        stroke: $text-color-white;
+        span {
+            font-size: 20px;
+        }
+        &.open {
+            .select-box {
+                border: 2px solid $tierroYellow;
+                .arrow {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            .icon-wrapper {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 3px;
+                border-radius: 3px;
+                background-color: rgba($color: $text-color-white, $alpha: 50%);
+            }
+          }
+        .select-box {
+          display: flex;
+          padding: 18px 24px;
+          border: 1px solid $form-border;
+          border-radius: 15px;
+          background-color: $dark;
+          color: $text-color-white;
+          cursor: pointer;
+          justify-content: space-between;
+          align-items: center;
+          min-width: 420px;
+
+         
+      
+          .arrow {
+            transition: transform 0.3s;
+          }
+        }
+      
+        .dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: $text-color-white;
+          border: 1px solid $form-border;
+          border-radius: 8px;
+          margin-top: 12px;
+          z-index: 1000;
+          list-style: none;
+          padding: 0;
+          overflow: hidden;
+          padding: 6px 6px 18px;
+      
+          li {
+            padding: 0;
+            cursor: pointer;
+           
+            &:hover {
+                .option-container {
+                    background-color: rgba($color: $tierroYellow, $alpha: 50%);
+                }
+            }
+      
+            &.active {
+               
+            }
+            .option-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                color: $tierroPrimary_100;
+                transition: background-color 0.3s;
+                padding: 12px;
+                border-radius: 15px;
+            }
+          }
+        }
+      }
+      
+}

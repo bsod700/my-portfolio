@@ -61,11 +61,11 @@ export class ScrollService {
     const currentRoute = this.getCurrentRoute();
     
       if (currentRoute === page) {
-        console.log('in page');
+        // console.log('in page');
         
         this.scrollToSection(event, comp);
       } else {
-        console.log('new page');
+        // console.log('new page');
         
         this.scrollToTop()
         this.router.navigate([`/${page}`], { fragment: scrollTo }).then(() => {

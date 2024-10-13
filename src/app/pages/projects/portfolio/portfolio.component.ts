@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DesignSystemShowComponent, DynamicSectionComponent, FigmaComponent, FinalSectionComponent, HeaderComponent, IconsImgComponent, MonoDynamicSectionComponent, NavbarComponent, ProblemSolutionComponent, ProcessComponent, SectionBulletsComponent, StyleGuideComponent } from '@shared/index';
 import { PortfolioConfigService, PortfolioProjectConfig } from './portfolio-config.service';
 
@@ -9,7 +9,8 @@ import { PortfolioConfigService, PortfolioProjectConfig } from './portfolio-conf
     IconsImgComponent, SectionBulletsComponent, FinalSectionComponent, StyleGuideComponent, DesignSystemShowComponent, FigmaComponent
   ],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+  styleUrl: './portfolio.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioComponent {
   config!: PortfolioProjectConfig;

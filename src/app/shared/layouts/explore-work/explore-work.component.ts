@@ -4,10 +4,10 @@ import { CardsRowComponent, CardsRowConfig } from '@shared/index';
 @Component({
   selector: 'app-explore-work',
   standalone: true,
-  imports: [CardsRowComponent],
+  imports: [CardsRowComponent ],
   templateUrl: './explore-work.component.html',
   styleUrl: './explore-work.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExploreWorkComponent {
   @Input() componentConfig!: ExploreWorkConfig;

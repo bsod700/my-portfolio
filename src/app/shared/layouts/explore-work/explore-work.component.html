@@ -11,7 +11,6 @@
                         <h4>{{type.title}}</h4>
                         <p>{{type.subtitle}}</p>
                     </div>
-                    
                     @for (cardRow of type.cardRows; track $index) {
                         <app-cards-row [componentConfig]="cardRow" [type]="type.title"/>
                     }

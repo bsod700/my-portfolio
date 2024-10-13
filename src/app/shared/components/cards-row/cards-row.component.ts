@@ -1,3 +1,4 @@
+
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CardWorkComponent, CardWorkConfig } from '@shared/index';
@@ -5,10 +6,10 @@ import { CardWorkComponent, CardWorkConfig } from '@shared/index';
 @Component({
   selector: 'app-cards-row',
   standalone: true,
-  imports: [CardWorkComponent, RouterModule],
+  imports: [ CardWorkComponent, RouterModule ],
   templateUrl: './cards-row.component.html',
   styleUrl: './cards-row.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardsRowComponent {
   @Input() componentConfig!: CardsRowConfig;
