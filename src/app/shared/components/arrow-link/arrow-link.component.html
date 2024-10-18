@@ -12,13 +12,29 @@
   </a>
 }
 @else {
-  <a class="arrow-link-wrapper" tabindex="0" 
-    [routerLink]="componentConfig.inLink ? ['/' + componentConfig.inLink] : null"
+  @if (componentConfig.inLink) {
+    <a class="arrow-link-wrapper" tabindex="0" 
+      [routerLink]="componentConfig.inLink ? ['/' + componentConfig.inLink] : null"
+      [attr.aria-label]="componentConfig.ariaLabel"
+    >
+      @if (componentConfig.showIcon) {
+        <!-- <app-icons-img [icon]="componentConfig.icon" /> -->
+      }
+      {{ componentConfig.label }}
+    </a>
+  }
+  @else if (componentConfig.outLink) {
+    <a class="arrow-link-wrapper" tabindex="0" 
     [attr.aria-label]="componentConfig.ariaLabel"
-  >
-    @if (componentConfig.showIcon) {
-      <!-- <app-icons-img [icon]="componentConfig.icon" /> -->
-    }
-    {{ componentConfig.label }}
-  </a>
+    [href]="componentConfig.outLink"
+    target="_blank"
+    >
+      @if (componentConfig.showIcon) {
+        <!-- <app-icons-img [icon]="componentConfig.icon" /> -->
+      }
+      {{ componentConfig.label }}
+    </a>
+  }
+
+ 
 }

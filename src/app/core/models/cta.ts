@@ -15,4 +15,5 @@ export interface Cta {
     iconRight?: string;
     scrollTo?: string;
     page?: string;
+    target?: string;
 }

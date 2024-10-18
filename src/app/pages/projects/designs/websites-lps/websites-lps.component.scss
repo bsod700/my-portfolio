@@ -1,0 +1,172 @@
+@import './mixins';
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+    overflow: hidden;
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*8;
+    overflow: hidden;
+    @include respond-to(lg) {
+        gap: 192px;
+        padding-top: $spacing-unit*32;
+    }
+    &.project-tierro {
+        background-color: $tierroPrimary_100;
+    }
+    &.project-portfolio {
+        background-color: $purple;
+    }
+    .container {
+        &.next {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .ctas {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+            @include respond-to(lg) {
+                gap: 48px;
+            }
+        }
+        .logo-wrapper {
+            margin-bottom: 24px;
+            @include respond-to(lg) {
+                margin-bottom: 48px;
+            }
+            img {
+                height: 60px;
+                width: 160px;
+                @include respond-to(lg) {
+                    height: 100px;
+                    width: 268px;
+                }
+            }
+        }
+        h2.title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 36px;
+            }
+            @include respond-to(lg) {
+                font-size: 48px;
+            }
+        }
+        h4.title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 22px;
+                margin-bottom: 24px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        h3.subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+            color: $tierroYellow;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 22px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        .paragraphs {
+            p {
+                font-size: 16px;
+                @include respond-to(lg) {
+                    font-size: 18px;
+                }
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            @include respond-to(lg) {
+                flex-direction: row;
+                gap: 0;
+            }
+        }
+        .side {
+            gap: 24px;
+            display: flex;
+            flex-direction: column;
+            @include respond-to(lg) {
+                flex: 0 0 650px;
+                gap: 48px;
+            }
+        }
+        .row {
+            display: flex;
+            gap: 24px;
+            @include respond-to(md) {
+                gap: 48px;
+            }
+            @include respond-to(lg) {
+                gap: 96px;
+            }
+            .column {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                h5 {
+                    font-size: 12px;
+                    line-height: 1.1;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    @include respond-to(md) {
+                        font-size: 18px;
+                    }
+                    @include respond-to(lg) {
+                        font-size: 20px;
+                    }
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 1.1;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                    color: $tierroYellow;
+                    @include respond-to(md) {
+                        font-size: 20px;
+                    }
+                    @include respond-to(lg) {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+        .img-wrapper {
+            margin-bottom: 48px;
+            @include respond-to(lg) {
+                margin-bottom: 0;
+            }
+            img {
+                width: 300px;
+                height: 220px;
+                @include respond-to(md) {
+                    width: 408px;
+                    height: 300px;
+                }
+                @include respond-to(lg) {
+                    width: 613px;
+                    height: 450px;
+                }
+            }
+        }
+    }
+}

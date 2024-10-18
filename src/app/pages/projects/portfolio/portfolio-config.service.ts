@@ -40,12 +40,12 @@ export class PortfolioConfigService {
         cta: {
           text: 'Take Me To The Live Site',
           size: 'default',
-          color: 'tierro',
-          ariaLabel: 'Go to TierroMusic website',
+          color: 'yellow',
+          ariaLabel: 'Go to Guy Tagger portfolio website',
           showIconRight: true,
           iconRight: 'arrow_right_line',
           showIconLeft: false,
-          outLink: 'https://www.tierromusic.com/'
+          inLink: '/'
         },
         devCta: {
           text: 'Go To The Repository',

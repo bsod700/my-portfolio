@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
-import { DocumentService } from '@core/index';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input } from '@angular/core';
+import { DefaultConfigService, DocumentService } from '@core/index';
 import { GetIconComponent } from '@shared/components/get-icon/get-icon.component';
 import { ArrowLink, ArrowLinkComponent, LogoComponent, logoConfig } from '@shared/index';
 
@@ -14,15 +14,42 @@ import { ArrowLink, ArrowLinkComponent, LogoComponent, logoConfig } from '@share
 })
 export class FooterComponent {
 
-  componentConfig!: FooterConfig;
-  documentService: DocumentService= inject(DocumentService);
-  
-  @Input('componentConfig') set _componentConfig(componentConfig: FooterConfig) {
-    this.componentConfig = componentConfig;
-    this.documentService.setInnerHtml({
-      'copyright-p': componentConfig.copyright
-    });
+  private _componentConfig!: FooterConfig;
+  private documentService: DocumentService= inject(DocumentService);
+  private defaultConfigService: DefaultConfigService = inject(DefaultConfigService);
+  private cdr = inject(ChangeDetectorRef);
+
+  @Input('componentConfig') set componentConfig(componentConfig: FooterConfig | undefined) {
+    if(componentConfig) {
+      this._componentConfig = componentConfig;
+      this.documentService.setInnerHtml({
+        'copyright-p': componentConfig.copyright
+      });
+    } else {
+      this._componentConfig = this.defaultConfigService.getRegularFooter();
+      this.documentService.setInnerHtml({
+        'copyright-p': this._componentConfig.copyright
+      });
+    }
+
+    this.cdr.markForCheck(); 
   };
+
+  get componentConfig(): FooterConfig {
+    if (this._componentConfig) {
+      this.documentService.setInnerHtml({
+        'copyright-p': this._componentConfig.copyright
+      });
+      return this._componentConfig;
+    }
+    else {
+      const config = this.defaultConfigService.getRegularFooter();
+      this.documentService.setInnerHtml({
+        'copyright-p': config.copyright
+      });
+      return config;
+    }
+  }
 }
 
 export interface FooterConfig {

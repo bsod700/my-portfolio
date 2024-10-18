@@ -17,7 +17,11 @@ export class CtaComponent {
   @Input() onClick!: () => void;
   
   scrollService: ScrollService = inject(ScrollService);
-  private router: Router = inject(Router)
+  private router: Router = inject(Router);
+
+  get ctaTarget(): string {
+    return this.ctaConfig.target ?? ''
+  }
 
   scrollToSection(event: Event): void {
     this.scrollService.scrollToSection(event, this.ctaConfig);

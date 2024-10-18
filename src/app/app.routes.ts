@@ -7,17 +7,17 @@ export const routes: Routes = [
         data: { name: 'Guy Tagger Portfolio' }
     },
     { 
-        path: 'projects/tierro', 
+        path: 'projects/ux/tierro', 
         loadComponent:() => import('./pages/projects/tierro/tierro.component').then(mod  => mod.TierroComponent),
         data: { name: 'Project Tierro' }
     },
     { 
-        path: 'projects/brushalong', 
+        path: 'projects/ux/brushalong', 
         loadComponent:() => import('./pages/projects/brushalong/brushalong.component').then(mod  => mod.BrushalongComponent),
         data: { name: 'Project BrushAlong' }
     },
     { 
-        path: 'projects/portfolio', 
+        path: 'projects/ux/portfolio', 
         loadComponent:() => import('./pages/projects/portfolio/portfolio.component').then(mod  => mod.PortfolioComponent),
         data: { name: 'Project Portfolio' }
     },
@@ -26,5 +26,11 @@ export const routes: Routes = [
         loadComponent:() => import('./pages/projects/more-projects/more-projects.component').then(mod  => mod.MoreProjectsComponent),
         data: { name: 'More Projects' }
     },
+    { 
+        path: 'projects/design/website-lps/:title', 
+        loadComponent:() => import('./pages/projects/designs/websites-lps/websites-lps.component').then(mod  => mod.WebsitesLpsComponent),
+        data: { name: 'Project Website :title' }
+    },
+
     { path: '**', redirectTo: '' },
 ];

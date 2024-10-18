@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, HostListener, Input, inject } from '@angular/core';
-import { NavbarRegular, ScrollService } from '@core/index';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Input, inject } from '@angular/core';
+import { DefaultConfigService, NavbarRegular, ScrollService } from '@core/index';
 import { ArrowLinkComponent, CtaComponent, LogoComponent } from '@shared/index';
 
 @Component({
@@ -12,10 +12,34 @@ import { ArrowLinkComponent, CtaComponent, LogoComponent } from '@shared/index';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
-  @Input() componentConfig!: NavbarRegular;
+  private _componentConfig!: NavbarRegular;
 
+  @Input()
+  set componentConfig(value: NavbarRegular | undefined) {
+    if (value) {
+      this._componentConfig = value;
+    } else {
+      this._componentConfig = this.defaultConfigService.getRegularNavbar();
+    }
+    this.cdr.markForCheck(); 
+  }
+  
+  private defaultConfigService: DefaultConfigService = inject(DefaultConfigService);
+  private cdr = inject(ChangeDetectorRef);
+
+ 
   scrolled = false;
   notTop = false;
+
+  get componentConfig(): NavbarRegular {
+    if (this._componentConfig) {
+      return this._componentConfig;
+    }
+    else {
+      const config = this.defaultConfigService.getRegularNavbar();
+      return config;
+    }
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

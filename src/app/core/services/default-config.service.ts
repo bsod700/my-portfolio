@@ -153,7 +153,8 @@ export class DefaultConfigService {
                 ariaLabel: 'Redirect to Tierro website design',
                 showIconRight: true,
                 iconRight: 'arrow_right',
-                showIconLeft: false
+                showIconLeft: false,
+                inLink: 'projects/design/website-lps/tierro'
             }
           },
           {
@@ -181,7 +182,8 @@ export class DefaultConfigService {
                 ariaLabel: 'Redirect to Portfolio website design',
                 showIconRight: true,
                 iconRight: 'arrow_right',
-                showIconLeft: false
+                showIconLeft: false,
+                inLink: 'projects/design/website-lps/portfolio'
             }
           },
           {
@@ -208,7 +210,7 @@ export class DefaultConfigService {
               iconRight: 'pending',
               showIconLeft: false
             }
-          }
+          },
         ],
         saas: [
           {

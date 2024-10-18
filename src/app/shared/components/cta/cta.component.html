@@ -9,6 +9,7 @@
     role="button"
     [target]="ctaConfig.targetStyle ?? '_self'"
     [ngClass]="[ctaConfig.iconRight ? 'icon-right' : '']"
+    [target]="ctaTarget"
     >
     @if (ctaConfig.showIconLeft) {
         <div class="icon-left">
