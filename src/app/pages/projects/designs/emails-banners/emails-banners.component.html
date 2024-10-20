@@ -1,1 +1,52 @@
-<p>emails-banners works!</p>
+<app-navbar />
+@if(config) {
+    <header [ngClass]="'project-' + websiteTitle">
+        <div class="container">
+            <div class="titles">
+                <h2 class="title">{{config.title}}</h2>
+                <h3 class="subtitle">{{config.subtitle}}</h3>
+            </div>
+        </div>
+        <div class="container row">
+            <div class="side">
+                <h4 class="subtitle">{{config.row.title}}</h4>
+                <div class="pragraphs">
+                    @for (p of config.row.paragraphs; track $index) {
+                        <p>{{p}}</p>
+                    }
+                </div>
+            </div>
+            <div class="img-wrapper">
+                <img [src]="config.row.img.src" [alt]="config.row.img.alt">
+            </div>
+        </div>
+        @if (config.emails) {
+            <div class="container emails">
+                @for (email of config.emails; track $index) {
+                    <div class="email" [ngClass]="'type-' + email.title">
+                        <img [src]="email.imgs.src" [alt]="email.imgs.src">
+                    </div>
+                }
+            </div>
+        }
+        
+        <div class="container">
+            <h4 class="title">More of {{websiteTitle | titlecase}}</h4>
+            @if (config.moreFrom) {
+                <div class="ctas">
+                    @for (cta of config.moreFrom; track $index) {
+                        <app-cta [ctaConfig]="cta"/>
+                    }
+                </div>
+            }
+        </div>
+        @if (nextProject) {
+            <div class="container next">
+                <app-cta [ctaConfig]="nextProject"/>
+            </div>
+        }
+    </header>
+}
+<app-footer />
+<app-icons-img />
+

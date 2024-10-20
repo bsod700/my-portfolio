@@ -171,3 +171,146 @@ header {
         }
     }
 }
+
+section.sections-wrapper {
+    background-repeat: no-repeat;
+    margin: 0;
+    overflow: hidden;
+    padding: 96px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: start;
+        gap: $spacing-unit*4;
+        text-align: start;
+        @include respond-to(md) {
+            align-items: center;
+        }
+    }
+    &:not(.reverse) {
+        .container {
+            flex-direction: column;
+            @include respond-to(md) {
+                flex-direction: row;
+            }
+        }
+       
+    }
+    &.reverse {
+        .container {
+            flex-direction: column;
+            @include respond-to(md) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+    .img-wrapper {
+        @include respond-to(md) {
+            flex: 0 0 300px;
+        }
+        @include respond-to(lg) {
+            flex: 0 0 500px;
+        }
+        img {
+            width: 300px;
+            @include respond-to(md) {
+                width: 300px;
+            }
+            @include respond-to(lg) {
+                width: 500px;
+            }
+        }
+    }
+    .text-content {
+        
+        @include respond-to(md) {
+            flex: 1 0 0;
+        }
+        h4.title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: $spacing-unit*2;
+            position: relative;
+            @include respond-to(md) {
+                font-size: 1.75rem;
+            }
+        }
+        .project-paragraph {
+            margin-bottom: 0;
+        }
+    }
+    &.tierro {
+        background-color: $tierroPrimary_100;
+        &.yellow-circle-right {
+           h4.title {
+                &::before {
+                    @include respond-to(md) {
+                        content: url(assets/images/projects/tierro/yellow-circle-right.svg);
+                        width: 195px;
+                        height: 215px;
+                        position: absolute;
+                        top: calc(-100% - 195px);
+                        right: calc(100% - 195px);
+                    }
+                }
+           }
+        }
+        &.yellow-circle-left {
+            h4.title {
+                &::before {
+                    @include respond-to(md) {
+                        content:  url(assets/images/projects/tierro/yellow-circle-left.svg);
+                        width: 195px;
+                        height: 215px;
+                        position: absolute;
+                        top: calc(-100% - 195px);
+                        left: calc(0% + 195px);
+                    }
+                }
+           }
+        }
+        &:not(.reverse) {
+            .img-wrapper {
+                position: relative;
+               &::before {
+                    content: '';
+                    border-radius: 100%;
+                    opacity: 0.1;
+                    background: radial-gradient(50% 50% at 50% 50%, $tierroYellow 0%, $tierroPrimary_100 100%);
+                    position: absolute;
+                    left: -140px;
+                    top: -110px;
+                    width: 500px;
+                    height: 500px;
+                    z-index: 1;
+               }
+               img {
+                position: relative;
+                z-index: 2;
+               }
+            }
+        }
+        &.reverse {
+            .img-wrapper {
+                position: relative;
+                &::before {
+                     content: '';
+                     border-radius: 100%;
+                     opacity: 0.1;
+                     background: radial-gradient(50% 50% at 50% 50%, $tierroYellow 0%, $tierroPrimary_100 100%);
+                     position: absolute;
+                     right: -140px;
+                     top: -110px;
+                     width: 500px;
+                     height: 500px;
+                     z-index: 1;
+                }
+                img {
+                 position: relative;
+                 z-index: 2;
+                }
+            }
+        }
+    }
+}

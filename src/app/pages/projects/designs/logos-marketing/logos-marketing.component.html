@@ -1,0 +1,65 @@
+<app-navbar />
+@if(config) {
+    <header [ngClass]="'project-' + websiteTitle">
+        <div class="container center">
+            <h2 class="title">{{config.title}}</h2>
+            <h3 class="subtitle">{{config.subtitle}}</h3>
+            <div class="logo-wrapper">
+                <img [src]="config.logo.src" [alt]="config.logo.alt">
+            </div>
+        </div>
+
+        <div class="container preview">
+            <h4 class="title">{{config.preview.title}}</h4>
+            <div class="paragraphs">
+                @for (p of config.preview.paragraphs; track $index) {
+                    <p>{{p}}</p>
+                }
+            </div>
+        </div>
+
+        @if (config.logosVariations) {
+            <div class="container logos">
+                <div class="logos-wrapper">
+                    @for (logo of config.logosVariations; track $index) {
+                        <div class="logo-variation" [ngClass]="logo.type">
+                            <img [src]="logo.logo.src" [alt]="logo.logo.alt">
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+
+        @if (config.icons) {
+            <div class="container icons">
+                <h4 class="title">{{config.icons.title}}</h4>
+                <div class="icons-wrapper">
+                    @for (icon of config.icons.icons; track $index) {
+                        <div class="icon-type" [ngClass]="icon.type">
+                            <img [src]="icon.icon.src" [alt]="icon.icon.alt">
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        
+        <div class="container">
+            <h4 class="title-more">More of {{websiteTitle | titlecase}}</h4>
+            @if (config.moreFrom) {
+                <div class="ctas">
+                    @for (cta of config.moreFrom; track $index) {
+                        <app-cta [ctaConfig]="cta"/>
+                    }
+                </div>
+            }
+        </div>
+        @if (nextProject) {
+            <div class="container next">
+                <app-cta [ctaConfig]="nextProject"/>
+            </div>
+        }
+    </header>
+}
+<app-footer />
+<app-icons-img />
+

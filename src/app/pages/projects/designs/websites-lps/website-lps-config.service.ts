@@ -55,7 +55,7 @@ export class WebsiteLpsConfigService {
               showIconLeft: false,
               showIconRight: true,
               iconRight: 'diamond',
-              inLink: 'projects/design/logos/tierro',
+              inLink: 'projects/design/logos-marketing/tierro',
               target: '_blank'
             },
             {
@@ -66,7 +66,7 @@ export class WebsiteLpsConfigService {
               showIconLeft: false,
               showIconRight: true,
               iconRight: 'management',
-              inLink: 'projects/design/saas/tierro',
+              inLink: 'projects/design/management/tierro',
               target: '_blank'
             },
             {
@@ -84,8 +84,8 @@ export class WebsiteLpsConfigService {
         },
         portfolio: {
           logo: {
-            src: 'assets/images/projects/tierro/logo-color.svg',
-            alt: 'Tierro project logo'
+            src: 'assets/images/logo-horizon.svg',
+            alt: 'Guy Tagger portfolio logo'
           },
           title: 'Background',
           subtitle: 'Design and Development of a Personal Website to Highlight My Skills and Attract Clients',
@@ -103,7 +103,7 @@ export class WebsiteLpsConfigService {
             inLink: '/',
             target: '_blank'
           },
-          industry: 'Music',
+          industry: 'Design',
           platform: 'Web',
           role: 'UI / UX Designer / Developer',
           imgHero: {
@@ -191,7 +191,7 @@ export interface WebsiteLpsConfig {
   platform: string;
   role: string;
   imgHero: Img;
-  moreFrom?: Cta[]
+  moreFrom?: Cta[];
 }
 
 export interface WebsiteLp {

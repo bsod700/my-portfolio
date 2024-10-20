@@ -232,13 +232,15 @@ export class DefaultConfigService {
             },
             projectDescription: 'An innovative webpage and logo design for a music producer, showcasing musical creativity. This project also includes a streamlined and efficient admin page designed for easy management and control.',
             cta: {
-                text: 'Take Me To The Project',
-                size: 'default',
-                color: 'yellow',
-                ariaLabel: 'string',
-                showIconRight: true,
-                iconRight: 'arrow_right',
-                showIconLeft: false
+              text: 'See Admin CRM Design',
+              size: 'regular',
+              color: 'yellow',
+              ariaLabel: 'Go to admin CRM design',
+              showIconLeft: false,
+              showIconRight: true,
+              iconRight: 'management',
+              inLink: 'projects/design/management/tierro',
+              target: '_blank'
             }
           },
           {
@@ -293,7 +295,8 @@ export class DefaultConfigService {
                 ariaLabel: 'Redirect to portfolio logo design',
                 showIconRight: true,
                 iconRight: 'arrow_right',
-                showIconLeft: false
+                showIconLeft: false,
+                inLink: 'projects/design/logos-marketing/portfolio',
             }
           },
           {
@@ -321,7 +324,8 @@ export class DefaultConfigService {
                 ariaLabel: 'Redirect to Tierro logo design',
                 showIconRight: true,
                 iconRight: 'arrow_right',
-                showIconLeft: false
+                showIconLeft: false,
+                inLink: 'projects/design/logos-marketing/tierro',
             }
           }, 
           {
@@ -349,7 +353,8 @@ export class DefaultConfigService {
                 ariaLabel: 'Redirect to werlive logo design',
                 showIconRight: true,
                 iconRight: 'arrow_right',
-                showIconLeft: false
+                showIconLeft: false,
+                inLink: 'projects/design/logos-marketing/werlive',
             }
           }
         ],

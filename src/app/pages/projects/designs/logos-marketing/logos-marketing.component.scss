@@ -1,0 +1,146 @@
+@import './mixins';
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    overflow: hidden;
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*8;
+    overflow: hidden;
+    @include respond-to(lg) {
+        gap: 96px;
+        padding-top: $spacing-unit*32;
+    }
+    &.project-tierro {
+        background-color: $tierroPrimary_100;
+    }
+    &.project-portfolio {
+        background-color: $purple;
+    }
+    .container {
+        &.next {
+            display: flex;
+            justify-content: flex-end;
+        }
+        &.center {
+            text-align: center;
+        }
+      
+        &.icons {
+            .icons-wrapper {
+                display: flex;
+                gap: 48px;
+                flex-wrap: wrap;
+                align-items: center;
+                flex-direction: column;
+                @include respond-to(md) {
+                    flex-direction: row;
+                }
+                .icon-type {
+                
+                    &.cube {
+                        @include respond-to(lg) {
+                            flex: 0 0 200px;
+                        }
+                        img {
+                            width: 200px;
+                            height: 200px;
+                        }
+                    }
+                &.circle {
+                   
+                    @include respond-to(lg) {
+                        flex: 0 0 200px;
+                    }
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        @include respond-to(lg) {
+                            width: 200px;
+                            height: 200px;
+                        }
+                    }
+                }
+            }
+          }
+        }
+        h4.title-more {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 22px;
+                margin-bottom: 24px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        
+        .ctas {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+            @include respond-to(lg) {
+                gap: 48px;
+            }
+        }
+        .logo-wrapper {
+            margin-bottom: 24px;
+            @include respond-to(lg) {
+                margin-bottom: 48px;
+            }
+            img {
+                height: 112px;
+                width: 300px;
+                @include respond-to(md) {
+                    height: 262px;
+                    width: 700px;
+                }
+                @include respond-to(lg) {
+                    height: 337px;
+                    width: 900px;
+                }
+            }
+        }
+        h2.title,h4.title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 36px;
+            }
+            @include respond-to(lg) {
+                font-size: 48px;
+            }
+        }
+        h4.title {
+            margin-bottom: 24px;
+        }
+        h3.subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+            color: $tierroYellow;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 22px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        .paragraphs {
+            p {
+                font-size: 16px;
+                @include respond-to(lg) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

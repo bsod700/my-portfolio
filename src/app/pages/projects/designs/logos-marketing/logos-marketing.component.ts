@@ -1,34 +1,34 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cta } from '@core/index';
-import { EmailsBannersConfig, EmailsBannersConfigService } from './emails-banners-config.service';
 import { CtaComponent, FooterComponent, IconsImgComponent, NavbarComponent } from '@shared/index';
-import { CommonModule } from '@angular/common';
+import { logosMarketingConfig, LogosMarketingConfigService } from './logos-marketing-config.service';
 
 @Component({
-  selector: 'app-emails-banners',
+  selector: 'app-logos-marketing',
   standalone: true,
   imports: [NavbarComponent, CommonModule, CtaComponent, IconsImgComponent, FooterComponent],
-  templateUrl: './emails-banners.component.html',
-  styleUrl: './emails-banners.component.scss',
+  templateUrl: './logos-marketing.component.html',
+  styleUrl: './logos-marketing.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmailsBannersComponent implements OnInit {
+export class LogosMarketingComponent {
   private route: ActivatedRoute = inject(ActivatedRoute);
-  private emailsBannersConfigService: EmailsBannersConfigService = inject(EmailsBannersConfigService);
+  private logosMarketingConfigService: LogosMarketingConfigService = inject(LogosMarketingConfigService);
   private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
 
-  config!: EmailsBannersConfig | undefined;
+  config!: logosMarketingConfig | undefined;
   nextProject!: Cta | undefined;
   websiteTitle: string = '';
-
+  
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const websiteTitle = params.get('title');
       if (websiteTitle) {
         this.websiteTitle = websiteTitle;
-        this.config = this.emailsBannersConfigService.getEmailsBanners(websiteTitle);
-        this.nextProject = this.emailsBannersConfigService.createCtaForNextProject(websiteTitle);
+        this.config = this.logosMarketingConfigService.getLogosMarketing(websiteTitle);
+        this.nextProject = this.logosMarketingConfigService.createCtaForNextProject(websiteTitle);
         this.cdr.markForCheck();
       }
     });

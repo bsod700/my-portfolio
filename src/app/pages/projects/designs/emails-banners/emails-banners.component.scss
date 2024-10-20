@@ -1,0 +1,166 @@
+@import './mixins';
+
+header {
+    padding-top: $spacing-unit*16;
+    padding-bottom: $spacing-unit*8;
+    overflow: hidden;
+    @include respond-to(lg) {
+        padding-top: $spacing-unit*32;
+    }
+    &.project-tierro {
+        background-color: $tierroPrimary_100;
+    }
+    &.project-portfolio {
+        background-color: $purple;
+    }
+    .container {
+        &.next {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .ctas {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+            @include respond-to(lg) {
+                gap: 48px;
+                margin-bottom: 96px;
+            }
+        }
+        .titles {
+            margin-bottom: 24px;
+            @include respond-to(lg) {
+                margin-bottom: 48px;
+            }
+        }
+        h2.title, h4.subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 36px;
+            }
+            @include respond-to(lg) {
+                font-size: 48px;
+            }
+        }
+        h4.title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 22px;
+                margin-bottom: 24px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        h3.subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+            color: $tierroYellow;
+            line-height: 1.1;
+            @include respond-to(md) {
+                font-size: 22px;
+            }
+            @include respond-to(lg) {
+                font-size: 28px;
+            }
+        }
+        .paragraphs {
+            p {
+                font-size: 16px;
+                @include respond-to(lg) {
+                    font-size: 18px;
+                }
+            }
+        }
+        &.row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            margin-bottom: 96px;
+            flex-direction: column-reverse;
+            @include respond-to(md) {
+                flex-direction: row;
+            }
+        }
+        .img-wrapper {
+            img {
+                width: 227px;
+                height: 250px;
+            }
+        }
+        &.emails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 96px;
+            flex-direction: column;
+            @include respond-to(lg) {
+                gap: 48px;
+                margin-bottom: 192px;
+                flex-direction: row;
+            }
+            .email {
+                &.type-mobile {
+                    @include respond-to(lg) {
+                        flex: 0 0 420px;
+                    }
+                    img {
+                        width: 300px;
+                        height: 1079px;
+                        @include respond-to(md) {
+                            width: 350px;
+                            height: 1258px;
+                        }
+                        @include respond-to(lg) {
+                            width: 420px;
+                            height: 1510px;
+                        }
+                    }
+                }
+                &.type-tablet {
+                    @include respond-to(lg) {
+                        flex: 0 0 500px;
+                    }
+                    img {
+                        width: 300px;
+                        height: 706px;
+                        @include respond-to(md) {
+                            width: 400px;
+                            height: 941px;
+                        }
+                        @include respond-to(lg) {
+                            width: 500px;
+                            height: 1176px;
+                        }
+                    }
+                }
+                &.type-template {
+                    flex: 0 0 100%;
+                    img {
+                        width: 300px;
+                        height: auto;
+                        @include respond-to(md) {
+                            width: 991px;
+                            height: auto;
+                        }
+                        @include respond-to(lg) {
+                            width: 1140px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

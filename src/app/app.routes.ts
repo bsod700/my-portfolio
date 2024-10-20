@@ -31,6 +31,21 @@ export const routes: Routes = [
         loadComponent:() => import('./pages/projects/designs/websites-lps/websites-lps.component').then(mod  => mod.WebsitesLpsComponent),
         data: { name: 'Project Website :title' }
     },
+    { 
+        path: 'projects/design/emails-banners/:title', 
+        loadComponent:() => import('./pages/projects/designs/emails-banners/emails-banners.component').then(mod  => mod.EmailsBannersComponent),
+        data: { name: 'Project Emails :title' }
+    },
+    { 
+        path: 'projects/design/management/:title', 
+        loadComponent:() => import('./pages/projects/designs/management/management.component').then(mod  => mod.ManagementComponent),
+        data: { name: 'Project Management :title' }
+    },
+    { 
+        path: 'projects/design/logos-marketing/:title', 
+        loadComponent:() => import('./pages/projects/designs/logos-marketing/logos-marketing.component').then(mod  => mod.LogosMarketingComponent),
+        data: { name: 'Project logos marketing :title' }
+    },
 
     { path: '**', redirectTo: '' },
 ];
